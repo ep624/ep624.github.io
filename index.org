@@ -290,21 +290,35 @@ yay -S libreoffice-extension-languagetool
 
   ~$ brew install pandoc pandoc-citeproc~
 
+** Create your ssh keys
+
+[[https://www.openssh.com][ssh]] or Secure Shell is a protocol for securely transferring data over networks.
+
+Following commands will create two files: ~~/.ssh/id_rsa~ and ~~/.ssh/id_rsa.pub~.
+
+The files are in ~.ssh~ directory.
+
+id_rsa is your private key which much be kept save and /never/ shared with anyone.
+
+id_rsa.pub is the matching public key which is shared with any machine with which you want to have secure data transfers.
+
+#+begin_src sh
+# If you do not already have ssh keys, create them as below
+mkdir ~/.ssh
+ssh-keygen -t rsa #No need to use a password, when asked. Just press enter for all the questions (accept defaults).
+#+end_src
+
+
 **  Emacs configuration
 
-Following commands will configure emacs for the requirements of this course.
+In your github.com account, go to settings, click on "SSH and GPG keys", and add a new ssh key. In the box that opens, in Title add your name, and the name of your machine, and in the box below, paste the contents of the public key that was created in the previous step (~~/.ssh/id_rsa.pub~).
+
+Once that is done, following commands will configure Emacs for the requirements of this course.
 
 #+begin_src sh
 
-# If you do not already have ssh keys, create them as below
-# mkdir ~/.ssh
-# cd ~/.ssh
-# ssh-keygen -t rsa #No need to use a password, when asked. Just press enter.
-# cd
-
-## You should add the public key (by default, the file ~/.ssh/id_rsa.pub) to your github account.
-git clone git@github.com:vikasrawal/prelude-ep624.git # Use this if you have added your public ssh key to your github account.
-git clone https://github.com/vikasrawal/prelude-ep624.git # Use this if you do not have a github account with your public ssh key added to it.
+git clone git@github.com:vikasrawal/prelude-ep624.git
+git clone https://github.com/vikasrawal/prelude-ep624.git # Use may use this if you do not have a github account with your public ssh key added to it.
 
 mv .emacs.d .emacs.d.old # Renames if you already have a .emacs.d directory
 mv prelude-ep624 .emacs.d

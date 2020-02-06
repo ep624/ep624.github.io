@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2020-02-07 Fri 02:08 -->
+<!-- 2020-02-07 Fri 02:30 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>EP624: Statistical Programming and Reproducible Research</title>
@@ -263,7 +263,8 @@ for the JavaScript code in this tag.
 <li><a href="#org790be1e">OS-X</a></li>
 </ul>
 </li>
-<li><a href="#orgb86d86b">1.3. Emacs configuration</a></li>
+<li><a href="#orgfb78447">1.3. Create your ssh keys</a></li>
+<li><a href="#orgb86d86b">1.4. Emacs configuration</a></li>
 </ul>
 </li>
 <li><a href="#orge8f754d">2. Introduction to Computer Programming</a>
@@ -282,9 +283,9 @@ for the JavaScript code in this tag.
 </li>
 </ul>
 </li>
-<li><a href="#org1ca0d70">3. Introduction to Emacs</a>
+<li><a href="#org2137977">3. Introduction to Emacs</a>
 <ul>
-<li><a href="#org7f05571">3.1. Introduction to Emacs</a>
+<li><a href="#org1ca0d70">3.1. Introduction to Emacs</a>
 <ul>
 <li><a href="#orgfceff0c">Notations</a></li>
 <li><a href="#orgf873cf1">Basic commands</a></li>
@@ -429,24 +430,54 @@ Also install pandoc and pandoc-citeproc using homebrew:
 </div>
 </div>
 
-<div id="outline-container-orgb86d86b" class="outline-3">
-<h3 id="orgb86d86b"><span class="section-number-3">1.3</span> Emacs configuration</h3>
+<div id="outline-container-orgfb78447" class="outline-3">
+<h3 id="orgfb78447"><span class="section-number-3">1.3</span> Create your ssh keys</h3>
 <div class="outline-text-3" id="text-1-3">
 <p>
-Following commands will configure emacs for the requirements of this course.
+<a href="https://www.openssh.com">ssh</a> or Secure Shell is a protocol for securely transferring data over networks.
+</p>
+
+<p>
+Following commands will create two files: <code>~/.ssh/id_rsa</code> and <code>~/.ssh/id_rsa.pub</code>.
+</p>
+
+<p>
+The files are in <code>.ssh</code> directory.
+</p>
+
+<p>
+id_rsa is your private key which much be kept save and <i>never</i> shared with anyone.
+</p>
+
+<p>
+id_rsa.pub is the matching public key which is shared with any machine with which you want to have secure data transfers.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-sh"><span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">If you do not already have ssh keys, create them as below</span>
+mkdir ~/.ssh
+ssh-keygen -t rsa <span style="color: #888a85; background-color: #ffffff; font-style: italic;">#</span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">No need to use a password, when asked. Just press enter for all the questions (accept defaults).</span>
+</pre>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-orgb86d86b" class="outline-3">
+<h3 id="orgb86d86b"><span class="section-number-3">1.4</span> Emacs configuration</h3>
+<div class="outline-text-3" id="text-1-4">
+<p>
+In your github.com account, go to settings, click on &ldquo;SSH and GPG keys&rdquo;, and add a new ssh key. In the box that opens, in Title add your name, and the name of your machine, and in the box below, paste the contents of the public key that was created in the previous step (<code>~/.ssh/id_rsa.pub</code>).
+</p>
+
+<p>
+Once that is done, following commands will configure Emacs for the requirements of this course.
 </p>
 
 <div class="org-src-container">
 <pre class="src src-sh">
-<span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">If you do not already have ssh keys, create them as below</span>
-<span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">mkdir ~/.ssh</span>
-<span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">cd ~/.ssh</span>
-<span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">ssh-keygen -t rsa #No need to use a password, when asked. Just press enter.</span>
-<span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">cd</span>
-
-<span style="color: #888a85; background-color: #ffffff; font-style: italic;">## </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">You should add the public key (by default, the file ~/.ssh/id_rsa.pub) to your github account.</span>
-git clone git@github.com:vikasrawal/prelude-ep624.git <span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">Use this if you have added your public ssh key to your github account.</span>
-git clone https://github.com/vikasrawal/prelude-ep624.git <span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">Use this if you do not have a github account with your public ssh key added to it.</span>
+git clone git@github.com:vikasrawal/prelude-ep624.git
+git clone https://github.com/vikasrawal/prelude-ep624.git <span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">Use may use this if you do not have a github account with your public ssh key added to it.</span>
 
 mv .emacs.d .emacs.d.old <span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">Renames if you already have a .emacs.d directory</span>
 mv prelude-ep624 .emacs.d
@@ -554,12 +585,12 @@ git checkout ep624
 </div>
 </div>
 
-<div id="outline-container-org1ca0d70" class="outline-2">
-<h2 id="org1ca0d70"><span class="section-number-2">3</span> Introduction to Emacs</h2>
+<div id="outline-container-org2137977" class="outline-2">
+<h2 id="org2137977"><span class="section-number-2">3</span> Introduction to Emacs</h2>
 <div class="outline-text-2" id="text-3">
 </div>
-<div id="outline-container-org7f05571" class="outline-3">
-<h3 id="org7f05571"><span class="section-number-3">3.1</span> Introduction to Emacs</h3>
+<div id="outline-container-org1ca0d70" class="outline-3">
+<h3 id="org1ca0d70"><span class="section-number-3">3.1</span> Introduction to Emacs</h3>
 <div class="outline-text-3" id="text-3-1">
 <p>
 Emacs is an extremely powerful cross-platform editor which can be used for all kinds of tasks that you do on your computer. Although Emacs is different from every other editor you are likely to have used, learning to use Emacs would be a huge asset for your computing abilities. A good way to learn Emacs, to ask, for each activity you do on your computer, can I do this using Emacs? You will be amazed at how many times the answer is: yes, and more efficiently than in your current application.
@@ -1030,7 +1061,7 @@ You could also specify colour, size and shape independently of aesthetics if you
 </p>
 
 <div class="org-src-container">
-<pre class="src src-R" id="org780bb06"><span class="linenr">1: </span>ggplot(data,aes(x=year,y=income,size=State),colour=<span style="color: #8f5902; font-style: italic;">"darkred"</span>)<span style="color: #8f5902; font-style: italic;">-&gt;</span>p
+<pre class="src src-R" id="orgd77b374"><span class="linenr">1: </span>ggplot(data,aes(x=year,y=income,size=State),colour=<span style="color: #8f5902; font-style: italic;">"darkred"</span>)<span style="color: #8f5902; font-style: italic;">-&gt;</span>p
 </pre>
 </div>
 </div>
@@ -1044,7 +1075,7 @@ In the second step, you specify the type of graph you want to make. These are ca
 </p>
 
 <div class="org-src-container">
-<pre class="src src-R" id="orgd367e59"><span class="linenr">2: </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">We start from the object 'p' created in Step 1 and use '+' to add to it/modify it.</span>
+<pre class="src src-R" id="org8e5a076"><span class="linenr">2: </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">We start from the object 'p' created in Step 1 and use '+' to add to it/modify it.</span>
 <span class="linenr">3: </span>p+geom_point()<span style="color: #8f5902; font-style: italic;">-&gt;</span>p <span style="color: #888a85; background-color: #ffffff; font-style: italic;">#</span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">This makes a scatter plot</span>
 <span class="linenr">4: </span>p+geom_line()<span style="color: #8f5902; font-style: italic;">-&gt;</span>p <span style="color: #888a85; background-color: #ffffff; font-style: italic;">#</span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">This adds a line to the plot</span>
 <span class="linenr">5: </span>p <span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">At any stage, doing this would actually plot p on the screen.</span>
@@ -1228,7 +1259,7 @@ For each of these scales (x, y, colour, size and shape), you can define attribut
 </p>
 
 <div class="org-src-container">
-<pre class="src src-R" id="orgd77b374"><span class="linenr">6: </span>p+scale_x_continuous(<span style="color: #8f5902; font-style: italic;">"Financial Year"</span>,limits=c(1990,2012),
+<pre class="src src-R" id="org4c1799e"><span class="linenr">6: </span>p+scale_x_continuous(<span style="color: #8f5902; font-style: italic;">"Financial Year"</span>,limits=c(1990,2012),
 <span class="linenr">7: </span>                     breaks=c(1990,1995,2000,2010))<span style="color: #8f5902; font-style: italic;">-&gt;</span>p
 <span class="linenr">8: </span>
 </pre>
@@ -2417,7 +2448,7 @@ document.
 </div></div>
 <div id="postamble" class="status">
 <p class="author">Author: Vikas Rawal</p>
-<p class="date">Created: 2020-02-07 Fri 02:08</p>
+<p class="date">Created: 2020-02-07 Fri 02:30</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
