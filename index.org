@@ -1,6 +1,6 @@
 #+TITLE: EP624: Statistical Programming and Reproducible Research
 #+AUTHOR: Vikas Rawal
-#+OPTIONS: H:3 num:2 ^:{}
+#+OPTIONS: H:3 num:2 ^:{} broken-links:mark 
 #+LATEX_HEADER: \usepackage{booktabs}
 #+LATEX_HEADER: \usepackage{tabularx}
 #+TODO: TODO REVISE | DONE
@@ -417,10 +417,11 @@ getwd() #Reports the present working directory
 
 * Reproducible Research Using Emacs Orgmode and R
 **  Introduction to orgmode
-#+INCLUDE: "~/vikascloud/orgpaper/orgpapers.org::orgmodebasics" :only-contents t
+#+INCLUDE: "~/vikascloud/orgpaper/orgpapers.org::#orgmodebasics"
+
+#+INCLUDE: "~/vikascloud/orgpaper/orgpapers.org::#orgmodeandr"
 
 
-**  Org-babel and writing R source code in Org
 **   Formatting tables and figures for print
 **   Citation management using org-ref and biblatex
 + A sample biblatex database to get you started can be taken from [[https://raw.githubusercontent.com/indianstatistics/bibliobase/master/bibliobase.bib][here]]. For now, you may just download it, save it and add to it. Please note that the source file on github keeps getting updated. Eventually, you may want to manage your own biblatex database using something like git.

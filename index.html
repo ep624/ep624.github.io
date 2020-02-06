@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2020-02-06 Thu 14:37 -->
+<!-- 2020-02-06 Thu 14:45 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>EP624: Statistical Programming and Reproducible Research</title>
@@ -271,9 +271,9 @@ for the JavaScript code in this tag.
 <li><a href="#org4858574">2.2. Introduction to shell programming</a></li>
 </ul>
 </li>
-<li><a href="#org2d29bac">3. Introduction to Emacs</a>
+<li><a href="#org19d80f9">3. Introduction to Emacs</a>
 <ul>
-<li><a href="#org42c5e22">3.1. Introduction to Emacs</a>
+<li><a href="#org2d29bac">3.1. Introduction to Emacs</a>
 <ul>
 <li><a href="#orgfceff0c">Notations</a></li>
 <li><a href="#orgf873cf1">Basic commands</a></li>
@@ -298,10 +298,14 @@ for the JavaScript code in this tag.
 </li>
 <li><a href="#orgd0f9917">5. Reproducible Research Using Emacs Orgmode and R</a>
 <ul>
-<li><a href="#org85afc03">5.1. Introduction to orgmode</a></li>
-<li><a href="#org3fd971f">5.2. Org-babel and writing R source code in Org</a></li>
-<li><a href="#org0ca66e6">5.3. Formatting tables and figures for print</a></li>
-<li><a href="#org951f1ca">5.4. Citation management using org-ref and biblatex</a></li>
+<li><a href="#org85afc03">5.1. Introduction to orgmode</a>
+<ul>
+<li><a href="#orgmodebasics">Org-mode basics</a></li>
+<li><a href="#orgmodeandr">Org-mode and R</a></li>
+</ul>
+</li>
+<li><a href="#org0ca66e6">5.2. Formatting tables and figures for print</a></li>
+<li><a href="#org951f1ca">5.3. Citation management using org-ref and biblatex</a></li>
 </ul>
 </li>
 </ul>
@@ -410,12 +414,12 @@ git checkout ep624
 <h3 id="org4858574"><span class="section-number-3">2.2</span> Introduction to shell programming</h3>
 </div>
 </div>
-<div id="outline-container-org2d29bac" class="outline-2">
-<h2 id="org2d29bac"><span class="section-number-2">3</span> Introduction to Emacs</h2>
+<div id="outline-container-org19d80f9" class="outline-2">
+<h2 id="org19d80f9"><span class="section-number-2">3</span> Introduction to Emacs</h2>
 <div class="outline-text-2" id="text-3">
 </div>
-<div id="outline-container-org42c5e22" class="outline-3">
-<h3 id="org42c5e22"><span class="section-number-3">3.1</span> Introduction to Emacs</h3>
+<div id="outline-container-org2d29bac" class="outline-3">
+<h3 id="org2d29bac"><span class="section-number-3">3.1</span> Introduction to Emacs</h3>
 <div class="outline-text-3" id="text-3-1">
 <p>
 Emacs is an extremely powerful cross-platform editor which can be used for all kinds of tasks that you do on your computer. Although Emacs is different from every other editor you are likely to have used, learning to use Emacs would be a huge asset for your computing abilities. A good way to learn Emacs, to ask, for each activity you do on your computer, can I do this using Emacs? You will be amazed at how many times the answer is: yes, and more efficiently than in your current application.
@@ -737,22 +741,852 @@ shortcuts and starts using them instead of the verbose versions.
 <div id="outline-container-org85afc03" class="outline-3">
 <h3 id="org85afc03"><span class="section-number-3">5.1</span> Introduction to orgmode</h3>
 <div class="outline-text-3" id="text-5-1">
+</div>
+<div id="outline-container-orgaf865bd" class="outline-4">
+<h4 id="orgmodebasics">Org-mode basics</h4>
+<div class="outline-text-4" id="text-orgmodebasics">
+</div>
+
+<ul class="org-ul">
+<li><a id="org21c3f70"></a>Preamble<br />
+<div class="outline-text-5" id="text-org21c3f70">
 <p>
-:CUSTOM_ID: orgmodebasics
+An Org file has a few special lines at the top that set up the
+environment. Following lines are an example of the minimal set of
+lines that we shall use.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-org"><span style="color: #7f7f7f; font-weight: bold;">#+TITLE:</span> <span style="color: #b22222; background-color: #ffffff;">Using Emacs, Org-mode and R for Research Writing in Social Sciences</span>
+<span style="color: #888a85; background-color: #ffffff;">#+SUBTITLE: A Toolkit for Writing Reproducible Research Papers and Monographs</span>
+<span style="color: #7f7f7f; font-weight: bold;">#+AUTHOR:</span> <span style="color: #b22222; font-size: 125%; font-weight: bold;">Vikas Rawal</span>
+<span style="color: #7f7f7f; font-weight: bold;">#+DATE:</span> <span style="color: #b22222; font-size: 125%; font-weight: bold;">May 4, 2014</span>
+<span style="color: #888a85; background-color: #ffffff;">#+OPTIONS: toc:2 H:3 num:2</span>
+</pre>
+</div>
+
+<p>
+As you can see, each line starts with a keyword, and the values for
+this keyword are specified after the colon.
+</p>
+
+<p>
+Table <a href="#org59a7e3a">2</a> gives details of a few major special lines that we shall use.
+</p>
+
+<table id="org59a7e3a" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<caption class="t-above"><span class="table-number">Table 2:</span> Main special lines to be used at the top of an Org buffer</caption>
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Keyword</th>
+<th scope="col" class="org-left">Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left"><code>#+TITLE</code></td>
+<td class="org-left">To declare title of the paper</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>#+AUTHOR</code></td>
+<td class="org-left">To declare author/s of the paper</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>#+DATE</code></td>
+<td class="org-left">Sets the date. If blank, no date is used. If this keyword is omitted, current date is used.</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>#+OPTIONS</code></td>
+<td class="org-left">There are many options you can give. These are what I find the most important Multiple options can be separated by a space and specified on the same line.</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">toc:--- (Do not include a Table of contents), toc:n (Include n levels of sections and sub-sections in Table of contents)</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">H:2  (Treat top two levels of headlines as section levels, and anything below that as item list. Modify the number as appropriate)</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">num:2 (Number top two levels of headlines. Modify the number as appropriate.)</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+In addition to these, we can use LaTeX specific options for formatting
+the pdf output, odt specific options for formatting the odt/docx
+output, and R specific options for setting up the R environment. These
+would also be specified using special lines at the top of the file. I
+shall provide details of some of these in the Sections where these
+topics are discussed.
+</p>
+
+<p>
+In research monographs prepared using org, you may need quite a few
+lines in the preamble to set everything. These would tend to make the
+top of the org file look daunting. It may be helpful to store these
+lines in a set of separate org files, and include them in your main
+document using line such as this:
+</p>
+
+<p>
+<code>#+INCLUDE: path-to-file/papersetup.org</code>
 </p>
 </div>
+</li>
+
+<li><a id="org075cbf3"></a>Sections and headlines<br />
+<div class="outline-text-5" id="text-org075cbf3">
+<p>
+After the special lines at the top comes the main body of the Org
+file.
+</p>
+
+<p>
+The content in any Org file is organised in a hierarchy of headlines.
+Think of these headlines as sections of your paper.
+</p>
+
+<p>
+A headline in Org starts with one or more stars (*) followed by a
+space. A single star denotes the main sections, double star denote the
+subsections, three stars denote sub-subsections, and so on. We shall
+use this to create the section structure of our document. You can
+create as many levels of sections as you need.
+</p>
+
+<p>
+See the following example. Note that headlines are not numbered. We
+leave section numbering for org-mode to handle automatically.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-org"><span style="color: #7f7f7f; font-weight: bold;">#+TITLE:</span> <span style="color: #b22222; background-color: #ffffff;">Reproducible Research Papers using Org-mode and R: A Guide</span>
+<span style="color: #7f7f7f; font-weight: bold;">#+AUTHOR:</span> <span style="color: #b22222; font-size: 125%; font-weight: bold;">Vikas Rawal</span>
+<span style="color: #7f7f7f; font-weight: bold;">#+DATE:</span> <span style="color: #b22222; font-size: 125%; font-weight: bold;">May 4, 2014</span>
+<span style="color: #1b4167; background-color: #ffffff;">* Introduction</span>
+This is the first section. Add your content here.
+<span style="color: #1b4167; background-color: #ffffff;">* Literature review</span>
+<span style="color: #ffffff;">*</span><span style="color: #aa142d; background-color: #ffffff; font-weight: bold;">* Is this an important issue</span>
+This is a sub-section under top-level section "Literature review" Now
+indulgence dissimilar for his thoroughly has terminated. Agreement
+offending commanded my an. Change wholly say why eldest period. Are
+projection put celebrated particular unreserved joy unsatiable its. In
+then dare good am rose bred or. On am in nearer square wanted.
+<span style="color: #ffffff;">*</span><span style="color: #aa142d; background-color: #ffffff; font-weight: bold;">* What are the major disputes in the literature</span>
+<span style="color: #ffffff;">**</span><span style="color: #0d7124; background-color: #ffffff; font-weight: bold;">* adulterated text</span>
+Instrument cultivated alteration any favourable expression law far
+nor. Both new like tore but year. An from mean on with when sing pain.
+Oh to as principles devonshire companions unsatiable an delightful.
+The ourselves suffering the sincerity. Inhabit her manners adapted age
+certain. Debating offended at branched striking be subjects.
+<span style="color: #ffffff;">**</span><span style="color: #0d7124; background-color: #ffffff; font-weight: bold;">* Unadulterated prose</span>
+Announcing of invitation principles in. Cold in late or deal.
+Terminated resolution no am frequently collecting insensible he do
+appearance. Projection invitation affronting admiration if no on or.
+It as instrument boisterous frequently apartments an in. Mr excellence
+inquietude conviction is in unreserved particular. You fully seems
+stand nay own point walls. Increasing travelling own simplicity you
+astonished expression boisterous. Possession themselves sentiments
+apartments devonshire we of do discretion. Enjoyment discourse ye
+continued pronounce we necessary abilities.
+<span style="color: #1b4167; background-color: #ffffff;">* Methodology</span>
+This is the next top-level section. There are no sub-sections under this.
+<span style="color: #1b4167; background-color: #ffffff;">* Results</span>
+This is the third top-level section. Theere are sub-sections under this.
+<span style="color: #ffffff;">*</span><span style="color: #aa142d; background-color: #ffffff; font-weight: bold;">* Result 1</span>
+This is a sub-section under section Results.
+<span style="color: #ffffff;">*</span><span style="color: #aa142d; background-color: #ffffff; font-weight: bold;">* Result 2</span>
+This is another sub-section under section Results
+<span style="color: #1b4167; background-color: #ffffff;">* Conclusions</span>
+This is the next and final top-level section. There are  no sub-sections under it.
+</pre>
+</div>
+
+<p>
+Org handles these headlines beautifully. With your cursor on the
+headline, pressing tab folds-in the contents of a headline. If you
+press tab on a folded headline, it opens to display the contents. If
+there are multiple levels of headlines, these open in stages as you
+repeat pressing the tab key.
+</p>
+
+<p>
+When you are on a headline, pressing M-return creates a new headline
+at the same level (that is, with the same number of stars). Once you
+are on the new headline, a tab moves it to a lower level (that is, a
+star is added), and shift-tab moves it to a higher level (that is, a
+star is removed).
+</p>
+
+<p>
+When I start writing a paper, I start with a tentative
+headline/section structure, and then start filling in the content
+under each headline, and modify the section structure, if needed, as
+the paper develops.
+</p>
+
+<p>
+(Further reading, <a href="http://orgmode.org/manual/Headlines.html#Headlines">Headlines</a> in Org manual)
+</p>
+</div>
+</li>
+
+<li><a id="org240b62e"></a>Itemised lists<br />
+<div class="outline-text-5" id="text-org240b62e">
+<p>
+Following syntax produces unordered (bulleted) lists:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-org">+ bullet
++ bullet
+  - bullet2 1
+  - bullet2 2
++ bullet
++ bullet
+</pre>
+</div>
+
+<p>
+This is how this list shows up in the final document
+</p>
+
+<ul class="org-ul">
+<li>bullet</li>
+<li>bullet
+<ul class="org-ul">
+<li>bullet2 1</li>
+<li>bullet2 2</li>
+</ul></li>
+<li>bullet</li>
+<li>bullet</li>
+</ul>
+
+
+<p>
+Following syntax produces ordered/numbered lists:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-org">1. Item 1
+2. Item 2
+  1) Item 2.1
+  2) Item 2.2
+     1) Item 2.2.1
+3) Item 3
+</pre>
+</div>
+
+<p>
+This is how the ordered list shows up in the final document.
+</p>
+
+<ol class="org-ol">
+<li>Item 1</li>
+<li>Item 2
+<ol class="org-ol">
+<li>Item 2.1</li>
+<li>Item 2.2
+<ol class="org-ol">
+<li>Item 2.2.1</li>
+</ol></li>
+</ol></li>
+<li>Item 3</li>
+</ol>
+
+
+<p>
+Following syntax produces a description list:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-org">+ <span style="font-weight: bold;">item1 ::</span> description of item1
++ <span style="font-weight: bold;">item2 ::</span> description of item2
+  - bullet1 under item2
+  - bullet2 under item2
+</pre>
+</div>
+
+<p>
+This is how this list shows up in the final document
+</p>
+
+<dl class="org-dl">
+<dt>item1</dt><dd>description of item1</dd>
+<dt>item2</dt><dd>description of item2
+<ul class="org-ul">
+<li>bullet1 under item2</li>
+<li>bullet2 under item2</li>
+</ul></dd>
+</dl>
+
+<p>
+Note that:
+</p>
+<ul class="org-ul">
+<li>In unordered/description lists, <code>+</code> and <code>-</code> signs are interchangeable.</li>
+<li>Similarly, in ordered lists 1. and 1) are interchangeable.</li>
+<li>Levels of bullets and numbering are determined by indentation.</li>
+<li>Different types of lists can be mixed using numbers and bullets for different levels.</li>
+<li>If the cursor is on a line that is part of an itemised list, M-return inserts a new line with a bullet/number below the present
+line with the same level of indentation.</li>
+</ul>
+</div>
+</li>
+
+<li><a id="orgd07a259"></a>Inserting footnotes<br />
+<div class="outline-text-5" id="text-orgd07a259">
+<ul class="org-ul">
+<li>To insert a footnote at any point, use <code>C-c C-x f</code></li>
+
+<li>To reorder and renumber footnotes after inserting a footnote in a
+text that already has some footnotes after the point where a new
+footnote is being inserted, use <code>C-u C-c C-x f S</code></li>
+</ul>
+</div>
+</li>
+
+<li><a id="orgab26e93"></a>Tables<br />
+<ul class="org-ul">
+<li><a id="org06ca61b"></a>Sample code<br />
+<div class="outline-text-6" id="text-org06ca61b">
+<p>
+We shall directly create only those tables in Org that present content
+not being produced through statistical analysis. For tables that are
+created through statistical analysis, we shall embed R programs rather
+than the tables themselves. This is discussed in Section <a href="#orgmodeandr">Org-mode and R</a>
+of this guide.
+</p>
+
+<p>
+The following sample code produces a reasonably formatted table, with
+a numbered title above the table and a name for cross-referencing the
+table from the text anywhere in the document.
+</p>
+
+<p>
+See Table [BROKEN LINK: table-yield] for an illustration of how this table shows
+up in the final document.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-org" id="orgff9912e"><span style="color: #888a85; background-color: #ffffff;">#+NAME: table-yield</span>
+<span style="color: #888a85; background-color: #ffffff;">#+CAPTION:</span> <span style="font-size: 96%;">Simple table created using LaTeX tabular environment</span>
+<span style="color: #888a85; background-color: #ffffff;">#+attr_latex: :environment tabular :width \textwidth :align lrr</span>
+    <span style="color: #204a87;">| State          | Average yield | Average income |</span>
+    <span style="color: #204a87;">|----------------+---------------+----------------|</span>
+    <span style="color: #204a87;">| Madhya Pradesh |           672 |          13000 |</span>
+    <span style="color: #204a87;">| Haryana        |           300 |          25000 |</span>
+    <span style="color: #204a87;">| Punjab         |           260 |          35000 |</span>
+</pre>
+</div>
+</div>
+</li>
+
+<li><a id="org75da72d"></a>Table editor<br />
+<div class="outline-text-6" id="text-org75da72d">
+<p>
+Org-mode has an in-built table editor, which is very simple to use.
+</p>
+
+<ul class="org-ul">
+<li>Tables in Org have columns separated using |.</li>
+<li>Once you create the first row by separating columns using |,
+pressing tabs takes you from the first column to the next. Org
+automatically aligns the columns.</li>
+<li>At the end of the row, pressing tab again, creates a new blank row.
+You can also create a new blank row by pressing return anywhere in
+the last row.</li>
+<li>For creating a horizontal line anywhere, type |- at the starting of
+the line, and press tab.</li>
+<li>Contents of each cell are aligned automatically by Org.</li>
+<li>To delete a row, use <code>C-k</code>.</li>
+</ul>
+
+<p>
+Org provides various commands for manipulating the design of
+tables. Table <a href="#orgd5263de">3</a> provides the most important
+ones. Note that Table <a href="#orgd5263de">3</a> is created using Org mode. It
+also gives you an idea of how the table would look eventually.
+</p>
+
+<table id="orgd5263de" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<caption class="t-above"><span class="table-number">Table 3:</span> Commands to manipulate tables in Org</caption>
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Command</th>
+<th scope="col" class="org-left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left"><code>M-&lt;left&gt;</code></td>
+<td class="org-left">Move the column left</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>M-&lt;right&gt;</code></td>
+<td class="org-left">Move the column right</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>M-S-&lt;left&gt;</code></td>
+<td class="org-left">Delete the current column</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>M-S-&lt;right&gt;</code></td>
+<td class="org-left">Insert a new column to the left of the cursor position</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>M-&lt;up&gt;</code></td>
+<td class="org-left">Move row up</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>M-&lt;down&gt;</code></td>
+<td class="org-left">Move row down</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>M-S-&lt;up&gt;</code></td>
+<td class="org-left">Delete the current row or horizontal line</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>M-S-&lt;down&gt;</code></td>
+<td class="org-left">Insert a new row above the current row</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+For more commands for manipulating tables, see <a href="http://www.orgmode.org/manual/Tables.html">this section of the Org
+manual</a>. In particular, you may want to look at spreadsheet-like
+functions of the table editor.
+</p>
+
+<p>
+One limitation of Org is lack of support for merging of cells in a
+Table.
+</p>
+</div>
+</li>
+</ul>
+</li>
+
+<li><a id="org19ca485"></a>Images<br />
+<div class="outline-text-5" id="text-org19ca485">
+<p>
+You can insert images in documents as follows
+</p>
+
+<pre class="example">
+[[file:path-to-file/a.jpg]]
+</pre>
+
+
+<p>
+You should do this for images that you already have, and you just want
+to insert them in the document. For graphs produced by R, we shall
+embed the code instead, so that the graph is generated and inserted
+automatically.
+</p>
+</div>
+</li>
+
+<li><a id="org839969e"></a>Captions and cross-references<br />
+<div class="outline-text-5" id="text-org839969e">
+<p>
+We would like to give a title to our tables and images. And we would
+like to be able to refer to them from the text. These are achieved by
+adding two lines above every table and image.
+</p>
+
+<ul class="org-ul">
+<li>A line starting with <code>#+CAPTION:</code> placed just above a table or a
+figure adds a title to it. All Tables and Figures titles are
+automatically numbered.</li>
+
+<li>For referring to these Tables and Figures in the text, we shall name
+each table and figure in a line starting with <code>#+NAME:</code> as below.</li>
+</ul>
+
+<p>
+To illustrate, for inserting an image, with a caption and a name, this
+is what we shall do.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-org"><span style="color: #888a85; background-color: #ffffff;">#+NAME: literacy-rate</span>
+<span style="color: #888a85; background-color: #ffffff;">#+CAPTION:</span> <span style="font-size: 96%;">Percentage of literate men and women, by country (per cent)</span>
+<span style="color: #4169e1; text-decoration: underline;"><a href="file:a.jpg">file:a.jpg</a></span>
+</pre>
+</div>
+
+<p>
+Similarly, a table will be inserted as follows.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-org"><span style="color: #888a85; background-color: #ffffff;">#+NAME: literacy-rate-table</span>
+<span style="color: #888a85; background-color: #ffffff;">#+CAPTION:</span> <span style="font-size: 96%;">Percentage of literate men and women, by country (per cent)</span>
+<span style="color: #204a87;">| Country    | Men | Women |</span>
+<span style="color: #204a87;">|------------+-----+-------|</span>
+<span style="color: #204a87;">| India      |  75 |    43 |</span>
+<span style="color: #204a87;">| Bangladesh |  83 |    63 |</span>
+<span style="color: #204a87;">| Rwanda     |  77 |    60 |</span>
+</pre>
+</div>
+
+<p>
+To refer to the Table above in the text, write Table
+<code>[[literacy-rate-table]]</code>. As an illustration, see the following sentence.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-org">Tables <span style="color: #4169e1; text-decoration: underline;"><a href="literacy-rate-table">literacy-rate-table</a></span> and <span style="color: #4169e1; text-decoration: underline;"><a href="health-table">health-table</a></span>, and Figure
+<span style="color: #4169e1; text-decoration: underline;"><a href="literacy-figure">literacy-figure</a></span>, show the level of underdevelopment.
+</pre>
+</div>
+
+<p>
+By default, all objects with captions are numbered, and names are used
+to anchor cross-references. When the formatted output is produced, all
+the references would be automatically converted to appropriate
+numbers. If new objects are inserted in the paper, numbering will be
+adjusted automatically when you create the formatted output.
+</p>
+</div>
+</li>
+</ul>
+</div>
+
+<div id="outline-container-org12a721a" class="outline-4">
+<h4 id="orgmodeandr">Org-mode and R</h4>
+<div class="outline-text-4" id="text-orgmodeandr">
+</div>
+<ul class="org-ul">
+<li><a id="orgd5376c0"></a>Configuration<br />
+<div class="outline-text-5" id="text-orgd5376c0">
+<p>
+Following code in research-toolkit.org enables Org to run different types
+of code. If you have installed research-toolkit.org as specified in
+[BROKEN LINK: customemacs], these are already enabled.
+</p>
+
+<p>
+I have included here the languages that I commonly use. See Org
+manual, if you would like to add any more.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">(org-babel-do-load-languages
+   'org-babel-load-languages
+   '((R . t)
+     (org . t)
+     (ditaa . t)
+     (latex . t)
+     (dot . t)
+     (emacs-lisp . t)
+     (gnuplot . t)
+     (screen . nil)
+     (shell . t)
+     (sql . nil)
+     (sqlite . t)))
+</pre>
+</div>
+</div>
+</li>
+
+<li><a id="org7772870"></a>Special lines for R<br />
+<div class="outline-text-5" id="text-org7772870">
+<p>
+Org allows you to run multiple R sessions simultaneously, if you are
+working on two documents side by side, and would like to keep
+statistical work for the two separately.
+</p>
+
+<p>
+This is done by naming the R session which a particular Org file is
+linked to. All R code in this file would be run in the specified R
+session. You could have, at the same time, another R session, with a
+different name, being called by another Org buffer.
+</p>
+
+<p>
+We can give a name to the R session (let us say, my-r-session) that
+our Org buffer should be linked to by adding the following line at the
+top (in the preamble, that is).
+</p>
+
+<pre class="example">
+#+property: session my-r-session
+</pre>
+</div>
+</li>
+
+<li><a id="orgd850b5b"></a>Embedding R code in an Org document<br />
+<div class="outline-text-5" id="text-orgd850b5b">
+<p>
+Org uses ESS (emacs-speaks-statistics) to provide a fully functional,
+syntax-aware, development environment to write R code. R code is
+embedded into Org as a source block. The basic syntax is
+</p>
+
+<div class="org-src-container">
+<pre class="src src-org"><span style="color: #888a85; background-color: #ffffff;">#+NAME: name_of_code_block</span>
+<span style="color: #888a85; background-color: #ffffff;">#+BEGIN_SRC R &lt;switches&gt; &lt;header-arguments&gt;</span>
+
+<span style="font-size: 96%;">  &lt;Your R code goes here.&gt;</span>
+
+<span style="color: #888a85; background-color: #ffffff;">#+END_SRC</span>
+</pre>
+</div>
+
+<p>
+This is how source blocks are created.
+</p>
+
+<ul class="org-ul">
+<li>First write the lines starting with <code>#+NAME</code>, <code>#+BEGIN_SRC</code> and
+<code>#+END_SRC</code>.</li>
+
+<li>Then with your cursor in between the <code>BEGIN_SRC</code> and the <code>END_SRC</code>
+lines, give the command C-c &rsquo; (that is, press Ctrl-C, release, and
+press &rsquo;).
+
+<ul class="org-ul">
+<li>This would open a new buffer using ESS mode. If you type your code
+in this buffer, you will see that ESS is syntax-aware and nicely
+highlights R code.</li>
+<li>ESS also allows you to run (evaluate) the code that you write, to
+test what your code is doing. Use <code>C-j</code> for evaluating a single
+line of code, <code>C-b</code> for evaluating the whole ess buffer, or <code>C-r</code>
+for a marked region within the ess buffer.</li>
+</ul></li>
+
+<li>Once you have finished writing a code block and tested it, press
+C-c &rsquo; again to come back to your Org buffer.</li>
+
+<li>In your Org buffer, with your cursor in a source-block,
+press <code>C-c C-c</code> to evaluate the whole code block and have the results included
+in your document.</li>
+
+<li>You can always edit your source code by opening a temporary ESS
+buffer using C-c&rsquo;</li>
+</ul>
+</div>
+</li>
+
+<li><a id="orgd74d302"></a>Code blocks that read data and load functions for later use in the document without any immediate output<br />
+<div class="outline-text-5" id="text-orgd74d302">
+<p>
+I normally have one or two code blocks that read the data I am going
+to use, call the libraries that I use, and define a few functions of
+my own that I plan to use. I want this code block to be evaluated, so
+that these data, libraries and functions become available in my R
+environment. But no output from such code blocks is expected to be
+included into the document.<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup>
+</p>
+
+<p>
+Code block <a href="#org9163087">1</a> is an example of such a code block. Note
+<code>:results value silent</code> switch used in the  <code>#+begin_src</code> line.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-org" id="org9163087"><span style="color: #888a85; background-color: #ffffff;">#+NAME: readdata-code</span>
+<span style="color: #888a85; background-color: #ffffff;">#+BEGIN_SRC R :results value silent</span>
+
+<span style="font-size: 96%;">read.data(</span><span style="color: #8f5902; font-size: 96%; font-style: italic;">"datafile1.csv"</span><span style="font-size: 96%;">,sep=</span><span style="color: #8f5902; font-size: 96%; font-style: italic;">","</span><span style="font-size: 96%;">,header=T)</span><span style="color: #8f5902; font-size: 96%; font-style: italic;">-&gt;</span><span style="font-size: 96%;">mydata1</span>
+
+
+<span style="color: #888a85; background-color: #ffffff;">#+END_SRC</span>
+</pre>
+</div>
+</div>
+</li>
+
+<li><a id="orgb5bc242"></a>Code blocks that produce results in the form of a table<br />
+<div class="outline-text-5" id="text-orgb5bc242">
+<p>
+Most of code blocks in my papers fall in this category. The code block
+may use data and functions made available by previous code blocks,
+read some new data and may load some new functions. The code block
+does some statistical processing. The last command of the code block
+produces an object (for example, a data.frame) that is included in the
+document as a Table.
+</p>
+
+<p>
+For example, the code block <a href="#org503ec0a">1</a> below uses mydata1 read in
+the previous code block, reads a new dataset, and processes them to
+create a table that shows average BMI by country.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-org" id="org503ec0a"><span style="color: #888a85; background-color: #ffffff;">#+NAME: bmi-table-code</span>
+<span style="color: #888a85; background-color: #ffffff;">#+BEGIN_SRC R :results value :colnames yes :hline yes</span>
+<span style="font-size: 96%;">aggregate(height~Country,data=mydata1,mean)</span><span style="color: #8f5902; font-size: 96%; font-style: italic;">-&gt;</span><span style="font-size: 96%;">a1</span>
+<span style="font-size: 96%;">read.data(</span><span style="color: #8f5902; font-size: 96%; font-style: italic;">"datafile2.csv"</span><span style="font-size: 96%;">,sep=</span><span style="color: #8f5902; font-size: 96%; font-style: italic;">","</span><span style="font-size: 96%;">,header=T)</span><span style="color: #8f5902; font-size: 96%; font-style: italic;">-&gt;</span><span style="font-size: 96%;">mydata2</span>
+<span style="font-size: 96%;">aggregate(weight~Country,data=mydata2,mean)</span><span style="color: #8f5902; font-size: 96%; font-style: italic;">-&gt;</span><span style="font-size: 96%;">a2</span>
+<span style="font-size: 96%;">merge(a1,a2,by=</span><span style="color: #8f5902; font-size: 96%; font-style: italic;">"Country"</span><span style="font-size: 96%;">)</span><span style="color: #8f5902; font-size: 96%; font-style: italic;">-&gt;</span><span style="font-size: 96%;">a1</span>
+<span style="font-size: 96%;">a1$weight/a1$height</span><span style="color: #8f5902; font-size: 96%; font-style: italic;">-&gt;</span><span style="font-size: 96%;">a1$BMI</span>
+<span style="font-size: 96%;">subset(a1,select=c(</span><span style="color: #8f5902; font-size: 96%; font-style: italic;">"Country"</span><span style="font-size: 96%;">,</span><span style="color: #8f5902; font-size: 96%; font-style: italic;">"BMI"</span><span style="font-size: 96%;">))</span>
+<span style="color: #888a85; background-color: #ffffff;">#+END_SRC</span>
+</pre>
+</div>
+
+<p>
+You can evaluate this code using C-c C-c. When you do that, it
+produces the output, and places it immediately below the code block.
+The results display the output of the code under a line that looks
+like below
+</p>
+
+<pre class="example">
+#+RESULTS: bmi-table-code
+</pre>
+
+
+<p>
+Note that the results are tied to the code block using the name of the
+code block. Every time you go to the source code block and press
+<code>C-c C-c</code>, the code will be evaluated again and the results will be
+updated.
+</p>
+
+<p>
+On top of the line starting with <code>#+RESULTS:</code>, we shall add two more
+lines, to give the table a title and a name. Note that both the code
+block and the result of the code block have separate names.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-org"><span style="color: #888a85; background-color: #ffffff;">#+NAME: bmi-table-output</span>
+<span style="color: #888a85; background-color: #ffffff;">#+CAPTION:</span> <span style="font-size: 96%;">Average BMI, by country</span>
+<span style="color: #888a85; background-color: #ffffff;">#+RESULTS: bmi-table-code</span>
+</pre>
+</div>
+
+<p>
+Like any Org table, you can cross-refer to this table using
+<code>[[bmi-table-output]]</code>.
+</p>
+</div>
+</li>
+
+<li><a id="org282d9e9"></a>Code blocks that produce a graph to be included in the document<br />
+<div class="outline-text-5" id="text-org282d9e9">
+<p>
+These code blocks can have a series of commands. The last command
+produces a graph that we would like to be included in the document.
+</p>
+
+<p>
+The following code shows an example of a code block that produces a
+graph.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-org"><span style="color: #888a85; background-color: #ffffff;">#+NAME: mygraph-code</span>
+<span style="color: #888a85; background-color: #ffffff;">#+BEGIN_SRC R :results output graphics :file bmi2.png :width 825 :height 1050 :fonts serif</span>
+
+<span style="color: #888a85; background-color: #ffffff;">#+END_SRC</span>
+</pre>
+</div>
+
+<p>
+As before, for creating your graph, you first write the <code>#+NAME</code>,
+<code>BEGIN_SRC</code> and the <code>END_SRC</code> lines, and then go into a temporary ESS
+buffer by using C-c &rsquo;.
+</p>
+
+<ul class="org-ul">
+<li>Once in this temporary ESS buffer, you can write the R commands for
+making your graph.</li>
+<li>As you write, you can evaluate the commands using <code>C-j</code>, <code>C-r</code> and
+<code>C-b</code> and see what your output looks like.</li>
+<li>The output is displayed on your screen using the default graphic
+device used by R (X11, quartz or windows graphic device depending
+upon your operating system).</li>
+<li>Once you have finalised your graph, you press C-c &rsquo; and come back
+to the Org buffer.</li>
+</ul>
+
+<p>
+Note that creation of the image file is left to appropriate switches
+in the <code>#+BEGIN_SRC</code> line. Org automatically chooses appropriate
+graphic device to produce the file. When you evaluate this code using
+<code>C-c C-c</code>, the results are displayed below the code block as follows.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-org"><span style="color: #888a85; background-color: #ffffff;">#+RESULTS: mygraph-code</span>
+<span style="color: #4169e1; text-decoration: underline;"><a href="bmi2.png">bmi2.png</a></span>
+</pre>
+</div>
+
+<p>
+Note that, taking the file name from our <code>#+BEGIN_SRC</code> line, a file
+called <code>bmi2.png</code> was automatically created and linked, so that the
+graph would be inserted in the document when you produce the formatted
+output.<sup><a id="fnr.2" class="footref" href="#fn.2">2</a></sup> Every time you evaluate the code using <code>C-c C-c</code>, the
+underlying image file containing the graph is overwritten by a new
+file.
+</p>
+
+<p>
+As with the tables, we shall add a caption and a name to it as follows
+</p>
+
+<div class="org-src-container">
+<pre class="src src-org"><span style="color: #888a85; background-color: #ffffff;">#+NAME: my-bmi-graph</span>
+<span style="color: #888a85; background-color: #ffffff;">#+CAPTION:</span> <span style="font-size: 96%;">Average BMI, by Country</span>
+<span style="color: #888a85; background-color: #ffffff;">#+RESULTS: mygraph-code</span>
+<span style="color: #4169e1; text-decoration: underline;"><a href="gini.png">gini.png</a></span>
+</pre>
+</div>
+
+<p>
+You can now refer to this graph in the text using <code>[[my-bmi-graph]]</code>.
+</p>
+</div>
+</li>
+</ul>
+</div>
 </div>
 
 
-<div id="outline-container-org3fd971f" class="outline-3">
-<h3 id="org3fd971f"><span class="section-number-3">5.2</span> Org-babel and writing R source code in Org</h3>
-</div>
 <div id="outline-container-org0ca66e6" class="outline-3">
-<h3 id="org0ca66e6"><span class="section-number-3">5.3</span> Formatting tables and figures for print</h3>
+<h3 id="org0ca66e6"><span class="section-number-3">5.2</span> Formatting tables and figures for print</h3>
 </div>
 <div id="outline-container-org951f1ca" class="outline-3">
-<h3 id="org951f1ca"><span class="section-number-3">5.4</span> Citation management using org-ref and biblatex</h3>
-<div class="outline-text-3" id="text-5-4">
+<h3 id="org951f1ca"><span class="section-number-3">5.3</span> Citation management using org-ref and biblatex</h3>
+<div class="outline-text-3" id="text-5-3">
 <ul class="org-ul">
 <li>A sample biblatex database to get you started can be taken from <a href="https://raw.githubusercontent.com/indianstatistics/bibliobase/master/bibliobase.bib">here</a>. For now, you may just download it, save it and add to it. Please note that the source file on github keeps getting updated. Eventually, you may want to manage your own biblatex database using something like git.</li>
 <li>There is also another Emacs mode &#x2013; ebib &#x2013; that can be used for maintaining your biblatex database. To start ebib, use M-x ebib</li>
@@ -760,10 +1594,32 @@ shortcuts and starts using them instead of the verbose versions.
 </div>
 </div>
 </div>
+<div id="footnotes">
+<h2 class="footnotes">Footnotes: </h2>
+<div id="text-footnotes">
+
+<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1">1</a></sup> <div class="footpara"><p class="footpara">
+For libraries and functions that you need to call, it is even
+better to include them in a .Rprofile file in your working
+directory. These libraries and functions would then be called when R
+is started, and not each time you evaluate code blocks in your
+document.
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.2" class="footnum" href="#fnr.2">2</a></sup> <div class="footpara"><p class="footpara">
+Of various image formats, I find that png files are most
+versatile. png files support transparency, and are rendered well both
+on the web and in print. You can also specify jpeg or pdf files. pdf
+files for images work very well if you are only going to produce a pdf
+document.
+</p></div></div>
+
+
 </div>
+</div></div>
 <div id="postamble" class="status">
 <p class="author">Author: Vikas Rawal</p>
-<p class="date">Created: 2020-02-06 Thu 14:37</p>
+<p class="date">Created: 2020-02-06 Thu 14:45</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
