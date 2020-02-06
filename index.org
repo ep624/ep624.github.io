@@ -254,11 +254,9 @@ q() # Quit R; prompts for saving the workspace.
 ??keyword # List commands with 'keyword' in the title
 help.search("keyword") # List commands with 'keyword'
                        #  anywhere in the docs
-setwd("c:/project1")  # Sets the working directory
-                      # to c:/project1
-setwd("~/proj2")  # In Linux or OSX, sets the
-                  # working directory to ~/proj2
-getwd() #Reports the present working directory
+setwd("c:/project1")  # On a Windows machine, sets the working directory to c:/project1
+setwd("~/proj2")  # On a Linux or OSX machine, sets the working directory to ~/proj2
+getwd() # Reports the present working directory
 #+end_src
 
 
