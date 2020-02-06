@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2020-02-07 Fri 02:57 -->
+<!-- 2020-02-07 Fri 04:06 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>EP624: Statistical Programming and Reproducible Research</title>
@@ -193,12 +193,17 @@
   .org-svg { width: 90%; }
   /*]]>*/-->
 </style>
-<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/styles/readtheorg/css/htmlize.css"/>
-<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/styles/readtheorg/css/readtheorg.css"/>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/styles/bigblow/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/styles/bigblow/css/bigblow.css"/>
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/styles/bigblow/css/hideshow.css"/>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/styles/bigblow/js/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/styles/bigblow/js/jquery-ui-1.10.2.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/styles/bigblow/js/jquery.localscroll-min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/styles/bigblow/js/jquery.scrollTo-1.4.3.1-min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/styles/bigblow/js/jquery.zclip.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/styles/bigblow/js/bigblow.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/styles/bigblow/js/hideshow.js"></script>
 <script type="text/javascript" src="https://fniessen.github.io/org-html-themes/styles/lib/js/jquery.stickytableheaders.min.js"></script>
-<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/styles/readtheorg/js/readtheorg.js"></script>
 <style>#content{max-width:1200px;} </style>
 <script type="text/javascript">
 /*
@@ -283,9 +288,9 @@ for the JavaScript code in this tag.
 </li>
 </ul>
 </li>
-<li><a href="#orgb37563f">3. Introduction to Emacs</a>
+<li><a href="#org0fb5ca3">3. Introduction to Emacs</a>
 <ul>
-<li><a href="#org4274702">3.1. Introduction to Emacs</a>
+<li><a href="#orgb37563f">3.1. Introduction to Emacs</a>
 <ul>
 <li><a href="#orgfceff0c">Notations</a></li>
 <li><a href="#orgf873cf1">Basic commands</a></li>
@@ -317,7 +322,7 @@ for the JavaScript code in this tag.
 <li><a href="#org59b67a3">4.6. Econometric Analysis in R</a></li>
 </ul>
 </li>
-<li><a href="#orgd0f9917">5. Reproducible Research Using Emacs Orgmode and R</a>
+<li><a href="#org885a723">5. Reproducible Research Using Emacs Orgmode and R3</a>
 <ul>
 <li><a href="#org85afc03">5.1. Introduction to orgmode</a>
 <ul>
@@ -583,12 +588,12 @@ git checkout ep624
 </div>
 </div>
 
-<div id="outline-container-orgb37563f" class="outline-2">
-<h2 id="orgb37563f"><span class="section-number-2">3</span> Introduction to Emacs</h2>
+<div id="outline-container-org0fb5ca3" class="outline-2">
+<h2 id="org0fb5ca3"><span class="section-number-2">3</span> Introduction to Emacs</h2>
 <div class="outline-text-2" id="text-3">
 </div>
-<div id="outline-container-org4274702" class="outline-3">
-<h3 id="org4274702"><span class="section-number-3">3.1</span> Introduction to Emacs</h3>
+<div id="outline-container-orgb37563f" class="outline-3">
+<h3 id="orgb37563f"><span class="section-number-3">3.1</span> Introduction to Emacs</h3>
 <div class="outline-text-3" id="text-3-1">
 <p>
 Emacs is an extremely powerful cross-platform editor which can be used for all kinds of tasks that you do on your computer. Although Emacs is different from every other editor you are likely to have used, learning to use Emacs would be a huge asset for your computing abilities. A good way to learn Emacs, to ask, for each activity you do on your computer, can I do this using Emacs? You will be amazed at how many times the answer is: yes, and more efficiently than in your current application.
@@ -1058,7 +1063,7 @@ You could also specify colour, size and shape independently of aesthetics if you
 </p>
 
 <div class="org-src-container">
-<pre class="src src-R" id="org607a2fc"><span class="linenr">1: </span>ggplot(data,aes(x=year,y=income,size=State),colour=<span style="color: #8f5902; font-style: italic;">"darkred"</span>)<span style="color: #8f5902; font-style: italic;">-&gt;</span>p
+<pre class="src src-R" id="org38a865a"><span class="linenr">1: </span>ggplot(data,aes(x=year,y=income,size=State),colour=<span style="color: #8f5902; font-style: italic;">"darkred"</span>)<span style="color: #8f5902; font-style: italic;">-&gt;</span>p
 </pre>
 </div>
 </div>
@@ -1072,7 +1077,7 @@ In the second step, you specify the type of graph you want to make. These are ca
 </p>
 
 <div class="org-src-container">
-<pre class="src src-R" id="org6895171"><span class="linenr">2: </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">We start from the object 'p' created in Step 1 and use '+' to add to it/modify it.</span>
+<pre class="src src-R" id="org24386d9"><span class="linenr">2: </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">We start from the object 'p' created in Step 1 and use '+' to add to it/modify it.</span>
 <span class="linenr">3: </span>p+geom_point()<span style="color: #8f5902; font-style: italic;">-&gt;</span>p <span style="color: #888a85; background-color: #ffffff; font-style: italic;">#</span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">This makes a scatter plot</span>
 <span class="linenr">4: </span>p+geom_line()<span style="color: #8f5902; font-style: italic;">-&gt;</span>p <span style="color: #888a85; background-color: #ffffff; font-style: italic;">#</span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">This adds a line to the plot</span>
 <span class="linenr">5: </span>p <span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">At any stage, doing this would actually plot p on the screen.</span>
@@ -1256,7 +1261,7 @@ For each of these scales (x, y, colour, size and shape), you can define attribut
 </p>
 
 <div class="org-src-container">
-<pre class="src src-R" id="org38a865a"><span class="linenr">6: </span>p+scale_x_continuous(<span style="color: #8f5902; font-style: italic;">"Financial Year"</span>,limits=c(1990,2012),
+<pre class="src src-R" id="org11a6a25"><span class="linenr">6: </span>p+scale_x_continuous(<span style="color: #8f5902; font-style: italic;">"Financial Year"</span>,limits=c(1990,2012),
 <span class="linenr">7: </span>                     breaks=c(1990,1995,2000,2010))<span style="color: #8f5902; font-style: italic;">-&gt;</span>p
 <span class="linenr">8: </span>
 </pre>
@@ -1561,8 +1566,8 @@ You can convert an existing data frame to a data.table using
 </div>
 </div>
 
-<div id="outline-container-orgd0f9917" class="outline-2">
-<h2 id="orgd0f9917"><span class="section-number-2">5</span> Reproducible Research Using Emacs Orgmode and R</h2>
+<div id="outline-container-org885a723" class="outline-2">
+<h2 id="org885a723"><span class="section-number-2">5</span> Reproducible Research Using Emacs Orgmode and R3</h2>
 <div class="outline-text-2" id="text-5">
 </div>
 <div id="outline-container-org85afc03" class="outline-3">
@@ -2445,7 +2450,7 @@ document.
 </div></div>
 <div id="postamble" class="status">
 <p class="author">Author: Vikas Rawal</p>
-<p class="date">Created: 2020-02-07 Fri 02:57</p>
+<p class="date">Created: 2020-02-07 Fri 04:06</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

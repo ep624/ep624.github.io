@@ -5,7 +5,7 @@
 #+LATEX_HEADER: \usepackage{tabularx}
 #+TODO: TODO REVISE | DONE
 #+PROPERTY: header-args:R :session ep624 :eval never-export
-#+SETUPFILE: https://fniessen.github.io/org-html-themes/setup/theme-readtheorg.setup
+#+SETUPFILE: https://fniessen.github.io/org-html-themes/setup/theme-bigblow.setup
 #+HTML_HEAD: <style>#content{max-width:1200px;} </style>
 #+MACRO: hlmacro (eval (org-table-insert-hline))
 
@@ -272,7 +272,7 @@ getwd() # Reports the present working directory
 ** Analysis of Survey Data in R
 ** Econometric Analysis in R
 
-* Reproducible Research Using Emacs Orgmode and R
+* Reproducible Research Using Emacs Orgmode and R3
 **  Introduction to orgmode
 #+INCLUDE: "~/vikascloud/orgpaper/orgpapers.org::#orgmodebasics"
 
