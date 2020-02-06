@@ -156,14 +156,9 @@ cd
 * Emacs
 ** Introduction to Emacs
 
-Emacs is an extremely powerful cross-platform editor which can be used for all kinds of tasks that you do on your computer. Although Emacs is different from every other editor you are likely to have used, learning to use Emacs would be a huge asset for your computing abilities. A good way to learn Emacs, to ask, for each activity you do on your computer, can I do this using Emacs? You will be amazed at how many times the answer is: yes, and more efficiently than in your current application.
+Emacs is an powerful cross-platform editor which can be used for all kinds of tasks that you do on your computer. Although Emacs is different from every other editor you are likely to have used, learning to use Emacs would be a huge asset for your computing abilities. A good way to learn Emacs, to ask, for each activity you do on your computer, can I do this using Emacs? You will be amazed at how many times the answer is: yes, and more efficiently than in your current application.
 
-This section, however, does not provide a detailed guide to the use of Emacs.
-
-In this guide, I will just provide a minimal set of basic commands in
-emacs to get you started. This is a minimal but sufficient set to be
-able to work. I expect that you would learn more commands as you start
-using emacs.
+This section does not provide a detailed guide to the use of Emacs. In this guide, I will just provide a minimal set of basic commands in emacs to get you started. This is a minimal but sufficient set to be able to work. I expect that you would learn more commands as you start using emacs.
 
 *** Notations
 
@@ -282,4 +277,3 @@ getwd() # Reports the present working directory
 **   Citation management using org-ref and biblatex
 + A sample biblatex database to get you started can be taken from [[https://raw.githubusercontent.com/indianstatistics/bibliobase/master/bibliobase.bib][here]]. For now, you may just download it, save it and add to it. Please note that the source file on github keeps getting updated. Eventually, you may want to manage your own biblatex database using something like git.
 + There is also another Emacs mode -- ebib -- that can be used for maintaining your biblatex database. To start ebib, use M-x ebib
-
