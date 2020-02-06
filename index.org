@@ -104,7 +104,7 @@ git checkout ep624
 cd
 #+end_src
 
-* Introduction to Computer Programming
+* Introduction
 ** Introduction to the course
 
 *** Why should you use programming for statistical analysis?
@@ -153,7 +153,7 @@ cd
   + uniq :: to find unique adjacent lines
   + wc :: count number of bytes, words and lines
 
-* Introduction to Emacs
+* Emacs
 ** Introduction to Emacs
 
 Emacs is an extremely powerful cross-platform editor which can be used for all kinds of tasks that you do on your computer. Although Emacs is different from every other editor you are likely to have used, learning to use Emacs would be a huge asset for your computing abilities. A good way to learn Emacs, to ask, for each activity you do on your computer, can I do this using Emacs? You will be amazed at how many times the answer is: yes, and more efficiently than in your current application.
@@ -231,7 +231,7 @@ shortcuts and starts using them instead of the verbose versions.
 ** Resources
 + [[https://www2.lib.uchicago.edu/keith/tcl-course/emacs-tutorial.html][A Tutorial Introduction to GNU Emacs]]
 
-* Introduction to R Programming
+* R Programming
 ** Basics
 
 + R is a case sensitive language. Do not mix upper case and lower case characters.
@@ -272,7 +272,7 @@ getwd() # Reports the present working directory
 ** Analysis of Survey Data in R
 ** Econometric Analysis in R
 
-* Reproducible Research Using Emacs Orgmode and R3
+* Reproducible Research
 **  Introduction to orgmode
 #+INCLUDE: "~/vikascloud/orgpaper/orgpapers.org::#orgmodebasics"
 
@@ -283,12 +283,3 @@ getwd() # Reports the present working directory
 + A sample biblatex database to get you started can be taken from [[https://raw.githubusercontent.com/indianstatistics/bibliobase/master/bibliobase.bib][here]]. For now, you may just download it, save it and add to it. Please note that the source file on github keeps getting updated. Eventually, you may want to manage your own biblatex database using something like git.
 + There is also another Emacs mode -- ebib -- that can be used for maintaining your biblatex database. To start ebib, use M-x ebib
 
-* Kill Connections                                                 :noexport:
-
-#+NAME: kill-ssh-connections
-#+BEGIN_SRC R :results silent :exports none
-  dbDisconnect(surveypg)
-  GrepResults<-system2("ps",c("ax | grep 'ssh -L 3333'| grep 'singdehri'"),stdout=TRUE)
-  Processes<-as.numeric(sub(" .*","",GrepResults))
-  tools::pskill(Processes)
-#+END_SRC
