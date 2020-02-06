@@ -417,6 +417,9 @@ getwd() #Reports the present working directory
 
 * Reproducible Research Using Emacs Orgmode and R
 **  Introduction to orgmode
+#+INCLUDE: "~/vikascloud/orgpaper/orgpapers.org::orgmodebasics" :only-contents t
+
+
 **  Org-babel and writing R source code in Org
 **   Formatting tables and figures for print
 **   Citation management using org-ref and biblatex
