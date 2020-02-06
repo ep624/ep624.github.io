@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2020-02-06 Thu 10:22 -->
+<!-- 2020-02-06 Thu 10:44 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>EP624: Statistical Programming and Reproducible Research</title>
@@ -267,9 +267,14 @@ for the JavaScript code in this tag.
 <li><a href="#org4858574">2.2. Introduction to shell programming</a></li>
 </ul>
 </li>
-<li><a href="#org70f9df3">3. Introduction to Emacs</a>
+<li><a href="#org6d10e47">3. Introduction to Emacs</a>
 <ul>
-<li><a href="#org2618dbb">3.1. Introduction to Emacs</a></li>
+<li><a href="#org70f9df3">3.1. Introduction to Emacs</a>
+<ul>
+<li><a href="#orgfceff0c">3.1.1. Notations</a></li>
+<li><a href="#orgf873cf1">3.1.2. Basic commands</a></li>
+</ul>
+</li>
 <li><a href="#org13d5a56">3.2. Resources</a></li>
 </ul>
 </li>
@@ -379,13 +384,256 @@ git checkout ep624
 <h3 id="org4858574"><span class="section-number-3">2.2</span> Introduction to shell programming</h3>
 </div>
 </div>
-<div id="outline-container-org70f9df3" class="outline-2">
-<h2 id="org70f9df3"><span class="section-number-2">3</span> Introduction to Emacs</h2>
+<div id="outline-container-org6d10e47" class="outline-2">
+<h2 id="org6d10e47"><span class="section-number-2">3</span> Introduction to Emacs</h2>
 <div class="outline-text-2" id="text-3">
 </div>
-<div id="outline-container-org2618dbb" class="outline-3">
-<h3 id="org2618dbb"><span class="section-number-3">3.1</span> Introduction to Emacs</h3>
+<div id="outline-container-org70f9df3" class="outline-3">
+<h3 id="org70f9df3"><span class="section-number-3">3.1</span> Introduction to Emacs</h3>
+<div class="outline-text-3" id="text-3-1">
+<p>
+Emacs is an extremely powerful cross-platform editor which can be used for all kinds of tasks that you do on your computer. Although Emacs is different from every other editor you are likely to have used, learning to use Emacs would be a huge asset for your computing abilities. A good way to learn Emacs, to ask, for each activity you do on your computer, can I do this using Emacs? You will be amazed at how many times the answer is: yes, and more efficiently than in your current application.
+</p>
+
+<p>
+This section, however, does not provide a detailed guide to the use of Emacs.
+</p>
+
+<p>
+In this guide, I will just provide a minimal set of basic commands in
+emacs to get you started. This is a minimal but sufficient set to be
+able to work. I expect that you would learn more commands as you start
+using emacs.
+</p>
 </div>
+
+<div id="outline-container-orgfceff0c" class="outline-4">
+<h4 id="orgfceff0c"><span class="section-number-4">3.1.1</span> Notations</h4>
+<div class="outline-text-4" id="text-3-1-1">
+<p>
+In emacs, a buffer is equivalent to a tab in a web browser. It is
+normal to have several buffers open at the same time. Each file opens
+in emacs as a buffer. Buffers could also have processes like R running
+in them. Emacs displays any messages for you in a separate buffer.
+</p>
+
+<p>
+Most commands in emacs are given using the Control (ctrl) or the Meta
+(often mapped to alt) keys. Control key is usually referred to as <code>C-</code>
+and the Meta key as <code>M-</code>. So a command <code>C-c</code> means pressing Control
+and c together. Command <code>M-x</code> means pressing Meta and x
+together. Everything is case-sensitive. So <code>M-X</code> would mean, pressing
+Meta, Shift and x together. <code>C-c M-x l</code> would mean pressing C-c,
+release, then M-x, release, and then l.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgf873cf1" class="outline-4">
+<h4 id="orgf873cf1"><span class="section-number-4">3.1.2</span> Basic commands</h4>
+<div class="outline-text-4" id="text-3-1-2">
+<p>
+Table <a href="#orgd9a5e59">1</a> gives the commands that are the most
+important. This is a minimal set, commands that you should aim to
+learn as soon as possible. There are many more, which you will learn
+as you start using emacs.
+</p>
+
+<p>
+All commands have a verbose version that can be used by pressing <code>M-x</code>
+and writing the command. For example, <code>M-x find-file</code> to open a file.
+All major commands are also mapped to a shortcut. For example, instead
+of typing <code>M-x find-file</code> to open a file, you can say <code>C-x C-f</code>. I
+remember shortcuts for commands that I use most frequently. For
+others, I use the verbose versions. Over time, one learns more
+shortcuts and starts using them instead of the verbose versions.
+</p>
+
+<table id="orgd9a5e59" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<caption class="t-above"><span class="table-number">Table 1:</span> Essential emacs commands</caption>
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Description</th>
+<th scope="col" class="org-left">Verbose command</th>
+<th scope="col" class="org-left">Shortcut</th>
+</tr>
+
+<tr>
+<th scope="col" class="org-left">&#xa0;</th>
+<th scope="col" class="org-left"><code>M-x</code> followed by</th>
+<th scope="col" class="org-left">&#xa0;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left"><i><b>Opening files, saving and closing</b></i></td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left"><i>Open a file</i></td>
+<td class="org-left"><code>find-file</code></td>
+<td class="org-left"><code>C-x C-f</code></td>
+</tr>
+
+<tr>
+<td class="org-left"><i>Save the buffer/file</i></td>
+<td class="org-left"><code>save-buffer</code></td>
+<td class="org-left"><code>C-x C-s</code></td>
+</tr>
+
+<tr>
+<td class="org-left"><i>Save as: prompts for a new filename and saves the buffer into it</i></td>
+<td class="org-left"><code>write-named-file</code></td>
+<td class="org-left"><code>C-x C-w</code></td>
+</tr>
+
+<tr>
+<td class="org-left"><i>Save all buffers and quit emacs</i></td>
+<td class="org-left"><code>save-buffers-kill-emacs</code></td>
+<td class="org-left"><code>C-x C-c</code></td>
+</tr>
+
+<tr>
+<td class="org-left"><i><b>Copy, Cut and Delete Commands</b></i></td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left"><i>Delete the rest of the current line</i></td>
+<td class="org-left"><code>kill-line</code></td>
+<td class="org-left"><code>C-k</code></td>
+</tr>
+
+<tr>
+<td class="org-left"><i>To select text, press this at the beginning of the region and then take the cursor to the end</i></td>
+<td class="org-left"><code>set-mark-command</code></td>
+<td class="org-left"><code>C-spacebar</code></td>
+</tr>
+
+<tr>
+<td class="org-left"><i>Cut the selected region</i></td>
+<td class="org-left"><code>kill-region</code></td>
+<td class="org-left"><code>C-w</code></td>
+</tr>
+
+<tr>
+<td class="org-left"><i>Copy the selected region</i></td>
+<td class="org-left"><code>copy-region-as-kill</code></td>
+<td class="org-left"><code>M-w</code></td>
+</tr>
+
+<tr>
+<td class="org-left"><i>Paste or insert at current cursor location</i></td>
+<td class="org-left"><code>yank</code></td>
+<td class="org-left"><code>C-y</code></td>
+</tr>
+
+<tr>
+<td class="org-left"><i><b>Search Commands</b></i></td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left"><i>prompts for text string and then searches from the current cursor position forwards in the buffer</i></td>
+<td class="org-left"><code>isearch-forward</code></td>
+<td class="org-left"><code>C-s</code></td>
+</tr>
+
+<tr>
+<td class="org-left"><i>Find-and-replace: replaces one string with another, one by one, asking for each occurrence of search string</i></td>
+<td class="org-left"><code>query-replace</code></td>
+<td class="org-left"><code>M-%</code></td>
+</tr>
+
+<tr>
+<td class="org-left"><i>Find-and-replace: replaces all occurrences of one string with another</i></td>
+<td class="org-left"><code>replace-string</code></td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left"><i><b>Other commands</b></i></td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">Divide a long sentence into multiple lines, each smaller than the maximum width specified</td>
+<td class="org-left"><code>fill-paragraph</code></td>
+<td class="org-left"><code>M-q</code></td>
+</tr>
+
+<tr>
+<td class="org-left"><i><b>Window and Buffer Commands</b></i></td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left"><i>Switch to another buffer</i></td>
+<td class="org-left"><code>switch-to-buffer</code></td>
+<td class="org-left"><code>C-x b</code></td>
+</tr>
+
+<tr>
+<td class="org-left"><i>List all buffers</i></td>
+<td class="org-left"><code>list-buffers</code></td>
+<td class="org-left"><code>C-x C-b</code></td>
+</tr>
+
+<tr>
+<td class="org-left"><i>Split current window into two windows; each window can show same or different buffers</i></td>
+<td class="org-left"><code>double-window</code></td>
+<td class="org-left"><code>C-x 2</code></td>
+</tr>
+
+<tr>
+<td class="org-left"><i>Remove the split</i></td>
+<td class="org-left"><code>zero-window</code></td>
+<td class="org-left"><code>C-x 0</code></td>
+</tr>
+
+<tr>
+<td class="org-left"><i>When you have two or more windows, move the cursor to the next window</i></td>
+<td class="org-left"><code>other-window</code></td>
+<td class="org-left"><code>C-x o</code></td>
+</tr>
+
+<tr>
+<td class="org-left"><i><b>Canceling and undoing</b></i></td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left"><i>Abort the command in progress</i></td>
+<td class="org-left"><code>keyboard-quit</code></td>
+<td class="org-left"><code>C-g</code></td>
+</tr>
+
+<tr>
+<td class="org-left"><i>Undo</i></td>
+<td class="org-left"><code>undo</code></td>
+<td class="org-left"><code>C-_</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
 <div id="outline-container-org13d5a56" class="outline-3">
 <h3 id="org13d5a56"><span class="section-number-3">3.2</span> Resources</h3>
 <div class="outline-text-3" id="text-3-2">
@@ -443,7 +691,7 @@ git checkout ep624
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Vikas Rawal</p>
-<p class="date">Created: 2020-02-06 Thu 10:22</p>
+<p class="date">Created: 2020-02-06 Thu 10:44</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

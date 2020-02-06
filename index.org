@@ -293,6 +293,79 @@ cd
 ** Introduction to shell programming
 * Introduction to Emacs
 ** Introduction to Emacs
+
+Emacs is an extremely powerful cross-platform editor which can be used for all kinds of tasks that you do on your computer. Although Emacs is different from every other editor you are likely to have used, learning to use Emacs would be a huge asset for your computing abilities. A good way to learn Emacs, to ask, for each activity you do on your computer, can I do this using Emacs? You will be amazed at how many times the answer is: yes, and more efficiently than in your current application.
+
+This section, however, does not provide a detailed guide to the use of Emacs.
+
+In this guide, I will just provide a minimal set of basic commands in
+emacs to get you started. This is a minimal but sufficient set to be
+able to work. I expect that you would learn more commands as you start
+using emacs.
+
+*** Notations
+
+In emacs, a buffer is equivalent to a tab in a web browser. It is
+normal to have several buffers open at the same time. Each file opens
+in emacs as a buffer. Buffers could also have processes like R running
+in them. Emacs displays any messages for you in a separate buffer.
+
+Most commands in emacs are given using the Control (ctrl) or the Meta
+(often mapped to alt) keys. Control key is usually referred to as ~C-~
+and the Meta key as ~M-~. So a command ~C-c~ means pressing Control
+and c together. Command ~M-x~ means pressing Meta and x
+together. Everything is case-sensitive. So ~M-X~ would mean, pressing
+Meta, Shift and x together. ~C-c M-x l~ would mean pressing C-c,
+release, then M-x, release, and then l.
+
+*** Basic commands
+
+Table [[essential-emacs-commands]] gives the commands that are the most
+important. This is a minimal set, commands that you should aim to
+learn as soon as possible. There are many more, which you will learn
+as you start using emacs.
+
+All commands have a verbose version that can be used by pressing ~M-x~
+and writing the command. For example, ~M-x find-file~ to open a file.
+All major commands are also mapped to a shortcut. For example, instead
+of typing ~M-x find-file~ to open a file, you can say ~C-x C-f~. I
+remember shortcuts for commands that I use most frequently. For
+others, I use the verbose versions. Over time, one learns more
+shortcuts and starts using them instead of the verbose versions.
+
+#+CAPTION: Essential emacs commands
+#+NAME: essential-emacs-commands
+#+attr_latex: :environment longtable :align p{4cm}ll :booktabs t
+| Description                                                                                                 | Verbose command         | Shortcut   |
+|                                                                                                             | =M-x= followed by         |            |
+|-------------------------------------------------------------------------------------------------------------+-------------------------+------------|
+| /*Opening files, saving and closing*/                                                                       |                         |            |
+| /Open a file/                                                                                                 | =find-file=               | =C-x C-f=    |
+| /Save the buffer/file/                                                                                        | =save-buffer=             | =C-x C-s=    |
+| /Save as: prompts for a new filename and saves the buffer into it/                                            | =write-named-file=        | =C-x C-w=    |
+| /Save all buffers and quit emacs/                                                                             | =save-buffers-kill-emacs= | =C-x C-c=    |
+| /*Copy, Cut and Delete Commands*/                                                                             |                         |            |
+| /Delete the rest of the current line/                                                                         | =kill-line=               | =C-k=        |
+| /To select text, press this at the beginning of the region and then take the cursor to the end/               | =set-mark-command=        | =C-spacebar= |
+| /Cut the selected region/                                                                                     | =kill-region=             | =C-w=        |
+| /Copy the selected region/                                                                                    | =copy-region-as-kill=     | =M-w=        |
+| /Paste or insert at current cursor location/                                                                  | =yank=                    | =C-y=        |
+| /*Search Commands*/                                                                                           |                         |            |
+| /prompts for text string and then searches from the current cursor position forwards in the buffer/           | =isearch-forward=         | =C-s=        |
+| /Find-and-replace: replaces one string with another, one by one, asking for each occurrence of search string/ | =query-replace=           | =M-%=        |
+| /Find-and-replace: replaces all occurrences of one string with another/                                       | =replace-string=          |            |
+| /*Other commands*/                                                                                            |                         |            |
+| Divide a long sentence into multiple lines, each smaller than the maximum width specified                   | =fill-paragraph=          | =M-q=        |
+| /*Window and Buffer Commands*/                                                                                |                         |            |
+| /Switch to another buffer/                                                                                    | =switch-to-buffer=        | =C-x b=      |
+| /List all buffers/                                                                                            | =list-buffers=            | =C-x C-b=    |
+| /Split current window into two windows; each window can show same or different buffers/                       | =double-window=           | =C-x 2=      |
+| /Remove the split/                                                                                            | =zero-window=             | =C-x 0=      |
+| /When you have two or more windows, move the cursor to the next window/                                       | =other-window=            | =C-x o=      |
+| /*Canceling and undoing*/                                                                                     |                         |            |
+| /Abort the command in progress/                                                                               | =keyboard-quit=           | =C-g=        |
+| /Undo/                                                                                                        | =undo=                    | =C-_=        |
+
 ** Resources
 + [[https://www2.lib.uchicago.edu/keith/tcl-course/emacs-tutorial.html][A Tutorial Introduction to GNU Emacs]]
 
