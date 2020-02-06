@@ -1,0 +1,299 @@
+#+TITLE: EP624: Statistical Programming and Reproducible Research
+#+AUTHOR: Vikas Rawal
+#+OPTIONS: H:3 ^:{}
+#+LATEX_HEADER: \usepackage{booktabs}
+#+LATEX_HEADER: \usepackage{tabularx}
+#+TODO: TODO REVISE | DONE
+#+PROPERTY: header-args:R :session ep624 :eval never-export
+#+SETUPFILE: https://fniessen.github.io/org-html-themes/setup/theme-readtheorg.setup
+#+HTML_HEAD: <style>#content{max-width:1200px;} </style>
+#+MACRO: hlmacro (eval (org-table-insert-hline))
+
+
+* Preliminaries                                                    :noexport:
+
+#+NAME: load-libraries
+#+BEGIN_SRC R :results silent :exports none
+    options(width=170)
+    require(RPostgreSQL)
+    require(ggplot2)
+    require(ggrepel)
+    require(data.table)
+    require(spatstat)
+    addhead<-function(d1,v1,v2) {
+      as.data.table(expand.grid(V2=levels(v2),V1=levels(v1))[,c(2,1)])->tabhead
+      as.character(tabhead$V1)->tabhead$V1
+      c(1:nrow(tabhead))->tabhead$rank
+      ave(tabhead$rank,tabhead$V1,FUN=rank)->tabhead$rank
+      ave(tabhead$rank,tabhead$V1,FUN=length)->tabhead$len
+      tabhead$V1[tabhead$rank!=1]<-""
+      ifelse(tabhead$V1=="","",paste("<",tabhead$len,"colc>",tabhead$V1,sep=""))->tabhead$V1
+      transpose(tabhead[,c(1:2)])->tabhead
+      names(tabhead)->names(d1)[c((ncol(d1)-ncol(tabhead)+1):ncol(d1))]
+      as.data.frame(rbind(tabhead,d1,fill=TRUE))->tabhead2
+      levels(tabhead2[,ncol(tabhead2)])<-c(levels(tabhead2[,ncol(tabhead2)]),names(tabhead2)[length(names(tabhead2))],"{{{hlmacro}}}")
+      names(tabhead2)[length(names(tabhead2))] ->tabhead2[1,ncol(tabhead2)]
+      "{{{hlmacro}}}"->tabhead2[2,ncol(tabhead2)]
+       tabhead2[,c(ncol(tabhead2),1:ncol(tabhead2)-1)]->tabhead2
+      ## tabhead2[2,1]<-""
+      tabhead2
+    }
+
+  is_outlier <- function(x,w) {
+    return(x < weighted.quantile(x,w, 0.25) -
+           1.5 * (weighted.quantile(x,w, 0.75)-weighted.quantile(x,w, 0.25)) |
+           x > weighted.quantile(x,w, 0.75) +
+           1.5 * (weighted.quantile(x,w, 0.75)-weighted.quantile(x,w, 0.25)) )
+  }
+#+END_SRC
+
+#+NAME: open-database-connection
+#+BEGIN_SRC R :results silent :exports none
+  source("~/vikascloud/surveymonitor/sserconnect.R")
+#+END_SRC
+
+#+NAME: read-data-code
+#+BEGIN_SRC R :results silent :exports none
+  #dbListTables(surveypg)->t
+  data.table(dbReadTable(surveypg,"ruralsurvey_household"))->household
+  data.table(dbReadTable(surveypg,"ruralsurvey_sampledesign"))->sampledesign
+  data.table(dbReadTable(surveypg,"ruralsurvey_member"))->member
+  member[person_number<90]->member
+  data.table(dbReadTable(surveypg,"ruralsurvey_codecaste"))->castes
+  data.table(dbReadTable(surveypg,"ruralsurvey_codereligion"))->religions
+  data.table(dbReadTable(surveypg,"ruralsurvey_codevillage"))->villages
+  data.table(dbReadTable(surveypg,"ruralsurvey_coderelationship"))->relationship
+  data.table(dbReadTable(surveypg,"ruralsurvey_codeoccupationcategory"))->occupationcode
+  data.table(dbReadTable(surveypg,"ruralsurvey_occupations_household_members"))->occupations
+  sampledesign[,id:=NULL]
+  merge(household,sampledesign,by.x=c("village_id","stratum_number"),by.y=c("village_id","stratum_number"),all.x=T)->household
+  household[household_number<9990]->household
+  household[is.na(multiplier),multiplier:=1]
+  merge(household,villages,by.x="village_id",by.y="id",all.x=T)->household
+  merge(household,castes,by.x="caste_tribe_id",by.y="id",all.x=T)->household
+  merge(household,religions,by.x="religion_id",by.y="id",all.x=T)->household
+  household[household_number<9000]->household
+  household[,c(39,5,6,4,16,38,41,42)]->hhid
+  setkey(hhid,id)
+  hhid[village_name=="Birdhana" & stratum_number==10,village_name:="Birdhana Dhanis"]
+  factor(hhid$village_name,levels=c("Khandrai","Cheher Kalan","Birdhana","Birdhana Dhanis","Jamalpur Shekhan","Gijji","Bhadas"))->hhid$village
+  levels(hhid$village)<-c("खंदरई","चहड़ कलां","भिरढाणा","भिरढाणा ढाणियाँ","जमालपुर शेखाँ","गिज्जी","भादस")
+
+  #dbDisconnect(surveypg)
+#+END_SRC
+
+#+NAME: list-tables-code
+#+BEGIN_SRC R :results value :exports none :colnames yes :hlines yes
+  dbListTables(surveypg)->t
+  t
+#+END_SRC
+
+#+NAME: list-tables
+#+RESULTS: list-tables-code
+| x                                                               |
+|-----------------------------------------------------------------|
+| django_migrations                                               |
+| auth_user                                                       |
+| django_session                                                  |
+| ruralsurvey_access_to_food_in_school_or_anganwadi               |
+| django_content_type                                             |
+| ruralsurvey_access_to_education_questions                       |
+| django_admin_log                                                |
+| auth_group                                                      |
+| auth_user_user_permissions                                      |
+| ruralsurvey_annual_consumption_of_major_items_of_food           |
+| ruralsurvey_animal_resources_for_last_one_year_inventory        |
+| ruralsurvey_animal_resources_milk                               |
+| ruralsurvey_asset_ownership_land_buildings                      |
+| ruralsurvey_code_commodity                                      |
+| ruralsurvey_code_purpose_of_borrowing                           |
+| ruralsurvey_codeinputcategory                                   |
+| ruralsurvey_expenditure_on_education                            |
+| ruralsurvey_irrigation_ownership_holdings                       |
+| ruralsurvey_land_tenancy_mortgage                               |
+| ruralsurvey_sampledesign                                        |
+| ruralsurvey_scholarships_pensions_rents_remittances             |
+| ruralsurvey_wells_ownership                                     |
+| auth_group_permissions                                          |
+| auth_user_groups                                                |
+| auth_permission                                                 |
+| ruralsurvey_assets                                              |
+| ruralsurvey_team_members                                        |
+| ruralsurvey_use_of_informal_institutions_for_savings            |
+| ruralsurvey_codeplaces                                          |
+| ruralsurvey_crop_sales                                          |
+| ruralsurvey_housing_materials                                   |
+| ruralsurvey_business_and_artisan_earnings_household_members     |
+| ruralsurvey_nrega_job_cards                                     |
+| ruralsurvey_incidence_of_diseases_over_last_one_month_disea4551 |
+| ruralsurvey_incidence_of_inpatient_treatment_disease_category   |
+| ruralsurvey_code_payer                                          |
+| ruralsurvey_codereligion                                        |
+| ruralsurvey_codeitem                                            |
+| ruralsurvey_codeownershiptype                                   |
+| ruralsurvey_ration_cards                                        |
+| ruralsurvey_cropping_pattern_schedule_production_and_sales      |
+| ruralsurvey_occupations_household_members                       |
+| ruralsurvey_access_to_education_children                        |
+| ruralsurvey_acquisition_and_loss_of_major_assets                |
+| ruralsurvey_animal_resources_for_last_one_year_sale_disposal    |
+| ruralsurvey_animal_resources_other_costs                        |
+| ruralsurvey_asset_ownership_furniture                           |
+| ruralsurvey_asset_ownership_electrical                          |
+| ruralsurvey_asset_ownership_inventories                         |
+| ruralsurvey_child_help                                          |
+| ruralsurvey_code_asset_others                                   |
+| ruralsurvey_code_asset_transport                                |
+| ruralsurvey_code_asset                                          |
+| ruralsurvey_code_asset_inventories                              |
+| ruralsurvey_code_card_type                                      |
+| ruralsurvey_code_asset_furniture                                |
+| ruralsurvey_code_bank_account_type                              |
+| ruralsurvey_code_cooking_energy_source                          |
+| ruralsurvey_business_and_artisan_earnings                       |
+| ruralsurvey_code_food                                           |
+| ruralsurvey_codeanimaltype                                      |
+| ruralsurvey_code_informal_saving_institions                     |
+| ruralsurvey_code_reasons_for_sale                               |
+| ruralsurvey_code_description_of_buyer_lessee                    |
+| ruralsurvey_code_credit_institutions                            |
+| ruralsurvey_codecropcommodity                                   |
+| ruralsurvey_codebusinesscategory                                |
+| ruralsurvey_code_source_of_borrowing                            |
+| ruralsurvey_code_materials                                      |
+| ruralsurvey_code_source_of_lighting                             |
+| ruralsurvey_code_reason_no_treatment                            |
+| ruralsurvey_codecontractduration                                |
+| ruralsurvey_codediseasecategory                                 |
+| ruralsurvey_code_others_irrigation_other_nature_ex              |
+| ruralsurvey_code_kind_commodity                                 |
+| ruralsurvey_codeeducationalinstitution                          |
+| ruralsurvey_comments_and_investigators                          |
+| ruralsurvey_codeirrigationsource                                |
+| ruralsurvey_codeseasons                                         |
+| ruralsurvey_coderelationship                                    |
+| ruralsurvey_codeinputtype                                       |
+| ruralsurvey_codetenurialstatus                                  |
+| ruralsurvey_codevariety                                         |
+| ruralsurvey_codesampletype                                      |
+| ruralsurvey_codeplaceofbirth                                    |
+| ruralsurvey_codepowersource                                     |
+| ruralsurvey_codelabourunit                                      |
+| ruralsurvey_codevillage                                         |
+| ruralsurvey_coderentunit                                        |
+| ruralsurvey_codemodeoftransport                                 |
+| ruralsurvey_for_long_term_agricultural_workers                  |
+| ruralsurvey_consumption_of_frequent_food_week                   |
+| ruralsurvey_housing                                             |
+| ruralsurvey_freedom_of_employment                               |
+| ruralsurvey_housing_assistance                                  |
+| ruralsurvey_experience_of_food_insecurity                       |
+| ruralsurvey_costs                                               |
+| ruralsurvey_current_ownership_holdings                          |
+| ruralsurvey_incidence_of_inpatient_treatment                    |
+| ruralsurvey_housing_q                                           |
+| ruralsurvey_labour_days_employed_and_wage_rates_agri            |
+| ruralsurvey_income_from_salaries                                |
+| ruralsurvey_incidence_of_diseases_over_last_one_month           |
+| ruralsurvey_input_use_for_crops_crop_number                     |
+| ruralsurvey_input_use_for_crops                                 |
+| ruralsurvey_impact_of_specified_events_on_access_to_livelihoods |
+| ruralsurvey_income_from_hiring_out_machinery                    |
+| ruralsurvey_medical_insurance                                   |
+| ruralsurvey_land_mortgaged_in                                   |
+| ruralsurvey_land_mortgaged_out                                  |
+| ruralsurvey_land_leased_in_fixed_rent                           |
+| ruralsurvey_non_agricultural_manual_labouring_out               |
+| ruralsurvey_means_of_prod                                       |
+| ruralsurvey_land_leased_out_fixed_rent                          |
+| ruralsurvey_membership_in_self_help_groups                      |
+| ruralsurvey_land_leased_out_share_rent                          |
+| ruralsurvey_ration_question                                     |
+| ruralsurvey_other_costs_incurred_last_year                      |
+| ruralsurvey_purchases_from_the_public_distribution_system       |
+| ruralsurvey_source_of_water_for_domestic_use                    |
+| ruralsurvey_standardnorm                                        |
+| ruralsurvey_payments_made_to_managers_and_long_term_workers     |
+| ruralsurvey_outstanding_loans                                   |
+| ruralsurvey_payments_made_to_managers_and_long_term_workers_gen |
+| ruralsurvey_work_done_by_household_members_under_nrega          |
+| ruralsurvey_household                                           |
+| ruralsurvey_agricultural_non_agricultura_labour_services        |
+| ruralsurvey_member                                              |
+| ruralsurvey_code_asset_electrical                               |
+| ruralsurvey_agricultural_loans_borrowed_last_year_and_repaid    |
+| ruralsurvey_asset_ownership_transport                           |
+| ruralsurvey_animal_resources_sale_production                    |
+| ruralsurvey_agricultural_labouring_out                          |
+| ruralsurvey_codefeedtype                                        |
+| ruralsurvey_animal_resources_work_done_by_household_members     |
+| ruralsurvey_animal_resources_feed                               |
+| ruralsurvey_codecrop                                            |
+| ruralsurvey_asset_ownership_other                               |
+| ruralsurvey_bank_post_office_accounts                           |
+| ruralsurvey_codeoccupationcategory                              |
+| ruralsurvey_codecaste                                           |
+| ruralsurvey_code_quantity_unit                                  |
+
+* System Setup
+
+** Operating System
+
++ Install any latest distribution of GNU/Linux on your computer. I use Manjaro, but feel free to install any.
+  + If you have a Mac, you can continue using OSX, and install the required applications on OSX.
+
+** Applications
+
+#+begin_src sh
+## This is how my computer is setup. These commands are for Arch Linux/Manjaro.
+## You can install the same applications in other distributions using their package managers.
+## These commands should be run one line at a time. Do not run it as a script.
+## Modify to suit your requirements
+sudo pacman -Ssy
+sudo pacman -S emacs firefox texlive-most biber nmap openssh yay gimp phpmyadmin evince git git-lfs mpv vlc r htop neomutt isync pass mariadb postgresql aspell-en termite pass notmuch go tk afew ack keychain chromium msmtp unison python-pip python-imaging ghostscript hplip geos youtube-dl evince pandoc-citeproc
+sudo pacman -R palemoon
+sudo pacman -S rofi #Only if you use i3wm
+sudo pacman -U https://www.archlinux.org/packages/community/x86_64/browserpass/download/
+sudo pacman -S browserpass-firefox browserpass-chromium
+systemctl enable sshd
+yay -S dropbox
+yay -S megasync
+yay -S keybase-bin
+yay -S skype
+yay -S signal-desktop
+yay -S mimio
+yay -S libreoffice-extension-languagetool
+#+end_src
+
+**  Emacs configuration
+
+Following commands will configure emacs for the requirements of this course.
+
+#+begin_src sh
+
+# If you do not already have ssh keys, create them as below
+# mkdir ~/.ssh
+# cd ~/.ssh
+# ssh-keygen -t rsa #No need to use a password, when asked. Just press enter.
+# cd
+
+## You should add the public key (by default, the file ~/.ssh/id_rsa.pub) to your github account.
+git clone git@github.com:vikasrawal/prelude-ep624.git # Use this if you have added your public ssh key to your github account.
+git clone https://github.com/vikasrawal/prelude-ep624.git # Use this if you do not have a github account with your public ssh key added to it.
+
+mv .emacs.d .emacs.d.old # Renames if you already have a .emacs.d directory
+mv prelude-ep624 .emacs.d
+cd .emacs.d
+git checkout ep624
+cd
+#+end_src
+
+* Kill Connections                                                 :noexport:
+
+#+NAME: kill-ssh-connections
+#+BEGIN_SRC R :results silent :exports none
+  dbDisconnect(surveypg)
+  GrepResults<-system2("ps",c("ax | grep 'ssh -L 3333'| grep 'singdehri'"),stdout=TRUE)
+  Processes<-as.numeric(sub(" .*","",GrepResults))
+  tools::pskill(Processes)
+#+END_SRC

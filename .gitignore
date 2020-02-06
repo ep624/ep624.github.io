@@ -1,0 +1,7 @@
+*
+!*.org
+!*.html
+!*.png
+!*.pdf
+!*.jpg
+!.gitignore
