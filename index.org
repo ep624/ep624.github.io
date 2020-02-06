@@ -288,6 +288,32 @@ git checkout ep624
 cd
 #+end_src
 
+* Introduction to Computer Programming
+** Introduction to the course
+** Introduction to shell programming
+* Introduction to Emacs
+** Introduction to Emacs
+** Resources
++ [[https://www2.lib.uchicago.edu/keith/tcl-course/emacs-tutorial.html][A Tutorial Introduction to GNU Emacs]]
+
+* Basics of R Programming
+
+** Data structures in R
+** Statistical Graphics with ggplot2
+** data.table
+** Analysis of Survey Data in R
+** Econometric Analysis in R
+
+* Reproducible Research Using Emacs Orgmode and R
+
+**  Introduction to orgmode
+**  Org-babel and writing R source code in Org
+**   Formatting tables and figures for print
+**   Citation management using org-ref and biblatex
++ A sample biblatex database to get you started can be taken from [[https://raw.githubusercontent.com/indianstatistics/bibliobase/master/bibliobase.bib][here]]. For now, you may just download it, save it and add to it. Please note that the source file on github keeps getting updated. Eventually, you may want to manage your own biblatex database using something like git.
++ There is also another Emacs mode -- ebib -- that can be used for maintaining your biblatex database. To start ebib, use M-x ebib
+
+
 * Kill Connections                                                 :noexport:
 
 #+NAME: kill-ssh-connections
