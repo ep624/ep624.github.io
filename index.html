@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2020-02-06 Thu 19:44 -->
+<!-- 2020-02-06 Thu 19:54 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>EP624: Statistical Programming and Reproducible Research</title>
@@ -277,9 +277,9 @@ for the JavaScript code in this tag.
 </li>
 </ul>
 </li>
-<li><a href="#org55de0e4">3. Introduction to Emacs</a>
+<li><a href="#org7f05571">3. Introduction to Emacs</a>
 <ul>
-<li><a href="#org681bfbe">3.1. Introduction to Emacs</a>
+<li><a href="#org55de0e4">3.1. Introduction to Emacs</a>
 <ul>
 <li><a href="#orgfceff0c">Notations</a></li>
 <li><a href="#orgf873cf1">Basic commands</a></li>
@@ -443,6 +443,13 @@ git checkout ep624
 </div>
 <div id="outline-container-orgabd18d7" class="outline-4">
 <h4 id="orgabd18d7">Introduction to *nix file system</h4>
+<div class="outline-text-4" id="text-orgabd18d7">
+<ul class="org-ul">
+<li>*nix file system is structured as a tree with &ldquo;/&rdquo; as the root.</li>
+<li>&ldquo;/home/yourusername&rdquo; is your home. ~ is a shortcut to this directory.</li>
+<li></li>
+</ul>
+</div>
 </div>
 
 <div id="outline-container-org7481537" class="outline-4">
@@ -450,54 +457,55 @@ git checkout ep624
 <div class="outline-text-4" id="text-org7481537">
 <ul class="org-ul">
 <li>Help
-<ul class="org-ul">
-<li>man</li>
-</ul></li>
+<dl class="org-dl">
+<dt>man</dt><dd>manual</dd>
+</dl></li>
 <li>File management
-<ul class="org-ul">
-<li>ls</li>
-<li>mkdir</li>
-<li>cp</li>
-<li>mv</li>
-<li>rm</li>
-<li>ssh, scp, rsync</li>
-<li>find</li>
-<li>ack</li>
-</ul></li>
+<dl class="org-dl">
+<dt>ls</dt><dd>list files</dd>
+<dt>mkdir</dt><dd>make directory</dd>
+<dt>cp</dt><dd>copy</dd>
+<dt>mv</dt><dd>move</dd>
+<dt>rm</dt><dd>remove/delete</dd>
+<dt>ssh, scp, rsync</dt><dd>commands used for secure copy to remote locations</dd>
+<dt>find</dt><dd>find a file</dd>
+<dt>ack</dt><dd>find files containing a string</dd>
+</dl></li>
 <li>Navigation
-<ul class="org-ul">
-<li>cd</li>
-</ul></li>
+<dl class="org-dl">
+<dt>cd</dt><dd>change directory</dd>
+<dt>pwd</dt><dd>path of working directory</dd>
+</dl></li>
 <li>Seeing/modifying files on the commandline
-<ul class="org-ul">
-<li>cat, more, less</li>
-<li>head, tail</li>
-<li>awk, sed</li>
-<li>diff</li>
-</ul></li>
+<dl class="org-dl">
+<dt>cat, more, less, head, tail</dt><dd>commands to see contents of text files</dd>
+<dt>awk, sed</dt><dd>tools to process text files line by line.</dd>
+<dt>diff</dt><dd>to compare two text files</dd>
+</dl></li>
 <li>Redirection
 <ul class="org-ul">
 <li>&gt;, &gt;&gt;, |</li>
 </ul></li>
 <li>Others
-<ul class="org-ul">
-<li>grep</li>
-<li>&ldquo;ip address show&rdquo;</li>
-<li>sort</li>
-<li>uniq</li>
-</ul></li>
+<dl class="org-dl">
+<dt>grep</dt><dd>filter lines of file containing a string</dd>
+<dt>&ldquo;ip address show&rdquo;</dt><dd>to find your ip address</dd>
+<dt>sort</dt><dd>sort lines</dd>
+<dt>uniq</dt><dd>to find unique adjacent lines</dd>
+<dt>wc</dt><dd>count number of bytes, words and lines</dd>
+</dl></li>
 </ul>
 </div>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org55de0e4" class="outline-2">
-<h2 id="org55de0e4"><span class="section-number-2">3</span> Introduction to Emacs</h2>
+<div id="outline-container-org7f05571" class="outline-2">
+<h2 id="org7f05571"><span class="section-number-2">3</span> Introduction to Emacs</h2>
 <div class="outline-text-2" id="text-3">
 </div>
-<div id="outline-container-org681bfbe" class="outline-3">
-<h3 id="org681bfbe"><span class="section-number-3">3.1</span> Introduction to Emacs</h3>
+<div id="outline-container-org55de0e4" class="outline-3">
+<h3 id="org55de0e4"><span class="section-number-3">3.1</span> Introduction to Emacs</h3>
 <div class="outline-text-3" id="text-3-1">
 <p>
 Emacs is an extremely powerful cross-platform editor which can be used for all kinds of tasks that you do on your computer. Although Emacs is different from every other editor you are likely to have used, learning to use Emacs would be a huge asset for your computing abilities. A good way to learn Emacs, to ask, for each activity you do on your computer, can I do this using Emacs? You will be amazed at how many times the answer is: yes, and more efficiently than in your current application.
@@ -968,7 +976,7 @@ You could also specify colour, size and shape independently of aesthetics if you
 </p>
 
 <div class="org-src-container">
-<pre class="src src-R" id="org5013447"><span class="linenr">1: </span>ggplot(data,aes(x=year,y=income,size=State),colour=<span style="color: #8f5902; font-style: italic;">"darkred"</span>)<span style="color: #8f5902; font-style: italic;">-&gt;</span>p
+<pre class="src src-R" id="org9b0c150"><span class="linenr">1: </span>ggplot(data,aes(x=year,y=income,size=State),colour=<span style="color: #8f5902; font-style: italic;">"darkred"</span>)<span style="color: #8f5902; font-style: italic;">-&gt;</span>p
 </pre>
 </div>
 </div>
@@ -982,7 +990,7 @@ In the second step, you specify the type of graph you want to make. These are ca
 </p>
 
 <div class="org-src-container">
-<pre class="src src-R" id="orga22fa3c"><span class="linenr">2: </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">We start from the object 'p' created in Step 1 and use '+' to add to it/modify it.</span>
+<pre class="src src-R" id="org712c4e8"><span class="linenr">2: </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">We start from the object 'p' created in Step 1 and use '+' to add to it/modify it.</span>
 <span class="linenr">3: </span>p+geom_point()<span style="color: #8f5902; font-style: italic;">-&gt;</span>p <span style="color: #888a85; background-color: #ffffff; font-style: italic;">#</span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">This makes a scatter plot</span>
 <span class="linenr">4: </span>p+geom_line()<span style="color: #8f5902; font-style: italic;">-&gt;</span>p <span style="color: #888a85; background-color: #ffffff; font-style: italic;">#</span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">This adds a line to the plot</span>
 <span class="linenr">5: </span>p <span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">At any stage, doing this would actually plot p on the screen.</span>
@@ -1166,7 +1174,7 @@ For each of these scales (x, y, colour, size and shape), you can define attribut
 </p>
 
 <div class="org-src-container">
-<pre class="src src-R" id="org9b0c150"><span class="linenr">6: </span>p+scale_x_continuous(<span style="color: #8f5902; font-style: italic;">"Financial Year"</span>,limits=c(1990,2012),
+<pre class="src src-R" id="org780bb06"><span class="linenr">6: </span>p+scale_x_continuous(<span style="color: #8f5902; font-style: italic;">"Financial Year"</span>,limits=c(1990,2012),
 <span class="linenr">7: </span>                     breaks=c(1990,1995,2000,2010))<span style="color: #8f5902; font-style: italic;">-&gt;</span>p
 <span class="linenr">8: </span>
 </pre>
@@ -2355,7 +2363,7 @@ document.
 </div></div>
 <div id="postamble" class="status">
 <p class="author">Author: Vikas Rawal</p>
-<p class="date">Created: 2020-02-06 Thu 19:44</p>
+<p class="date">Created: 2020-02-06 Thu 19:54</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

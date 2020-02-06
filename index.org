@@ -304,33 +304,38 @@ cd
 
 *** Introduction to *nix file system
 
++ *nix file system is structured as a tree with "/" as the root.
++ "/home/yourusername" is your home. ~ is a shortcut to this directory.
++
+
 *** Important Bash Commands to Learn
 
 + Help
-  + man
+  + man :: manual
 + File management
-  + ls
-  + mkdir
-  + cp
-  + mv
-  + rm
-  + ssh, scp, rsync
-  + find
-  + ack
+  + ls :: list files
+  + mkdir :: make directory
+  + cp :: copy
+  + mv :: move
+  + rm :: remove/delete
+  + ssh, scp, rsync :: commands used for secure copy to remote locations
+  + find :: find a file
+  + ack :: find files containing a string
 + Navigation
-  + cd
+  + cd :: change directory
+  + pwd :: path of working directory
 + Seeing/modifying files on the commandline
-  + cat, more, less
-  + head, tail
-  + awk, sed
-  + diff
+  + cat, more, less, head, tail :: commands to see contents of text files
+  + awk, sed :: tools to process text files line by line.
+  + diff :: to compare two text files
 + Redirection
   + >, >>, |
 + Others
-  + grep
-  + "ip address show"
-  + sort
-  + uniq
+  + grep :: filter lines of file containing a string
+  + "ip address show" :: to find your ip address
+  + sort :: sort lines
+  + uniq :: to find unique adjacent lines
+  + wc :: count number of bytes, words and lines
 
 * Introduction to Emacs
 ** Introduction to Emacs
