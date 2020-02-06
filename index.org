@@ -328,7 +328,7 @@ cd
   + >, >>, |
 + Others
   + grep
-  + /sbin/ifconfig
+  + "ip address show"
   + sort
   + uniq
 
