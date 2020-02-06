@@ -1,6 +1,6 @@
 #+TITLE: EP624: Statistical Programming and Reproducible Research
 #+AUTHOR: Vikas Rawal
-#+OPTIONS: H:3 ^:{}
+#+OPTIONS: H:3 num:2 ^:{}
 #+LATEX_HEADER: \usepackage{booktabs}
 #+LATEX_HEADER: \usepackage{tabularx}
 #+TODO: TODO REVISE | DONE
@@ -290,6 +290,14 @@ cd
 
 * Introduction to Computer Programming
 ** Introduction to the course
+
+*** Why should you use programming for statistical analysis? Why use R?
++ Programming is crucial for reproducibility and verifiability of your research.
++ Updating your analysis, for example when new data become available, is easy, as the same program could be run on new data to get new results.
++ R is open-source and free of cost.
+  + Will always remain available.
+  + Development is fast; tools for using new, cutting-edge statistical techniques become available as add-on packages.
+
 ** Introduction to shell programming
 * Introduction to Emacs
 ** Introduction to Emacs
@@ -408,14 +416,12 @@ getwd() #Reports the present working directory
 ** Econometric Analysis in R
 
 * Reproducible Research Using Emacs Orgmode and R
-
 **  Introduction to orgmode
 **  Org-babel and writing R source code in Org
 **   Formatting tables and figures for print
 **   Citation management using org-ref and biblatex
 + A sample biblatex database to get you started can be taken from [[https://raw.githubusercontent.com/indianstatistics/bibliobase/master/bibliobase.bib][here]]. For now, you may just download it, save it and add to it. Please note that the source file on github keeps getting updated. Eventually, you may want to manage your own biblatex database using something like git.
 + There is also another Emacs mode -- ebib -- that can be used for maintaining your biblatex database. To start ebib, use M-x ebib
-
 
 * Kill Connections                                                 :noexport:
 

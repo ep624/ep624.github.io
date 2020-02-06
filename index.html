@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2020-02-06 Thu 10:53 -->
+<!-- 2020-02-06 Thu 14:11 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>EP624: Statistical Programming and Reproducible Research</title>
@@ -263,16 +263,20 @@ for the JavaScript code in this tag.
 </li>
 <li><a href="#orge8f754d">2. Introduction to Computer Programming</a>
 <ul>
-<li><a href="#org572c083">2.1. Introduction to the course</a></li>
+<li><a href="#org572c083">2.1. Introduction to the course</a>
+<ul>
+<li><a href="#org57cfa84">Why should you use programming for statistical analysis? Why use R?</a></li>
+</ul>
+</li>
 <li><a href="#org4858574">2.2. Introduction to shell programming</a></li>
 </ul>
 </li>
-<li><a href="#orgb61ec06">3. Introduction to Emacs</a>
+<li><a href="#org9edff9b">3. Introduction to Emacs</a>
 <ul>
-<li><a href="#orgca580af">3.1. Introduction to Emacs</a>
+<li><a href="#orgb61ec06">3.1. Introduction to Emacs</a>
 <ul>
-<li><a href="#orgfceff0c">3.1.1. Notations</a></li>
-<li><a href="#orgf873cf1">3.1.2. Basic commands</a></li>
+<li><a href="#orgfceff0c">Notations</a></li>
+<li><a href="#orgf873cf1">Basic commands</a></li>
 </ul>
 </li>
 <li><a href="#org13d5a56">3.2. Resources</a></li>
@@ -282,7 +286,7 @@ for the JavaScript code in this tag.
 <ul>
 <li>
 <ul>
-<li><a href="#org98b2ac7">4.0.1. Some basic commands in R</a></li>
+<li><a href="#org98b2ac7">Some basic commands in R</a></li>
 </ul>
 </li>
 <li><a href="#org67397fa">4.1. Data structures in R</a></li>
@@ -384,17 +388,34 @@ git checkout ep624
 </div>
 <div id="outline-container-org572c083" class="outline-3">
 <h3 id="org572c083"><span class="section-number-3">2.1</span> Introduction to the course</h3>
+<div class="outline-text-3" id="text-2-1">
 </div>
+<div id="outline-container-org57cfa84" class="outline-4">
+<h4 id="org57cfa84">Why should you use programming for statistical analysis? Why use R?</h4>
+<div class="outline-text-4" id="text-org57cfa84">
+<ul class="org-ul">
+<li>Programming is crucial for reproducibility and verifiability of your research.</li>
+<li>Updating your analysis, for example when new data become available, is easy, as the same program could be run on new data to get new results.</li>
+<li>R is open-source and free of cost.
+<ul class="org-ul">
+<li>Will always remain available.</li>
+<li>Development is fast; tools for using new, cutting-edge statistical techniques become available as add-on packages.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+
 <div id="outline-container-org4858574" class="outline-3">
 <h3 id="org4858574"><span class="section-number-3">2.2</span> Introduction to shell programming</h3>
 </div>
 </div>
-<div id="outline-container-orgb61ec06" class="outline-2">
-<h2 id="orgb61ec06"><span class="section-number-2">3</span> Introduction to Emacs</h2>
+<div id="outline-container-org9edff9b" class="outline-2">
+<h2 id="org9edff9b"><span class="section-number-2">3</span> Introduction to Emacs</h2>
 <div class="outline-text-2" id="text-3">
 </div>
-<div id="outline-container-orgca580af" class="outline-3">
-<h3 id="orgca580af"><span class="section-number-3">3.1</span> Introduction to Emacs</h3>
+<div id="outline-container-orgb61ec06" class="outline-3">
+<h3 id="orgb61ec06"><span class="section-number-3">3.1</span> Introduction to Emacs</h3>
 <div class="outline-text-3" id="text-3-1">
 <p>
 Emacs is an extremely powerful cross-platform editor which can be used for all kinds of tasks that you do on your computer. Although Emacs is different from every other editor you are likely to have used, learning to use Emacs would be a huge asset for your computing abilities. A good way to learn Emacs, to ask, for each activity you do on your computer, can I do this using Emacs? You will be amazed at how many times the answer is: yes, and more efficiently than in your current application.
@@ -413,8 +434,8 @@ using emacs.
 </div>
 
 <div id="outline-container-orgfceff0c" class="outline-4">
-<h4 id="orgfceff0c"><span class="section-number-4">3.1.1</span> Notations</h4>
-<div class="outline-text-4" id="text-3-1-1">
+<h4 id="orgfceff0c">Notations</h4>
+<div class="outline-text-4" id="text-orgfceff0c">
 <p>
 In emacs, a buffer is equivalent to a tab in a web browser. It is
 normal to have several buffers open at the same time. Each file opens
@@ -435,8 +456,8 @@ release, then M-x, release, and then l.
 </div>
 
 <div id="outline-container-orgf873cf1" class="outline-4">
-<h4 id="orgf873cf1"><span class="section-number-4">3.1.2</span> Basic commands</h4>
-<div class="outline-text-4" id="text-3-1-2">
+<h4 id="orgf873cf1">Basic commands</h4>
+<div class="outline-text-4" id="text-orgf873cf1">
 <p>
 Table <a href="#orgd9a5e59">1</a> gives the commands that are the most
 important. This is a minimal set, commands that you should aim to
@@ -672,8 +693,8 @@ shortcuts and starts using them instead of the verbose versions.
 </div>
 
 <div id="outline-container-org98b2ac7" class="outline-4">
-<h4 id="org98b2ac7"><span class="section-number-4">4.0.1</span> Some basic commands in R</h4>
-<div class="outline-text-4" id="text-4-0-1">
+<h4 id="org98b2ac7">Some basic commands in R</h4>
+<div class="outline-text-4" id="text-org98b2ac7">
 <div class="org-src-container">
 <pre class="src src-R"><span class="linenr"> 1: </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">Text after # is a comment to explain what the command does</span>
 <span class="linenr"> 2: </span>q() <span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">Quit R; prompts for saving the workspace.</span>
@@ -735,7 +756,7 @@ shortcuts and starts using them instead of the verbose versions.
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Vikas Rawal</p>
-<p class="date">Created: 2020-02-06 Thu 10:53</p>
+<p class="date">Created: 2020-02-06 Thu 14:11</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
