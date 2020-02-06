@@ -121,8 +121,8 @@ cd
 *** Introduction to *nix file system
 
 + *nix file system is structured as a tree with "/" as the root.
-+ "/home/yourusername" is your home. ~ is a shortcut to this directory.
-+
++ ~/home/yourusername~ is your $HOME. ~ is a shortcut to this directory.
+  + On Mac/OS-X, $HOME is located at ~/Users/yourusername~. ~ is mapped to this directory.
 
 *** Important Bash Commands to Learn
 
