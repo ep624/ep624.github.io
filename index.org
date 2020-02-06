@@ -446,7 +446,11 @@ getwd() #Reports the present working directory
 #+INCLUDE: "~/ssercloud/sseRguide/sseRguide.org::#dataobjects" :only-contents t
 
 ** Statistical Graphics with ggplot2
-** data.table
+#+INCLUDE: "~/ssercloud/sseRguide/sseRguide.org::#ggplotgraphs" :only-contents t
+
+** Making tables using the data.table package
+#+INCLUDE: "~/ssercloud/sseRguide/sseRguide.org::#datatables" :only-contents t
+
 ** Analysis of Survey Data in R
 ** Econometric Analysis in R
 
