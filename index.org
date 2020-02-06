@@ -385,9 +385,9 @@ shortcuts and starts using them instead of the verbose versions.
 
 *** Some basic commands in R
 
-\noindent Text after # is a comment to explain what the command does
 
 #+begin_src R -n
+# Text after # is a comment to explain what the command does
 q() # Quit R; prompts for saving the workspace.
 ?command # Open help for 'command'; q to quit help.
 ??keyword # List commands with 'keyword' in the title
