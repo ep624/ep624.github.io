@@ -21,7 +21,7 @@
 
 ** Applications
 
-*** GNO/Linux
+*** GNU/Linux
 
 #+begin_src sh
 ## This is how my computer is setup. These commands are for Arch Linux/Manjaro.
