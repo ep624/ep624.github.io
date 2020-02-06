@@ -443,6 +443,8 @@ getwd() #Reports the present working directory
 
 
 ** Data structures in R
+#+INCLUDE: "~/ssercloud/sseRguide/sseRguide.org::#dataobjects" :only-contents t
+
 ** Statistical Graphics with ggplot2
 ** data.table
 ** Analysis of Survey Data in R
@@ -453,7 +455,6 @@ getwd() #Reports the present working directory
 #+INCLUDE: "~/vikascloud/orgpaper/orgpapers.org::#orgmodebasics"
 
 #+INCLUDE: "~/vikascloud/orgpaper/orgpapers.org::#orgmodeandr"
-
 
 **   Formatting tables and figures for print
 **   Citation management using org-ref and biblatex

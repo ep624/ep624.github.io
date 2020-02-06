@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2020-02-06 Thu 19:36 -->
+<!-- 2020-02-06 Thu 19:40 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>EP624: Statistical Programming and Reproducible Research</title>
@@ -277,9 +277,9 @@ for the JavaScript code in this tag.
 </li>
 </ul>
 </li>
-<li><a href="#org9b1df9b">3. Introduction to Emacs</a>
+<li><a href="#org681bfbe">3. Introduction to Emacs</a>
 <ul>
-<li><a href="#org89ba664">3.1. Introduction to Emacs</a>
+<li><a href="#org9b1df9b">3.1. Introduction to Emacs</a>
 <ul>
 <li><a href="#orgfceff0c">Notations</a></li>
 <li><a href="#orgf873cf1">Basic commands</a></li>
@@ -295,7 +295,12 @@ for the JavaScript code in this tag.
 <li><a href="#org98b2ac7">Some basic commands in R</a></li>
 </ul>
 </li>
-<li><a href="#org67397fa">4.1. Data structures in R</a></li>
+<li><a href="#org67397fa">4.1. Data structures in R</a>
+<ul>
+<li><a href="#org7d8f63a">Vectors</a></li>
+<li><a href="#org6d6e93f">Data frames</a></li>
+</ul>
+</li>
 <li><a href="#org9bfdd07">4.2. Statistical Graphics with ggplot2</a></li>
 <li><a href="#orgd16c2a0">4.3. data.table</a></li>
 <li><a href="#orgdc1b796">4.4. Analysis of Survey Data in R</a></li>
@@ -479,12 +484,12 @@ git checkout ep624
 </div>
 </div>
 
-<div id="outline-container-org9b1df9b" class="outline-2">
-<h2 id="org9b1df9b"><span class="section-number-2">3</span> Introduction to Emacs</h2>
+<div id="outline-container-org681bfbe" class="outline-2">
+<h2 id="org681bfbe"><span class="section-number-2">3</span> Introduction to Emacs</h2>
 <div class="outline-text-2" id="text-3">
 </div>
-<div id="outline-container-org89ba664" class="outline-3">
-<h3 id="org89ba664"><span class="section-number-3">3.1</span> Introduction to Emacs</h3>
+<div id="outline-container-org9b1df9b" class="outline-3">
+<h3 id="org9b1df9b"><span class="section-number-3">3.1</span> Introduction to Emacs</h3>
 <div class="outline-text-3" id="text-3-1">
 <p>
 Emacs is an extremely powerful cross-platform editor which can be used for all kinds of tasks that you do on your computer. Although Emacs is different from every other editor you are likely to have used, learning to use Emacs would be a huge asset for your computing abilities. A good way to learn Emacs, to ask, for each activity you do on your computer, can I do this using Emacs? You will be amazed at how many times the answer is: yes, and more efficiently than in your current application.
@@ -784,7 +789,140 @@ shortcuts and starts using them instead of the verbose versions.
 
 <div id="outline-container-org67397fa" class="outline-3">
 <h3 id="org67397fa"><span class="section-number-3">4.1</span> Data structures in R</h3>
+<div class="outline-text-3" id="text-4-1">
 </div>
+<div id="outline-container-org7d8f63a" class="outline-4">
+<h4 id="org7d8f63a">Vectors</h4>
+<div class="outline-text-4" id="text-org7d8f63a">
+<ul class="org-ul">
+<li>A vector is a column of data. The most basic command for creating a vector (think of a column) is <code>c()</code>.
+<ul class="org-ul">
+<li><code>c(1:50)</code> creates a vector with numbers 1 to 50.</li>
+</ul></li>
+<li>If vec1 is a vector, vec1[i] refers to i<sup>th</sup> element of the vector.</li>
+<li>A vector can be a numeric vector, a character vector, or a factor (categorical) vector.
+– character variables are text strings,
+– numeric variables are numbers
+– factors are categorical variables, in which each observation belongs to a category. Category labels may be numeric or characters. Even when they are numeric, they are just labels for categories and should not be confused as numbers.</li>
+</ul>
+
+<div class="NewBox" id="vectorintro">
+<p>
+
+</p>
+
+<p>
+A numeric vector is a collection of numbers.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-R" id="org12bb58c">
+<span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">Line 3 creates a numeric vector called col1 with</span>
+<span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">13 elements: numbers 1 to 10, 11, 14.5 and 6.</span>
+c(1:10,11,14.5,6)<span style="color: #8f5902; font-style: italic;">-&gt;</span>col1
+col1
+<span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">Line 6 creates a character vector called col2 with</span>
+<span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">four elements, each being a string of characters</span>
+c(<span style="color: #8f5902; font-style: italic;">"Sheela"</span>,<span style="color: #8f5902; font-style: italic;">"Manoj"</span>,<span style="color: #8f5902; font-style: italic;">"Karim"</span>,<span style="color: #8f5902; font-style: italic;">"John"</span>)<span style="color: #8f5902; font-style: italic;">-&gt;</span>col2
+col2
+<span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">Line 9 creates a factor vector in which each element</span>
+<span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">belongs to category "M" or "F".</span>
+as.factor(c(<span style="color: #8f5902; font-style: italic;">"M"</span>,<span style="color: #8f5902; font-style: italic;">"M"</span>,<span style="color: #8f5902; font-style: italic;">"M"</span>,<span style="color: #8f5902; font-style: italic;">"F"</span>,<span style="color: #8f5902; font-style: italic;">"F"</span>,<span style="color: #8f5902; font-style: italic;">"M"</span>,<span style="color: #8f5902; font-style: italic;">"M"</span>))<span style="color: #8f5902; font-style: italic;">-&gt;</span>col3
+col3
+<span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">Line 13 reads a factor vector and outputs a vector that</span>
+<span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">is a list of categories. In this case, the output would</span>
+<span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">be ~[1] "F" "M"~</span>
+levels(col3)
+<span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">Line 15 can be used to check what type of object is col3.</span>
+class(col3)
+</pre>
+</div>
+
+<p>
+<b>Results of running the code above</b>
+</p>
+
+<pre class="example">
+ [1]  1.0  2.0  3.0  4.0  5.0  6.0  7.0  8.0  9.0 10.0 11.0 14.5  6.0
+[1] "Sheela" "Manoj"  "Karim"  "John"
+[1] M M M F F M M
+Levels: F M
+[1] "F" "M"
+[1] "factor"
+</pre>
+
+</div>
+</div>
+</div>
+
+<div id="outline-container-org6d6e93f" class="outline-4">
+<h4 id="org6d6e93f">Data frames</h4>
+<div class="outline-text-4" id="text-org6d6e93f">
+<ul class="org-ul">
+<li>A data frame is a collection of vectors. It is a table that stores variables in columns and observations in rows. You could think of data frames as equivalent to a spreadsheet with many columns. When you import a data file, it would normally be imported as a data frame.</li>
+<li>However, there is one important difference. In an R data frame, each column is a particular type of vector (numeric, character or factor). You cannot mix the type of data in a given column. A spreadsheet, in contrast, can contain anything in any cell.</li>
+<li>Just as for a vector col1, col1[i] refers to the i<sup>th</sup> element, in a data frame data[i,j] refers to the element in i<sup>th</sup> row and j<sup>th</sup> column. Note that the first argument (before the comma) specifies the rows and the second argument (after the comma) specifies the columns. This is one way to subset data frames.
+<ul class="org-ul">
+<li><code>data[1:9,c(2,5,6)]</code> picks the first nine rows and column nos 2, 5 and 6.</li>
+<li><code>data[data[,1]-&gt;10000,]</code> selects all rows in which the first column is greater than 10000, and for these rows, shows all columns. Note that not specifying anything after comma is interpreted as all columns. Similarly, nothing before the comma would be interpreted as all rows.</li>
+</ul></li>
+<li><code>data1$var1</code> refers to vector var1 inside data frame data1.
+<ul class="org-ul">
+<li><code>data1$var1^2-&gt;data1$var5</code> calculates square of var1 in data1 and inserts it as a new vector (var5) in data1.</li>
+<li><code>data1$var1+2*data1$var2-&gt;data1$var2</code> calculates takes var1 and var2 from data1, computres var1+2*var2, and replaces var2 in data1 with the computed variable.</li>
+</ul></li>
+<li>R provides a large number of commands to manipulate data frames in various ways. You should master these. See Box <a href="#orgce791d5">1</a> to learn commands for selecting subsets of data frames, match merging data frames, appending data frames, adding rows and columns to data frames, and reshaping data frames.</li>
+</ul>
+
+<div class="NewBox" id="dataframeintro">
+<p>
+
+</p>
+
+<div class="org-src-container">
+<pre class="src src-R">
+<span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">Selecting rows</span>
+subset(data1,var1&gt;10000)<span style="color: #8f5902; font-style: italic;">-&gt;</span>data2
+
+<span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">Selecting columns (may be combined with argument for</span>
+<span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">selecting rows).</span>
+
+subset(data1,select=c(<span style="color: #8f5902; font-style: italic;">"var1"</span>,<span style="color: #8f5902; font-style: italic;">"var5"</span>,<span style="color: #8f5902; font-style: italic;">"var10"</span>))<span style="color: #8f5902; font-style: italic;">-&gt;</span>data2
+
+<span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">merging data frames using variables var1 and var2,</span>
+<span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">selecting only matching rows of data3 and data4.</span>
+
+merge(data3, data4, by=c(<span style="color: #8f5902; font-style: italic;">"var1"</span>,<span style="color: #8f5902; font-style: italic;">"var2"</span>))<span style="color: #8f5902; font-style: italic;">-&gt;</span>data5
+
+<span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">merging data frames using variables var1 and var2,</span>
+<span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">selecting all rows of data3 and matching rows of data4. Rows</span>
+<span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">with no matching information from data4 will have NAs</span>
+<span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">in columns coming from data4</span>
+
+merge(data3, data4, by=c(<span style="color: #8f5902; font-style: italic;">"var1"</span>,<span style="color: #8f5902; font-style: italic;">"var2"</span>),
+      all.x=<span style="color: #a40000;">TRUE</span>)<span style="color: #8f5902; font-style: italic;">-&gt;</span>data5
+
+<span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">merging data frames using variables var1 and var2,</span>
+<span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">selecting all rows of data4 and matching rows of data3</span>
+
+merge(data3, data4, by=c(<span style="color: #8f5902; font-style: italic;">"var1"</span>,<span style="color: #8f5902; font-style: italic;">"var2"</span>),
+      all.y=<span style="color: #a40000;">TRUE</span>)<span style="color: #8f5902; font-style: italic;">-&gt;</span>data5
+
+<span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">merging data frames using variables var1 and var2,</span>
+<span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">selecting all rows of data 3 and data4.</span>
+
+merge(data3, data4, by=c(<span style="color: #8f5902; font-style: italic;">"var1"</span>,<span style="color: #8f5902; font-style: italic;">"var2"</span>),
+      all=<span style="color: #a40000;">TRUE</span>)<span style="color: #8f5902; font-style: italic;">-&gt;</span>data5
+
+
+</pre>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
 <div id="outline-container-org9bfdd07" class="outline-3">
 <h3 id="org9bfdd07"><span class="section-number-3">4.2</span> Statistical Graphics with ggplot2</h3>
 </div>
@@ -1645,7 +1783,6 @@ You can now refer to this graph in the text using <code>[[my-bmi-graph]]</code>.
 </div>
 </div>
 
-
 <div id="outline-container-org0ca66e6" class="outline-3">
 <h3 id="org0ca66e6"><span class="section-number-3">5.2</span> Formatting tables and figures for print</h3>
 </div>
@@ -1684,7 +1821,7 @@ document.
 </div></div>
 <div id="postamble" class="status">
 <p class="author">Author: Vikas Rawal</p>
-<p class="date">Created: 2020-02-06 Thu 19:36</p>
+<p class="date">Created: 2020-02-06 Thu 19:40</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
