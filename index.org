@@ -383,7 +383,7 @@ shortcuts and starts using them instead of the verbose versions.
   + ~col1<-c(1:5)~ also does the same thing.
 + In this guide, all commands are formatted using a mono-spaced font to distinguish them. Such lines are numbered. But line numbers are not a part of the command. In the boxes, text starting with a ~#~ is used to write comments for the reader. These comments are not part of the commands. You do not need to type them into R as any line starting with a ~#~ is treated as a comment in R and not executed. When you write your own programs, use lines starting with ~#~ to write your own comments that may be necessary to make your program intelligible to your collaborators.
 
-*** Some basic commands in R}
+*** Some basic commands in R
 
 \noindent Text after # is a comment to explain what the command does
 
