@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2020-02-06 Thu 19:40 -->
+<!-- 2020-02-06 Thu 19:44 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>EP624: Statistical Programming and Reproducible Research</title>
@@ -277,9 +277,9 @@ for the JavaScript code in this tag.
 </li>
 </ul>
 </li>
-<li><a href="#org681bfbe">3. Introduction to Emacs</a>
+<li><a href="#org55de0e4">3. Introduction to Emacs</a>
 <ul>
-<li><a href="#org9b1df9b">3.1. Introduction to Emacs</a>
+<li><a href="#org681bfbe">3.1. Introduction to Emacs</a>
 <ul>
 <li><a href="#orgfceff0c">Notations</a></li>
 <li><a href="#orgf873cf1">Basic commands</a></li>
@@ -301,8 +301,16 @@ for the JavaScript code in this tag.
 <li><a href="#org6d6e93f">Data frames</a></li>
 </ul>
 </li>
-<li><a href="#org9bfdd07">4.2. Statistical Graphics with ggplot2</a></li>
-<li><a href="#orgd16c2a0">4.3. data.table</a></li>
+<li><a href="#org9bfdd07">4.2. Statistical Graphics with ggplot2</a>
+<ul>
+<li><a href="#org82d8971">Step 1: Specify the aesthetic mappings</a></li>
+<li><a href="#org8bca810">Step 2: Specify the type of graph you want</a></li>
+<li><a href="#org8903cad">Step 3: Modify the scale</a></li>
+<li><a href="#org11c5dd1">Step 4: Modifying the overall appearance of the graph</a></li>
+<li><a href="#orgee650f6">Step 5: If needed, use faceting to show multiple plots in a panel</a></li>
+</ul>
+</li>
+<li><a href="#orgccfea8c">4.3. Making tables using the data.table package</a></li>
 <li><a href="#orgdc1b796">4.4. Analysis of Survey Data in R</a></li>
 <li><a href="#org59b67a3">4.5. Econometric Analysis in R</a></li>
 </ul>
@@ -484,12 +492,12 @@ git checkout ep624
 </div>
 </div>
 
-<div id="outline-container-org681bfbe" class="outline-2">
-<h2 id="org681bfbe"><span class="section-number-2">3</span> Introduction to Emacs</h2>
+<div id="outline-container-org55de0e4" class="outline-2">
+<h2 id="org55de0e4"><span class="section-number-2">3</span> Introduction to Emacs</h2>
 <div class="outline-text-2" id="text-3">
 </div>
-<div id="outline-container-org9b1df9b" class="outline-3">
-<h3 id="org9b1df9b"><span class="section-number-3">3.1</span> Introduction to Emacs</h3>
+<div id="outline-container-org681bfbe" class="outline-3">
+<h3 id="org681bfbe"><span class="section-number-3">3.1</span> Introduction to Emacs</h3>
 <div class="outline-text-3" id="text-3-1">
 <p>
 Emacs is an extremely powerful cross-platform editor which can be used for all kinds of tasks that you do on your computer. Although Emacs is different from every other editor you are likely to have used, learning to use Emacs would be a huge asset for your computing abilities. A good way to learn Emacs, to ask, for each activity you do on your computer, can I do this using Emacs? You will be amazed at how many times the answer is: yes, and more efficiently than in your current application.
@@ -925,10 +933,536 @@ merge(data3, data4, by=c(<span style="color: #8f5902; font-style: italic;">"var1
 
 <div id="outline-container-org9bfdd07" class="outline-3">
 <h3 id="org9bfdd07"><span class="section-number-3">4.2</span> Statistical Graphics with ggplot2</h3>
+<div class="outline-text-3" id="text-4-2">
+<p>
+Showing statistical information in an appropriate graphical form can help reveal the underlying patterns and trends. This is the purpose of using statistical graphs. Graphs are not made to add colour to your report. Spreadsheet software generated chartjunk has increasingly been passed off as statistical graphs. <a class='org-ref-reference' href="#tufte2001visual">tufte2001visual</a> remarked, &ldquo;graphical decoration, which prospers in technical publications as well as in commercial and media graphics, comes cheaper than the hard work required to produce intriguing numbers and secure evidence&rdquo;.
+</p>
+
+<p>
+The ggplot2 package provides an extremely powerful system for making statistical graphs. The ggplot2 package is based on Leland Wilkinson&rsquo;s <i>The Grammer of Graphics</i> <a class='org-ref-reference' href="#wilkinson2006grammar">wilkinson2006grammar</a>. It can be used for making a large variety of statistical graphs as well as maps. Although it is somewhat complex, mastering ggplot2 would give you a big advantage in making interesting statistical graphs.
+</p>
+
+<p>
+This guide would give you a basic idea of the ggplot2 syntax. You should look at the <a href="http://ggplot2.tidyverse.org/reference/">ggplot2 website</a> for more examples. You are also advised to read <a class='org-ref-reference' href="#wickham2016ggplot2">wickham2016ggplot2</a> and <a class='org-ref-reference' href="#chang2012r">chang2012r</a>. These are expected to be used as ready reckoners.
+</p>
+
+<p>
+In ggplot2, graphs are made in steps. You start from a basic specification of the graph, and then add/modify the details.
+</p>
 </div>
-<div id="outline-container-orgd16c2a0" class="outline-3">
-<h3 id="orgd16c2a0"><span class="section-number-3">4.3</span> data.table</h3>
+
+<div id="outline-container-org82d8971" class="outline-4">
+<h4 id="org82d8971">Step 1: Specify the aesthetic mappings</h4>
+<div class="outline-text-4" id="text-org82d8971">
+<p>
+In the first step, you map, through <i>aesthetic</i> mappings, selected variables in your data to different scales. ggplot2 provides various types of scales for mapping your variables. The most important of these are the horizontal x axis, the vertical y axis, colour, size, linetype and shape (of a point). Continuous variables or discrete variables(for example, factors) can be mapped to these. Only discrete variables can be mapped to shape and linetype.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-R" id="orgcad04c6"><span class="linenr">1: </span>ggplot(data,aes(x=year,y=income,colour=State))<span style="color: #8f5902; font-style: italic;">-&gt;</span>p
+</pre>
 </div>
+
+<p>
+You could also specify colour, size and shape independently of aesthetics if you want to specify a specific colour, shape or size but keep them constant for all the data points.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-R" id="org5013447"><span class="linenr">1: </span>ggplot(data,aes(x=year,y=income,size=State),colour=<span style="color: #8f5902; font-style: italic;">"darkred"</span>)<span style="color: #8f5902; font-style: italic;">-&gt;</span>p
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org8bca810" class="outline-4">
+<h4 id="org8bca810">Step 2: Specify the type of graph you want</h4>
+<div class="outline-text-4" id="text-org8bca810">
+<p>
+In the second step, you specify the type of graph you want to make. These are called geometric objects, or &ldquo;geom&rdquo;, in the ggplot2 lexicon. Where necessary, you may also specify a statistical transformation that should be done while plotting (using commands that typically start with a stat_). Table <a href="#org1ab7c60">2</a> provides a list of various types of graphs/geometric objects that can be made with ggplot2, and the associated commands.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-R" id="orga22fa3c"><span class="linenr">2: </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">We start from the object 'p' created in Step 1 and use '+' to add to it/modify it.</span>
+<span class="linenr">3: </span>p+geom_point()<span style="color: #8f5902; font-style: italic;">-&gt;</span>p <span style="color: #888a85; background-color: #ffffff; font-style: italic;">#</span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">This makes a scatter plot</span>
+<span class="linenr">4: </span>p+geom_line()<span style="color: #8f5902; font-style: italic;">-&gt;</span>p <span style="color: #888a85; background-color: #ffffff; font-style: italic;">#</span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">This adds a line to the plot</span>
+<span class="linenr">5: </span>p <span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">At any stage, doing this would actually plot p on the screen.</span>
+</pre>
+</div>
+
+<table id="org1ab7c60" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<caption class="t-above"><span class="table-number">Table 2:</span> Various types of geometric objects (geoms), and the commands used to make them, in ggplot2</caption>
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Command</th>
+<th scope="col" class="org-left">Type of graph</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">geom_abline, geom_hline, geom_vline,</td>
+<td class="org-left">Reference lines: horizontal, vertical, and diagonal</td>
+</tr>
+
+<tr>
+<td class="org-left">geom_bar, geom_col, stat_count,</td>
+<td class="org-left">Bars charts</td>
+</tr>
+
+<tr>
+<td class="org-left">geom_bin2d, stat_bin_2d,</td>
+<td class="org-left">Heatmap of 2d bin counts</td>
+</tr>
+
+<tr>
+<td class="org-left">geom_blank,</td>
+<td class="org-left">Draw nothing</td>
+</tr>
+
+<tr>
+<td class="org-left">geom_boxplot, stat_boxplot,</td>
+<td class="org-left">A box and whiskers plot (in the style of Tukey)</td>
+</tr>
+
+<tr>
+<td class="org-left">geom_contour, stat_contour,</td>
+<td class="org-left">2d contours of a 3d surface</td>
+</tr>
+
+<tr>
+<td class="org-left">geom_count, stat_sum,</td>
+<td class="org-left">Count overlapping points</td>
+</tr>
+
+<tr>
+<td class="org-left">geom_density_2d, stat_density_2d,</td>
+<td class="org-left">Contours of a 2d density estimate</td>
+</tr>
+
+<tr>
+<td class="org-left">geom_density, stat_density,</td>
+<td class="org-left">Smoothed density estimates</td>
+</tr>
+
+<tr>
+<td class="org-left">geom_dotplot,</td>
+<td class="org-left">Dot plot</td>
+</tr>
+
+<tr>
+<td class="org-left">geom_errorbarh,</td>
+<td class="org-left">Horizontal error bars</td>
+</tr>
+
+<tr>
+<td class="org-left">geom_hex, stat_bin_hex,</td>
+<td class="org-left">Hexagonal heatmap of 2d bin counts</td>
+</tr>
+
+<tr>
+<td class="org-left">geom_freqpoly, geom_histogram, stat_bin,</td>
+<td class="org-left">Histograms and frequency polygons</td>
+</tr>
+
+<tr>
+<td class="org-left">geom_jitter,</td>
+<td class="org-left">Jittered points</td>
+</tr>
+
+<tr>
+<td class="org-left">geom_crossbar, geom_errorbar, geom_linerange, geom_pointrange,</td>
+<td class="org-left">Vertical intervals: lines, crossbars &amp; errorbars</td>
+</tr>
+
+<tr>
+<td class="org-left">geom_map,</td>
+<td class="org-left">Polygons from a reference map</td>
+</tr>
+
+<tr>
+<td class="org-left">geom_path, geom_line, geom_step,</td>
+<td class="org-left">Connect observations</td>
+</tr>
+
+<tr>
+<td class="org-left">geom_point,</td>
+<td class="org-left">Points</td>
+</tr>
+
+<tr>
+<td class="org-left">geom_polygon,</td>
+<td class="org-left">Polygons</td>
+</tr>
+
+<tr>
+<td class="org-left">geom_qq, stat_qq,</td>
+<td class="org-left">A quantile-quantile plot</td>
+</tr>
+
+<tr>
+<td class="org-left">geom_quantile, stat_quantile,</td>
+<td class="org-left">Quantile regression</td>
+</tr>
+
+<tr>
+<td class="org-left">geom_ribbon, geom_area,</td>
+<td class="org-left">Ribbons and area plots</td>
+</tr>
+
+<tr>
+<td class="org-left">geom_rug,</td>
+<td class="org-left">Rug plots in the margins</td>
+</tr>
+
+<tr>
+<td class="org-left">geom_segment, geom_curve,</td>
+<td class="org-left">Line segments and curves</td>
+</tr>
+
+<tr>
+<td class="org-left">geom_smooth, stat_smooth,</td>
+<td class="org-left">Smoothed conditional means</td>
+</tr>
+
+<tr>
+<td class="org-left">geom_spoke,</td>
+<td class="org-left">Line segments parameterised by location, direction and distance</td>
+</tr>
+
+<tr>
+<td class="org-left">geom_label, geom_text,</td>
+<td class="org-left">Text</td>
+</tr>
+
+<tr>
+<td class="org-left">geom_raster, geom_rect, geom_tile,</td>
+<td class="org-left">Rectangles</td>
+</tr>
+
+<tr>
+<td class="org-left">geom_violin, stat_ydensity,</td>
+<td class="org-left">Violin plot</td>
+</tr>
+
+<tr>
+<td class="org-left">stat_sf, geom_sf, coord_sf,</td>
+<td class="org-left">Visualise sf objects</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div id="outline-container-org8903cad" class="outline-4">
+<h4 id="org8903cad">Step 3: Modify the scale</h4>
+<div class="outline-text-4" id="text-org8903cad">
+<p>
+For each of these scales (x, y, colour, size and shape), you can define attributes such as the range to be displayed, the value (say of colour or shape) associated with each category in a discrete variable, the axis label, how and where to tick-mark the axis, and the type of legend to be drawn.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-R" id="org9b0c150"><span class="linenr">6: </span>p+scale_x_continuous(<span style="color: #8f5902; font-style: italic;">"Financial Year"</span>,limits=c(1990,2012),
+<span class="linenr">7: </span>                     breaks=c(1990,1995,2000,2010))<span style="color: #8f5902; font-style: italic;">-&gt;</span>p
+<span class="linenr">8: </span>
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org11c5dd1" class="outline-4">
+<h4 id="org11c5dd1">Step 4: Modifying the overall appearance of the graph</h4>
+<div class="outline-text-4" id="text-org11c5dd1">
+<p>
+ggplot2 provides various themes, and different elements to change them, to tweak the overall look of the graph. Table <a href="#orgde75880">3</a> gives a list of different aspects of a theme that can be modified. Table <a href="#orgcaceefd">4</a> lists different attributes of text and theme elements that can be modified.
+</p>
+
+
+<table id="orgde75880" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<caption class="t-above"><span class="table-number">Table 3:</span> Theme items that control appearance of text</caption>
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Name</th>
+<th scope="col" class="org-left">Description</th>
+<th scope="col" class="org-left">Element type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">text</td>
+<td class="org-left">All text elements</td>
+<td class="org-left">element_text()</td>
+</tr>
+
+<tr>
+<td class="org-left">rect</td>
+<td class="org-left">All rectangular elements</td>
+<td class="org-left">element_rect()</td>
+</tr>
+
+<tr>
+<td class="org-left">line</td>
+<td class="org-left">All line elements</td>
+<td class="org-left">element_line()</td>
+</tr>
+
+<tr>
+<td class="org-left">axis.line</td>
+<td class="org-left">Lines along axes</td>
+<td class="org-left">element_line()</td>
+</tr>
+
+<tr>
+<td class="org-left">axis.title, axis.title.x, axis.title.y</td>
+<td class="org-left">Appearance of axis labels: both, x and y</td>
+<td class="org-left">element_text()</td>
+</tr>
+
+<tr>
+<td class="org-left">axis.text, axis.text.x, axis.text.y</td>
+<td class="org-left">Appearance of tick labels: both, x and y</td>
+<td class="org-left">element_text()</td>
+</tr>
+
+<tr>
+<td class="org-left">legend.background</td>
+<td class="org-left">Background of legend</td>
+<td class="org-left">element_rect()</td>
+</tr>
+
+<tr>
+<td class="org-left">legend.text, legend.title</td>
+<td class="org-left">Legend item and title appearance</td>
+<td class="org-left">element_text()</td>
+</tr>
+
+<tr>
+<td class="org-left">legend.position</td>
+<td class="org-left">Position of the legend</td>
+<td class="org-left">&ldquo;left&rdquo;,&ldquo;right&rdquo;,&ldquo;bottom&rdquo;,&ldquo;top&rdquo;, or two-element numeric vector if you wish to place it inside the plot area</td>
+</tr>
+
+<tr>
+<td class="org-left">panel.background</td>
+<td class="org-left">Background of plotting area</td>
+<td class="org-left">element_rect()</td>
+</tr>
+
+<tr>
+<td class="org-left">panel.border</td>
+<td class="org-left">Border around plotting area</td>
+<td class="org-left">element_rect(linetype=&ldquo;dashed&rdquo;)</td>
+</tr>
+
+<tr>
+<td class="org-left">panel.grid.major, panel.grid.major.x, panel.grid.major.y</td>
+<td class="org-left">Major grid lines: both, vertical and horizontal</td>
+<td class="org-left">element_line()</td>
+</tr>
+
+<tr>
+<td class="org-left">panel.grid.minor, panel.grid.minor.x, panel.grid.minor.y</td>
+<td class="org-left">Minor grid lines: both, vertical and horizontal</td>
+<td class="org-left">element_line()</td>
+</tr>
+
+<tr>
+<td class="org-left">plot.background</td>
+<td class="org-left">Background of the entire plot</td>
+<td class="org-left">element_rect(fill = &ldquo;white&rdquo;, colour = NA)</td>
+</tr>
+
+<tr>
+<td class="org-left">plot.title</td>
+<td class="org-left">Title text appearance</td>
+<td class="org-left">element_text()</td>
+</tr>
+
+<tr>
+<td class="org-left">strip.background</td>
+<td class="org-left">Background of facet labels</td>
+<td class="org-left">element_rect()</td>
+</tr>
+
+<tr>
+<td class="org-left">strip.text, strip.text.x, strip.text.y</td>
+<td class="org-left">Text appearance for facet labels: both, horizontal and vertical</td>
+<td class="org-left">element_text()</td>
+</tr>
+</tbody>
+</table>
+
+<table id="orgcaceefd" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<caption class="t-above"><span class="table-number">Table 4:</span> Properties of theme elements and text geoms</caption>
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Theme elements</th>
+<th scope="col" class="org-left">Text geoms</th>
+<th scope="col" class="org-left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">family</td>
+<td class="org-left">family</td>
+<td class="org-left">Helvetica, Times, Courier</td>
+</tr>
+
+<tr>
+<td class="org-left">face</td>
+<td class="org-left">fontface</td>
+<td class="org-left">plain, bold, italic, bold.italic</td>
+</tr>
+
+<tr>
+<td class="org-left">colour</td>
+<td class="org-left">colour</td>
+<td class="org-left">Color (name or&ldquo;#RRGGBB&rdquo;)</td>
+</tr>
+
+<tr>
+<td class="org-left">size</td>
+<td class="org-left">size</td>
+<td class="org-left">Font size (in points for theme elements; in mm for geoms)</td>
+</tr>
+
+<tr>
+<td class="org-left">hjust</td>
+<td class="org-left">hjust</td>
+<td class="org-left">Horizontal alignment: 0=left, 0.5=center, 1=right</td>
+</tr>
+
+<tr>
+<td class="org-left">vjust</td>
+<td class="org-left">vjust</td>
+<td class="org-left">Vertical alignment: 0=bottom, 0.5=middle, 1=top</td>
+</tr>
+
+<tr>
+<td class="org-left">angle</td>
+<td class="org-left">angle</td>
+<td class="org-left">Angle in degrees</td>
+</tr>
+
+<tr>
+<td class="org-left">lineheight</td>
+<td class="org-left">lineheight</td>
+<td class="org-left">Line spacing multiplier</td>
+</tr>
+</tbody>
+</table>
+
+<div class="org-src-container">
+<pre class="src src-R"><span class="linenr"> 9: </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">The line below adds a title to the graph</span>
+<span class="linenr">10: </span>p<span style="color: #8f5902; font-style: italic;">&lt;-</span>p + ggtitle(<span style="color: #8f5902; font-style: italic;">"Title of my graph"</span>)
+<span class="linenr">11: </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">The line below changes the x axis title</span>
+<span class="linenr">12: </span>p<span style="color: #8f5902; font-style: italic;">&lt;-</span>p + theme(axis.title.x=element_text(size=16, lineheight=.9, family=<span style="color: #8f5902; font-style: italic;">"Times"</span>,
+<span class="linenr">13: </span>                                        face=<span style="color: #8f5902; font-style: italic;">"bold.italic"</span>, colour=<span style="color: #8f5902; font-style: italic;">"red"</span>))
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgee650f6" class="outline-4">
+<h4 id="orgee650f6">Step 5: If needed, use faceting to show multiple plots in a panel</h4>
+<div class="outline-text-4" id="text-orgee650f6">
+<p>
+ggplot2 also provides facetting tools, to be used if you want to show multiple graphs in a panel. gglot2 provides two functions to add
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgccfea8c" class="outline-3">
+<h3 id="orgccfea8c"><span class="section-number-3">4.3</span> Making tables using the data.table package</h3>
+<div class="outline-text-3" id="text-4-3">
+<p>
+Many commands in R, and in several add-on packages, can be used for working with and creating statistical tables. Among the most popular are the <code>apply</code> family of functions and plyr, dplyr and reshape2 packages. The data.tables package may be considered a swiss knife for working with and producing statistical tables. Of all the tools, this is one of the most flexible, versatile and efficient.
+</p>
+
+<ul class="org-ul">
+<li>data.table does not work directly on data frames but needs you to create a data frame like object called &ldquo;data.table&rdquo;.</li>
+<li><p>
+You can convert an existing data frame to a data.table using
+</p>
+
+<p>
+<code>as.data.table(data1)-&gt;data1</code>
+</p></li>
+<li>Or you can use <code>fread("delimited_file_name")-&gt;data1</code> to read a delimited file and directly create a data table.
+<ul class="org-ul">
+<li><code>fread</code> is fast and efficient.</li>
+<li>It also automatically detects separating character and variable names.</li>
+</ul></li>
+<li>All commands that work on a data frame can also be used on a &ldquo;data.table&rdquo;. So nothing is lost by keeping your data as a data table rather than as a data frame.</li>
+<li>The basis syntax of data.table is as follows: <code>DT[i,j,by]</code>. This subsets DT using i, calculates j, groups using &ldquo;by&rdquo;
+<ul class="org-ul">
+<li>i (subsetting rows)
+<ul class="org-ul">
+<li>a set of logical expressions to subset DT.</li>
+<li>columns can be referred to directly by their names.</li>
+<li><code>data2.dt[sector==1]</code> subsets rows for which variable sector==1.</li>
+</ul></li>
+<li>j (selecting columns, summarising)
+<ul class="org-ul">
+<li><code>[,columnname]</code> selects a column and returns it as a vector.</li>
+<li><code>[,.columnname]</code> selects a column and returns the output as datatable.</li>
+<li><code>[,.(columnname1, columnname2)] or [,list(columnname1, columnname2)]</code> return two columns.</li>
+<li><code>[,.(colname1=columnname1, colname2=columnname2)]</code> simultaneously renames columns.</li>
+<li><code>[,.(col1mean=mean(columnname1),col2median=med(columnname2))]</code> calculates mean and median.</li>
+</ul></li>
+<li>by (separately doing the calculations for groups)
+<ul class="org-ul">
+<li><code>[,.(col1mean=mean(columnname1),col2median=med(columnname2)),.(sector,sex)]</code> computes mean and median separately for each combination of sector and sex (say, Rural male, Rural female, Urban male, Urban female).</li>
+</ul></li>
+<li>keyby can be used in place of by to simultaneously sort the output.
+<code>[,.(col1mean=mean(columnname1),col2median=med(columnname2)),keyby=.(sector,sex)]</code></li>
+</ul></li>
+<li>Output of a data.table is also a data.table. This means, that they can be chained as:~DT[i1,j1,by1][i2,j2,by2][i3,j2,by3]~
+<ul class="org-ul">
+<li>This is equivalent to
+<code>DT[i1,j1,by1]-&gt;DT2</code>
+<code>DT2[i2,j2,by2]-&gt;DT3</code>
+<code>DT3[i3,j2,by3]</code></li>
+</ul></li>
+<li>It is also possible to use <code>DT[i,j]</code> to do a transformation on DT itself rather than create a new data.table.
+<ul class="org-ul">
+<li>For example, to create a new column called newcol in DT, one can use  j as <code>newcol:=columnname1*columnname2</code>. Note that <code>:=</code> is used to say that the transformation is to be done on DT itself.</li>
+<li>A limitation of this usage is that only one field can be transformed at a time. Transforming multiple fields would require chaining the data.table commands.</li>
+</ul></li>
+<li>Sometimes you may wish to rotate a cross-table created using data table. That is, you may wish to create columns out of one or more disaggregating (keyby) variables that have been used. This can be achieved in the following way.
+<ul class="org-ul">
+<li>In the command below, the first data.table transformation computes mean by sector, sex and religion. The second data.table transformation creates all combinations of sector, sex and religion, and ensures that DT2 has rows for all combinations (including null rows). The third data.table transformation rotates the table, with sector and sex being identified as row disaggregators and the remaining keyby variable (religion) as the column disaggregator.
+<code>DT[,.(col1mean=mean(columnname1)),keyby=.(sector,sex,religion)]-&gt;DT1</code>
+<code>DT1[CJ(unique(sector),unique(sex),unique(religion)]-&gt;DT2
+     ~DT2[,as.list(col1mean),by=.(sex,religion)]</code></li>
+<li>These commands can be chained together as follows.
+<code>DT[,.(col1mean=mean(columnname1)),keyby=.(sector,sex,religion)][CJ(unique(sector),unique(sex),unique(religion)][,as.list(col1mean),by=.(sex,religion)]</code></li>
+</ul></li>
+</ul>
+</div>
+</div>
+
 <div id="outline-container-orgdc1b796" class="outline-3">
 <h3 id="orgdc1b796"><span class="section-number-3">4.4</span> Analysis of Survey Data in R</h3>
 </div>
@@ -974,11 +1508,11 @@ this keyword are specified after the colon.
 </p>
 
 <p>
-Table <a href="#org59a7e3a">2</a> gives details of a few major special lines that we shall use.
+Table <a href="#org59a7e3a">5</a> gives details of a few major special lines that we shall use.
 </p>
 
 <table id="org59a7e3a" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
-<caption class="t-above"><span class="table-number">Table 2:</span> Main special lines to be used at the top of an Org buffer</caption>
+<caption class="t-above"><span class="table-number">Table 5:</span> Main special lines to be used at the top of an Org buffer</caption>
 
 <colgroup>
 <col  class="org-left" />
@@ -1323,13 +1857,13 @@ the line, and press tab.</li>
 
 <p>
 Org provides various commands for manipulating the design of
-tables. Table <a href="#orgd5263de">3</a> provides the most important
-ones. Note that Table <a href="#orgd5263de">3</a> is created using Org mode. It
+tables. Table <a href="#orgd5263de">6</a> provides the most important
+ones. Note that Table <a href="#orgd5263de">6</a> is created using Org mode. It
 also gives you an idea of how the table would look eventually.
 </p>
 
 <table id="orgd5263de" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
-<caption class="t-above"><span class="table-number">Table 3:</span> Commands to manipulate tables in Org</caption>
+<caption class="t-above"><span class="table-number">Table 6:</span> Commands to manipulate tables in Org</caption>
 
 <colgroup>
 <col  class="org-left" />
@@ -1821,7 +2355,7 @@ document.
 </div></div>
 <div id="postamble" class="status">
 <p class="author">Author: Vikas Rawal</p>
-<p class="date">Created: 2020-02-06 Thu 19:40</p>
+<p class="date">Created: 2020-02-06 Thu 19:44</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
