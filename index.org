@@ -1,6 +1,6 @@
 #+TITLE: EP624: Statistical Programming and Reproducible Research
 #+AUTHOR: Vikas Rawal
-#+OPTIONS: H:3 num:2 ^:{} broken-links:mark 
+#+OPTIONS: H:3 num:2 ^:{} broken-links:mark
 #+LATEX_HEADER: \usepackage{booktabs}
 #+LATEX_HEADER: \usepackage{tabularx}
 #+TODO: TODO REVISE | DONE
@@ -291,14 +291,47 @@ cd
 * Introduction to Computer Programming
 ** Introduction to the course
 
-*** Why should you use programming for statistical analysis? Why use R?
-+ Programming is crucial for reproducibility and verifiability of your research.
-+ Updating your analysis, for example when new data become available, is easy, as the same program could be run on new data to get new results.
+*** Why should you use programming for statistical analysis?
++ Programming makes your results reproducible and verifiable.
++ It is easier to revise your estimations, graphs, tables etc if you write and save your programs.
++ Updating your analysis, for example when new data become available, is easy, as the same/modified programs could be run on new data to get new results.
+*** Why use R?
 + R is open-source and free of cost.
   + Will always remain available.
   + Development is fast; tools for using new, cutting-edge statistical techniques become available as add-on packages.
 
 ** Introduction to shell programming
+
+*** Introduction to *nix file system
+
+*** Important Bash Commands to Learn
+
++ Help
+  + man
++ File management
+  + ls
+  + mkdir
+  + cp
+  + mv
+  + rm
+  + ssh, scp, rsync
+  + find
+  + ack
++ Navigation
+  + cd
++ Seeing/modifying files on the commandline
+  + cat, more, less
+  + head, tail
+  + awk, sed
+  + diff
++ Redirection
+  + >, >>, |
++ Others
+  + grep
+  + /sbin/ifconfig
+  + sort
+  + uniq
+
 * Introduction to Emacs
 ** Introduction to Emacs
 

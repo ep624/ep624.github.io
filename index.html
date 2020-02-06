@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2020-02-06 Thu 14:45 -->
+<!-- 2020-02-06 Thu 19:14 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>EP624: Statistical Programming and Reproducible Research</title>
@@ -265,15 +265,21 @@ for the JavaScript code in this tag.
 <ul>
 <li><a href="#org572c083">2.1. Introduction to the course</a>
 <ul>
-<li><a href="#org57cfa84">Why should you use programming for statistical analysis? Why use R?</a></li>
+<li><a href="#orga749316">Why should you use programming for statistical analysis?</a></li>
+<li><a href="#org1194bd7">Why use R?</a></li>
 </ul>
 </li>
-<li><a href="#org4858574">2.2. Introduction to shell programming</a></li>
-</ul>
-</li>
-<li><a href="#org19d80f9">3. Introduction to Emacs</a>
+<li><a href="#org4858574">2.2. Introduction to shell programming</a>
 <ul>
-<li><a href="#org2d29bac">3.1. Introduction to Emacs</a>
+<li><a href="#orgabd18d7">Introduction to *nix file system</a></li>
+<li><a href="#org7481537">Important Bash Commands to Learn</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org89ba664">3. Introduction to Emacs</a>
+<ul>
+<li><a href="#org19d80f9">3.1. Introduction to Emacs</a>
 <ul>
 <li><a href="#orgfceff0c">Notations</a></li>
 <li><a href="#orgf873cf1">Basic commands</a></li>
@@ -394,12 +400,20 @@ git checkout ep624
 <h3 id="org572c083"><span class="section-number-3">2.1</span> Introduction to the course</h3>
 <div class="outline-text-3" id="text-2-1">
 </div>
-<div id="outline-container-org57cfa84" class="outline-4">
-<h4 id="org57cfa84">Why should you use programming for statistical analysis? Why use R?</h4>
-<div class="outline-text-4" id="text-org57cfa84">
+<div id="outline-container-orga749316" class="outline-4">
+<h4 id="orga749316">Why should you use programming for statistical analysis?</h4>
+<div class="outline-text-4" id="text-orga749316">
 <ul class="org-ul">
-<li>Programming is crucial for reproducibility and verifiability of your research.</li>
-<li>Updating your analysis, for example when new data become available, is easy, as the same program could be run on new data to get new results.</li>
+<li>Programming makes your results reproducible and verifiable.</li>
+<li>It is easier to revise your estimations, graphs, tables etc if you write and save your programs.</li>
+<li>Updating your analysis, for example when new data become available, is easy, as the same/modified programs could be run on new data to get new results.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org1194bd7" class="outline-4">
+<h4 id="org1194bd7">Why use R?</h4>
+<div class="outline-text-4" id="text-org1194bd7">
+<ul class="org-ul">
 <li>R is open-source and free of cost.
 <ul class="org-ul">
 <li>Will always remain available.</li>
@@ -412,14 +426,65 @@ git checkout ep624
 
 <div id="outline-container-org4858574" class="outline-3">
 <h3 id="org4858574"><span class="section-number-3">2.2</span> Introduction to shell programming</h3>
+<div class="outline-text-3" id="text-2-2">
+</div>
+<div id="outline-container-orgabd18d7" class="outline-4">
+<h4 id="orgabd18d7">Introduction to *nix file system</h4>
+</div>
+
+<div id="outline-container-org7481537" class="outline-4">
+<h4 id="org7481537">Important Bash Commands to Learn</h4>
+<div class="outline-text-4" id="text-org7481537">
+<ul class="org-ul">
+<li>Help
+<ul class="org-ul">
+<li>man</li>
+</ul></li>
+<li>File management
+<ul class="org-ul">
+<li>ls</li>
+<li>mkdir</li>
+<li>cp</li>
+<li>mv</li>
+<li>rm</li>
+<li>ssh, scp, rsync</li>
+<li>find</li>
+<li>ack</li>
+</ul></li>
+<li>Navigation
+<ul class="org-ul">
+<li>cd</li>
+</ul></li>
+<li>Seeing/modifying files on the commandline
+<ul class="org-ul">
+<li>cat, more, less</li>
+<li>head, tail</li>
+<li>awk, sed</li>
+<li>diff</li>
+</ul></li>
+<li>Redirection
+<ul class="org-ul">
+<li>&gt;, &gt;&gt;, |</li>
+</ul></li>
+<li>Others
+<ul class="org-ul">
+<li>grep</li>
+<li>/sbin/ifconfig</li>
+<li>sort</li>
+<li>uniq</li>
+</ul></li>
+</ul>
 </div>
 </div>
-<div id="outline-container-org19d80f9" class="outline-2">
-<h2 id="org19d80f9"><span class="section-number-2">3</span> Introduction to Emacs</h2>
+</div>
+</div>
+
+<div id="outline-container-org89ba664" class="outline-2">
+<h2 id="org89ba664"><span class="section-number-2">3</span> Introduction to Emacs</h2>
 <div class="outline-text-2" id="text-3">
 </div>
-<div id="outline-container-org2d29bac" class="outline-3">
-<h3 id="org2d29bac"><span class="section-number-3">3.1</span> Introduction to Emacs</h3>
+<div id="outline-container-org19d80f9" class="outline-3">
+<h3 id="org19d80f9"><span class="section-number-3">3.1</span> Introduction to Emacs</h3>
 <div class="outline-text-3" id="text-3-1">
 <p>
 Emacs is an extremely powerful cross-platform editor which can be used for all kinds of tasks that you do on your computer. Although Emacs is different from every other editor you are likely to have used, learning to use Emacs would be a huge asset for your computing abilities. A good way to learn Emacs, to ask, for each activity you do on your computer, can I do this using Emacs? You will be amazed at how many times the answer is: yes, and more efficiently than in your current application.
@@ -1619,7 +1684,7 @@ document.
 </div></div>
 <div id="postamble" class="status">
 <p class="author">Author: Vikas Rawal</p>
-<p class="date">Created: 2020-02-06 Thu 14:45</p>
+<p class="date">Created: 2020-02-06 Thu 19:14</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
