@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2020-02-06 Thu 10:44 -->
+<!-- 2020-02-06 Thu 10:51 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>EP624: Statistical Programming and Reproducible Research</title>
@@ -246,6 +246,28 @@ for the JavaScript code in this tag.
  }
 /*]]>*///-->
 </script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
 </head>
 <body>
 <div id="content">
@@ -267,9 +289,9 @@ for the JavaScript code in this tag.
 <li><a href="#org4858574">2.2. Introduction to shell programming</a></li>
 </ul>
 </li>
-<li><a href="#org6d10e47">3. Introduction to Emacs</a>
+<li><a href="#orgbd3de4c">3. Introduction to Emacs</a>
 <ul>
-<li><a href="#org70f9df3">3.1. Introduction to Emacs</a>
+<li><a href="#org6d10e47">3.1. Introduction to Emacs</a>
 <ul>
 <li><a href="#orgfceff0c">3.1.1. Notations</a></li>
 <li><a href="#orgf873cf1">3.1.2. Basic commands</a></li>
@@ -280,6 +302,11 @@ for the JavaScript code in this tag.
 </li>
 <li><a href="#org6e3222d">4. Basics of R Programming</a>
 <ul>
+<li>
+<ul>
+<li><a href="#org3752fe3">4.0.1. Some basic commands in R}</a></li>
+</ul>
+</li>
 <li><a href="#org67397fa">4.1. Data structures in R</a></li>
 <li><a href="#org9bfdd07">4.2. Statistical Graphics with ggplot2</a></li>
 <li><a href="#orgd16c2a0">4.3. data.table</a></li>
@@ -384,12 +411,12 @@ git checkout ep624
 <h3 id="org4858574"><span class="section-number-3">2.2</span> Introduction to shell programming</h3>
 </div>
 </div>
-<div id="outline-container-org6d10e47" class="outline-2">
-<h2 id="org6d10e47"><span class="section-number-2">3</span> Introduction to Emacs</h2>
+<div id="outline-container-orgbd3de4c" class="outline-2">
+<h2 id="orgbd3de4c"><span class="section-number-2">3</span> Introduction to Emacs</h2>
 <div class="outline-text-2" id="text-3">
 </div>
-<div id="outline-container-org70f9df3" class="outline-3">
-<h3 id="org70f9df3"><span class="section-number-3">3.1</span> Introduction to Emacs</h3>
+<div id="outline-container-org6d10e47" class="outline-3">
+<h3 id="org6d10e47"><span class="section-number-3">3.1</span> Introduction to Emacs</h3>
 <div class="outline-text-3" id="text-3-1">
 <p>
 Emacs is an extremely powerful cross-platform editor which can be used for all kinds of tasks that you do on your computer. Although Emacs is different from every other editor you are likely to have used, learning to use Emacs would be a huge asset for your computing abilities. A good way to learn Emacs, to ask, for each activity you do on your computer, can I do this using Emacs? You will be amazed at how many times the answer is: yes, and more efficiently than in your current application.
@@ -647,7 +674,49 @@ shortcuts and starts using them instead of the verbose versions.
 <div id="outline-container-org6e3222d" class="outline-2">
 <h2 id="org6e3222d"><span class="section-number-2">4</span> Basics of R Programming</h2>
 <div class="outline-text-2" id="text-4">
+<ul class="org-ul">
+<li>R is a case sensitive language. Do not mix upper case and lower case characters.</li>
+<li>You should have a separate directory for each project/article you work on.</li>
+<li>By default, the work you do is saved in this working directory in a file called .RData</li>
+<li>All R commands are followed by <code>()</code>. Arguments that the command needs are given inside the parentheses. Empty parentheses have to be used even if a command needs no arguments. For example,
+<ul class="org-ul">
+<li><code>q</code> will not work as a command</li>
+<li><code>q()</code> is a command</li>
+<li><code>q(save="yes")</code> is a command with an argument that asks the R environment to be saved before quitting.</li>
+</ul></li>
+<li><code>-&gt;</code> or <code>&lt;-</code> is used to create an object using output of a command.
+<ul class="org-ul">
+<li><code>c(1:5)-&gt;col1</code> creates an object col1 containing the output of the command <code>c(1:5)</code>.</li>
+<li><code>col1&lt;-c(1:5)</code> also does the same thing.</li>
+</ul></li>
+<li>In this guide, all commands are formatted using a mono-spaced font to distinguish them. Such lines are numbered. But line numbers are not a part of the command. In the boxes, text starting with a <code>#</code> is used to write comments for the reader. These comments are not part of the commands. You do not need to type them into R as any line starting with a <code>#</code> is treated as a comment in R and not executed. When you write your own programs, use lines starting with <code>#</code> to write your own comments that may be necessary to make your program intelligible to your collaborators.</li>
+</ul>
 </div>
+
+<div id="outline-container-org3752fe3" class="outline-4">
+<h4 id="org3752fe3"><span class="section-number-4">4.0.1</span> Some basic commands in R}</h4>
+<div class="outline-text-4" id="text-4-0-1">
+<p>
+\noindent Text after # is a comment to explain what the command does
+</p>
+
+<div class="org-src-container">
+<pre class="src src-R"><span class="linenr"> 1: </span>q() <span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">Quit R; prompts for saving the workspace.</span>
+<span class="linenr"> 2: </span>?command <span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">Open help for 'command'; q to quit help.</span>
+<span class="linenr"> 3: </span>??keyword <span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">List commands with 'keyword' in the title</span>
+<span class="linenr"> 4: </span>help.search(<span style="color: #8f5902; font-style: italic;">"keyword"</span>) <span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">List commands with 'keyword'</span>
+<span class="linenr"> 5: </span>                       <span style="color: #888a85; background-color: #ffffff; font-style: italic;">#  </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">anywhere in the docs</span>
+<span class="linenr"> 6: </span><span style="color: #8f5902; font-style: italic;">setwd</span>(<span style="color: #8f5902; font-style: italic;">"c:/project1"</span>)  <span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">Sets the working directory</span>
+<span class="linenr"> 7: </span>                      <span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">to c:/project1</span>
+<span class="linenr"> 8: </span><span style="color: #8f5902; font-style: italic;">setwd</span>(<span style="color: #8f5902; font-style: italic;">"~/proj2"</span>)  <span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">In Linux or OSX, sets the</span>
+<span class="linenr"> 9: </span>                  <span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">working directory to ~/proj2</span>
+<span class="linenr">10: </span>getwd() <span style="color: #888a85; background-color: #ffffff; font-style: italic;">#</span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">Reports the present working directory</span>
+</pre>
+</div>
+</div>
+</div>
+
+
 <div id="outline-container-org67397fa" class="outline-3">
 <h3 id="org67397fa"><span class="section-number-3">4.1</span> Data structures in R</h3>
 </div>
@@ -691,7 +760,7 @@ shortcuts and starts using them instead of the verbose versions.
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Vikas Rawal</p>
-<p class="date">Created: 2020-02-06 Thu 10:44</p>
+<p class="date">Created: 2020-02-06 Thu 10:51</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
