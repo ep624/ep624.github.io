@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2020-02-06 Thu 19:54 -->
+<!-- 2020-02-07 Fri 02:08 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>EP624: Statistical Programming and Reproducible Research</title>
@@ -257,7 +257,12 @@ for the JavaScript code in this tag.
 <li><a href="#org4d8f174">1. System Setup</a>
 <ul>
 <li><a href="#org9f1424f">1.1. Operating System</a></li>
-<li><a href="#org6a27711">1.2. Applications</a></li>
+<li><a href="#org6a27711">1.2. Applications</a>
+<ul>
+<li><a href="#org9635916">GNO/Linux</a></li>
+<li><a href="#org790be1e">OS-X</a></li>
+</ul>
+</li>
 <li><a href="#orgb86d86b">1.3. Emacs configuration</a></li>
 </ul>
 </li>
@@ -277,9 +282,9 @@ for the JavaScript code in this tag.
 </li>
 </ul>
 </li>
-<li><a href="#org7f05571">3. Introduction to Emacs</a>
+<li><a href="#org1ca0d70">3. Introduction to Emacs</a>
 <ul>
-<li><a href="#org55de0e4">3.1. Introduction to Emacs</a>
+<li><a href="#org7f05571">3.1. Introduction to Emacs</a>
 <ul>
 <li><a href="#orgfceff0c">Notations</a></li>
 <li><a href="#orgf873cf1">Basic commands</a></li>
@@ -351,6 +356,10 @@ for the JavaScript code in this tag.
 <div id="outline-container-org6a27711" class="outline-3">
 <h3 id="org6a27711"><span class="section-number-3">1.2</span> Applications</h3>
 <div class="outline-text-3" id="text-1-2">
+</div>
+<div id="outline-container-org9635916" class="outline-4">
+<h4 id="org9635916">GNO/Linux</h4>
+<div class="outline-text-4" id="text-org9635916">
 <div class="org-src-container">
 <pre class="src src-sh"><span style="color: #888a85; background-color: #ffffff; font-style: italic;">## </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">This is how my computer is setup. These commands are for Arch Linux/Manjaro.</span>
 <span style="color: #888a85; background-color: #ffffff; font-style: italic;">## </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">You can install the same applications in other distributions using their package managers.</span>
@@ -371,6 +380,51 @@ yay -S signal-desktop
 yay -S mimio
 yay -S libreoffice-extension-languagetool
 </pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org790be1e" class="outline-4">
+<h4 id="org790be1e">OS-X</h4>
+<div class="outline-text-4" id="text-org790be1e">
+<p>
+The built-in Emacs on OS-X is an older version, and it would be a
+good idea to install the latest version instead.
+</p>
+
+<p>
+The best option is to install it via homebrew. I like the version
+available from railwaycat/emacsmacport tap
+(<a href="https://github.com/railwaycat/emacs-mac-port">https://github.com/railwaycat/emacs-mac-port</a>).
+</p>
+
+<p>
+First install <a href="https://brew.sh/">Homebrew</a>. Then, from the terminal, give following commands:
+</p>
+
+<p>
+<code>$ brew tap railwaycat/emacsmacport</code>
+</p>
+
+<p>
+<code>$ brew install emacs-mac</code>
+</p>
+
+<p>
+Install MacTeX from <a href="http://www.tug.org/mactex/">http://www.tug.org/mactex/</a>
+</p>
+
+<p>
+Install R from <a href="http://www.r-project.org">http://www.r-project.org</a>
+</p>
+
+<p>
+Also install pandoc and pandoc-citeproc using homebrew:
+</p>
+
+<p>
+<code>$ brew install pandoc pandoc-citeproc</code>
+</p>
 </div>
 </div>
 </div>
@@ -500,12 +554,12 @@ git checkout ep624
 </div>
 </div>
 
-<div id="outline-container-org7f05571" class="outline-2">
-<h2 id="org7f05571"><span class="section-number-2">3</span> Introduction to Emacs</h2>
+<div id="outline-container-org1ca0d70" class="outline-2">
+<h2 id="org1ca0d70"><span class="section-number-2">3</span> Introduction to Emacs</h2>
 <div class="outline-text-2" id="text-3">
 </div>
-<div id="outline-container-org55de0e4" class="outline-3">
-<h3 id="org55de0e4"><span class="section-number-3">3.1</span> Introduction to Emacs</h3>
+<div id="outline-container-org7f05571" class="outline-3">
+<h3 id="org7f05571"><span class="section-number-3">3.1</span> Introduction to Emacs</h3>
 <div class="outline-text-3" id="text-3-1">
 <p>
 Emacs is an extremely powerful cross-platform editor which can be used for all kinds of tasks that you do on your computer. Although Emacs is different from every other editor you are likely to have used, learning to use Emacs would be a huge asset for your computing abilities. A good way to learn Emacs, to ask, for each activity you do on your computer, can I do this using Emacs? You will be amazed at how many times the answer is: yes, and more efficiently than in your current application.
@@ -976,7 +1030,7 @@ You could also specify colour, size and shape independently of aesthetics if you
 </p>
 
 <div class="org-src-container">
-<pre class="src src-R" id="org9b0c150"><span class="linenr">1: </span>ggplot(data,aes(x=year,y=income,size=State),colour=<span style="color: #8f5902; font-style: italic;">"darkred"</span>)<span style="color: #8f5902; font-style: italic;">-&gt;</span>p
+<pre class="src src-R" id="org780bb06"><span class="linenr">1: </span>ggplot(data,aes(x=year,y=income,size=State),colour=<span style="color: #8f5902; font-style: italic;">"darkred"</span>)<span style="color: #8f5902; font-style: italic;">-&gt;</span>p
 </pre>
 </div>
 </div>
@@ -990,7 +1044,7 @@ In the second step, you specify the type of graph you want to make. These are ca
 </p>
 
 <div class="org-src-container">
-<pre class="src src-R" id="org712c4e8"><span class="linenr">2: </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">We start from the object 'p' created in Step 1 and use '+' to add to it/modify it.</span>
+<pre class="src src-R" id="orgd367e59"><span class="linenr">2: </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">We start from the object 'p' created in Step 1 and use '+' to add to it/modify it.</span>
 <span class="linenr">3: </span>p+geom_point()<span style="color: #8f5902; font-style: italic;">-&gt;</span>p <span style="color: #888a85; background-color: #ffffff; font-style: italic;">#</span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">This makes a scatter plot</span>
 <span class="linenr">4: </span>p+geom_line()<span style="color: #8f5902; font-style: italic;">-&gt;</span>p <span style="color: #888a85; background-color: #ffffff; font-style: italic;">#</span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">This adds a line to the plot</span>
 <span class="linenr">5: </span>p <span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">At any stage, doing this would actually plot p on the screen.</span>
@@ -1174,7 +1228,7 @@ For each of these scales (x, y, colour, size and shape), you can define attribut
 </p>
 
 <div class="org-src-container">
-<pre class="src src-R" id="org780bb06"><span class="linenr">6: </span>p+scale_x_continuous(<span style="color: #8f5902; font-style: italic;">"Financial Year"</span>,limits=c(1990,2012),
+<pre class="src src-R" id="orgd77b374"><span class="linenr">6: </span>p+scale_x_continuous(<span style="color: #8f5902; font-style: italic;">"Financial Year"</span>,limits=c(1990,2012),
 <span class="linenr">7: </span>                     breaks=c(1990,1995,2000,2010))<span style="color: #8f5902; font-style: italic;">-&gt;</span>p
 <span class="linenr">8: </span>
 </pre>
@@ -2363,7 +2417,7 @@ document.
 </div></div>
 <div id="postamble" class="status">
 <p class="author">Author: Vikas Rawal</p>
-<p class="date">Created: 2020-02-06 Thu 19:54</p>
+<p class="date">Created: 2020-02-07 Fri 02:08</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

@@ -244,6 +244,8 @@
 
 ** Applications
 
+*** GNO/Linux
+
 #+begin_src sh
 ## This is how my computer is setup. These commands are for Arch Linux/Manjaro.
 ## You can install the same applications in other distributions using their package managers.
@@ -264,6 +266,29 @@ yay -S signal-desktop
 yay -S mimio
 yay -S libreoffice-extension-languagetool
 #+end_src
+
+*** OS-X
+
+  The built-in Emacs on OS-X is an older version, and it would be a
+  good idea to install the latest version instead.
+
+  The best option is to install it via homebrew. I like the version
+  available from railwaycat/emacsmacport tap
+  (https://github.com/railwaycat/emacs-mac-port).
+
+  First install [[https://brew.sh/][Homebrew]]. Then, from the terminal, give following commands:
+
+  ~$ brew tap railwaycat/emacsmacport~
+
+  ~$ brew install emacs-mac~
+
+  Install MacTeX from http://www.tug.org/mactex/
+
+  Install R from http://www.r-project.org
+
+  Also install pandoc and pandoc-citeproc using homebrew:
+
+  ~$ brew install pandoc pandoc-citeproc~
 
 **  Emacs configuration
 
