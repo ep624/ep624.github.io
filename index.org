@@ -231,7 +231,8 @@ shortcuts and starts using them instead of the verbose versions.
 ** Resources
 + [[https://www2.lib.uchicago.edu/keith/tcl-course/emacs-tutorial.html][A Tutorial Introduction to GNU Emacs]]
 
-* Basics of R Programming
+* Introduction to R Programming
+** Basics
 
 + R is a case sensitive language. Do not mix upper case and lower case characters.
 + You should have a separate directory for each project/article you work on.
@@ -245,10 +246,8 @@ shortcuts and starts using them instead of the verbose versions.
   + ~col1<-c(1:5)~ also does the same thing.
 + In this guide, all commands are formatted using a mono-spaced font to distinguish them. Such lines are numbered. But line numbers are not a part of the command. In the boxes, text starting with a ~#~ is used to write comments for the reader. These comments are not part of the commands. You do not need to type them into R as any line starting with a ~#~ is treated as a comment in R and not executed. When you write your own programs, use lines starting with ~#~ to write your own comments that may be necessary to make your program intelligible to your collaborators.
 
-*** Some basic commands in R
-
-
 #+begin_src R -n
+#+CAPTION: Some basic commands in R
 # Text after # is a comment to explain what the command does
 q() # Quit R; prompts for saving the workspace.
 ?command # Open help for 'command'; q to quit help.

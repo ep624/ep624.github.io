@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2020-02-07 Fri 02:49 -->
+<!-- 2020-02-07 Fri 02:54 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>EP624: Statistical Programming and Reproducible Research</title>
@@ -283,9 +283,9 @@ for the JavaScript code in this tag.
 </li>
 </ul>
 </li>
-<li><a href="#org51e951d">3. Introduction to Emacs</a>
+<li><a href="#org4274702">3. Introduction to Emacs</a>
 <ul>
-<li><a href="#orgc4729d1">3.1. Introduction to Emacs</a>
+<li><a href="#org51e951d">3.1. Introduction to Emacs</a>
 <ul>
 <li><a href="#orgfceff0c">Notations</a></li>
 <li><a href="#orgf873cf1">Basic commands</a></li>
@@ -294,20 +294,16 @@ for the JavaScript code in this tag.
 <li><a href="#org13d5a56">3.2. Resources</a></li>
 </ul>
 </li>
-<li><a href="#org6e3222d">4. Basics of R Programming</a>
+<li><a href="#orgd31bc59">4. Introduction to R Programming</a>
 <ul>
-<li>
-<ul>
-<li><a href="#org98b2ac7">Some basic commands in R</a></li>
-</ul>
-</li>
-<li><a href="#org67397fa">4.1. Data structures in R</a>
+<li><a href="#orgd9a42d0">4.1. Basics</a></li>
+<li><a href="#org67397fa">4.2. Data structures in R</a>
 <ul>
 <li><a href="#org7d8f63a">Vectors</a></li>
 <li><a href="#org6d6e93f">Data frames</a></li>
 </ul>
 </li>
-<li><a href="#org9bfdd07">4.2. Statistical Graphics with ggplot2</a>
+<li><a href="#org9bfdd07">4.3. Statistical Graphics with ggplot2</a>
 <ul>
 <li><a href="#org82d8971">Step 1: Specify the aesthetic mappings</a></li>
 <li><a href="#org8bca810">Step 2: Specify the type of graph you want</a></li>
@@ -316,9 +312,9 @@ for the JavaScript code in this tag.
 <li><a href="#orgee650f6">Step 5: If needed, use faceting to show multiple plots in a panel</a></li>
 </ul>
 </li>
-<li><a href="#orgccfea8c">4.3. Making tables using the data.table package</a></li>
-<li><a href="#orgdc1b796">4.4. Analysis of Survey Data in R</a></li>
-<li><a href="#org59b67a3">4.5. Econometric Analysis in R</a></li>
+<li><a href="#orgccfea8c">4.4. Making tables using the data.table package</a></li>
+<li><a href="#orgdc1b796">4.5. Analysis of Survey Data in R</a></li>
+<li><a href="#org59b67a3">4.6. Econometric Analysis in R</a></li>
 </ul>
 </li>
 <li><a href="#orgd0f9917">5. Reproducible Research Using Emacs Orgmode and R</a>
@@ -587,12 +583,12 @@ git checkout ep624
 </div>
 </div>
 
-<div id="outline-container-org51e951d" class="outline-2">
-<h2 id="org51e951d"><span class="section-number-2">3</span> Introduction to Emacs</h2>
+<div id="outline-container-org4274702" class="outline-2">
+<h2 id="org4274702"><span class="section-number-2">3</span> Introduction to Emacs</h2>
 <div class="outline-text-2" id="text-3">
 </div>
-<div id="outline-container-orgc4729d1" class="outline-3">
-<h3 id="orgc4729d1"><span class="section-number-3">3.1</span> Introduction to Emacs</h3>
+<div id="outline-container-org51e951d" class="outline-3">
+<h3 id="org51e951d"><span class="section-number-3">3.1</span> Introduction to Emacs</h3>
 <div class="outline-text-3" id="text-3-1">
 <p>
 Emacs is an extremely powerful cross-platform editor which can be used for all kinds of tasks that you do on your computer. Although Emacs is different from every other editor you are likely to have used, learning to use Emacs would be a huge asset for your computing abilities. A good way to learn Emacs, to ask, for each activity you do on your computer, can I do this using Emacs? You will be amazed at how many times the answer is: yes, and more efficiently than in your current application.
@@ -847,9 +843,13 @@ shortcuts and starts using them instead of the verbose versions.
 </div>
 </div>
 
-<div id="outline-container-org6e3222d" class="outline-2">
-<h2 id="org6e3222d"><span class="section-number-2">4</span> Basics of R Programming</h2>
+<div id="outline-container-orgd31bc59" class="outline-2">
+<h2 id="orgd31bc59"><span class="section-number-2">4</span> Introduction to R Programming</h2>
 <div class="outline-text-2" id="text-4">
+</div>
+<div id="outline-container-orgd9a42d0" class="outline-3">
+<h3 id="orgd9a42d0"><span class="section-number-3">4.1</span> Basics</h3>
+<div class="outline-text-3" id="text-4-1">
 <ul class="org-ul">
 <li>R is a case sensitive language. Do not mix upper case and lower case characters.</li>
 <li>You should have a separate directory for each project/article you work on.</li>
@@ -867,23 +867,20 @@ shortcuts and starts using them instead of the verbose versions.
 </ul></li>
 <li>In this guide, all commands are formatted using a mono-spaced font to distinguish them. Such lines are numbered. But line numbers are not a part of the command. In the boxes, text starting with a <code>#</code> is used to write comments for the reader. These comments are not part of the commands. You do not need to type them into R as any line starting with a <code>#</code> is treated as a comment in R and not executed. When you write your own programs, use lines starting with <code>#</code> to write your own comments that may be necessary to make your program intelligible to your collaborators.</li>
 </ul>
-</div>
 
-<div id="outline-container-org98b2ac7" class="outline-4">
-<h4 id="org98b2ac7">Some basic commands in R</h4>
-<div class="outline-text-4" id="text-org98b2ac7">
 <div class="org-src-container">
-<pre class="src src-R"><span class="linenr"> 1: </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">Text after # is a comment to explain what the command does</span>
-<span class="linenr"> 2: </span>q() <span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">Quit R; prompts for saving the workspace.</span>
-<span class="linenr"> 3: </span>?command <span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">Open help for 'command'; q to quit help.</span>
-<span class="linenr"> 4: </span>??keyword <span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">List commands with 'keyword' in the title</span>
-<span class="linenr"> 5: </span>help.search(<span style="color: #8f5902; font-style: italic;">"keyword"</span>) <span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">List commands with 'keyword'</span>
-<span class="linenr"> 6: </span>                       <span style="color: #888a85; background-color: #ffffff; font-style: italic;">#  </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">anywhere in the docs</span>
-<span class="linenr"> 7: </span><span style="color: #8f5902; font-style: italic;">setwd</span>(<span style="color: #8f5902; font-style: italic;">"c:/project1"</span>)  <span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">Sets the working directory</span>
-<span class="linenr"> 8: </span>                      <span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">to c:/project1</span>
-<span class="linenr"> 9: </span><span style="color: #8f5902; font-style: italic;">setwd</span>(<span style="color: #8f5902; font-style: italic;">"~/proj2"</span>)  <span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">In Linux or OSX, sets the</span>
-<span class="linenr">10: </span>                  <span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">working directory to ~/proj2</span>
-<span class="linenr">11: </span>getwd() <span style="color: #888a85; background-color: #ffffff; font-style: italic;">#</span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">Reports the present working directory</span>
+<pre class="src src-R"><span class="linenr"> 1: </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">#</span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">+CAPTION: Some basic commands in R</span>
+<span class="linenr"> 2: </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">Text after # is a comment to explain what the command does</span>
+<span class="linenr"> 3: </span>q() <span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">Quit R; prompts for saving the workspace.</span>
+<span class="linenr"> 4: </span>?command <span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">Open help for 'command'; q to quit help.</span>
+<span class="linenr"> 5: </span>??keyword <span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">List commands with 'keyword' in the title</span>
+<span class="linenr"> 6: </span>help.search(<span style="color: #8f5902; font-style: italic;">"keyword"</span>) <span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">List commands with 'keyword'</span>
+<span class="linenr"> 7: </span>                       <span style="color: #888a85; background-color: #ffffff; font-style: italic;">#  </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">anywhere in the docs</span>
+<span class="linenr"> 8: </span><span style="color: #8f5902; font-style: italic;">setwd</span>(<span style="color: #8f5902; font-style: italic;">"c:/project1"</span>)  <span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">Sets the working directory</span>
+<span class="linenr"> 9: </span>                      <span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">to c:/project1</span>
+<span class="linenr">10: </span><span style="color: #8f5902; font-style: italic;">setwd</span>(<span style="color: #8f5902; font-style: italic;">"~/proj2"</span>)  <span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">In Linux or OSX, sets the</span>
+<span class="linenr">11: </span>                  <span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">working directory to ~/proj2</span>
+<span class="linenr">12: </span>getwd() <span style="color: #888a85; background-color: #ffffff; font-style: italic;">#</span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">Reports the present working directory</span>
 </pre>
 </div>
 </div>
@@ -891,8 +888,8 @@ shortcuts and starts using them instead of the verbose versions.
 
 
 <div id="outline-container-org67397fa" class="outline-3">
-<h3 id="org67397fa"><span class="section-number-3">4.1</span> Data structures in R</h3>
-<div class="outline-text-3" id="text-4-1">
+<h3 id="org67397fa"><span class="section-number-3">4.2</span> Data structures in R</h3>
+<div class="outline-text-3" id="text-4-2">
 </div>
 <div id="outline-container-org7d8f63a" class="outline-4">
 <h4 id="org7d8f63a">Vectors</h4>
@@ -1027,8 +1024,8 @@ merge(data3, data4, by=c(<span style="color: #8f5902; font-style: italic;">"var1
 </div>
 
 <div id="outline-container-org9bfdd07" class="outline-3">
-<h3 id="org9bfdd07"><span class="section-number-3">4.2</span> Statistical Graphics with ggplot2</h3>
-<div class="outline-text-3" id="text-4-2">
+<h3 id="org9bfdd07"><span class="section-number-3">4.3</span> Statistical Graphics with ggplot2</h3>
+<div class="outline-text-3" id="text-4-3">
 <p>
 Showing statistical information in an appropriate graphical form can help reveal the underlying patterns and trends. This is the purpose of using statistical graphs. Graphs are not made to add colour to your report. Spreadsheet software generated chartjunk has increasingly been passed off as statistical graphs. <a class='org-ref-reference' href="#tufte2001visual">tufte2001visual</a> remarked, &ldquo;graphical decoration, which prospers in technical publications as well as in commercial and media graphics, comes cheaper than the hard work required to produce intriguing numbers and secure evidence&rdquo;.
 </p>
@@ -1063,7 +1060,7 @@ You could also specify colour, size and shape independently of aesthetics if you
 </p>
 
 <div class="org-src-container">
-<pre class="src src-R" id="org2b18295"><span class="linenr">1: </span>ggplot(data,aes(x=year,y=income,size=State),colour=<span style="color: #8f5902; font-style: italic;">"darkred"</span>)<span style="color: #8f5902; font-style: italic;">-&gt;</span>p
+<pre class="src src-R" id="org58ed9cd"><span class="linenr">1: </span>ggplot(data,aes(x=year,y=income,size=State),colour=<span style="color: #8f5902; font-style: italic;">"darkred"</span>)<span style="color: #8f5902; font-style: italic;">-&gt;</span>p
 </pre>
 </div>
 </div>
@@ -1077,7 +1074,7 @@ In the second step, you specify the type of graph you want to make. These are ca
 </p>
 
 <div class="org-src-container">
-<pre class="src src-R" id="org273c20e"><span class="linenr">2: </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">We start from the object 'p' created in Step 1 and use '+' to add to it/modify it.</span>
+<pre class="src src-R" id="org7e6e2e7"><span class="linenr">2: </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">We start from the object 'p' created in Step 1 and use '+' to add to it/modify it.</span>
 <span class="linenr">3: </span>p+geom_point()<span style="color: #8f5902; font-style: italic;">-&gt;</span>p <span style="color: #888a85; background-color: #ffffff; font-style: italic;">#</span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">This makes a scatter plot</span>
 <span class="linenr">4: </span>p+geom_line()<span style="color: #8f5902; font-style: italic;">-&gt;</span>p <span style="color: #888a85; background-color: #ffffff; font-style: italic;">#</span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">This adds a line to the plot</span>
 <span class="linenr">5: </span>p <span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">At any stage, doing this would actually plot p on the screen.</span>
@@ -1261,7 +1258,7 @@ For each of these scales (x, y, colour, size and shape), you can define attribut
 </p>
 
 <div class="org-src-container">
-<pre class="src src-R" id="org58ed9cd"><span class="linenr">6: </span>p+scale_x_continuous(<span style="color: #8f5902; font-style: italic;">"Financial Year"</span>,limits=c(1990,2012),
+<pre class="src src-R" id="org607a2fc"><span class="linenr">6: </span>p+scale_x_continuous(<span style="color: #8f5902; font-style: italic;">"Financial Year"</span>,limits=c(1990,2012),
 <span class="linenr">7: </span>                     breaks=c(1990,1995,2000,2010))<span style="color: #8f5902; font-style: italic;">-&gt;</span>p
 <span class="linenr">8: </span>
 </pre>
@@ -1489,8 +1486,8 @@ ggplot2 also provides facetting tools, to be used if you want to show multiple g
 </div>
 
 <div id="outline-container-orgccfea8c" class="outline-3">
-<h3 id="orgccfea8c"><span class="section-number-3">4.3</span> Making tables using the data.table package</h3>
-<div class="outline-text-3" id="text-4-3">
+<h3 id="orgccfea8c"><span class="section-number-3">4.4</span> Making tables using the data.table package</h3>
+<div class="outline-text-3" id="text-4-4">
 <p>
 Many commands in R, and in several add-on packages, can be used for working with and creating statistical tables. Among the most popular are the <code>apply</code> family of functions and plyr, dplyr and reshape2 packages. The data.tables package may be considered a swiss knife for working with and producing statistical tables. Of all the tools, this is one of the most flexible, versatile and efficient.
 </p>
@@ -1559,10 +1556,10 @@ You can convert an existing data frame to a data.table using
 </div>
 
 <div id="outline-container-orgdc1b796" class="outline-3">
-<h3 id="orgdc1b796"><span class="section-number-3">4.4</span> Analysis of Survey Data in R</h3>
+<h3 id="orgdc1b796"><span class="section-number-3">4.5</span> Analysis of Survey Data in R</h3>
 </div>
 <div id="outline-container-org59b67a3" class="outline-3">
-<h3 id="org59b67a3"><span class="section-number-3">4.5</span> Econometric Analysis in R</h3>
+<h3 id="org59b67a3"><span class="section-number-3">4.6</span> Econometric Analysis in R</h3>
 </div>
 </div>
 
@@ -2450,7 +2447,7 @@ document.
 </div></div>
 <div id="postamble" class="status">
 <p class="author">Author: Vikas Rawal</p>
-<p class="date">Created: 2020-02-07 Fri 02:49</p>
+<p class="date">Created: 2020-02-07 Fri 02:54</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
