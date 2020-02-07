@@ -144,7 +144,9 @@ cd
   + awk, sed :: tools to process text files line by line.
   + diff :: to compare two text files
 **** Redirection
-  + >, >>, |
+  + $>$ :: redirect output to a file
+  + $>>$ :: append output to a file
+  + $|$ :: pipe output to another command
 **** Others
   + grep :: filter lines of file containing a string
   + "ip address show" :: to find your ip address
