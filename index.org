@@ -144,8 +144,8 @@ cd
   + awk, sed :: tools to process text files line by line.
   + diff :: to compare two text files
 **** Redirection
-  + $>$ :: redirect output to a file
-  + $>>$ :: append output to a file
+  + $>$ :: redirect output to a file (if the output file already exists, it will be replaced)
+  + $>>$ :: append output to a file (if output file does not exist, it will be created)
   + $|$ :: pipe output to another command
 **** Others
   + grep :: filter lines of file containing a string
