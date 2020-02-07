@@ -1,6 +1,6 @@
 #+TITLE: EP624: Statistical Programming and Reproducible Research
 #+AUTHOR: Vikas Rawal
-#+OPTIONS: H:3 num:2 ^:{} broken-links:mark
+#+OPTIONS: H:4 num:2 ^:{} broken-links:mark
 #+LATEX_HEADER: \usepackage{booktabs}
 #+LATEX_HEADER: \usepackage{tabularx}
 #+TODO: TODO REVISE | DONE
@@ -125,9 +125,9 @@ cd
 
 *** Important Bash Commands to Learn
 
-+ Help
+**** Help
   + man :: manual
-+ File management
+**** File management
   + ls :: list files
   + mkdir :: make directory
   + cp :: copy
@@ -136,16 +136,16 @@ cd
   + ssh, scp, rsync :: commands used for secure copy to remote locations
   + find :: find a file
   + ack :: find files containing a string
-+ Navigation
+**** Navigation
   + cd :: change directory
   + pwd :: path of working directory
-+ Seeing/modifying files on the commandline
+**** Seeing/modifying files on the commandline
   + cat, more, less, head, tail :: commands to see contents of text files
   + awk, sed :: tools to process text files line by line.
   + diff :: to compare two text files
-+ Redirection
+**** Redirection
   + >, >>, |
-+ Others
+**** Others
   + grep :: filter lines of file containing a string
   + "ip address show" :: to find your ip address
   + sort :: sort lines

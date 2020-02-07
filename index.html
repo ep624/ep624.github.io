@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2020-02-07 Fri 06:24 -->
+<!-- 2020-02-07 Fri 07:04 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>EP624: Statistical Programming and Reproducible Research</title>
@@ -283,7 +283,16 @@ for the JavaScript code in this tag.
 <li><a href="#org4858574">2.2. Introduction to shell programming</a>
 <ul>
 <li><a href="#orgabd18d7">Introduction to *nix file system</a></li>
-<li><a href="#org7481537">Important Bash Commands to Learn</a></li>
+<li><a href="#org7481537">Important Bash Commands to Learn</a>
+<ul>
+<li><a href="#orgc785b5d">Help</a></li>
+<li><a href="#orgbaafa6d">File management</a></li>
+<li><a href="#org489e383">Navigation</a></li>
+<li><a href="#orgd5f1b63">Seeing/modifying files on the commandline</a></li>
+<li><a href="#orga8861b5">Redirection</a></li>
+<li><a href="#org050e8a1">Others</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -326,8 +335,27 @@ for the JavaScript code in this tag.
 <ul>
 <li><a href="#org85afc03">5.1. Introduction to orgmode</a>
 <ul>
-<li><a href="#orgmodebasics">Org-mode basics</a></li>
-<li><a href="#orgmodeandr">Org-mode and R</a></li>
+<li><a href="#orgmodebasics">Org-mode basics</a>
+<ul>
+<li><a href="#org21c3f70">Preamble</a></li>
+<li><a href="#org075cbf3">Sections and headlines</a></li>
+<li><a href="#org240b62e">Itemised lists</a></li>
+<li><a href="#orgd07a259">Inserting footnotes</a></li>
+<li><a href="#orgab26e93">Tables</a></li>
+<li><a href="#org19ca485">Images</a></li>
+<li><a href="#org839969e">Captions and cross-references</a></li>
+</ul>
+</li>
+<li><a href="#orgmodeandr">Org-mode and R</a>
+<ul>
+<li><a href="#orgd5376c0">Configuration</a></li>
+<li><a href="#org7772870">Special lines for R</a></li>
+<li><a href="#orgd850b5b">Embedding R code in an Org document</a></li>
+<li><a href="#orgd74d302">Code blocks that read data and load functions for later use in the document without any immediate output</a></li>
+<li><a href="#orgb5bc242">Code blocks that produce results in the form of a table</a></li>
+<li><a href="#org282d9e9">Code blocks that produce a graph to be included in the document</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li><a href="#org0ca66e6">5.2. Formatting tables and figures for print</a></li>
@@ -542,12 +570,18 @@ git checkout ep624
 <div id="outline-container-org7481537" class="outline-4">
 <h4 id="org7481537">Important Bash Commands to Learn</h4>
 <div class="outline-text-4" id="text-org7481537">
-<ul class="org-ul">
-<li>Help
+</div>
+<div id="outline-container-orgc785b5d" class="outline-5">
+<h5 id="orgc785b5d">Help</h5>
+<div class="outline-text-5" id="text-orgc785b5d">
 <dl class="org-dl">
 <dt>man</dt><dd>manual</dd>
-</dl></li>
-<li>File management
+</dl>
+</div>
+</div>
+<div id="outline-container-orgbaafa6d" class="outline-5">
+<h5 id="orgbaafa6d">File management</h5>
+<div class="outline-text-5" id="text-orgbaafa6d">
 <dl class="org-dl">
 <dt>ls</dt><dd>list files</dd>
 <dt>mkdir</dt><dd>make directory</dd>
@@ -557,31 +591,47 @@ git checkout ep624
 <dt>ssh, scp, rsync</dt><dd>commands used for secure copy to remote locations</dd>
 <dt>find</dt><dd>find a file</dd>
 <dt>ack</dt><dd>find files containing a string</dd>
-</dl></li>
-<li>Navigation
+</dl>
+</div>
+</div>
+<div id="outline-container-org489e383" class="outline-5">
+<h5 id="org489e383">Navigation</h5>
+<div class="outline-text-5" id="text-org489e383">
 <dl class="org-dl">
 <dt>cd</dt><dd>change directory</dd>
 <dt>pwd</dt><dd>path of working directory</dd>
-</dl></li>
-<li>Seeing/modifying files on the commandline
+</dl>
+</div>
+</div>
+<div id="outline-container-orgd5f1b63" class="outline-5">
+<h5 id="orgd5f1b63">Seeing/modifying files on the commandline</h5>
+<div class="outline-text-5" id="text-orgd5f1b63">
 <dl class="org-dl">
 <dt>cat, more, less, head, tail</dt><dd>commands to see contents of text files</dd>
 <dt>awk, sed</dt><dd>tools to process text files line by line.</dd>
 <dt>diff</dt><dd>to compare two text files</dd>
-</dl></li>
-<li>Redirection
+</dl>
+</div>
+</div>
+<div id="outline-container-orga8861b5" class="outline-5">
+<h5 id="orga8861b5">Redirection</h5>
+<div class="outline-text-5" id="text-orga8861b5">
 <ul class="org-ul">
 <li>&gt;, &gt;&gt;, |</li>
-</ul></li>
-<li>Others
+</ul>
+</div>
+</div>
+<div id="outline-container-org050e8a1" class="outline-5">
+<h5 id="org050e8a1">Others</h5>
+<div class="outline-text-5" id="text-org050e8a1">
 <dl class="org-dl">
 <dt>grep</dt><dd>filter lines of file containing a string</dd>
 <dt>&ldquo;ip address show&rdquo;</dt><dd>to find your ip address</dd>
 <dt>sort</dt><dd>sort lines</dd>
 <dt>uniq</dt><dd>to find unique adjacent lines</dd>
 <dt>wc</dt><dd>count number of bytes, words and lines</dd>
-</dl></li>
-</ul>
+</dl>
+</div>
 </div>
 </div>
 </div>
@@ -1055,7 +1105,7 @@ You could also specify colour, size and shape independently of aesthetics if you
 </p>
 
 <div class="org-src-container">
-<pre class="src src-R" id="org2e89be0"><span class="linenr">1: </span>ggplot(data,aes(x=year,y=income,size=State),colour=<span style="color: #8f5902; font-style: italic;">"darkred"</span>)<span style="color: #8f5902; font-style: italic;">-&gt;</span>p
+<pre class="src src-R" id="org67d26ed"><span class="linenr">1: </span>ggplot(data,aes(x=year,y=income,size=State),colour=<span style="color: #8f5902; font-style: italic;">"darkred"</span>)<span style="color: #8f5902; font-style: italic;">-&gt;</span>p
 </pre>
 </div>
 </div>
@@ -1069,7 +1119,7 @@ In the second step, you specify the type of graph you want to make. These are ca
 </p>
 
 <div class="org-src-container">
-<pre class="src src-R" id="org2601b25"><span class="linenr">2: </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">We start from the object 'p' created in Step 1 and use '+' to add to it/modify it.</span>
+<pre class="src src-R" id="org0abec01"><span class="linenr">2: </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">We start from the object 'p' created in Step 1 and use '+' to add to it/modify it.</span>
 <span class="linenr">3: </span>p+geom_point()<span style="color: #8f5902; font-style: italic;">-&gt;</span>p <span style="color: #888a85; background-color: #ffffff; font-style: italic;">#</span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">This makes a scatter plot</span>
 <span class="linenr">4: </span>p+geom_line()<span style="color: #8f5902; font-style: italic;">-&gt;</span>p <span style="color: #888a85; background-color: #ffffff; font-style: italic;">#</span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">This adds a line to the plot</span>
 <span class="linenr">5: </span>p <span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">At any stage, doing this would actually plot p on the screen.</span>
@@ -1253,7 +1303,7 @@ For each of these scales (x, y, colour, size and shape), you can define attribut
 </p>
 
 <div class="org-src-container">
-<pre class="src src-R" id="orgfd68b60"><span class="linenr">6: </span>p+scale_x_continuous(<span style="color: #8f5902; font-style: italic;">"Financial Year"</span>,limits=c(1990,2012),
+<pre class="src src-R" id="org60103bc"><span class="linenr">6: </span>p+scale_x_continuous(<span style="color: #8f5902; font-style: italic;">"Financial Year"</span>,limits=c(1990,2012),
 <span class="linenr">7: </span>                     breaks=c(1990,1995,2000,2010))<span style="color: #8f5902; font-style: italic;">-&gt;</span>p
 <span class="linenr">8: </span>
 </pre>
@@ -1571,8 +1621,8 @@ You can convert an existing data frame to a data.table using
 <div class="outline-text-4" id="text-orgmodebasics">
 </div>
 
-<ul class="org-ul">
-<li><a id="org21c3f70"></a>Preamble<br />
+<div id="outline-container-org21c3f70" class="outline-5">
+<h5 id="org21c3f70">Preamble</h5>
 <div class="outline-text-5" id="text-org21c3f70">
 <p>
 An Org file has a few special lines at the top that set up the
@@ -1671,9 +1721,10 @@ document using line such as this:
 <code>#+INCLUDE: path-to-file/papersetup.org</code>
 </p>
 </div>
-</li>
+</div>
 
-<li><a id="org075cbf3"></a>Sections and headlines<br />
+<div id="outline-container-org075cbf3" class="outline-5">
+<h5 id="org075cbf3">Sections and headlines</h5>
 <div class="outline-text-5" id="text-org075cbf3">
 <p>
 After the special lines at the top comes the main body of the Org
@@ -1768,9 +1819,10 @@ the paper develops.
 (Further reading, <a href="http://orgmode.org/manual/Headlines.html#Headlines">Headlines</a> in Org manual)
 </p>
 </div>
-</li>
+</div>
 
-<li><a id="org240b62e"></a>Itemised lists<br />
+<div id="outline-container-org240b62e" class="outline-5">
+<h5 id="org240b62e">Itemised lists</h5>
 <div class="outline-text-5" id="text-org240b62e">
 <p>
 Following syntax produces unordered (bulleted) lists:
@@ -1871,9 +1923,10 @@ Note that:
 line with the same level of indentation.</li>
 </ul>
 </div>
-</li>
+</div>
 
-<li><a id="orgd07a259"></a>Inserting footnotes<br />
+<div id="outline-container-orgd07a259" class="outline-5">
+<h5 id="orgd07a259">Inserting footnotes</h5>
 <div class="outline-text-5" id="text-orgd07a259">
 <ul class="org-ul">
 <li>To insert a footnote at any point, use <code>C-c C-x f</code></li>
@@ -1883,9 +1936,12 @@ text that already has some footnotes after the point where a new
 footnote is being inserted, use <code>C-u C-c C-x f S</code></li>
 </ul>
 </div>
-</li>
+</div>
 
-<li><a id="orgab26e93"></a>Tables<br />
+<div id="outline-container-orgab26e93" class="outline-5">
+<h5 id="orgab26e93">Tables</h5>
+<div class="outline-text-5" id="text-orgab26e93">
+</div>
 <ul class="org-ul">
 <li><a id="org06ca61b"></a>Sample code<br />
 <div class="outline-text-6" id="text-org06ca61b">
@@ -2019,9 +2075,10 @@ Table.
 </div>
 </li>
 </ul>
-</li>
+</div>
 
-<li><a id="org19ca485"></a>Images<br />
+<div id="outline-container-org19ca485" class="outline-5">
+<h5 id="org19ca485">Images</h5>
 <div class="outline-text-5" id="text-org19ca485">
 <p>
 You can insert images in documents as follows
@@ -2039,9 +2096,10 @@ embed the code instead, so that the graph is generated and inserted
 automatically.
 </p>
 </div>
-</li>
+</div>
 
-<li><a id="org839969e"></a>Captions and cross-references<br />
+<div id="outline-container-org839969e" class="outline-5">
+<h5 id="org839969e">Captions and cross-references</h5>
 <div class="outline-text-5" id="text-org839969e">
 <p>
 We would like to give a title to our tables and images. And we would
@@ -2104,16 +2162,15 @@ numbers. If new objects are inserted in the paper, numbering will be
 adjusted automatically when you create the formatted output.
 </p>
 </div>
-</li>
-</ul>
+</div>
 </div>
 
 <div id="outline-container-org12a721a" class="outline-4">
 <h4 id="orgmodeandr">Org-mode and R</h4>
 <div class="outline-text-4" id="text-orgmodeandr">
 </div>
-<ul class="org-ul">
-<li><a id="orgd5376c0"></a>Configuration<br />
+<div id="outline-container-orgd5376c0" class="outline-5">
+<h5 id="orgd5376c0">Configuration</h5>
 <div class="outline-text-5" id="text-orgd5376c0">
 <p>
 Following code in research-toolkit.org enables Org to run different types
@@ -2143,9 +2200,10 @@ manual, if you would like to add any more.
 </pre>
 </div>
 </div>
-</li>
+</div>
 
-<li><a id="org7772870"></a>Special lines for R<br />
+<div id="outline-container-org7772870" class="outline-5">
+<h5 id="org7772870">Special lines for R</h5>
 <div class="outline-text-5" id="text-org7772870">
 <p>
 Org allows you to run multiple R sessions simultaneously, if you are
@@ -2170,9 +2228,10 @@ top (in the preamble, that is).
 #+property: session my-r-session
 </pre>
 </div>
-</li>
+</div>
 
-<li><a id="orgd850b5b"></a>Embedding R code in an Org document<br />
+<div id="outline-container-orgd850b5b" class="outline-5">
+<h5 id="orgd850b5b">Embedding R code in an Org document</h5>
 <div class="outline-text-5" id="text-orgd850b5b">
 <p>
 Org uses ESS (emacs-speaks-statistics) to provide a fully functional,
@@ -2223,9 +2282,10 @@ in your document.</li>
 buffer using C-c&rsquo;</li>
 </ul>
 </div>
-</li>
+</div>
 
-<li><a id="orgd74d302"></a>Code blocks that read data and load functions for later use in the document without any immediate output<br />
+<div id="outline-container-orgd74d302" class="outline-5">
+<h5 id="orgd74d302">Code blocks that read data and load functions for later use in the document without any immediate output</h5>
 <div class="outline-text-5" id="text-orgd74d302">
 <p>
 I normally have one or two code blocks that read the data I am going
@@ -2252,9 +2312,10 @@ Code block <a href="#org9163087">1</a> is an example of such a code block. Note
 </pre>
 </div>
 </div>
-</li>
+</div>
 
-<li><a id="orgb5bc242"></a>Code blocks that produce results in the form of a table<br />
+<div id="outline-container-orgb5bc242" class="outline-5">
+<h5 id="orgb5bc242">Code blocks that produce results in the form of a table</h5>
 <div class="outline-text-5" id="text-orgb5bc242">
 <p>
 Most of code blocks in my papers fall in this category. The code block
@@ -2321,9 +2382,10 @@ Like any Org table, you can cross-refer to this table using
 <code>[[bmi-table-output]]</code>.
 </p>
 </div>
-</li>
+</div>
 
-<li><a id="org282d9e9"></a>Code blocks that produce a graph to be included in the document<br />
+<div id="outline-container-org282d9e9" class="outline-5">
+<h5 id="org282d9e9">Code blocks that produce a graph to be included in the document</h5>
 <div class="outline-text-5" id="text-org282d9e9">
 <p>
 These code blocks can have a series of commands. The last command
@@ -2399,8 +2461,7 @@ As with the tables, we shall add a caption and a name to it as follows
 You can now refer to this graph in the text using <code>[[my-bmi-graph]]</code>.
 </p>
 </div>
-</li>
-</ul>
+</div>
 </div>
 </div>
 
@@ -2442,7 +2503,7 @@ document.
 </div></div>
 <div id="postamble" class="status">
 <p class="author">Author: Vikas Rawal</p>
-<p class="date">Created: 2020-02-07 Fri 06:24</p>
+<p class="date">Created: 2020-02-07 Fri 07:04</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
