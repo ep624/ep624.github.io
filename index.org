@@ -71,13 +71,7 @@ yay -S libreoffice-extension-languagetool
 
 [[https://www.openssh.com][ssh]] or Secure Shell is a protocol for securely transferring data over networks.
 
-Following commands will create two files: ~~/.ssh/id_rsa~ and ~~/.ssh/id_rsa.pub~.
-
-The files are in ~.ssh~ directory.
-
-id_rsa is your private key which much be kept save and /never/ shared with anyone.
-
-id_rsa.pub is the matching public key which is shared with any machine with which you want to have secure data transfers.
+Use these commands to create your ssh keys.
 
 #+begin_src sh
 # If you do not already have ssh keys, create them as below
@@ -85,6 +79,11 @@ mkdir ~/.ssh
 ssh-keygen -t rsa #No need to use a password, when asked. Just press enter for all the questions (accept defaults).
 #+end_src
 
+If you have just accepted the defaults, these commands would have created two files in ~.ssh~ directory: ~~/.ssh/id_rsa~ and ~~/.ssh/id_rsa.pub~.
+
+id_rsa is your private key which much be kept safe and is /never/ shared with anyone.
+
+id_rsa.pub is the matching public key which is shared with any machine with which you want to have secure data transfers.
 
 **  Emacs configuration
 
