@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2020-02-07 Fri 07:18 -->
+<!-- 2020-02-07 Fri 14:26 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>EP624: Statistical Programming and Reproducible Research</title>
@@ -321,13 +321,10 @@ for the JavaScript code in this tag.
 </li>
 <li><a href="#orgfff3185">3. Emacs</a>
 <ul>
-<li><a href="#org0fb5ca3">3.1. Introduction to Emacs</a>
-<ul>
-<li><a href="#orgfceff0c">Notations</a></li>
-<li><a href="#orgf873cf1">Basic commands</a></li>
-</ul>
-</li>
-<li><a href="#org13d5a56">3.2. Resources</a></li>
+<li><a href="#org0fb5ca3">3.1. Introduction to Emacs</a></li>
+<li><a href="#orgfceff0c">3.2. Notations</a></li>
+<li><a href="#orgf873cf1">3.3. Basic commands</a></li>
+<li><a href="#org13d5a56">3.4. Resources</a></li>
 </ul>
 </li>
 <li><a href="#org27c1820">4. R Programming</a>
@@ -676,10 +673,11 @@ Emacs is an powerful cross-platform editor which can be used for all kinds of ta
 This section does not provide a detailed guide to the use of Emacs. In this guide, I will just provide a minimal set of basic commands in emacs to get you started. This is a minimal but sufficient set to be able to work. I expect that you would learn more commands as you start using emacs.
 </p>
 </div>
+</div>
 
-<div id="outline-container-orgfceff0c" class="outline-4">
-<h4 id="orgfceff0c">Notations</h4>
-<div class="outline-text-4" id="text-orgfceff0c">
+<div id="outline-container-orgfceff0c" class="outline-3">
+<h3 id="orgfceff0c"><span class="section-number-3">3.2</span> Notations</h3>
+<div class="outline-text-3" id="text-3-2">
 <p>
 In emacs, a buffer is equivalent to a tab in a web browser. It is
 normal to have several buffers open at the same time. Each file opens
@@ -699,9 +697,9 @@ release, then M-x, release, and then l.
 </div>
 </div>
 
-<div id="outline-container-orgf873cf1" class="outline-4">
-<h4 id="orgf873cf1">Basic commands</h4>
-<div class="outline-text-4" id="text-orgf873cf1">
+<div id="outline-container-orgf873cf1" class="outline-3">
+<h3 id="orgf873cf1"><span class="section-number-3">3.3</span> Basic commands</h3>
+<div class="outline-text-3" id="text-3-3">
 <p>
 Table <a href="#orgd9a5e59">1</a> gives the commands that are the most
 important. This is a minimal set, commands that you should aim to
@@ -902,11 +900,10 @@ shortcuts and starts using them instead of the verbose versions.
 </table>
 </div>
 </div>
-</div>
 
 <div id="outline-container-org13d5a56" class="outline-3">
-<h3 id="org13d5a56"><span class="section-number-3">3.2</span> Resources</h3>
-<div class="outline-text-3" id="text-3-2">
+<h3 id="org13d5a56"><span class="section-number-3">3.4</span> Resources</h3>
+<div class="outline-text-3" id="text-3-4">
 <ul class="org-ul">
 <li><a href="https://www2.lib.uchicago.edu/keith/tcl-course/emacs-tutorial.html">A Tutorial Introduction to GNU Emacs</a></li>
 </ul>
@@ -1129,7 +1126,7 @@ You could also specify colour, size and shape independently of aesthetics if you
 </p>
 
 <div class="org-src-container">
-<pre class="src src-R" id="orgb69ca1b"><span class="linenr">1: </span>ggplot(data,aes(x=year,y=income,size=State),colour=<span style="color: #8f5902; font-style: italic;">"darkred"</span>)<span style="color: #8f5902; font-style: italic;">-&gt;</span>p
+<pre class="src src-R" id="org9ed962c"><span class="linenr">1: </span>ggplot(data,aes(x=year,y=income,size=State),colour=<span style="color: #8f5902; font-style: italic;">"darkred"</span>)<span style="color: #8f5902; font-style: italic;">-&gt;</span>p
 </pre>
 </div>
 </div>
@@ -1143,7 +1140,7 @@ In the second step, you specify the type of graph you want to make. These are ca
 </p>
 
 <div class="org-src-container">
-<pre class="src src-R" id="orgf071a67"><span class="linenr">2: </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">We start from the object 'p' created in Step 1 and use '+' to add to it/modify it.</span>
+<pre class="src src-R" id="orga1ec733"><span class="linenr">2: </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">We start from the object 'p' created in Step 1 and use '+' to add to it/modify it.</span>
 <span class="linenr">3: </span>p+geom_point()<span style="color: #8f5902; font-style: italic;">-&gt;</span>p <span style="color: #888a85; background-color: #ffffff; font-style: italic;">#</span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">This makes a scatter plot</span>
 <span class="linenr">4: </span>p+geom_line()<span style="color: #8f5902; font-style: italic;">-&gt;</span>p <span style="color: #888a85; background-color: #ffffff; font-style: italic;">#</span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">This adds a line to the plot</span>
 <span class="linenr">5: </span>p <span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">At any stage, doing this would actually plot p on the screen.</span>
@@ -1327,7 +1324,7 @@ For each of these scales (x, y, colour, size and shape), you can define attribut
 </p>
 
 <div class="org-src-container">
-<pre class="src src-R" id="org9ed962c"><span class="linenr">6: </span>p+scale_x_continuous(<span style="color: #8f5902; font-style: italic;">"Financial Year"</span>,limits=c(1990,2012),
+<pre class="src src-R" id="org2c77444"><span class="linenr">6: </span>p+scale_x_continuous(<span style="color: #8f5902; font-style: italic;">"Financial Year"</span>,limits=c(1990,2012),
 <span class="linenr">7: </span>                     breaks=c(1990,1995,2000,2010))<span style="color: #8f5902; font-style: italic;">-&gt;</span>p
 <span class="linenr">8: </span>
 </pre>
@@ -2527,7 +2524,7 @@ document.
 </div></div>
 <div id="postamble" class="status">
 <p class="author">Author: Vikas Rawal</p>
-<p class="date">Created: 2020-02-07 Fri 07:18</p>
+<p class="date">Created: 2020-02-07 Fri 14:26</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

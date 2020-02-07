@@ -161,7 +161,7 @@ Emacs is an powerful cross-platform editor which can be used for all kinds of ta
 
 This section does not provide a detailed guide to the use of Emacs. In this guide, I will just provide a minimal set of basic commands in emacs to get you started. This is a minimal but sufficient set to be able to work. I expect that you would learn more commands as you start using emacs.
 
-*** Notations
+** Notations
 
 In emacs, a buffer is equivalent to a tab in a web browser. It is
 normal to have several buffers open at the same time. Each file opens
@@ -176,7 +176,7 @@ together. Everything is case-sensitive. So ~M-X~ would mean, pressing
 Meta, Shift and x together. ~C-c M-x l~ would mean pressing C-c,
 release, then M-x, release, and then l.
 
-*** Basic commands
+** Basic commands
 
 Table [[essential-emacs-commands]] gives the commands that are the most
 important. This is a minimal set, commands that you should aim to
