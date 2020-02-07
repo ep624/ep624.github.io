@@ -287,8 +287,7 @@ getwd() # Reports the present working directory
 + Spector, Phil (2008), /Data Manipulation with R/, Springer
 + Wikham, Hadley, /ggplot2: Elegant Graphics for Data Analysis/, UseR Series, Springer
 
-* Reproducible ResearchSchulte, Eric, Dan Davison, Thomas Dye and Carsten Dominik (2016), "A Multi-Language Computing Environment for Literate Programming and Reproducible Research." Journal of Statistical Software, 46 (3), 1 – 24.
-
+* Reproducible Research
 **  Introduction to orgmode
 #+INCLUDE: "~/vikascloud/orgpaper/orgpapers.org::#orgmodebasics"
 
