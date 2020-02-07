@@ -226,6 +226,10 @@ shortcuts and starts using them instead of the verbose versions.
 
 ** Resources
 + [[https://www2.lib.uchicago.edu/keith/tcl-course/emacs-tutorial.html][A Tutorial Introduction to GNU Emacs]]
++ A. J Rossini and Richard M Heiberger and Rodney A Sparapani and Martin Mächler and Kurt Hornik (2004), “Emacs Speaks Statistics: A Multiplatform, Multipackage Development Environment for Statistical Analysis”, Journal of Computational and Graphical Statistics, 13(1), 247-261
++ Heiberger, Richard M (2001), “Emacs Speaks Statistcs: One Interface, Many Programs”, in K. Hornik and F. Leisch (eds.), Proceedings of the 2nd International Workshop on Distributed Statistical Computing, March 15-17, Vienna, Austria
++ Rossini, A.J., Heiberger, R.M., Hornik, K., Maechler, M., Sparapani, R.A., Eglen, S.J., Spinu, V., Henry, L. (2016), ESS: Emacs Speaks Statistics
++ Rossini, Anthony, Martin Maechler, Kurt Hornik, Richard M. Heiberger, (2001) "Emacs Speaks Statistics: A Universal Interface for Statistical Analysis", University of Washington Biostatistics Available at: http://works.bepress.com/anthony_rossini/3/
 
 * R Programming
 ** Basics
@@ -268,7 +272,23 @@ getwd() # Reports the present working directory
 ** Analysis of Survey Data in R
 ** Econometric Analysis in R
 
-* Reproducible Research
+** Resources
++ Chang, Winston (2013), /R Graphics Cookbook/, OReilly
++ Crawley, Michael J (2015), /Statistics: An Introduction using R/, Wiley
++ Fox, John and Weisberg, Sanford (2011), /An R Companion to Applied Regression/, Sage Publications, Thousand Oaks, CA.
++ Hatekar, Neeraj (2010), /Principles of Econometrics: An Introduction (Using R)/, Sage
++ Hilbe, Joseph (2013), /Methods of Statistical Model Estimation/, Chapman & Hall/CRC Press.
++ Lumley, Thomas, /Complex Surveys: A Guide to Analysis Using R/, John Wiley & Sons
++ Maindonald, John and Braun, John (2003), /Data Analysis and Graphics Using R: An Example-based Approach/, Cambridge University Press
++ Michael J. Crawley (2013), /The R Book/, Second Edition, John Wiley & Sons
++ Murrell, Paul (2011), /R Graphics/, Chapman & Hall/CRC Press.
++ R Core Team (2015), /An Introduction to R/,  R Foundation for Statistical Computing,Vienna.
++ R Core Team (2015), /R: A Language and Environment for Statistical Computing/,  R Foundation for Statistical Computing,Vienna.
++ Spector, Phil (2008), /Data Manipulation with R/, Springer
++ Wikham, Hadley, /ggplot2: Elegant Graphics for Data Analysis/, UseR Series, Springer
+
+* Reproducible ResearchSchulte, Eric, Dan Davison, Thomas Dye and Carsten Dominik (2016), "A Multi-Language Computing Environment for Literate Programming and Reproducible Research." Journal of Statistical Software, 46 (3), 1 – 24.
+
 **  Introduction to orgmode
 #+INCLUDE: "~/vikascloud/orgpaper/orgpapers.org::#orgmodebasics"
 
@@ -278,3 +298,12 @@ getwd() # Reports the present working directory
 **   Citation management using org-ref and biblatex
 + A sample biblatex database to get you started can be taken from [[https://raw.githubusercontent.com/indianstatistics/bibliobase/master/bibliobase.bib][here]]. For now, you may just download it, save it and add to it. Please note that the source file on github keeps getting updated. Eventually, you may want to manage your own biblatex database using something like git.
 + There is also another Emacs mode -- ebib -- that can be used for maintaining your biblatex database. To start ebib, use M-x ebib
+** Resources
++ Dominik, Carsten and others (2016), /The Org Manual/, Free Software Foundation
++ Gentleman, Robert and Duncan Temple Lang, “Statistical Analyses and Reproducible Research”, Journal of Computational and Graphical Statistics, 16 (1), pp. 1-23
++ Kitchin, John (2014), The org-ref Manual
++ Knuth, Donald E. (1992), /Literate Programming/, Center for the Study of Language and Information, Stanford.
++ Rawal, Vikas (2014), /Using Emacs, Org-mode and R for Research Writing in Social Sciences: A Toolkit for Writing Reproducible Research Papers and Monographs/,  http://archive.indianstatistics.org/tools/orgpapers.pdf; a revised but incomplete version may be seen at https://github.com/vikasrawal/orgpaper/blob/master/orgpapers.org
++ Rossini, Anthony and Friedrich Leisch. (2003) "Literate Statistical Practice", University of Washington Biostatistics Working Paper Series , Available at: http://works.bepress.com/anthony_rossini/6/
++ Schulte, Eric and Dan Davison (2011), “Active Documents with Org-Mode”, Computing in Science & Engineering.
++ Schulte, Eric, Dan Davison, Thomas Dye and Carsten Dominik (2016), "A Multi-Language Computing Environment for Literate Programming and Reproducible Research." Journal of Statistical Software, 46 (3), 1 – 24.
