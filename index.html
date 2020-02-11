@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2020-02-07 Fri 14:35 -->
+<!-- 2020-02-11 Tue 11:19 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>EP624: Statistical Programming and Reproducible Research</title>
@@ -324,7 +324,7 @@ for the JavaScript code in this tag.
 <li><a href="#org0fb5ca3">3.1. Introduction to Emacs</a></li>
 <li><a href="#orgfceff0c">3.2. Notations</a></li>
 <li><a href="#orgf873cf1">3.3. Basic commands</a></li>
-<li><a href="#org715a000">3.4. Resources</a></li>
+<li><a href="#orgadeaf33">3.4. Resources</a></li>
 </ul>
 </li>
 <li><a href="#org27c1820">4. R Programming</a>
@@ -348,7 +348,7 @@ for the JavaScript code in this tag.
 <li><a href="#orgccfea8c">4.4. Making tables using the data.table package</a></li>
 <li><a href="#orgdc1b796">4.5. Analysis of Survey Data in R</a></li>
 <li><a href="#org59b67a3">4.6. Econometric Analysis in R</a></li>
-<li><a href="#org30da8f4">4.7. Resources</a></li>
+<li><a href="#org4a176a5">4.7. Resources</a></li>
 </ul>
 </li>
 <li><a href="#org3632094">5. Reproducible Research</a>
@@ -380,9 +380,10 @@ for the JavaScript code in this tag.
 </li>
 <li><a href="#org0ca66e6">5.2. Formatting tables and figures for print</a></li>
 <li><a href="#org951f1ca">5.3. Citation management using org-ref and biblatex</a></li>
-<li><a href="#org71772fa">5.4. Resources</a></li>
+<li><a href="#org21beb96">5.4. Resources</a></li>
 </ul>
 </li>
+<li><a href="#org76f19d0">6. Git</a></li>
 </ul>
 </div>
 </div>
@@ -430,6 +431,7 @@ yay -S skype
 yay -S signal-desktop
 yay -S mimio
 yay -S libreoffice-extension-languagetool
+install_pulse
 </pre>
 </div>
 </div>
@@ -903,8 +905,8 @@ shortcuts and starts using them instead of the verbose versions.
 </div>
 </div>
 
-<div id="outline-container-org715a000" class="outline-3">
-<h3 id="org715a000"><span class="section-number-3">3.4</span> Resources</h3>
+<div id="outline-container-orgadeaf33" class="outline-3">
+<h3 id="orgadeaf33"><span class="section-number-3">3.4</span> Resources</h3>
 <div class="outline-text-3" id="text-3-4">
 <ul class="org-ul">
 <li><a href="https://www2.lib.uchicago.edu/keith/tcl-course/emacs-tutorial.html">A Tutorial Introduction to GNU Emacs</a></li>
@@ -988,25 +990,27 @@ A numeric vector is a collection of numbers.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-R" id="org12bb58c">
-<span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">Line 3 creates a numeric vector called col1 with</span>
-<span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">13 elements: numbers 1 to 10, 11, 14.5 and 6.</span>
-c(1:10,11,14.5,6)<span style="color: #8f5902; font-style: italic;">-&gt;</span>col1
-col1
-<span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">Line 6 creates a character vector called col2 with</span>
-<span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">four elements, each being a string of characters</span>
-c(<span style="color: #8f5902; font-style: italic;">"Sheela"</span>,<span style="color: #8f5902; font-style: italic;">"Manoj"</span>,<span style="color: #8f5902; font-style: italic;">"Karim"</span>,<span style="color: #8f5902; font-style: italic;">"John"</span>)<span style="color: #8f5902; font-style: italic;">-&gt;</span>col2
-col2
-<span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">Line 9 creates a factor vector in which each element</span>
-<span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">belongs to category "M" or "F".</span>
-as.factor(c(<span style="color: #8f5902; font-style: italic;">"M"</span>,<span style="color: #8f5902; font-style: italic;">"M"</span>,<span style="color: #8f5902; font-style: italic;">"M"</span>,<span style="color: #8f5902; font-style: italic;">"F"</span>,<span style="color: #8f5902; font-style: italic;">"F"</span>,<span style="color: #8f5902; font-style: italic;">"M"</span>,<span style="color: #8f5902; font-style: italic;">"M"</span>))<span style="color: #8f5902; font-style: italic;">-&gt;</span>col3
-col3
-<span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">Line 13 reads a factor vector and outputs a vector that</span>
-<span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">is a list of categories. In this case, the output would</span>
-<span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">be ~[1] "F" "M"~</span>
-levels(col3)
-<span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">Line 15 can be used to check what type of object is col3.</span>
-class(col3)
+<pre class="src src-R" id="org12bb58c"><span class="linenr"> 1: </span>
+<span class="linenr"> 2: </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">Line 3 creates a numeric vector called col1 with</span>
+<span class="linenr"> 3: </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">13 elements: numbers 1 to 10, 11, 14.5 and 6.</span>
+<span class="linenr"> 4: </span>c(1:5,11,14.5,6)<span style="color: #8f5902; font-style: italic;">-&gt;</span>col1
+<span class="linenr"> 5: </span>col1
+<span class="linenr"> 6: </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">Line 6 creates a character vector called col2</span>
+<span class="linenr"> 7: </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">with four elements, each being a string of</span>
+<span class="linenr"> 8: </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">characters</span>
+<span class="linenr"> 9: </span>c(<span style="color: #8f5902; font-style: italic;">"Sheela"</span>,<span style="color: #8f5902; font-style: italic;">"Manoj"</span>,<span style="color: #8f5902; font-style: italic;">"Karim"</span>,<span style="color: #8f5902; font-style: italic;">"John"</span>)<span style="color: #8f5902; font-style: italic;">-&gt;</span>col2
+<span class="linenr">10: </span>col2
+<span class="linenr">11: </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">Line 9 creates a factor vector in which each</span>
+<span class="linenr">12: </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">element belongs to category "M" or "F".</span>
+<span class="linenr">13: </span>as.factor(c(<span style="color: #8f5902; font-style: italic;">"M"</span>,<span style="color: #8f5902; font-style: italic;">"M"</span>,<span style="color: #8f5902; font-style: italic;">"M"</span>,<span style="color: #8f5902; font-style: italic;">"F"</span>,<span style="color: #8f5902; font-style: italic;">"F"</span>,<span style="color: #8f5902; font-style: italic;">"M"</span>,<span style="color: #8f5902; font-style: italic;">"M"</span>))<span style="color: #8f5902; font-style: italic;">-&gt;</span>col3
+<span class="linenr">14: </span>col3
+<span class="linenr">15: </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">Line 13 reads a factor vector and outputs a</span>
+<span class="linenr">16: </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">vector that is a list of categories. In this</span>
+<span class="linenr">17: </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">case, the output would be: [1] "F" "M"</span>
+<span class="linenr">18: </span>levels(col3)
+<span class="linenr">19: </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">Line 15 can be used to check what type of object</span>
+<span class="linenr">20: </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">is col3.</span>
+<span class="linenr">21: </span>class(col3)
 </pre>
 </div>
 
@@ -1015,7 +1019,7 @@ class(col3)
 </p>
 
 <pre class="example">
- [1]  1.0  2.0  3.0  4.0  5.0  6.0  7.0  8.0  9.0 10.0 11.0 14.5  6.0
+[1]  1.0  2.0  3.0  4.0  5.0 11.0 14.5  6.0
 [1] "Sheela" "Manoj"  "Karim"  "John"
 [1] M M M F F M M
 Levels: F M
@@ -1041,7 +1045,7 @@ Levels: F M
 <li><code>data1$var1</code> refers to vector var1 inside data frame data1.
 <ul class="org-ul">
 <li><code>data1$var1^2-&gt;data1$var5</code> calculates square of var1 in data1 and inserts it as a new vector (var5) in data1.</li>
-<li><code>data1$var1+2*data1$var2-&gt;data1$var2</code> calculates takes var1 and var2 from data1, computres var1+2*var2, and replaces var2 in data1 with the computed variable.</li>
+<li><code>data1$var1+2*data1$var2-&gt;data1$var2</code> takes var1 and var2 from data1, computes var1+2*var2, and replaces var2 in data1 with the computed variable.</li>
 </ul></li>
 <li>R provides a large number of commands to manipulate data frames in various ways. You should master these. See Box <a href="#orgce791d5">1</a> to learn commands for selecting subsets of data frames, match merging data frames, appending data frames, adding rows and columns to data frames, and reshaping data frames.</li>
 </ul>
@@ -1053,35 +1057,38 @@ Levels: F M
 
 <div class="org-src-container">
 <pre class="src src-R">
-<span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">Selecting rows</span>
+<span style="color: #888a85; background-color: #ffffff; font-style: italic;">## </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">Selecting rows using conditions. Conditions can be</span>
+<span style="color: #888a85; background-color: #ffffff; font-style: italic;">## </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">specified using operators such as:</span>
+<span style="color: #888a85; background-color: #ffffff; font-style: italic;">## </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">==, !=, &lt;, &lt;=, &gt;, &gt;=, is.na, is.nan</span>
 subset(data1,var1&gt;10000)<span style="color: #8f5902; font-style: italic;">-&gt;</span>data2
 
-<span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">Selecting columns (may be combined with argument for</span>
-<span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">selecting rows).</span>
+<span style="color: #888a85; background-color: #ffffff; font-style: italic;">## </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">Selecting columns (may be combined with argument for</span>
+<span style="color: #888a85; background-color: #ffffff; font-style: italic;">## </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">selecting rows).</span>
 
 subset(data1,select=c(<span style="color: #8f5902; font-style: italic;">"var1"</span>,<span style="color: #8f5902; font-style: italic;">"var5"</span>,<span style="color: #8f5902; font-style: italic;">"var10"</span>))<span style="color: #8f5902; font-style: italic;">-&gt;</span>data2
 
-<span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">merging data frames using variables var1 and var2,</span>
-<span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">selecting only matching rows of data3 and data4.</span>
+<span style="color: #888a85; background-color: #ffffff; font-style: italic;">## </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">merging data frames using variables var1 and var2,</span>
+<span style="color: #888a85; background-color: #ffffff; font-style: italic;">## </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">selecting only matching rows of data3 and data4.</span>
 
 merge(data3, data4, by=c(<span style="color: #8f5902; font-style: italic;">"var1"</span>,<span style="color: #8f5902; font-style: italic;">"var2"</span>))<span style="color: #8f5902; font-style: italic;">-&gt;</span>data5
 
-<span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">merging data frames using variables var1 and var2,</span>
-<span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">selecting all rows of data3 and matching rows of data4. Rows</span>
-<span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">with no matching information from data4 will have NAs</span>
-<span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">in columns coming from data4</span>
+<span style="color: #888a85; background-color: #ffffff; font-style: italic;">## </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">merging data frames using variables var1 and var2,</span>
+<span style="color: #888a85; background-color: #ffffff; font-style: italic;">## </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">selecting all rows of data3 and matching rows of</span>
+<span style="color: #888a85; background-color: #ffffff; font-style: italic;">## </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">data4. Rows with no matching information from data4</span>
+<span style="color: #888a85; background-color: #ffffff; font-style: italic;">## </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">will have NAs in columns coming from data4</span>
 
 merge(data3, data4, by=c(<span style="color: #8f5902; font-style: italic;">"var1"</span>,<span style="color: #8f5902; font-style: italic;">"var2"</span>),
       all.x=<span style="color: #a40000;">TRUE</span>)<span style="color: #8f5902; font-style: italic;">-&gt;</span>data5
 
-<span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">merging data frames using variables var1 and var2,</span>
-<span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">selecting all rows of data4 and matching rows of data3</span>
+<span style="color: #888a85; background-color: #ffffff; font-style: italic;">## </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">merging data frames using variables var1 and var2,</span>
+<span style="color: #888a85; background-color: #ffffff; font-style: italic;">## </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">selecting all rows of data4 and matching rows of</span>
+<span style="color: #888a85; background-color: #ffffff; font-style: italic;">## </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">data3</span>
 
 merge(data3, data4, by=c(<span style="color: #8f5902; font-style: italic;">"var1"</span>,<span style="color: #8f5902; font-style: italic;">"var2"</span>),
       all.y=<span style="color: #a40000;">TRUE</span>)<span style="color: #8f5902; font-style: italic;">-&gt;</span>data5
 
-<span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">merging data frames using variables var1 and var2,</span>
-<span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">selecting all rows of data 3 and data4.</span>
+<span style="color: #888a85; background-color: #ffffff; font-style: italic;">## </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">merging data frames using variables var1 and var2,</span>
+<span style="color: #888a85; background-color: #ffffff; font-style: italic;">## </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">selecting all rows of data 3 and data4.</span>
 
 merge(data3, data4, by=c(<span style="color: #8f5902; font-style: italic;">"var1"</span>,<span style="color: #8f5902; font-style: italic;">"var2"</span>),
       all=<span style="color: #a40000;">TRUE</span>)<span style="color: #8f5902; font-style: italic;">-&gt;</span>data5
@@ -1132,7 +1139,8 @@ You could also specify colour, size and shape independently of aesthetics if you
 </p>
 
 <div class="org-src-container">
-<pre class="src src-R" id="org71939b2"><span class="linenr">1: </span>ggplot(data,aes(x=year,y=income,size=State),colour=<span style="color: #8f5902; font-style: italic;">"darkred"</span>)<span style="color: #8f5902; font-style: italic;">-&gt;</span>p
+<pre class="src src-R" id="orgf576f97"><span class="linenr">1: </span>ggplot(data,aes(x=year,y=income,size=State),
+<span class="linenr">2: </span>       colour=<span style="color: #8f5902; font-style: italic;">"darkred"</span>)<span style="color: #8f5902; font-style: italic;">-&gt;</span>p
 </pre>
 </div>
 </div>
@@ -1146,10 +1154,12 @@ In the second step, you specify the type of graph you want to make. These are ca
 </p>
 
 <div class="org-src-container">
-<pre class="src src-R" id="orgb53554a"><span class="linenr">2: </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">We start from the object 'p' created in Step 1 and use '+' to add to it/modify it.</span>
-<span class="linenr">3: </span>p+geom_point()<span style="color: #8f5902; font-style: italic;">-&gt;</span>p <span style="color: #888a85; background-color: #ffffff; font-style: italic;">#</span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">This makes a scatter plot</span>
-<span class="linenr">4: </span>p+geom_line()<span style="color: #8f5902; font-style: italic;">-&gt;</span>p <span style="color: #888a85; background-color: #ffffff; font-style: italic;">#</span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">This adds a line to the plot</span>
-<span class="linenr">5: </span>p <span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">At any stage, doing this would actually plot p on the screen.</span>
+<pre class="src src-R" id="org307fd03"><span class="linenr">2: </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">We start from the object 'p' created in Step 1</span>
+<span class="linenr">3: </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">and use '+' to add to it/modify it.</span>
+<span class="linenr">4: </span>p+geom_point()<span style="color: #8f5902; font-style: italic;">-&gt;</span>p <span style="color: #888a85; background-color: #ffffff; font-style: italic;">#</span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">This makes a scatter plot</span>
+<span class="linenr">5: </span>p+geom_line()<span style="color: #8f5902; font-style: italic;">-&gt;</span>p <span style="color: #888a85; background-color: #ffffff; font-style: italic;">#</span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">This adds a line to the plot</span>
+<span class="linenr">6: </span>p <span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">At any stage, doing this would actually</span>
+<span class="linenr">7: </span>  <span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">plot p on the screen.</span>
 </pre>
 </div>
 
@@ -1322,6 +1332,7 @@ In the second step, you specify the type of graph you want to make. These are ca
 </div>
 </div>
 
+
 <div id="outline-container-org8903cad" class="outline-4">
 <h4 id="org8903cad">Step 3: Modify the scale</h4>
 <div class="outline-text-4" id="text-org8903cad">
@@ -1330,9 +1341,11 @@ For each of these scales (x, y, colour, size and shape), you can define attribut
 </p>
 
 <div class="org-src-container">
-<pre class="src src-R" id="org5c1cd56"><span class="linenr">6: </span>p+scale_x_continuous(<span style="color: #8f5902; font-style: italic;">"Financial Year"</span>,limits=c(1990,2012),
-<span class="linenr">7: </span>                     breaks=c(1990,1995,2000,2010))<span style="color: #8f5902; font-style: italic;">-&gt;</span>p
-<span class="linenr">8: </span>
+<pre class="src src-R" id="org377ebf4"><span class="linenr"> 6: </span>p+scale_x_continuous(<span style="color: #8f5902; font-style: italic;">"Financial Year"</span>,
+<span class="linenr"> 7: </span>                     limits=c(1990,2012),
+<span class="linenr"> 8: </span>                     breaks=c(1990,1995,
+<span class="linenr"> 9: </span>                              2000,2010))<span style="color: #8f5902; font-style: italic;">-&gt;</span>p
+<span class="linenr">10: </span>
 </pre>
 </div>
 </div>
@@ -1540,8 +1553,11 @@ ggplot2 provides various themes, and different elements to change them, to tweak
 <pre class="src src-R"><span class="linenr"> 9: </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">The line below adds a title to the graph</span>
 <span class="linenr">10: </span>p<span style="color: #8f5902; font-style: italic;">&lt;-</span>p + ggtitle(<span style="color: #8f5902; font-style: italic;">"Title of my graph"</span>)
 <span class="linenr">11: </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">The line below changes the x axis title</span>
-<span class="linenr">12: </span>p<span style="color: #8f5902; font-style: italic;">&lt;-</span>p + theme(axis.title.x=element_text(size=16, lineheight=.9, family=<span style="color: #8f5902; font-style: italic;">"Times"</span>,
-<span class="linenr">13: </span>                                        face=<span style="color: #8f5902; font-style: italic;">"bold.italic"</span>, colour=<span style="color: #8f5902; font-style: italic;">"red"</span>))
+<span class="linenr">12: </span>p<span style="color: #8f5902; font-style: italic;">&lt;-</span>p+theme(axis.title.x=element_text(size=16,
+<span class="linenr">13: </span>                                     lineheight=.9,
+<span class="linenr">14: </span>                                     family=<span style="color: #8f5902; font-style: italic;">"Times"</span>,
+<span class="linenr">15: </span>                                     face=<span style="color: #8f5902; font-style: italic;">"bold.italic"</span>,
+<span class="linenr">16: </span>                                     colour=<span style="color: #8f5902; font-style: italic;">"red"</span>))
 </pre>
 </div>
 </div>
@@ -1551,8 +1567,27 @@ ggplot2 provides various themes, and different elements to change them, to tweak
 <h4 id="orgee650f6">Step 5: If needed, use faceting to show multiple plots in a panel</h4>
 <div class="outline-text-4" id="text-orgee650f6">
 <p>
-ggplot2 also provides facetting tools, to be used if you want to show multiple graphs in a panel. gglot2 provides two functions to add
+ggplot2 also provides facetting tools, to be used if you want to show multiple graphs in a panel. gglot2 provides two functions to split the graph into different categories: facet_wrap and facet_grid.
 </p>
+
+<div class="org-src-container">
+<pre class="src src-R"><span class="linenr">14: </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">The line below creates a separate graph for</span>
+<span class="linenr">15: </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">each value of category, and arranges that</span>
+<span class="linenr">16: </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">in a matrix of three columns, and as many</span>
+<span class="linenr">17: </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">rows as required.</span>
+<span class="linenr">18: </span>p+facet_wrap(~category,ncol=3)
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-R"><span class="linenr">15: </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">The line below creates a separate graph</span>
+<span class="linenr">16: </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">for each combination of category1</span>
+<span class="linenr">17: </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">and category2. Graphs are arranged in</span>
+<span class="linenr">18: </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">a grid with values of category1 making rows</span>
+<span class="linenr">19: </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">and values of category2 making columns.</span>
+<span class="linenr">20: </span>p+facet_grid(category1~category2,ncol=3)
+</pre>
+</div>
 </div>
 </div>
 </div>
@@ -1589,39 +1624,109 @@ You can convert an existing data frame to a data.table using
 </ul></li>
 <li>j (selecting columns, summarising)
 <ul class="org-ul">
-<li><code>[,columnname]</code> selects a column and returns it as a vector.</li>
-<li><code>[,.columnname]</code> selects a column and returns the output as datatable.</li>
-<li><code>[,.(columnname1, columnname2)] or [,list(columnname1, columnname2)]</code> return two columns.</li>
-<li><code>[,.(colname1=columnname1, colname2=columnname2)]</code> simultaneously renames columns.</li>
-<li><code>[,.(col1mean=mean(columnname1),col2median=med(columnname2))]</code> calculates mean and median.</li>
+<li><code>[,col]</code> selects a column and returns it as a vector.</li>
+<li><code>[,.col]</code> selects a column and returns the output as datatable.</li>
+<li><code>[,.(col1, col2)] or
+      [,list(col1, col2)]</code> return two columns.</li>
+<li><code>[,.(colname1=col1, colname2=col2)]</code> simultaneously renames columns.</li>
+<li><code>[,.(c1mn=mean(col1),c2med=med(col2))]</code> calculates mean and median.</li>
 </ul></li>
 <li>by (separately doing the calculations for groups)
 <ul class="org-ul">
-<li><code>[,.(col1mean=mean(columnname1),col2median=med(columnname2)),.(sector,sex)]</code> computes mean and median separately for each combination of sector and sex (say, Rural male, Rural female, Urban male, Urban female).</li>
+<li><p>
+Following code computes mean and median separately for each combination of col3 and col4.
+</p>
+<div class="org-src-container">
+<pre class="src src-R">[,.(c1mn=mean(col1),c2med=med(col2)),
+  .(col3,col4)]
+</pre>
+</div></li>
 </ul></li>
-<li>keyby can be used in place of by to simultaneously sort the output.
-<code>[,.(col1mean=mean(columnname1),col2median=med(columnname2)),keyby=.(sector,sex)]</code></li>
 </ul></li>
-<li>Output of a data.table is also a data.table. This means, that they can be chained as:~DT[i1,j1,by1][i2,j2,by2][i3,j2,by3]~
+
+<li>In a data.table, you can define some variables as &ldquo;keys&rdquo;. These can be used for quickly sorting, subsetting and merging.
 <ul class="org-ul">
-<li>This is equivalent to
-<code>DT[i1,j1,by1]-&gt;DT2</code>
-<code>DT2[i2,j2,by2]-&gt;DT3</code>
-<code>DT3[i3,j2,by3]</code></li>
+<li><code>setkey(DT, sector)</code> defines <code>sector</code> as a key variable in DT.</li>
+<li><p>
+If <code>sector</code> in <code>DT</code> is defined as a key variable, then the following command will subset rows for which the key variable takes values &ldquo;Industry&rdquo; or &ldquo;Agriculture&rdquo;.
+</p>
+<div class="org-src-container">
+<pre class="src src-R">DT[c(<span style="color: #8f5902; font-style: italic;">"Industry"</span>,<span style="color: #8f5902; font-style: italic;">"Agriculture"</span>)]
+</pre>
+</div></li>
+<li><p>
+In the usual <code>DT[i,j,by]</code> type commands, you can replace <code>by</code> with <code>keyby</code> as shown below to simultaneously define keys and sort the output.
+</p>
+<div class="org-src-container">
+<pre class="src src-R">[,.(c1mn=mean(col1),c2med=med(col2)),
+ keyby=.(col3,col4)]
+</pre>
+</div></li>
 </ul></li>
+<li><p>
+Output of a data.table is also a data.table. This means, that a sequence of commands can be chained as:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-R"><span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">Three commands run in a sequence</span>
+
+DT[i1,j1,by1]<span style="color: #8f5902; font-style: italic;">-&gt;</span>DT2
+DT2[i2,j2,by2]<span style="color: #8f5902; font-style: italic;">-&gt;</span>DT3
+DT3[i3,j2,by3]
+
+<span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">Can be combined into one line</span>
+<span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">as follows</span>
+
+DT[i1,j1,by1][i2,j2,by2][i3,j2,by3]
+
+</pre>
+</div></li>
+
 <li>It is also possible to use <code>DT[i,j]</code> to do a transformation on DT itself rather than create a new data.table.
+
 <ul class="org-ul">
-<li>For example, to create a new column called newcol in DT, one can use  j as <code>newcol:=columnname1*columnname2</code>. Note that <code>:=</code> is used to say that the transformation is to be done on DT itself.</li>
+<li><p>
+For example, to create a new column called newcol in DT, one can use  j as
+</p>
+
+<p>
+<code>newcol:=columnname1*columnname2</code>.
+</p>
+
+<p>
+Note that <code>:=</code> is used to say that the transformation is to be done on DT itself.
+</p></li>
+
 <li>A limitation of this usage is that only one field can be transformed at a time. Transforming multiple fields would require chaining the data.table commands.</li>
 </ul></li>
+
 <li>Sometimes you may wish to rotate a cross-table created using data table. That is, you may wish to create columns out of one or more disaggregating (keyby) variables that have been used. This can be achieved in the following way.
 <ul class="org-ul">
-<li>In the command below, the first data.table transformation computes mean by sector, sex and religion. The second data.table transformation creates all combinations of sector, sex and religion, and ensures that DT2 has rows for all combinations (including null rows). The third data.table transformation rotates the table, with sector and sex being identified as row disaggregators and the remaining keyby variable (religion) as the column disaggregator.
-<code>DT[,.(col1mean=mean(columnname1)),keyby=.(sector,sex,religion)]-&gt;DT1</code>
-<code>DT1[CJ(unique(sector),unique(sex),unique(religion)]-&gt;DT2
-     ~DT2[,as.list(col1mean),by=.(sex,religion)]</code></li>
-<li>These commands can be chained together as follows.
-<code>DT[,.(col1mean=mean(columnname1)),keyby=.(sector,sex,religion)][CJ(unique(sector),unique(sex),unique(religion)][,as.list(col1mean),by=.(sex,religion)]</code></li>
+<li><p>
+In the command below, the first data.table transformation computes mean by sector, sex and religion. The second data.table transformation creates all combinations of sector, sex and religion, and ensures that DT2 has rows for all combinations (including null rows). The third data.table transformation rotates the table, with religion and sex being identified as row disaggregators and the remaining keyby variable (sector) as the column disaggregator.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-R">DT[,.(col1mean=mean(columnname1)),
+   keyby=.(sector,sex,religion)]<span style="color: #8f5902; font-style: italic;">-&gt;</span>DT1
+
+DT1[CJ(unique(sector),
+       unique(sex),
+       unique(religion))]<span style="color: #8f5902; font-style: italic;">-&gt;</span>DT2
+
+DT2[,as.list(col1mean)
+   ,by=.(sex,religion)]
+</pre>
+</div></li>
+
+<li>Like all data.table commands, these can be chained together into one line of code.</li>
+</ul></li>
+
+<li>data.table provides a very convenient syntax for merging data.tables.
+
+<ul class="org-ul">
+<li>DT1[DT2] joins matching data from DT2 with DT1; the matches are done using their keys (presuming the keys are defined).</li>
+<li>DT1[DT2,on=c(var1=&ldquo;var2&rdquo;)] joins matching data from DT2 with DT1; matches are done using var1 of DT1 and var2 of DT2.</li>
 </ul></li>
 </ul>
 </div>
@@ -1634,8 +1739,8 @@ You can convert an existing data frame to a data.table using
 <h3 id="org59b67a3"><span class="section-number-3">4.6</span> Econometric Analysis in R</h3>
 </div>
 
-<div id="outline-container-org30da8f4" class="outline-3">
-<h3 id="org30da8f4"><span class="section-number-3">4.7</span> Resources</h3>
+<div id="outline-container-org4a176a5" class="outline-3">
+<h3 id="org4a176a5"><span class="section-number-3">4.7</span> Resources</h3>
 <div class="outline-text-3" id="text-4-7">
 <ul class="org-ul">
 <li>Chang, Winston (2013), <i>R Graphics Cookbook</i>, OReilly</li>
@@ -2293,7 +2398,7 @@ embedded into Org as a source block. The basic syntax is
 
 <span style="font-size: 96%;">  &lt;Your R code goes here.&gt;</span>
 
-<span style="color: #888a85; background-color: #ffffff;">#+END_SRC</span>
+#+END_SRC
 </pre>
 </div>
 
@@ -2356,7 +2461,7 @@ Code block <a href="#org9163087">1</a> is an example of such a code block. Note
 <span style="font-size: 96%;">read.data(</span><span style="color: #8f5902; font-size: 96%; font-style: italic;">"datafile1.csv"</span><span style="font-size: 96%;">,sep=</span><span style="color: #8f5902; font-size: 96%; font-style: italic;">","</span><span style="font-size: 96%;">,header=T)</span><span style="color: #8f5902; font-size: 96%; font-style: italic;">-&gt;</span><span style="font-size: 96%;">mydata1</span>
 
 
-<span style="color: #888a85; background-color: #ffffff;">#+END_SRC</span>
+#+END_SRC
 </pre>
 </div>
 </div>
@@ -2389,7 +2494,7 @@ create a table that shows average BMI by country.
 <span style="font-size: 96%;">merge(a1,a2,by=</span><span style="color: #8f5902; font-size: 96%; font-style: italic;">"Country"</span><span style="font-size: 96%;">)</span><span style="color: #8f5902; font-size: 96%; font-style: italic;">-&gt;</span><span style="font-size: 96%;">a1</span>
 <span style="font-size: 96%;">a1$weight/a1$height</span><span style="color: #8f5902; font-size: 96%; font-style: italic;">-&gt;</span><span style="font-size: 96%;">a1$BMI</span>
 <span style="font-size: 96%;">subset(a1,select=c(</span><span style="color: #8f5902; font-size: 96%; font-style: italic;">"Country"</span><span style="font-size: 96%;">,</span><span style="color: #8f5902; font-size: 96%; font-style: italic;">"BMI"</span><span style="font-size: 96%;">))</span>
-<span style="color: #888a85; background-color: #ffffff;">#+END_SRC</span>
+#+END_SRC
 </pre>
 </div>
 
@@ -2449,7 +2554,7 @@ graph.
 <pre class="src src-org"><span style="color: #888a85; background-color: #ffffff;">#+NAME: mygraph-code</span>
 <span style="color: #888a85; background-color: #ffffff;">#+BEGIN_SRC R :results output graphics :file bmi2.png :width 825 :height 1050 :fonts serif</span>
 
-<span style="color: #888a85; background-color: #ffffff;">#+END_SRC</span>
+#+END_SRC
 </pre>
 </div>
 
@@ -2525,8 +2630,8 @@ You can now refer to this graph in the text using <code>[[my-bmi-graph]]</code>.
 </ul>
 </div>
 </div>
-<div id="outline-container-org71772fa" class="outline-3">
-<h3 id="org71772fa"><span class="section-number-3">5.4</span> Resources</h3>
+<div id="outline-container-org21beb96" class="outline-3">
+<h3 id="org21beb96"><span class="section-number-3">5.4</span> Resources</h3>
 <div class="outline-text-3" id="text-5-4">
 <ul class="org-ul">
 <li>Dominik, Carsten and others (2016), <i>The Org Manual</i>, Free Software Foundation</li>
@@ -2538,6 +2643,59 @@ You can now refer to this graph in the text using <code>[[my-bmi-graph]]</code>.
 <li>Schulte, Eric and Dan Davison (2011), “Active Documents with Org-Mode”, Computing in Science &amp; Engineering.</li>
 <li>Schulte, Eric, Dan Davison, Thomas Dye and Carsten Dominik (2016), &ldquo;A Multi-Language Computing Environment for Literate Programming and Reproducible Research.&rdquo; Journal of Statistical Software, 46 (3), 1 – 24.</li>
 </ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org76f19d0" class="outline-2">
+<h2 id="org76f19d0"><span class="section-number-2">6</span> Git</h2>
+<div class="outline-text-2" id="text-6">
+<p>
+Git is a version control system. Created originally by Linus Torvaldes, it is most widely used version control system for collaboration and tracking by software developers. Since most of our work &#x2013; the org files, the R scripts, the LaTeX files &#x2013; is in plain text files, we can use git not only to track evolution of our programs but also of our research papers, dissertations and books.
+</p>
+
+<p>
+Apart from locally hosting your repositories on your own machine, you can also keep your repositories on platforms like github and gitlab. If you want to keep your work-in-progress research on these platforms, you would need rights to create private repositories. While gitlab provides it by default, you can enable it on github by claiming educational discount.
+</p>
+
+<p>
+I will be using git and github to run this course. Which means that you will need to know basic git commands to submit your assignments and get my feedback. The idea is to use this to familiarise you with basic git commands.
+</p>
+
+<p>
+I will create a separate <i>repository</i> for each student on github, and invite you as a collaborator. You will <i>clone</i> it on your computer using the commands mentioned below, create a separate sub-directory for each assignment and do all your work in these sub-directories. Once you have completed some work and want to share it with me, you will <i>commit</i> it and <i>push</i> it to the github repository. You commit anything to the repository in two steps. You first add it to the <i>staging area</i> and then you <i>commit</i> it.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-sh"><span class="linenr"> 1: </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">#</span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">+CAPTION: Basic git workflow for this course</span>
+<span class="linenr"> 2: </span>
+<span class="linenr"> 3: </span>  <span style="color: #888a85; background-color: #ffffff; font-style: italic;">## </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">The following command, after modifying the name of your repository,</span>
+<span class="linenr"> 4: </span>  <span style="color: #888a85; background-color: #ffffff; font-style: italic;">## </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">clones your repository. A directory -- 2020_yourname -- will be</span>
+<span class="linenr"> 5: </span>  <span style="color: #888a85; background-color: #ffffff; font-style: italic;">## </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">created in the directory from where the command is given</span>
+<span class="linenr"> 6: </span>  <span style="color: #888a85; background-color: #ffffff; font-style: italic;">## </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">(your home directory in this case). All future work for the course</span>
+<span class="linenr"> 7: </span>  <span style="color: #888a85; background-color: #ffffff; font-style: italic;">## </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">should be done in 2020_yourname directory.</span>
+<span class="linenr"> 8: </span>
+<span class="linenr"> 9: </span>  <span style="color: #75507b;">cd</span> ~
+<span class="linenr">10: </span>  git clone git@github.com:ep624/2020_yourname.git
+<span class="linenr">11: </span>
+<span class="linenr">12: </span>  <span style="color: #888a85; background-color: #ffffff; font-style: italic;">## </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">create a separate subdirectory in 2020_yourname for each of your assignments.</span>
+<span class="linenr">13: </span>  <span style="color: #75507b;">cd</span> ~/2020_yourname
+<span class="linenr">14: </span>  mkdir midterm
+<span class="linenr">15: </span>
+<span class="linenr">16: </span>  <span style="color: #888a85; background-color: #ffffff; font-style: italic;">## </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">To add a file to the staging area (a new file, or a file that has been modified)</span>
+<span class="linenr">17: </span>  git add mainfile.org
+<span class="linenr">18: </span>  git add figure1.png <span style="color: #888a85; background-color: #ffffff; font-style: italic;">## </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">the repository accepts png files as git lfs objects.</span>
+<span class="linenr">19: </span>
+<span class="linenr">20: </span>  <span style="color: #888a85; background-color: #ffffff; font-style: italic;">## </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">To commit the file</span>
+<span class="linenr">21: </span>  git commit -m <span style="color: #8f5902; font-style: italic;">"A message describing this commit"</span>
+<span class="linenr">22: </span>
+<span class="linenr">23: </span>  <span style="color: #888a85; background-color: #ffffff; font-style: italic;">## </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">To push it to github repository</span>
+<span class="linenr">24: </span>  git push
+<span class="linenr">25: </span>
+<span class="linenr">26: </span>  <span style="color: #888a85; background-color: #ffffff; font-style: italic;">## </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">To pull from github the work of other collaborators (my comments/edits, for example)</span>
+<span class="linenr">27: </span>  <span style="color: #888a85; background-color: #ffffff; font-style: italic;">## </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">and merge it into your local repository</span>
+<span class="linenr">28: </span>  git pull
+<span class="linenr">29: </span>
+</pre>
 </div>
 </div>
 </div>
@@ -2566,7 +2724,7 @@ document.
 </div></div>
 <div id="postamble" class="status">
 <p class="author">Author: Vikas Rawal</p>
-<p class="date">Created: 2020-02-07 Fri 14:35</p>
+<p class="date">Created: 2020-02-11 Tue 11:19</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
