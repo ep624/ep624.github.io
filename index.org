@@ -51,8 +51,7 @@ install_pulse
   good idea to install the latest version instead.
 
   The best option is to install it via homebrew. I like the version
-  available from railwaycat/emacsmacport tap
-  (https://github.com/railwaycat/emacs-mac-port).
+  available from railwaycat/emacsmacport tap (https://github.com/railwaycat/homebrew-emacsmacport).
 
   First install [[https://brew.sh/][Homebrew]]. Then, from the terminal, give following commands:
 

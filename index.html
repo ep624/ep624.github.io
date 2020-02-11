@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2020-02-11 Tue 11:19 -->
+<!-- 2020-02-11 Tue 11:42 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>EP624: Statistical Programming and Reproducible Research</title>
@@ -324,7 +324,7 @@ for the JavaScript code in this tag.
 <li><a href="#org0fb5ca3">3.1. Introduction to Emacs</a></li>
 <li><a href="#orgfceff0c">3.2. Notations</a></li>
 <li><a href="#orgf873cf1">3.3. Basic commands</a></li>
-<li><a href="#orgadeaf33">3.4. Resources</a></li>
+<li><a href="#org21beb96">3.4. Resources</a></li>
 </ul>
 </li>
 <li><a href="#org27c1820">4. R Programming</a>
@@ -348,7 +348,7 @@ for the JavaScript code in this tag.
 <li><a href="#orgccfea8c">4.4. Making tables using the data.table package</a></li>
 <li><a href="#orgdc1b796">4.5. Analysis of Survey Data in R</a></li>
 <li><a href="#org59b67a3">4.6. Econometric Analysis in R</a></li>
-<li><a href="#org4a176a5">4.7. Resources</a></li>
+<li><a href="#orgfe88f2e">4.7. Resources</a></li>
 </ul>
 </li>
 <li><a href="#org3632094">5. Reproducible Research</a>
@@ -380,7 +380,7 @@ for the JavaScript code in this tag.
 </li>
 <li><a href="#org0ca66e6">5.2. Formatting tables and figures for print</a></li>
 <li><a href="#org951f1ca">5.3. Citation management using org-ref and biblatex</a></li>
-<li><a href="#org21beb96">5.4. Resources</a></li>
+<li><a href="#orgf677625">5.4. Resources</a></li>
 </ul>
 </li>
 <li><a href="#org76f19d0">6. Git</a></li>
@@ -447,8 +447,7 @@ good idea to install the latest version instead.
 
 <p>
 The best option is to install it via homebrew. I like the version
-available from railwaycat/emacsmacport tap
-(<a href="https://github.com/railwaycat/emacs-mac-port">https://github.com/railwaycat/emacs-mac-port</a>).
+available from railwaycat/emacsmacport tap (<a href="https://github.com/railwaycat/homebrew-emacsmacport">https://github.com/railwaycat/homebrew-emacsmacport</a>).
 </p>
 
 <p>
@@ -905,8 +904,8 @@ shortcuts and starts using them instead of the verbose versions.
 </div>
 </div>
 
-<div id="outline-container-orgadeaf33" class="outline-3">
-<h3 id="orgadeaf33"><span class="section-number-3">3.4</span> Resources</h3>
+<div id="outline-container-org21beb96" class="outline-3">
+<h3 id="org21beb96"><span class="section-number-3">3.4</span> Resources</h3>
 <div class="outline-text-3" id="text-3-4">
 <ul class="org-ul">
 <li><a href="https://www2.lib.uchicago.edu/keith/tcl-course/emacs-tutorial.html">A Tutorial Introduction to GNU Emacs</a></li>
@@ -1139,7 +1138,7 @@ You could also specify colour, size and shape independently of aesthetics if you
 </p>
 
 <div class="org-src-container">
-<pre class="src src-R" id="orgf576f97"><span class="linenr">1: </span>ggplot(data,aes(x=year,y=income,size=State),
+<pre class="src src-R" id="org377ebf4"><span class="linenr">1: </span>ggplot(data,aes(x=year,y=income,size=State),
 <span class="linenr">2: </span>       colour=<span style="color: #8f5902; font-style: italic;">"darkred"</span>)<span style="color: #8f5902; font-style: italic;">-&gt;</span>p
 </pre>
 </div>
@@ -1154,7 +1153,7 @@ In the second step, you specify the type of graph you want to make. These are ca
 </p>
 
 <div class="org-src-container">
-<pre class="src src-R" id="org307fd03"><span class="linenr">2: </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">We start from the object 'p' created in Step 1</span>
+<pre class="src src-R" id="org717b6e8"><span class="linenr">2: </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">We start from the object 'p' created in Step 1</span>
 <span class="linenr">3: </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">and use '+' to add to it/modify it.</span>
 <span class="linenr">4: </span>p+geom_point()<span style="color: #8f5902; font-style: italic;">-&gt;</span>p <span style="color: #888a85; background-color: #ffffff; font-style: italic;">#</span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">This makes a scatter plot</span>
 <span class="linenr">5: </span>p+geom_line()<span style="color: #8f5902; font-style: italic;">-&gt;</span>p <span style="color: #888a85; background-color: #ffffff; font-style: italic;">#</span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">This adds a line to the plot</span>
@@ -1341,7 +1340,7 @@ For each of these scales (x, y, colour, size and shape), you can define attribut
 </p>
 
 <div class="org-src-container">
-<pre class="src src-R" id="org377ebf4"><span class="linenr"> 6: </span>p+scale_x_continuous(<span style="color: #8f5902; font-style: italic;">"Financial Year"</span>,
+<pre class="src src-R" id="orgf190578"><span class="linenr"> 6: </span>p+scale_x_continuous(<span style="color: #8f5902; font-style: italic;">"Financial Year"</span>,
 <span class="linenr"> 7: </span>                     limits=c(1990,2012),
 <span class="linenr"> 8: </span>                     breaks=c(1990,1995,
 <span class="linenr"> 9: </span>                              2000,2010))<span style="color: #8f5902; font-style: italic;">-&gt;</span>p
@@ -1739,8 +1738,8 @@ DT2[,as.list(col1mean)
 <h3 id="org59b67a3"><span class="section-number-3">4.6</span> Econometric Analysis in R</h3>
 </div>
 
-<div id="outline-container-org4a176a5" class="outline-3">
-<h3 id="org4a176a5"><span class="section-number-3">4.7</span> Resources</h3>
+<div id="outline-container-orgfe88f2e" class="outline-3">
+<h3 id="orgfe88f2e"><span class="section-number-3">4.7</span> Resources</h3>
 <div class="outline-text-3" id="text-4-7">
 <ul class="org-ul">
 <li>Chang, Winston (2013), <i>R Graphics Cookbook</i>, OReilly</li>
@@ -2630,8 +2629,8 @@ You can now refer to this graph in the text using <code>[[my-bmi-graph]]</code>.
 </ul>
 </div>
 </div>
-<div id="outline-container-org21beb96" class="outline-3">
-<h3 id="org21beb96"><span class="section-number-3">5.4</span> Resources</h3>
+<div id="outline-container-orgf677625" class="outline-3">
+<h3 id="orgf677625"><span class="section-number-3">5.4</span> Resources</h3>
 <div class="outline-text-3" id="text-5-4">
 <ul class="org-ul">
 <li>Dominik, Carsten and others (2016), <i>The Org Manual</i>, Free Software Foundation</li>
@@ -2724,7 +2723,7 @@ document.
 </div></div>
 <div id="postamble" class="status">
 <p class="author">Author: Vikas Rawal</p>
-<p class="date">Created: 2020-02-11 Tue 11:19</p>
+<p class="date">Created: 2020-02-11 Tue 11:42</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
