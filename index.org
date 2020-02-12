@@ -3,7 +3,7 @@
 #+OPTIONS: H:4 num:2 ^:{} broken-links:mark
 #+LATEX_HEADER: \usepackage{booktabs}
 #+LATEX_HEADER: \usepackage{tabularx}
-#+TODO: TODO REVISE | DONE
+#+TODO: TODO | DONE
 #+PROPERTY: header-args:R :session ep624 :eval never-export
 #+SETUPFILE: https://fniessen.github.io/org-html-themes/setup/theme-bigblow.setup
 #+HTML_HEAD: <style>#content{max-width:1200px;} </style>
@@ -13,7 +13,6 @@
 * Preliminaries                                                    :noexport:
 
 * System Setup
-
 ** Operating System
 
 + Install any latest distribution of GNU/Linux on your computer. I use Manjaro, but feel free to install any.
@@ -21,7 +20,7 @@
 
 ** Applications
 
-*** GNU/Linux
+*** GNU/Linux                                                         :update:
 
 #+begin_src sh
 ## This is how my computer is setup. These commands are for Arch Linux/Manjaro.
@@ -101,6 +100,48 @@ mv prelude-ep624 .emacs.d
 cd .emacs.d
 git checkout ep624
 cd
+#+end_src
+
+**  Access to your Github repositories                            :new:
+
+Git is a version control system. Created originally by Linus Torvaldes, it is the most widely used version control system for collaboration and tracking by software developers. Since most of our work -- the org files, the R scripts, the LaTeX files -- would be in plain text files, we can use git not only to track evolution of our programs but also of our research papers, dissertations and books.
+
+Apart from locally hosting your repositories on your own machine, you can also keep your repositories on platforms like Github and Gitlab. If you want to keep your work-in-progress research on these platforms, you would need rights to create private repositories. While Gitlab provides it by default, you can enable it on Github by claiming educational discount.
+
+I will be using git and Github to run this course. Which means that you will need to know basic git commands to submit your assignments and get my feedback. The idea is to use this to familiarise you with basic git commands.
+
+I will create a separate /repository/ for each student on Github, and invite you as a collaborator. You will /clone/ it on your computer using the commands mentioned below, create a separate sub-directory for each assignment and do all your work in these sub-directories. Once you have completed some work and want to share it with me, you will /commit/ it and /push/ it to the github repository. You commit anything to the repository in two steps. You first add it to the /staging area/ and then you /commit/ it.
+
+#+begin_src sh -n
+#+CAPTION: Basic git workflow for this course
+
+  ## The following command, after modifying the name of your repository,
+  ## clones your repository. A directory -- 2020_yourname -- will be
+  ## created in the directory from where the command is given
+  ## (your home directory in this case). All future work for the course
+  ## should be done in 2020_yourname directory.
+
+  cd ~
+  git clone --recurse-submodules git@github.com:ep624/2020_yourname.git
+
+  ## create a separate subdirectory in 2020_yourname for each of your assignments.
+  cd ~/2020_yourname
+  mkdir midterm
+
+  ## To add a file to the staging area (a new file, or a file that has been modified)
+  git add mainfile.org
+  git add figure1.png ## the repository accepts png files as git lfs objects.
+
+  ## To commit the file
+  git commit -m "A message describing this commit"
+
+  ## To push it to github repository
+  git push
+
+  ## To pull from github the work of other collaborators (my comments/edits, for example)
+  ## and merge it into your local repository
+  git pull
+
 #+end_src
 
 * Introduction
@@ -309,45 +350,6 @@ getwd() # Reports the present working directory
 + Schulte, Eric, Dan Davison, Thomas Dye and Carsten Dominik (2016), "A Multi-Language Computing Environment for Literate Programming and Reproducible Research." Journal of Statistical Software, 46 (3), 1 – 24.
 * Git
 
-Git is a version control system. Created originally by Linus Torvaldes, it is most widely used version control system for collaboration and tracking by software developers. Since most of our work -- the org files, the R scripts, the LaTeX files -- is in plain text files, we can use git not only to track evolution of our programs but also of our research papers, dissertations and books.
-
-Apart from locally hosting your repositories on your own machine, you can also keep your repositories on platforms like github and gitlab. If you want to keep your work-in-progress research on these platforms, you would need rights to create private repositories. While gitlab provides it by default, you can enable it on github by claiming educational discount.
-
-I will be using git and github to run this course. Which means that you will need to know basic git commands to submit your assignments and get my feedback. The idea is to use this to familiarise you with basic git commands.
-
-I will create a separate /repository/ for each student on github, and invite you as a collaborator. You will /clone/ it on your computer using the commands mentioned below, create a separate sub-directory for each assignment and do all your work in these sub-directories. Once you have completed some work and want to share it with me, you will /commit/ it and /push/ it to the github repository. You commit anything to the repository in two steps. You first add it to the /staging area/ and then you /commit/ it.
-
-#+begin_src sh -n
-#+CAPTION: Basic git workflow for this course
-
-  ## The following command, after modifying the name of your repository,
-  ## clones your repository. A directory -- 2020_yourname -- will be
-  ## created in the directory from where the command is given
-  ## (your home directory in this case). All future work for the course
-  ## should be done in 2020_yourname directory.
-
-  cd ~
-  git clone git@github.com:ep624/2020_yourname.git
-
-  ## create a separate subdirectory in 2020_yourname for each of your assignments.
-  cd ~/2020_yourname
-  mkdir midterm
-
-  ## To add a file to the staging area (a new file, or a file that has been modified)
-  git add mainfile.org
-  git add figure1.png ## the repository accepts png files as git lfs objects.
-
-  ## To commit the file
-  git commit -m "A message describing this commit"
-
-  ## To push it to github repository
-  git push
-
-  ## To pull from github the work of other collaborators (my comments/edits, for example)
-  ## and merge it into your local repository
-  git pull
-
-#+end_src
 
 * References                                                       :noexport:
 

@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2020-02-11 Tue 11:42 -->
+<!-- 2020-02-13 Thu 01:34 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>EP624: Statistical Programming and Reproducible Research</title>
@@ -286,12 +286,13 @@ for the JavaScript code in this tag.
 <li><a href="#org9f1424f">1.1. Operating System</a></li>
 <li><a href="#org6a27711">1.2. Applications</a>
 <ul>
-<li><a href="#org0f2848e">GNU/Linux</a></li>
+<li><a href="#org0f2848e">GNU/Linux&#xa0;&#xa0;&#xa0;<span class="tag"><span class="update">update</span></span></a></li>
 <li><a href="#org790be1e">OS-X</a></li>
 </ul>
 </li>
 <li><a href="#orgfb78447">1.3. Create your ssh keys</a></li>
 <li><a href="#orgb86d86b">1.4. Emacs configuration</a></li>
+<li><a href="#orgd3a7879">1.5. Access to your Github repositories&#xa0;&#xa0;&#xa0;<span class="tag"><span class="new">new</span></span></a></li>
 </ul>
 </li>
 <li><a href="#org20a9e73">2. Introduction</a>
@@ -324,7 +325,7 @@ for the JavaScript code in this tag.
 <li><a href="#org0fb5ca3">3.1. Introduction to Emacs</a></li>
 <li><a href="#orgfceff0c">3.2. Notations</a></li>
 <li><a href="#orgf873cf1">3.3. Basic commands</a></li>
-<li><a href="#org21beb96">3.4. Resources</a></li>
+<li><a href="#orgf677625">3.4. Resources</a></li>
 </ul>
 </li>
 <li><a href="#org27c1820">4. R Programming</a>
@@ -348,7 +349,7 @@ for the JavaScript code in this tag.
 <li><a href="#orgccfea8c">4.4. Making tables using the data.table package</a></li>
 <li><a href="#orgdc1b796">4.5. Analysis of Survey Data in R</a></li>
 <li><a href="#org59b67a3">4.6. Econometric Analysis in R</a></li>
-<li><a href="#orgfe88f2e">4.7. Resources</a></li>
+<li><a href="#org81bd173">4.7. Resources</a></li>
 </ul>
 </li>
 <li><a href="#org3632094">5. Reproducible Research</a>
@@ -380,7 +381,7 @@ for the JavaScript code in this tag.
 </li>
 <li><a href="#org0ca66e6">5.2. Formatting tables and figures for print</a></li>
 <li><a href="#org951f1ca">5.3. Citation management using org-ref and biblatex</a></li>
-<li><a href="#orgf677625">5.4. Resources</a></li>
+<li><a href="#orgb50fa17">5.4. Resources</a></li>
 </ul>
 </li>
 <li><a href="#org76f19d0">6. Git</a></li>
@@ -410,7 +411,7 @@ for the JavaScript code in this tag.
 <div class="outline-text-3" id="text-1-2">
 </div>
 <div id="outline-container-org0f2848e" class="outline-4">
-<h4 id="org0f2848e">GNU/Linux</h4>
+<h4 id="org0f2848e">GNU/Linux&#xa0;&#xa0;&#xa0;<span class="tag"><span class="update">update</span></span></h4>
 <div class="outline-text-4" id="text-org0f2848e">
 <div class="org-src-container">
 <pre class="src src-sh"><span style="color: #888a85; background-color: #ffffff; font-style: italic;">## </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">This is how my computer is setup. These commands are for Arch Linux/Manjaro.</span>
@@ -534,6 +535,60 @@ mv prelude-ep624 .emacs.d
 <span style="color: #75507b;">cd</span> .emacs.d
 git checkout ep624
 <span style="color: #75507b;">cd</span>
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgd3a7879" class="outline-3">
+<h3 id="orgd3a7879"><span class="section-number-3">1.5</span> Access to your Github repositories&#xa0;&#xa0;&#xa0;<span class="tag"><span class="new">new</span></span></h3>
+<div class="outline-text-3" id="text-1-5">
+<p>
+Git is a version control system. Created originally by Linus Torvaldes, it is the most widely used version control system for collaboration and tracking by software developers. Since most of our work &#x2013; the org files, the R scripts, the LaTeX files &#x2013; would be in plain text files, we can use git not only to track evolution of our programs but also of our research papers, dissertations and books.
+</p>
+
+<p>
+Apart from locally hosting your repositories on your own machine, you can also keep your repositories on platforms like Github and Gitlab. If you want to keep your work-in-progress research on these platforms, you would need rights to create private repositories. While Gitlab provides it by default, you can enable it on Github by claiming educational discount.
+</p>
+
+<p>
+I will be using git and Github to run this course. Which means that you will need to know basic git commands to submit your assignments and get my feedback. The idea is to use this to familiarise you with basic git commands.
+</p>
+
+<p>
+I will create a separate <i>repository</i> for each student on Github, and invite you as a collaborator. You will <i>clone</i> it on your computer using the commands mentioned below, create a separate sub-directory for each assignment and do all your work in these sub-directories. Once you have completed some work and want to share it with me, you will <i>commit</i> it and <i>push</i> it to the github repository. You commit anything to the repository in two steps. You first add it to the <i>staging area</i> and then you <i>commit</i> it.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-sh"><span class="linenr"> 1: </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">#</span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">+CAPTION: Basic git workflow for this course</span>
+<span class="linenr"> 2: </span>
+<span class="linenr"> 3: </span>  <span style="color: #888a85; background-color: #ffffff; font-style: italic;">## </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">The following command, after modifying the name of your repository,</span>
+<span class="linenr"> 4: </span>  <span style="color: #888a85; background-color: #ffffff; font-style: italic;">## </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">clones your repository. A directory -- 2020_yourname -- will be</span>
+<span class="linenr"> 5: </span>  <span style="color: #888a85; background-color: #ffffff; font-style: italic;">## </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">created in the directory from where the command is given</span>
+<span class="linenr"> 6: </span>  <span style="color: #888a85; background-color: #ffffff; font-style: italic;">## </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">(your home directory in this case). All future work for the course</span>
+<span class="linenr"> 7: </span>  <span style="color: #888a85; background-color: #ffffff; font-style: italic;">## </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">should be done in 2020_yourname directory.</span>
+<span class="linenr"> 8: </span>
+<span class="linenr"> 9: </span>  <span style="color: #75507b;">cd</span> ~
+<span class="linenr">10: </span>  git clone --recurse-submodules git@github.com:ep624/2020_yourname.git
+<span class="linenr">11: </span>
+<span class="linenr">12: </span>  <span style="color: #888a85; background-color: #ffffff; font-style: italic;">## </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">create a separate subdirectory in 2020_yourname for each of your assignments.</span>
+<span class="linenr">13: </span>  <span style="color: #75507b;">cd</span> ~/2020_yourname
+<span class="linenr">14: </span>  mkdir midterm
+<span class="linenr">15: </span>
+<span class="linenr">16: </span>  <span style="color: #888a85; background-color: #ffffff; font-style: italic;">## </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">To add a file to the staging area (a new file, or a file that has been modified)</span>
+<span class="linenr">17: </span>  git add mainfile.org
+<span class="linenr">18: </span>  git add figure1.png <span style="color: #888a85; background-color: #ffffff; font-style: italic;">## </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">the repository accepts png files as git lfs objects.</span>
+<span class="linenr">19: </span>
+<span class="linenr">20: </span>  <span style="color: #888a85; background-color: #ffffff; font-style: italic;">## </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">To commit the file</span>
+<span class="linenr">21: </span>  git commit -m <span style="color: #8f5902; font-style: italic;">"A message describing this commit"</span>
+<span class="linenr">22: </span>
+<span class="linenr">23: </span>  <span style="color: #888a85; background-color: #ffffff; font-style: italic;">## </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">To push it to github repository</span>
+<span class="linenr">24: </span>  git push
+<span class="linenr">25: </span>
+<span class="linenr">26: </span>  <span style="color: #888a85; background-color: #ffffff; font-style: italic;">## </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">To pull from github the work of other collaborators (my comments/edits, for example)</span>
+<span class="linenr">27: </span>  <span style="color: #888a85; background-color: #ffffff; font-style: italic;">## </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">and merge it into your local repository</span>
+<span class="linenr">28: </span>  git pull
+<span class="linenr">29: </span>
 </pre>
 </div>
 </div>
@@ -904,8 +959,8 @@ shortcuts and starts using them instead of the verbose versions.
 </div>
 </div>
 
-<div id="outline-container-org21beb96" class="outline-3">
-<h3 id="org21beb96"><span class="section-number-3">3.4</span> Resources</h3>
+<div id="outline-container-orgf677625" class="outline-3">
+<h3 id="orgf677625"><span class="section-number-3">3.4</span> Resources</h3>
 <div class="outline-text-3" id="text-3-4">
 <ul class="org-ul">
 <li><a href="https://www2.lib.uchicago.edu/keith/tcl-course/emacs-tutorial.html">A Tutorial Introduction to GNU Emacs</a></li>
@@ -1138,7 +1193,7 @@ You could also specify colour, size and shape independently of aesthetics if you
 </p>
 
 <div class="org-src-container">
-<pre class="src src-R" id="org377ebf4"><span class="linenr">1: </span>ggplot(data,aes(x=year,y=income,size=State),
+<pre class="src src-R" id="orgf190578"><span class="linenr">1: </span>ggplot(data,aes(x=year,y=income,size=State),
 <span class="linenr">2: </span>       colour=<span style="color: #8f5902; font-style: italic;">"darkred"</span>)<span style="color: #8f5902; font-style: italic;">-&gt;</span>p
 </pre>
 </div>
@@ -1153,7 +1208,7 @@ In the second step, you specify the type of graph you want to make. These are ca
 </p>
 
 <div class="org-src-container">
-<pre class="src src-R" id="org717b6e8"><span class="linenr">2: </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">We start from the object 'p' created in Step 1</span>
+<pre class="src src-R" id="orgbf3e5d2"><span class="linenr">2: </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">We start from the object 'p' created in Step 1</span>
 <span class="linenr">3: </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">and use '+' to add to it/modify it.</span>
 <span class="linenr">4: </span>p+geom_point()<span style="color: #8f5902; font-style: italic;">-&gt;</span>p <span style="color: #888a85; background-color: #ffffff; font-style: italic;">#</span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">This makes a scatter plot</span>
 <span class="linenr">5: </span>p+geom_line()<span style="color: #8f5902; font-style: italic;">-&gt;</span>p <span style="color: #888a85; background-color: #ffffff; font-style: italic;">#</span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">This adds a line to the plot</span>
@@ -1340,7 +1395,7 @@ For each of these scales (x, y, colour, size and shape), you can define attribut
 </p>
 
 <div class="org-src-container">
-<pre class="src src-R" id="orgf190578"><span class="linenr"> 6: </span>p+scale_x_continuous(<span style="color: #8f5902; font-style: italic;">"Financial Year"</span>,
+<pre class="src src-R" id="org1249cdf"><span class="linenr"> 6: </span>p+scale_x_continuous(<span style="color: #8f5902; font-style: italic;">"Financial Year"</span>,
 <span class="linenr"> 7: </span>                     limits=c(1990,2012),
 <span class="linenr"> 8: </span>                     breaks=c(1990,1995,
 <span class="linenr"> 9: </span>                              2000,2010))<span style="color: #8f5902; font-style: italic;">-&gt;</span>p
@@ -1738,8 +1793,8 @@ DT2[,as.list(col1mean)
 <h3 id="org59b67a3"><span class="section-number-3">4.6</span> Econometric Analysis in R</h3>
 </div>
 
-<div id="outline-container-orgfe88f2e" class="outline-3">
-<h3 id="orgfe88f2e"><span class="section-number-3">4.7</span> Resources</h3>
+<div id="outline-container-org81bd173" class="outline-3">
+<h3 id="org81bd173"><span class="section-number-3">4.7</span> Resources</h3>
 <div class="outline-text-3" id="text-4-7">
 <ul class="org-ul">
 <li>Chang, Winston (2013), <i>R Graphics Cookbook</i>, OReilly</li>
@@ -2397,7 +2452,7 @@ embedded into Org as a source block. The basic syntax is
 
 <span style="font-size: 96%;">  &lt;Your R code goes here.&gt;</span>
 
-#+END_SRC
+<span style="color: #888a85; background-color: #ffffff;">#+END_SRC</span>
 </pre>
 </div>
 
@@ -2460,7 +2515,7 @@ Code block <a href="#org9163087">1</a> is an example of such a code block. Note
 <span style="font-size: 96%;">read.data(</span><span style="color: #8f5902; font-size: 96%; font-style: italic;">"datafile1.csv"</span><span style="font-size: 96%;">,sep=</span><span style="color: #8f5902; font-size: 96%; font-style: italic;">","</span><span style="font-size: 96%;">,header=T)</span><span style="color: #8f5902; font-size: 96%; font-style: italic;">-&gt;</span><span style="font-size: 96%;">mydata1</span>
 
 
-#+END_SRC
+<span style="color: #888a85; background-color: #ffffff;">#+END_SRC</span>
 </pre>
 </div>
 </div>
@@ -2493,7 +2548,7 @@ create a table that shows average BMI by country.
 <span style="font-size: 96%;">merge(a1,a2,by=</span><span style="color: #8f5902; font-size: 96%; font-style: italic;">"Country"</span><span style="font-size: 96%;">)</span><span style="color: #8f5902; font-size: 96%; font-style: italic;">-&gt;</span><span style="font-size: 96%;">a1</span>
 <span style="font-size: 96%;">a1$weight/a1$height</span><span style="color: #8f5902; font-size: 96%; font-style: italic;">-&gt;</span><span style="font-size: 96%;">a1$BMI</span>
 <span style="font-size: 96%;">subset(a1,select=c(</span><span style="color: #8f5902; font-size: 96%; font-style: italic;">"Country"</span><span style="font-size: 96%;">,</span><span style="color: #8f5902; font-size: 96%; font-style: italic;">"BMI"</span><span style="font-size: 96%;">))</span>
-#+END_SRC
+<span style="color: #888a85; background-color: #ffffff;">#+END_SRC</span>
 </pre>
 </div>
 
@@ -2553,7 +2608,7 @@ graph.
 <pre class="src src-org"><span style="color: #888a85; background-color: #ffffff;">#+NAME: mygraph-code</span>
 <span style="color: #888a85; background-color: #ffffff;">#+BEGIN_SRC R :results output graphics :file bmi2.png :width 825 :height 1050 :fonts serif</span>
 
-#+END_SRC
+<span style="color: #888a85; background-color: #ffffff;">#+END_SRC</span>
 </pre>
 </div>
 
@@ -2629,8 +2684,8 @@ You can now refer to this graph in the text using <code>[[my-bmi-graph]]</code>.
 </ul>
 </div>
 </div>
-<div id="outline-container-orgf677625" class="outline-3">
-<h3 id="orgf677625"><span class="section-number-3">5.4</span> Resources</h3>
+<div id="outline-container-orgb50fa17" class="outline-3">
+<h3 id="orgb50fa17"><span class="section-number-3">5.4</span> Resources</h3>
 <div class="outline-text-3" id="text-5-4">
 <ul class="org-ul">
 <li>Dominik, Carsten and others (2016), <i>The Org Manual</i>, Free Software Foundation</li>
@@ -2647,56 +2702,6 @@ You can now refer to this graph in the text using <code>[[my-bmi-graph]]</code>.
 </div>
 <div id="outline-container-org76f19d0" class="outline-2">
 <h2 id="org76f19d0"><span class="section-number-2">6</span> Git</h2>
-<div class="outline-text-2" id="text-6">
-<p>
-Git is a version control system. Created originally by Linus Torvaldes, it is most widely used version control system for collaboration and tracking by software developers. Since most of our work &#x2013; the org files, the R scripts, the LaTeX files &#x2013; is in plain text files, we can use git not only to track evolution of our programs but also of our research papers, dissertations and books.
-</p>
-
-<p>
-Apart from locally hosting your repositories on your own machine, you can also keep your repositories on platforms like github and gitlab. If you want to keep your work-in-progress research on these platforms, you would need rights to create private repositories. While gitlab provides it by default, you can enable it on github by claiming educational discount.
-</p>
-
-<p>
-I will be using git and github to run this course. Which means that you will need to know basic git commands to submit your assignments and get my feedback. The idea is to use this to familiarise you with basic git commands.
-</p>
-
-<p>
-I will create a separate <i>repository</i> for each student on github, and invite you as a collaborator. You will <i>clone</i> it on your computer using the commands mentioned below, create a separate sub-directory for each assignment and do all your work in these sub-directories. Once you have completed some work and want to share it with me, you will <i>commit</i> it and <i>push</i> it to the github repository. You commit anything to the repository in two steps. You first add it to the <i>staging area</i> and then you <i>commit</i> it.
-</p>
-
-<div class="org-src-container">
-<pre class="src src-sh"><span class="linenr"> 1: </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">#</span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">+CAPTION: Basic git workflow for this course</span>
-<span class="linenr"> 2: </span>
-<span class="linenr"> 3: </span>  <span style="color: #888a85; background-color: #ffffff; font-style: italic;">## </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">The following command, after modifying the name of your repository,</span>
-<span class="linenr"> 4: </span>  <span style="color: #888a85; background-color: #ffffff; font-style: italic;">## </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">clones your repository. A directory -- 2020_yourname -- will be</span>
-<span class="linenr"> 5: </span>  <span style="color: #888a85; background-color: #ffffff; font-style: italic;">## </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">created in the directory from where the command is given</span>
-<span class="linenr"> 6: </span>  <span style="color: #888a85; background-color: #ffffff; font-style: italic;">## </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">(your home directory in this case). All future work for the course</span>
-<span class="linenr"> 7: </span>  <span style="color: #888a85; background-color: #ffffff; font-style: italic;">## </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">should be done in 2020_yourname directory.</span>
-<span class="linenr"> 8: </span>
-<span class="linenr"> 9: </span>  <span style="color: #75507b;">cd</span> ~
-<span class="linenr">10: </span>  git clone git@github.com:ep624/2020_yourname.git
-<span class="linenr">11: </span>
-<span class="linenr">12: </span>  <span style="color: #888a85; background-color: #ffffff; font-style: italic;">## </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">create a separate subdirectory in 2020_yourname for each of your assignments.</span>
-<span class="linenr">13: </span>  <span style="color: #75507b;">cd</span> ~/2020_yourname
-<span class="linenr">14: </span>  mkdir midterm
-<span class="linenr">15: </span>
-<span class="linenr">16: </span>  <span style="color: #888a85; background-color: #ffffff; font-style: italic;">## </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">To add a file to the staging area (a new file, or a file that has been modified)</span>
-<span class="linenr">17: </span>  git add mainfile.org
-<span class="linenr">18: </span>  git add figure1.png <span style="color: #888a85; background-color: #ffffff; font-style: italic;">## </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">the repository accepts png files as git lfs objects.</span>
-<span class="linenr">19: </span>
-<span class="linenr">20: </span>  <span style="color: #888a85; background-color: #ffffff; font-style: italic;">## </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">To commit the file</span>
-<span class="linenr">21: </span>  git commit -m <span style="color: #8f5902; font-style: italic;">"A message describing this commit"</span>
-<span class="linenr">22: </span>
-<span class="linenr">23: </span>  <span style="color: #888a85; background-color: #ffffff; font-style: italic;">## </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">To push it to github repository</span>
-<span class="linenr">24: </span>  git push
-<span class="linenr">25: </span>
-<span class="linenr">26: </span>  <span style="color: #888a85; background-color: #ffffff; font-style: italic;">## </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">To pull from github the work of other collaborators (my comments/edits, for example)</span>
-<span class="linenr">27: </span>  <span style="color: #888a85; background-color: #ffffff; font-style: italic;">## </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">and merge it into your local repository</span>
-<span class="linenr">28: </span>  git pull
-<span class="linenr">29: </span>
-</pre>
-</div>
-</div>
 </div>
 <div id="footnotes">
 <h2 class="footnotes">Footnotes: </h2>
@@ -2723,7 +2728,7 @@ document.
 </div></div>
 <div id="postamble" class="status">
 <p class="author">Author: Vikas Rawal</p>
-<p class="date">Created: 2020-02-11 Tue 11:42</p>
+<p class="date">Created: 2020-02-13 Thu 01:34</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
