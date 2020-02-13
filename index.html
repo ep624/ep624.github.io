@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2020-02-13 Thu 01:34 -->
+<!-- 2020-02-13 Thu 08:02 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>EP624: Statistical Programming and Reproducible Research</title>
@@ -325,7 +325,7 @@ for the JavaScript code in this tag.
 <li><a href="#org0fb5ca3">3.1. Introduction to Emacs</a></li>
 <li><a href="#orgfceff0c">3.2. Notations</a></li>
 <li><a href="#orgf873cf1">3.3. Basic commands</a></li>
-<li><a href="#orgf677625">3.4. Resources</a></li>
+<li><a href="#orgb50fa17">3.4. Resources</a></li>
 </ul>
 </li>
 <li><a href="#org27c1820">4. R Programming</a>
@@ -349,7 +349,7 @@ for the JavaScript code in this tag.
 <li><a href="#orgccfea8c">4.4. Making tables using the data.table package</a></li>
 <li><a href="#orgdc1b796">4.5. Analysis of Survey Data in R</a></li>
 <li><a href="#org59b67a3">4.6. Econometric Analysis in R</a></li>
-<li><a href="#org81bd173">4.7. Resources</a></li>
+<li><a href="#org9116005">4.7. Resources</a></li>
 </ul>
 </li>
 <li><a href="#org3632094">5. Reproducible Research</a>
@@ -381,7 +381,7 @@ for the JavaScript code in this tag.
 </li>
 <li><a href="#org0ca66e6">5.2. Formatting tables and figures for print</a></li>
 <li><a href="#org951f1ca">5.3. Citation management using org-ref and biblatex</a></li>
-<li><a href="#orgb50fa17">5.4. Resources</a></li>
+<li><a href="#orgbec55f5">5.4. Resources</a></li>
 </ul>
 </li>
 <li><a href="#org76f19d0">6. Git</a></li>
@@ -413,9 +413,12 @@ for the JavaScript code in this tag.
 <div id="outline-container-org0f2848e" class="outline-4">
 <h4 id="org0f2848e">GNU/Linux&#xa0;&#xa0;&#xa0;<span class="tag"><span class="update">update</span></span></h4>
 <div class="outline-text-4" id="text-org0f2848e">
+<p>
+Commands below are for setting a Manjaro/Arch Linux computer. For other distributions (for example, Debian/Ubuntu-based), use their package managers to install the same applications.
+</p>
+
 <div class="org-src-container">
-<pre class="src src-sh"><span style="color: #888a85; background-color: #ffffff; font-style: italic;">## </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">This is how my computer is setup. These commands are for Arch Linux/Manjaro.</span>
-<span style="color: #888a85; background-color: #ffffff; font-style: italic;">## </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">You can install the same applications in other distributions using their package managers.</span>
+<pre class="src src-sh"><span style="color: #888a85; background-color: #ffffff; font-style: italic;">#</span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">+CAPTION: Setting up a Manjaro/Arch Linux computer</span>
 <span style="color: #888a85; background-color: #ffffff; font-style: italic;">## </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">These commands should be run one line at a time. Do not run it as a script.</span>
 <span style="color: #888a85; background-color: #ffffff; font-style: italic;">## </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">Modify to suit your requirements</span>
 sudo pacman -Ssy
@@ -959,8 +962,8 @@ shortcuts and starts using them instead of the verbose versions.
 </div>
 </div>
 
-<div id="outline-container-orgf677625" class="outline-3">
-<h3 id="orgf677625"><span class="section-number-3">3.4</span> Resources</h3>
+<div id="outline-container-orgb50fa17" class="outline-3">
+<h3 id="orgb50fa17"><span class="section-number-3">3.4</span> Resources</h3>
 <div class="outline-text-3" id="text-3-4">
 <ul class="org-ul">
 <li><a href="https://www2.lib.uchicago.edu/keith/tcl-course/emacs-tutorial.html">A Tutorial Introduction to GNU Emacs</a></li>
@@ -1193,7 +1196,7 @@ You could also specify colour, size and shape independently of aesthetics if you
 </p>
 
 <div class="org-src-container">
-<pre class="src src-R" id="orgf190578"><span class="linenr">1: </span>ggplot(data,aes(x=year,y=income,size=State),
+<pre class="src src-R" id="org1249cdf"><span class="linenr">1: </span>ggplot(data,aes(x=year,y=income,size=State),
 <span class="linenr">2: </span>       colour=<span style="color: #8f5902; font-style: italic;">"darkred"</span>)<span style="color: #8f5902; font-style: italic;">-&gt;</span>p
 </pre>
 </div>
@@ -1208,7 +1211,7 @@ In the second step, you specify the type of graph you want to make. These are ca
 </p>
 
 <div class="org-src-container">
-<pre class="src src-R" id="orgbf3e5d2"><span class="linenr">2: </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">We start from the object 'p' created in Step 1</span>
+<pre class="src src-R" id="orgb2bccf9"><span class="linenr">2: </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">We start from the object 'p' created in Step 1</span>
 <span class="linenr">3: </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">and use '+' to add to it/modify it.</span>
 <span class="linenr">4: </span>p+geom_point()<span style="color: #8f5902; font-style: italic;">-&gt;</span>p <span style="color: #888a85; background-color: #ffffff; font-style: italic;">#</span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">This makes a scatter plot</span>
 <span class="linenr">5: </span>p+geom_line()<span style="color: #8f5902; font-style: italic;">-&gt;</span>p <span style="color: #888a85; background-color: #ffffff; font-style: italic;">#</span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">This adds a line to the plot</span>
@@ -1395,7 +1398,7 @@ For each of these scales (x, y, colour, size and shape), you can define attribut
 </p>
 
 <div class="org-src-container">
-<pre class="src src-R" id="org1249cdf"><span class="linenr"> 6: </span>p+scale_x_continuous(<span style="color: #8f5902; font-style: italic;">"Financial Year"</span>,
+<pre class="src src-R" id="orgb34ae40"><span class="linenr"> 6: </span>p+scale_x_continuous(<span style="color: #8f5902; font-style: italic;">"Financial Year"</span>,
 <span class="linenr"> 7: </span>                     limits=c(1990,2012),
 <span class="linenr"> 8: </span>                     breaks=c(1990,1995,
 <span class="linenr"> 9: </span>                              2000,2010))<span style="color: #8f5902; font-style: italic;">-&gt;</span>p
@@ -1793,8 +1796,8 @@ DT2[,as.list(col1mean)
 <h3 id="org59b67a3"><span class="section-number-3">4.6</span> Econometric Analysis in R</h3>
 </div>
 
-<div id="outline-container-org81bd173" class="outline-3">
-<h3 id="org81bd173"><span class="section-number-3">4.7</span> Resources</h3>
+<div id="outline-container-org9116005" class="outline-3">
+<h3 id="org9116005"><span class="section-number-3">4.7</span> Resources</h3>
 <div class="outline-text-3" id="text-4-7">
 <ul class="org-ul">
 <li>Chang, Winston (2013), <i>R Graphics Cookbook</i>, OReilly</li>
@@ -1803,7 +1806,12 @@ DT2[,as.list(col1mean)
 <li>Hatekar, Neeraj (2010), <i>Principles of Econometrics: An Introduction (Using R)</i>, Sage</li>
 <li>Hilbe, Joseph (2013), <i>Methods of Statistical Model Estimation</i>, Chapman &amp; Hall/CRC Press.</li>
 <li>Lumley, Thomas, <i>Complex Surveys: A Guide to Analysis Using R</i>, John Wiley &amp; Sons</li>
-<li>Maindonald, John and Braun, John (2003), <i>Data Analysis and Graphics Using R: An Example-based Approach</i>, Cambridge University Press</li>
+<li>Maindonald</li>
+</ul>
+<p>
+, John and Braun, John (2003), <i>Data Analysis and Graphics Using R: An Example-based Approach</i>, Cambridge University Press
+</p>
+<ul class="org-ul">
 <li>Michael J. Crawley (2013), <i>The R Book</i>, Second Edition, John Wiley &amp; Sons</li>
 <li>Murrell, Paul (2011), <i>R Graphics</i>, Chapman &amp; Hall/CRC Press.</li>
 <li>R Core Team (2015), <i>An Introduction to R</i>,  R Foundation for Statistical Computing,Vienna.</li>
@@ -2684,8 +2692,8 @@ You can now refer to this graph in the text using <code>[[my-bmi-graph]]</code>.
 </ul>
 </div>
 </div>
-<div id="outline-container-orgb50fa17" class="outline-3">
-<h3 id="orgb50fa17"><span class="section-number-3">5.4</span> Resources</h3>
+<div id="outline-container-orgbec55f5" class="outline-3">
+<h3 id="orgbec55f5"><span class="section-number-3">5.4</span> Resources</h3>
 <div class="outline-text-3" id="text-5-4">
 <ul class="org-ul">
 <li>Dominik, Carsten and others (2016), <i>The Org Manual</i>, Free Software Foundation</li>
@@ -2728,7 +2736,7 @@ document.
 </div></div>
 <div id="postamble" class="status">
 <p class="author">Author: Vikas Rawal</p>
-<p class="date">Created: 2020-02-13 Thu 01:34</p>
+<p class="date">Created: 2020-02-13 Thu 08:02</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

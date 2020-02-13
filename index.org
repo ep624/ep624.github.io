@@ -22,9 +22,10 @@
 
 *** GNU/Linux                                                         :update:
 
+Commands below are for setting a Manjaro/Arch Linux computer. For other distributions (for example, Debian/Ubuntu-based), use their package managers to install the same applications.
+
 #+begin_src sh
-## This is how my computer is setup. These commands are for Arch Linux/Manjaro.
-## You can install the same applications in other distributions using their package managers.
+#+CAPTION: Setting up a Manjaro/Arch Linux computer
 ## These commands should be run one line at a time. Do not run it as a script.
 ## Modify to suit your requirements
 sudo pacman -Ssy
@@ -84,7 +85,7 @@ id_rsa is your private key which much be kept safe and is /never/ shared with an
 
 id_rsa.pub is the matching public key which is shared with any machine with which you want to have secure data transfers.
 
-**  Emacs configuration
+** Emacs configuration
 
 In your github.com account, go to settings, click on "SSH and GPG keys", and add a new ssh key. In the box that opens, in Title add your name, and the name of your machine, and in the box below, paste the contents of the public key that was created in the previous step (~~/.ssh/id_rsa.pub~).
 
@@ -102,7 +103,7 @@ git checkout ep624
 cd
 #+end_src
 
-**  Access to your Github repositories                            :new:
+** Access to your Github repositories                                  :new:
 
 Git is a version control system. Created originally by Linus Torvaldes, it is the most widely used version control system for collaboration and tracking by software developers. Since most of our work -- the org files, the R scripts, the LaTeX files -- would be in plain text files, we can use git not only to track evolution of our programs but also of our research papers, dissertations and books.
 
@@ -321,7 +322,8 @@ getwd() # Reports the present working directory
 + Hatekar, Neeraj (2010), /Principles of Econometrics: An Introduction (Using R)/, Sage
 + Hilbe, Joseph (2013), /Methods of Statistical Model Estimation/, Chapman & Hall/CRC Press.
 + Lumley, Thomas, /Complex Surveys: A Guide to Analysis Using R/, John Wiley & Sons
-+ Maindonald, John and Braun, John (2003), /Data Analysis and Graphics Using R: An Example-based Approach/, Cambridge University Press
++ Maindonald
+, John and Braun, John (2003), /Data Analysis and Graphics Using R: An Example-based Approach/, Cambridge University Press
 + Michael J. Crawley (2013), /The R Book/, Second Edition, John Wiley & Sons
 + Murrell, Paul (2011), /R Graphics/, Chapman & Hall/CRC Press.
 + R Core Team (2015), /An Introduction to R/,  R Foundation for Statistical Computing,Vienna.
