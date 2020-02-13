@@ -113,8 +113,8 @@ I will be using git and Github to run this course. Which means that you will nee
 
 I will create a separate /repository/ for each student on Github, and invite you as a collaborator. You will /clone/ it on your computer using the commands mentioned below, create a separate sub-directory for each assignment and do all your work in these sub-directories. Once you have completed some work and want to share it with me, you will /commit/ it and /push/ it to the github repository. You commit anything to the repository in two steps. You first add it to the /staging area/ and then you /commit/ it.
 
-#+begin_src sh -n
 #+CAPTION: Basic git workflow for this course
+#+begin_src sh -n
 
   ## The following command, after modifying the name of your repository,
   ## clones your repository. A directory -- 2020_yourname -- will be
