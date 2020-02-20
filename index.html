@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2020-02-13 Thu 08:04 -->
+<!-- 2020-02-20 Thu 19:41 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>EP624: Statistical Programming and Reproducible Research</title>
@@ -325,7 +325,7 @@ for the JavaScript code in this tag.
 <li><a href="#org0fb5ca3">3.1. Introduction to Emacs</a></li>
 <li><a href="#orgfceff0c">3.2. Notations</a></li>
 <li><a href="#orgf873cf1">3.3. Basic commands</a></li>
-<li><a href="#orgbec55f5">3.4. Resources</a></li>
+<li><a href="#org0669d9d">3.4. Resources</a></li>
 </ul>
 </li>
 <li><a href="#org27c1820">4. R Programming</a>
@@ -349,7 +349,7 @@ for the JavaScript code in this tag.
 <li><a href="#orgccfea8c">4.4. Making tables using the data.table package</a></li>
 <li><a href="#orgdc1b796">4.5. Analysis of Survey Data in R</a></li>
 <li><a href="#org59b67a3">4.6. Econometric Analysis in R</a></li>
-<li><a href="#org7ed15a6">4.7. Resources</a></li>
+<li><a href="#orgd265ece">4.7. Resources</a></li>
 </ul>
 </li>
 <li><a href="#org3632094">5. Reproducible Research</a>
@@ -381,7 +381,7 @@ for the JavaScript code in this tag.
 </li>
 <li><a href="#org0ca66e6">5.2. Formatting tables and figures for print</a></li>
 <li><a href="#org951f1ca">5.3. Citation management using org-ref and biblatex</a></li>
-<li><a href="#org0669d9d">5.4. Resources</a></li>
+<li><a href="#org30af10d">5.4. Resources</a></li>
 </ul>
 </li>
 <li><a href="#org76f19d0">6. Git</a></li>
@@ -418,13 +418,13 @@ Commands below are for setting a Manjaro/Arch Linux computer. For other distribu
 </p>
 
 <div class="org-src-container">
-<pre class="src src-sh"><span style="color: #888a85; background-color: #ffffff; font-style: italic;">#</span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">+CAPTION: Setting up a Manjaro/Arch Linux computer</span>
-<span style="color: #888a85; background-color: #ffffff; font-style: italic;">## </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">These commands should be run one line at a time. Do not run it as a script.</span>
-<span style="color: #888a85; background-color: #ffffff; font-style: italic;">## </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">Modify to suit your requirements</span>
+<pre class="src src-sh"><span style="color: #5F7F5F;">#</span><span style="color: #7F9F7F;">+CAPTION: Setting up a Manjaro/Arch Linux computer</span>
+<span style="color: #5F7F5F;">## </span><span style="color: #7F9F7F;">These commands should be run one line at a time. Do not run it as a script.</span>
+<span style="color: #5F7F5F;">## </span><span style="color: #7F9F7F;">Modify to suit your requirements</span>
 sudo pacman -Ssy
 sudo pacman -S emacs firefox texlive-most biber nmap openssh yay gimp phpmyadmin evince git git-lfs mpv vlc r htop neomutt isync pass mariadb postgresql aspell-en termite pass notmuch go tk afew ack keychain chromium msmtp unison python-pip python-imaging ghostscript hplip geos youtube-dl evince pandoc-citeproc
 sudo pacman -R palemoon
-sudo pacman -S rofi <span style="color: #888a85; background-color: #ffffff; font-style: italic;">#</span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">Only if you use i3wm</span>
+sudo pacman -S rofi <span style="color: #5F7F5F;">#</span><span style="color: #7F9F7F;">Only if you use i3wm</span>
 sudo pacman -U https://www.archlinux.org/packages/community/x86_64/browserpass/download/
 sudo pacman -S browserpass-firefox browserpass-chromium
 systemctl enable sshd
@@ -497,9 +497,9 @@ Use these commands to create your ssh keys.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-sh"><span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">If you do not already have ssh keys, create them as below</span>
+<pre class="src src-sh"><span style="color: #5F7F5F;"># </span><span style="color: #7F9F7F;">If you do not already have ssh keys, create them as below</span>
 mkdir ~/.ssh
-ssh-keygen -t rsa <span style="color: #888a85; background-color: #ffffff; font-style: italic;">#</span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">No need to use a password, when asked. Just press enter for all the questions (accept defaults).</span>
+ssh-keygen -t rsa <span style="color: #5F7F5F;">#</span><span style="color: #7F9F7F;">No need to use a password, when asked. Just press enter for all the questions (accept defaults).</span>
 </pre>
 </div>
 
@@ -531,13 +531,13 @@ Once that is done, following commands will configure Emacs for the requirements 
 <div class="org-src-container">
 <pre class="src src-sh">
 git clone git@github.com:vikasrawal/prelude-ep624.git
-git clone https://github.com/vikasrawal/prelude-ep624.git <span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">Use may use this if you do not have a github account with your public ssh key added to it.</span>
+<span style="color: #5F7F5F;">#</span><span style="color: #7F9F7F;">git clone https://github.com/vikasrawal/prelude-ep624.git # Use may use this if you do not have a github account with your public ssh key added to it.</span>
 
-mv .emacs.d .emacs.d.old <span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">Renames if you already have a .emacs.d directory</span>
+mv .emacs.d .emacs.d.old <span style="color: #5F7F5F;"># </span><span style="color: #7F9F7F;">Renames if you already have a .emacs.d directory</span>
 mv prelude-ep624 .emacs.d
-<span style="color: #75507b;">cd</span> .emacs.d
+<span style="color: #DCDCCC; font-weight: bold;">cd</span> .emacs.d
 git checkout ep624
-<span style="color: #75507b;">cd</span>
+<span style="color: #DCDCCC; font-weight: bold;">cd</span>
 </pre>
 </div>
 </div>
@@ -562,37 +562,50 @@ I will be using git and Github to run this course. Which means that you will nee
 I will create a separate <i>repository</i> for each student on Github, and invite you as a collaborator. You will <i>clone</i> it on your computer using the commands mentioned below, create a separate sub-directory for each assignment and do all your work in these sub-directories. Once you have completed some work and want to share it with me, you will <i>commit</i> it and <i>push</i> it to the github repository. You commit anything to the repository in two steps. You first add it to the <i>staging area</i> and then you <i>commit</i> it.
 </p>
 
+
 <div class="org-src-container">
-<label class="org-src-name"><span class="listing-number">Listing 1: </span>Basic git workflow for this course</label><pre class="src src-sh"><span class="linenr"> 1: </span>
-<span class="linenr"> 2: </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">## </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">The following command, after modifying the name of your repository,</span>
-<span class="linenr"> 3: </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">## </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">clones your repository. A directory -- 2020_yourname -- will be</span>
-<span class="linenr"> 4: </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">## </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">created in the directory from where the command is given</span>
-<span class="linenr"> 5: </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">## </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">(your home directory in this case). All future work for the course</span>
-<span class="linenr"> 6: </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">## </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">should be done in 2020_yourname directory.</span>
+<pre class="src src-sh"><span class="linenr"> 1: </span><span style="color: #5F7F5F;">## </span><span style="color: #7F9F7F;">Basic git workflow for this course</span>
+<span class="linenr"> 2: </span><span style="color: #5F7F5F;">## </span><span style="color: #7F9F7F;">The following command, after modifying the name of your repository,</span>
+<span class="linenr"> 3: </span><span style="color: #5F7F5F;">## </span><span style="color: #7F9F7F;">clones your repository. A directory -- 2020_yourname -- will be</span>
+<span class="linenr"> 4: </span><span style="color: #5F7F5F;">## </span><span style="color: #7F9F7F;">created in the directory from where the command is given</span>
+<span class="linenr"> 5: </span><span style="color: #5F7F5F;">## </span><span style="color: #7F9F7F;">(your home directory in this case). All future work for the course</span>
+<span class="linenr"> 6: </span><span style="color: #5F7F5F;">## </span><span style="color: #7F9F7F;">should be done in 2020_yourname directory.</span>
 <span class="linenr"> 7: </span>
-<span class="linenr"> 8: </span><span style="color: #75507b;">cd</span> ~
+<span class="linenr"> 8: </span><span style="color: #DCDCCC; font-weight: bold;">cd</span> ~
 <span class="linenr"> 9: </span>git clone --recurse-submodules git@github.com:ep624/2020_yourname.git
 <span class="linenr">10: </span>
-<span class="linenr">11: </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">## </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">create a separate subdirectory in 2020_yourname for each of your assignments.</span>
-<span class="linenr">12: </span><span style="color: #75507b;">cd</span> ~/2020_yourname
-<span class="linenr">13: </span>mkdir midterm
+<span class="linenr">11: </span><span style="color: #DCDCCC; font-weight: bold;">cd</span> ~/2020_yourname
+<span class="linenr">12: </span>rm -Rf resources
+<span class="linenr">13: </span>git clone git@github.com:ep624/resources.git
 <span class="linenr">14: </span>
-<span class="linenr">15: </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">## </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">To add a file to the staging area (a new file, or a file that has been modified)</span>
-<span class="linenr">16: </span>git add mainfile.org
-<span class="linenr">17: </span>git add figure1.png <span style="color: #888a85; background-color: #ffffff; font-style: italic;">## </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">the repository accepts png files as git lfs objects.</span>
+<span class="linenr">15: </span><span style="color: #DCDCCC; font-weight: bold;">cd</span> ~/2020_yourname/resources
+<span class="linenr">16: </span>git pull origin master
+<span class="linenr">17: </span>
 <span class="linenr">18: </span>
-<span class="linenr">19: </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">## </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">To commit the file</span>
-<span class="linenr">20: </span>git commit -m <span style="color: #8f5902; font-style: italic;">"A message describing this commit"</span>
-<span class="linenr">21: </span>
-<span class="linenr">22: </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">## </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">To push it to github repository</span>
-<span class="linenr">23: </span>git push
-<span class="linenr">24: </span>
-<span class="linenr">25: </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">## </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">To pull from github the work of other collaborators (my comments/edits, for example)</span>
-<span class="linenr">26: </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">## </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">and merge it into your local repository</span>
-<span class="linenr">27: </span>git pull
-<span class="linenr">28: </span>
+<span class="linenr">19: </span><span style="color: #5F7F5F;">## </span><span style="color: #7F9F7F;">create a separate subdirectory in 2020_yourname for each of your assignments.</span>
+<span class="linenr">20: </span><span style="color: #DCDCCC; font-weight: bold;">cd</span> ~/2020_yourname
+<span class="linenr">21: </span>mkdir midterm
+<span class="linenr">22: </span>
+<span class="linenr">23: </span><span style="color: #5F7F5F;">## </span><span style="color: #7F9F7F;">To add a file to the staging area (a new file, or a file that has been modified)</span>
+<span class="linenr">24: </span>git add mainfile.org
+<span class="linenr">25: </span>git add figure1.png <span style="color: #5F7F5F;">## </span><span style="color: #7F9F7F;">the repository accepts png files as git lfs objects.</span>
+<span class="linenr">26: </span>
+<span class="linenr">27: </span><span style="color: #5F7F5F;">## </span><span style="color: #7F9F7F;">To commit the file</span>
+<span class="linenr">28: </span>git commit -m <span style="color: #CC9393;">"A message describing this commit"</span>
+<span class="linenr">29: </span>
+<span class="linenr">30: </span><span style="color: #5F7F5F;">## </span><span style="color: #7F9F7F;">To push it to github repository</span>
+<span class="linenr">31: </span>git push
+<span class="linenr">32: </span>
+<span class="linenr">33: </span><span style="color: #5F7F5F;">## </span><span style="color: #7F9F7F;">To pull from github the work of other collaborators (my comments/edits, for example)</span>
+<span class="linenr">34: </span><span style="color: #5F7F5F;">## </span><span style="color: #7F9F7F;">and merge it into your local repository</span>
+<span class="linenr">35: </span>git pull
+<span class="linenr">36: </span>
 </pre>
 </div>
+
+<p>
+A separate team has been created on Github for your batch. You should accept the invite and join the team.
+</p>
 </div>
 </div>
 </div>
@@ -739,7 +752,7 @@ This section does not provide a detailed guide to the use of Emacs. In this guid
 <h3 id="orgfceff0c"><span class="section-number-3">3.2</span> Notations</h3>
 <div class="outline-text-3" id="text-3-2">
 <p>
-In emacs, a buffer is equivalent to a tab in a web browser. It is
+In emacs, a buffer is like a tab in an application. It is
 normal to have several buffers open at the same time. Each file opens
 in emacs as a buffer. Buffers could also have processes like R running
 in them. Emacs displays any messages for you in a separate buffer.
@@ -961,8 +974,8 @@ shortcuts and starts using them instead of the verbose versions.
 </div>
 </div>
 
-<div id="outline-container-orgbec55f5" class="outline-3">
-<h3 id="orgbec55f5"><span class="section-number-3">3.4</span> Resources</h3>
+<div id="outline-container-org0669d9d" class="outline-3">
+<h3 id="org0669d9d"><span class="section-number-3">3.4</span> Resources</h3>
 <div class="outline-text-3" id="text-3-4">
 <ul class="org-ul">
 <li><a href="https://www2.lib.uchicago.edu/keith/tcl-course/emacs-tutorial.html">A Tutorial Introduction to GNU Emacs</a></li>
@@ -1001,16 +1014,16 @@ shortcuts and starts using them instead of the verbose versions.
 </ul>
 
 <div class="org-src-container">
-<pre class="src src-R"><span class="linenr"> 1: </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">#</span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">+CAPTION: Some basic commands in R</span>
-<span class="linenr"> 2: </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">Text after # is a comment to explain what the command does</span>
-<span class="linenr"> 3: </span>q() <span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">Quit R; prompts for saving the workspace.</span>
-<span class="linenr"> 4: </span>?command <span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">Open help for 'command'; q to quit help.</span>
-<span class="linenr"> 5: </span>??keyword <span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">List commands with 'keyword' in the title</span>
-<span class="linenr"> 6: </span>help.search(<span style="color: #8f5902; font-style: italic;">"keyword"</span>) <span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">List commands with 'keyword'</span>
-<span class="linenr"> 7: </span>                       <span style="color: #888a85; background-color: #ffffff; font-style: italic;">#  </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">anywhere in the docs</span>
-<span class="linenr"> 8: </span><span style="color: #8f5902; font-style: italic;">setwd</span>(<span style="color: #8f5902; font-style: italic;">"c:/project1"</span>)  <span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">On a Windows machine, sets the working directory to c:/project1</span>
-<span class="linenr"> 9: </span><span style="color: #8f5902; font-style: italic;">setwd</span>(<span style="color: #8f5902; font-style: italic;">"~/proj2"</span>)  <span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">On a Linux or OSX machine, sets the working directory to ~/proj2</span>
-<span class="linenr">10: </span>getwd() <span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">Reports the present working directory</span>
+<pre class="src src-R"><span class="linenr"> 1: </span><span style="color: #5F7F5F;">#</span><span style="color: #7F9F7F;">+CAPTION: Some basic commands in R</span>
+<span class="linenr"> 2: </span><span style="color: #5F7F5F;"># </span><span style="color: #7F9F7F;">Text after # is a comment to explain what the command does</span>
+<span class="linenr"> 3: </span>q() <span style="color: #5F7F5F;"># </span><span style="color: #7F9F7F;">Quit R; prompts for saving the workspace.</span>
+<span class="linenr"> 4: </span>?command <span style="color: #5F7F5F;"># </span><span style="color: #7F9F7F;">Open help for 'command'; q to quit help.</span>
+<span class="linenr"> 5: </span>??keyword <span style="color: #5F7F5F;"># </span><span style="color: #7F9F7F;">List commands with 'keyword' in the title</span>
+<span class="linenr"> 6: </span>help.search(<span style="color: #CC9393;">"keyword"</span>) <span style="color: #5F7F5F;"># </span><span style="color: #7F9F7F;">List commands with 'keyword'</span>
+<span class="linenr"> 7: </span>                       <span style="color: #5F7F5F;">#  </span><span style="color: #7F9F7F;">anywhere in the docs</span>
+<span class="linenr"> 8: </span><span style="color: #BFEBBF;">setwd</span>(<span style="color: #CC9393;">"c:/project1"</span>)  <span style="color: #5F7F5F;"># </span><span style="color: #7F9F7F;">On a Windows machine, sets the working directory to c:/project1</span>
+<span class="linenr"> 9: </span><span style="color: #BFEBBF;">setwd</span>(<span style="color: #CC9393;">"~/proj2"</span>)  <span style="color: #5F7F5F;"># </span><span style="color: #7F9F7F;">On a Linux or OSX machine, sets the working directory to ~/proj2</span>
+<span class="linenr">10: </span>getwd() <span style="color: #5F7F5F;"># </span><span style="color: #7F9F7F;">Reports the present working directory</span>
 </pre>
 </div>
 </div>
@@ -1047,25 +1060,25 @@ A numeric vector is a collection of numbers.
 
 <div class="org-src-container">
 <pre class="src src-R" id="org12bb58c"><span class="linenr"> 1: </span>
-<span class="linenr"> 2: </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">Line 3 creates a numeric vector called col1 with</span>
-<span class="linenr"> 3: </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">13 elements: numbers 1 to 10, 11, 14.5 and 6.</span>
-<span class="linenr"> 4: </span>c(1:5,11,14.5,6)<span style="color: #8f5902; font-style: italic;">-&gt;</span>col1
+<span class="linenr"> 2: </span><span style="color: #5F7F5F;"># </span><span style="color: #7F9F7F;">Line 3 creates a numeric vector called col1 with</span>
+<span class="linenr"> 3: </span><span style="color: #5F7F5F;"># </span><span style="color: #7F9F7F;">13 elements: numbers 1 to 10, 11, 14.5 and 6.</span>
+<span class="linenr"> 4: </span>c(1:5,11,14.5,6)<span style="color: #BFEBBF;">-&gt;</span>col1
 <span class="linenr"> 5: </span>col1
-<span class="linenr"> 6: </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">Line 6 creates a character vector called col2</span>
-<span class="linenr"> 7: </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">with four elements, each being a string of</span>
-<span class="linenr"> 8: </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">characters</span>
-<span class="linenr"> 9: </span>c(<span style="color: #8f5902; font-style: italic;">"Sheela"</span>,<span style="color: #8f5902; font-style: italic;">"Manoj"</span>,<span style="color: #8f5902; font-style: italic;">"Karim"</span>,<span style="color: #8f5902; font-style: italic;">"John"</span>)<span style="color: #8f5902; font-style: italic;">-&gt;</span>col2
+<span class="linenr"> 6: </span><span style="color: #5F7F5F;"># </span><span style="color: #7F9F7F;">Line 6 creates a character vector called col2</span>
+<span class="linenr"> 7: </span><span style="color: #5F7F5F;"># </span><span style="color: #7F9F7F;">with four elements, each being a string of</span>
+<span class="linenr"> 8: </span><span style="color: #5F7F5F;"># </span><span style="color: #7F9F7F;">characters</span>
+<span class="linenr"> 9: </span>c(<span style="color: #CC9393;">"Sheela"</span>,<span style="color: #CC9393;">"Manoj"</span>,<span style="color: #CC9393;">"Karim"</span>,<span style="color: #CC9393;">"John"</span>)<span style="color: #BFEBBF;">-&gt;</span>col2
 <span class="linenr">10: </span>col2
-<span class="linenr">11: </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">Line 9 creates a factor vector in which each</span>
-<span class="linenr">12: </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">element belongs to category "M" or "F".</span>
-<span class="linenr">13: </span>as.factor(c(<span style="color: #8f5902; font-style: italic;">"M"</span>,<span style="color: #8f5902; font-style: italic;">"M"</span>,<span style="color: #8f5902; font-style: italic;">"M"</span>,<span style="color: #8f5902; font-style: italic;">"F"</span>,<span style="color: #8f5902; font-style: italic;">"F"</span>,<span style="color: #8f5902; font-style: italic;">"M"</span>,<span style="color: #8f5902; font-style: italic;">"M"</span>))<span style="color: #8f5902; font-style: italic;">-&gt;</span>col3
+<span class="linenr">11: </span><span style="color: #5F7F5F;"># </span><span style="color: #7F9F7F;">Line 9 creates a factor vector in which each</span>
+<span class="linenr">12: </span><span style="color: #5F7F5F;"># </span><span style="color: #7F9F7F;">element belongs to category "M" or "F".</span>
+<span class="linenr">13: </span>as.factor(c(<span style="color: #CC9393;">"M"</span>,<span style="color: #CC9393;">"M"</span>,<span style="color: #CC9393;">"M"</span>,<span style="color: #CC9393;">"F"</span>,<span style="color: #CC9393;">"F"</span>,<span style="color: #CC9393;">"M"</span>,<span style="color: #CC9393;">"M"</span>))<span style="color: #BFEBBF;">-&gt;</span>col3
 <span class="linenr">14: </span>col3
-<span class="linenr">15: </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">Line 13 reads a factor vector and outputs a</span>
-<span class="linenr">16: </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">vector that is a list of categories. In this</span>
-<span class="linenr">17: </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">case, the output would be: [1] "F" "M"</span>
+<span class="linenr">15: </span><span style="color: #5F7F5F;"># </span><span style="color: #7F9F7F;">Line 13 reads a factor vector and outputs a</span>
+<span class="linenr">16: </span><span style="color: #5F7F5F;"># </span><span style="color: #7F9F7F;">vector that is a list of categories. In this</span>
+<span class="linenr">17: </span><span style="color: #5F7F5F;"># </span><span style="color: #7F9F7F;">case, the output would be: [1] "F" "M"</span>
 <span class="linenr">18: </span>levels(col3)
-<span class="linenr">19: </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">Line 15 can be used to check what type of object</span>
-<span class="linenr">20: </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">is col3.</span>
+<span class="linenr">19: </span><span style="color: #5F7F5F;"># </span><span style="color: #7F9F7F;">Line 15 can be used to check what type of object</span>
+<span class="linenr">20: </span><span style="color: #5F7F5F;"># </span><span style="color: #7F9F7F;">is col3.</span>
 <span class="linenr">21: </span>class(col3)
 </pre>
 </div>
@@ -1113,41 +1126,41 @@ Levels: F M
 
 <div class="org-src-container">
 <pre class="src src-R">
-<span style="color: #888a85; background-color: #ffffff; font-style: italic;">## </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">Selecting rows using conditions. Conditions can be</span>
-<span style="color: #888a85; background-color: #ffffff; font-style: italic;">## </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">specified using operators such as:</span>
-<span style="color: #888a85; background-color: #ffffff; font-style: italic;">## </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">==, !=, &lt;, &lt;=, &gt;, &gt;=, is.na, is.nan</span>
-subset(data1,var1&gt;10000)<span style="color: #8f5902; font-style: italic;">-&gt;</span>data2
+<span style="color: #5F7F5F;">## </span><span style="color: #7F9F7F;">Selecting rows using conditions. Conditions can be</span>
+<span style="color: #5F7F5F;">## </span><span style="color: #7F9F7F;">specified using operators such as:</span>
+<span style="color: #5F7F5F;">## </span><span style="color: #7F9F7F;">==, !=, &lt;, &lt;=, &gt;, &gt;=, is.na, is.nan</span>
+subset(data1,var1&gt;10000)<span style="color: #BFEBBF;">-&gt;</span>data2
 
-<span style="color: #888a85; background-color: #ffffff; font-style: italic;">## </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">Selecting columns (may be combined with argument for</span>
-<span style="color: #888a85; background-color: #ffffff; font-style: italic;">## </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">selecting rows).</span>
+<span style="color: #5F7F5F;">## </span><span style="color: #7F9F7F;">Selecting columns (may be combined with argument for</span>
+<span style="color: #5F7F5F;">## </span><span style="color: #7F9F7F;">selecting rows).</span>
 
-subset(data1,select=c(<span style="color: #8f5902; font-style: italic;">"var1"</span>,<span style="color: #8f5902; font-style: italic;">"var5"</span>,<span style="color: #8f5902; font-style: italic;">"var10"</span>))<span style="color: #8f5902; font-style: italic;">-&gt;</span>data2
+subset(data1,select=c(<span style="color: #CC9393;">"var1"</span>,<span style="color: #CC9393;">"var5"</span>,<span style="color: #CC9393;">"var10"</span>))<span style="color: #BFEBBF;">-&gt;</span>data2
 
-<span style="color: #888a85; background-color: #ffffff; font-style: italic;">## </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">merging data frames using variables var1 and var2,</span>
-<span style="color: #888a85; background-color: #ffffff; font-style: italic;">## </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">selecting only matching rows of data3 and data4.</span>
+<span style="color: #5F7F5F;">## </span><span style="color: #7F9F7F;">merging data frames using variables var1 and var2,</span>
+<span style="color: #5F7F5F;">## </span><span style="color: #7F9F7F;">selecting only matching rows of data3 and data4.</span>
 
-merge(data3, data4, by=c(<span style="color: #8f5902; font-style: italic;">"var1"</span>,<span style="color: #8f5902; font-style: italic;">"var2"</span>))<span style="color: #8f5902; font-style: italic;">-&gt;</span>data5
+merge(data3, data4, by=c(<span style="color: #CC9393;">"var1"</span>,<span style="color: #CC9393;">"var2"</span>))<span style="color: #BFEBBF;">-&gt;</span>data5
 
-<span style="color: #888a85; background-color: #ffffff; font-style: italic;">## </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">merging data frames using variables var1 and var2,</span>
-<span style="color: #888a85; background-color: #ffffff; font-style: italic;">## </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">selecting all rows of data3 and matching rows of</span>
-<span style="color: #888a85; background-color: #ffffff; font-style: italic;">## </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">data4. Rows with no matching information from data4</span>
-<span style="color: #888a85; background-color: #ffffff; font-style: italic;">## </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">will have NAs in columns coming from data4</span>
+<span style="color: #5F7F5F;">## </span><span style="color: #7F9F7F;">merging data frames using variables var1 and var2,</span>
+<span style="color: #5F7F5F;">## </span><span style="color: #7F9F7F;">selecting all rows of data3 and matching rows of</span>
+<span style="color: #5F7F5F;">## </span><span style="color: #7F9F7F;">data4. Rows with no matching information from data4</span>
+<span style="color: #5F7F5F;">## </span><span style="color: #7F9F7F;">will have NAs in columns coming from data4</span>
 
-merge(data3, data4, by=c(<span style="color: #8f5902; font-style: italic;">"var1"</span>,<span style="color: #8f5902; font-style: italic;">"var2"</span>),
-      all.x=<span style="color: #a40000;">TRUE</span>)<span style="color: #8f5902; font-style: italic;">-&gt;</span>data5
+merge(data3, data4, by=c(<span style="color: #CC9393;">"var1"</span>,<span style="color: #CC9393;">"var2"</span>),
+      all.x=<span style="color: #7CB8BB;">TRUE</span>)<span style="color: #BFEBBF;">-&gt;</span>data5
 
-<span style="color: #888a85; background-color: #ffffff; font-style: italic;">## </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">merging data frames using variables var1 and var2,</span>
-<span style="color: #888a85; background-color: #ffffff; font-style: italic;">## </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">selecting all rows of data4 and matching rows of</span>
-<span style="color: #888a85; background-color: #ffffff; font-style: italic;">## </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">data3</span>
+<span style="color: #5F7F5F;">## </span><span style="color: #7F9F7F;">merging data frames using variables var1 and var2,</span>
+<span style="color: #5F7F5F;">## </span><span style="color: #7F9F7F;">selecting all rows of data4 and matching rows of</span>
+<span style="color: #5F7F5F;">## </span><span style="color: #7F9F7F;">data3</span>
 
-merge(data3, data4, by=c(<span style="color: #8f5902; font-style: italic;">"var1"</span>,<span style="color: #8f5902; font-style: italic;">"var2"</span>),
-      all.y=<span style="color: #a40000;">TRUE</span>)<span style="color: #8f5902; font-style: italic;">-&gt;</span>data5
+merge(data3, data4, by=c(<span style="color: #CC9393;">"var1"</span>,<span style="color: #CC9393;">"var2"</span>),
+      all.y=<span style="color: #7CB8BB;">TRUE</span>)<span style="color: #BFEBBF;">-&gt;</span>data5
 
-<span style="color: #888a85; background-color: #ffffff; font-style: italic;">## </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">merging data frames using variables var1 and var2,</span>
-<span style="color: #888a85; background-color: #ffffff; font-style: italic;">## </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">selecting all rows of data 3 and data4.</span>
+<span style="color: #5F7F5F;">## </span><span style="color: #7F9F7F;">merging data frames using variables var1 and var2,</span>
+<span style="color: #5F7F5F;">## </span><span style="color: #7F9F7F;">selecting all rows of data 3 and data4.</span>
 
-merge(data3, data4, by=c(<span style="color: #8f5902; font-style: italic;">"var1"</span>,<span style="color: #8f5902; font-style: italic;">"var2"</span>),
-      all=<span style="color: #a40000;">TRUE</span>)<span style="color: #8f5902; font-style: italic;">-&gt;</span>data5
+merge(data3, data4, by=c(<span style="color: #CC9393;">"var1"</span>,<span style="color: #CC9393;">"var2"</span>),
+      all=<span style="color: #7CB8BB;">TRUE</span>)<span style="color: #BFEBBF;">-&gt;</span>data5
 
 
 </pre>
@@ -1186,7 +1199,7 @@ In the first step, you map, through <i>aesthetic</i> mappings, selected variable
 </p>
 
 <div class="org-src-container">
-<pre class="src src-R" id="orgcad04c6"><span class="linenr">1: </span>ggplot(data,aes(x=year,y=income,colour=State))<span style="color: #8f5902; font-style: italic;">-&gt;</span>p
+<pre class="src src-R" id="orgcad04c6"><span class="linenr">1: </span>ggplot(data,aes(x=year,y=income,colour=State))<span style="color: #BFEBBF;">-&gt;</span>p
 </pre>
 </div>
 
@@ -1195,8 +1208,8 @@ You could also specify colour, size and shape independently of aesthetics if you
 </p>
 
 <div class="org-src-container">
-<pre class="src src-R" id="orgb34ae40"><span class="linenr">1: </span>ggplot(data,aes(x=year,y=income,size=State),
-<span class="linenr">2: </span>       colour=<span style="color: #8f5902; font-style: italic;">"darkred"</span>)<span style="color: #8f5902; font-style: italic;">-&gt;</span>p
+<pre class="src src-R" id="org691fa3f"><span class="linenr">1: </span>ggplot(data,aes(x=year,y=income,size=State),
+<span class="linenr">2: </span>       colour=<span style="color: #CC9393;">"darkred"</span>)<span style="color: #BFEBBF;">-&gt;</span>p
 </pre>
 </div>
 </div>
@@ -1210,12 +1223,12 @@ In the second step, you specify the type of graph you want to make. These are ca
 </p>
 
 <div class="org-src-container">
-<pre class="src src-R" id="org0bad896"><span class="linenr">2: </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">We start from the object 'p' created in Step 1</span>
-<span class="linenr">3: </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">and use '+' to add to it/modify it.</span>
-<span class="linenr">4: </span>p+geom_point()<span style="color: #8f5902; font-style: italic;">-&gt;</span>p <span style="color: #888a85; background-color: #ffffff; font-style: italic;">#</span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">This makes a scatter plot</span>
-<span class="linenr">5: </span>p+geom_line()<span style="color: #8f5902; font-style: italic;">-&gt;</span>p <span style="color: #888a85; background-color: #ffffff; font-style: italic;">#</span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">This adds a line to the plot</span>
-<span class="linenr">6: </span>p <span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">At any stage, doing this would actually</span>
-<span class="linenr">7: </span>  <span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">plot p on the screen.</span>
+<pre class="src src-R" id="org400f361"><span class="linenr">2: </span><span style="color: #5F7F5F;"># </span><span style="color: #7F9F7F;">We start from the object 'p' created in Step 1</span>
+<span class="linenr">3: </span><span style="color: #5F7F5F;"># </span><span style="color: #7F9F7F;">and use '+' to add to it/modify it.</span>
+<span class="linenr">4: </span>p+geom_point()<span style="color: #BFEBBF;">-&gt;</span>p <span style="color: #5F7F5F;">#</span><span style="color: #7F9F7F;">This makes a scatter plot</span>
+<span class="linenr">5: </span>p+geom_line()<span style="color: #BFEBBF;">-&gt;</span>p <span style="color: #5F7F5F;">#</span><span style="color: #7F9F7F;">This adds a line to the plot</span>
+<span class="linenr">6: </span>p <span style="color: #5F7F5F;"># </span><span style="color: #7F9F7F;">At any stage, doing this would actually</span>
+<span class="linenr">7: </span>  <span style="color: #5F7F5F;"># </span><span style="color: #7F9F7F;">plot p on the screen.</span>
 </pre>
 </div>
 
@@ -1397,10 +1410,10 @@ For each of these scales (x, y, colour, size and shape), you can define attribut
 </p>
 
 <div class="org-src-container">
-<pre class="src src-R" id="org691fa3f"><span class="linenr"> 6: </span>p+scale_x_continuous(<span style="color: #8f5902; font-style: italic;">"Financial Year"</span>,
+<pre class="src src-R" id="org53cf168"><span class="linenr"> 6: </span>p+scale_x_continuous(<span style="color: #CC9393;">"Financial Year"</span>,
 <span class="linenr"> 7: </span>                     limits=c(1990,2012),
 <span class="linenr"> 8: </span>                     breaks=c(1990,1995,
-<span class="linenr"> 9: </span>                              2000,2010))<span style="color: #8f5902; font-style: italic;">-&gt;</span>p
+<span class="linenr"> 9: </span>                              2000,2010))<span style="color: #BFEBBF;">-&gt;</span>p
 <span class="linenr">10: </span>
 </pre>
 </div>
@@ -1606,14 +1619,14 @@ ggplot2 provides various themes, and different elements to change them, to tweak
 </table>
 
 <div class="org-src-container">
-<pre class="src src-R"><span class="linenr"> 9: </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">The line below adds a title to the graph</span>
-<span class="linenr">10: </span>p<span style="color: #8f5902; font-style: italic;">&lt;-</span>p + ggtitle(<span style="color: #8f5902; font-style: italic;">"Title of my graph"</span>)
-<span class="linenr">11: </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">The line below changes the x axis title</span>
-<span class="linenr">12: </span>p<span style="color: #8f5902; font-style: italic;">&lt;-</span>p+theme(axis.title.x=element_text(size=16,
+<pre class="src src-R"><span class="linenr"> 9: </span><span style="color: #5F7F5F;"># </span><span style="color: #7F9F7F;">The line below adds a title to the graph</span>
+<span class="linenr">10: </span>p<span style="color: #BFEBBF;">&lt;-</span>p + ggtitle(<span style="color: #CC9393;">"Title of my graph"</span>)
+<span class="linenr">11: </span><span style="color: #5F7F5F;"># </span><span style="color: #7F9F7F;">The line below changes the x axis title</span>
+<span class="linenr">12: </span>p<span style="color: #BFEBBF;">&lt;-</span>p+theme(axis.title.x=element_text(size=16,
 <span class="linenr">13: </span>                                     lineheight=.9,
-<span class="linenr">14: </span>                                     family=<span style="color: #8f5902; font-style: italic;">"Times"</span>,
-<span class="linenr">15: </span>                                     face=<span style="color: #8f5902; font-style: italic;">"bold.italic"</span>,
-<span class="linenr">16: </span>                                     colour=<span style="color: #8f5902; font-style: italic;">"red"</span>))
+<span class="linenr">14: </span>                                     family=<span style="color: #CC9393;">"Times"</span>,
+<span class="linenr">15: </span>                                     face=<span style="color: #CC9393;">"bold.italic"</span>,
+<span class="linenr">16: </span>                                     colour=<span style="color: #CC9393;">"red"</span>))
 </pre>
 </div>
 </div>
@@ -1627,20 +1640,20 @@ ggplot2 also provides facetting tools, to be used if you want to show multiple g
 </p>
 
 <div class="org-src-container">
-<pre class="src src-R"><span class="linenr">14: </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">The line below creates a separate graph for</span>
-<span class="linenr">15: </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">each value of category, and arranges that</span>
-<span class="linenr">16: </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">in a matrix of three columns, and as many</span>
-<span class="linenr">17: </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">rows as required.</span>
+<pre class="src src-R"><span class="linenr">14: </span><span style="color: #5F7F5F;"># </span><span style="color: #7F9F7F;">The line below creates a separate graph for</span>
+<span class="linenr">15: </span><span style="color: #5F7F5F;"># </span><span style="color: #7F9F7F;">each value of category, and arranges that</span>
+<span class="linenr">16: </span><span style="color: #5F7F5F;"># </span><span style="color: #7F9F7F;">in a matrix of three columns, and as many</span>
+<span class="linenr">17: </span><span style="color: #5F7F5F;"># </span><span style="color: #7F9F7F;">rows as required.</span>
 <span class="linenr">18: </span>p+facet_wrap(~category,ncol=3)
 </pre>
 </div>
 
 <div class="org-src-container">
-<pre class="src src-R"><span class="linenr">15: </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">The line below creates a separate graph</span>
-<span class="linenr">16: </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">for each combination of category1</span>
-<span class="linenr">17: </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">and category2. Graphs are arranged in</span>
-<span class="linenr">18: </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">a grid with values of category1 making rows</span>
-<span class="linenr">19: </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">and values of category2 making columns.</span>
+<pre class="src src-R"><span class="linenr">15: </span><span style="color: #5F7F5F;"># </span><span style="color: #7F9F7F;">The line below creates a separate graph</span>
+<span class="linenr">16: </span><span style="color: #5F7F5F;"># </span><span style="color: #7F9F7F;">for each combination of category1</span>
+<span class="linenr">17: </span><span style="color: #5F7F5F;"># </span><span style="color: #7F9F7F;">and category2. Graphs are arranged in</span>
+<span class="linenr">18: </span><span style="color: #5F7F5F;"># </span><span style="color: #7F9F7F;">a grid with values of category1 making rows</span>
+<span class="linenr">19: </span><span style="color: #5F7F5F;"># </span><span style="color: #7F9F7F;">and values of category2 making columns.</span>
 <span class="linenr">20: </span>p+facet_grid(category1~category2,ncol=3)
 </pre>
 </div>
@@ -1707,7 +1720,7 @@ Following code computes mean and median separately for each combination of col3 
 If <code>sector</code> in <code>DT</code> is defined as a key variable, then the following command will subset rows for which the key variable takes values &ldquo;Industry&rdquo; or &ldquo;Agriculture&rdquo;.
 </p>
 <div class="org-src-container">
-<pre class="src src-R">DT[c(<span style="color: #8f5902; font-style: italic;">"Industry"</span>,<span style="color: #8f5902; font-style: italic;">"Agriculture"</span>)]
+<pre class="src src-R">DT[c(<span style="color: #CC9393;">"Industry"</span>,<span style="color: #CC9393;">"Agriculture"</span>)]
 </pre>
 </div></li>
 <li><p>
@@ -1724,14 +1737,14 @@ Output of a data.table is also a data.table. This means, that a sequence of comm
 </p>
 
 <div class="org-src-container">
-<pre class="src src-R"><span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">Three commands run in a sequence</span>
+<pre class="src src-R"><span style="color: #5F7F5F;"># </span><span style="color: #7F9F7F;">Three commands run in a sequence</span>
 
-DT[i1,j1,by1]<span style="color: #8f5902; font-style: italic;">-&gt;</span>DT2
-DT2[i2,j2,by2]<span style="color: #8f5902; font-style: italic;">-&gt;</span>DT3
+DT[i1,j1,by1]<span style="color: #BFEBBF;">-&gt;</span>DT2
+DT2[i2,j2,by2]<span style="color: #BFEBBF;">-&gt;</span>DT3
 DT3[i3,j2,by3]
 
-<span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">Can be combined into one line</span>
-<span style="color: #888a85; background-color: #ffffff; font-style: italic;"># </span><span style="color: #888a85; background-color: #ffffff; font-style: italic;">as follows</span>
+<span style="color: #5F7F5F;"># </span><span style="color: #7F9F7F;">Can be combined into one line</span>
+<span style="color: #5F7F5F;"># </span><span style="color: #7F9F7F;">as follows</span>
 
 DT[i1,j1,by1][i2,j2,by2][i3,j2,by3]
 
@@ -1764,11 +1777,11 @@ In the command below, the first data.table transformation computes mean by secto
 
 <div class="org-src-container">
 <pre class="src src-R">DT[,.(col1mean=mean(columnname1)),
-   keyby=.(sector,sex,religion)]<span style="color: #8f5902; font-style: italic;">-&gt;</span>DT1
+   keyby=.(sector,sex,religion)]<span style="color: #BFEBBF;">-&gt;</span>DT1
 
 DT1[CJ(unique(sector),
        unique(sex),
-       unique(religion))]<span style="color: #8f5902; font-style: italic;">-&gt;</span>DT2
+       unique(religion))]<span style="color: #BFEBBF;">-&gt;</span>DT2
 
 DT2[,as.list(col1mean)
    ,by=.(sex,religion)]
@@ -1795,8 +1808,8 @@ DT2[,as.list(col1mean)
 <h3 id="org59b67a3"><span class="section-number-3">4.6</span> Econometric Analysis in R</h3>
 </div>
 
-<div id="outline-container-org7ed15a6" class="outline-3">
-<h3 id="org7ed15a6"><span class="section-number-3">4.7</span> Resources</h3>
+<div id="outline-container-orgd265ece" class="outline-3">
+<h3 id="orgd265ece"><span class="section-number-3">4.7</span> Resources</h3>
 <div class="outline-text-3" id="text-4-7">
 <ul class="org-ul">
 <li>Chang, Winston (2013), <i>R Graphics Cookbook</i>, OReilly</li>
@@ -1845,11 +1858,11 @@ lines that we shall use.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-org"><span style="color: #7f7f7f; font-weight: bold;">#+TITLE:</span> <span style="color: #b22222; background-color: #ffffff;">Using Emacs, Org-mode and R for Research Writing in Social Sciences</span>
-<span style="color: #888a85; background-color: #ffffff;">#+SUBTITLE: A Toolkit for Writing Reproducible Research Papers and Monographs</span>
-<span style="color: #7f7f7f; font-weight: bold;">#+AUTHOR:</span> <span style="color: #b22222; font-size: 125%; font-weight: bold;">Vikas Rawal</span>
-<span style="color: #7f7f7f; font-weight: bold;">#+DATE:</span> <span style="color: #b22222; font-size: 125%; font-weight: bold;">May 4, 2014</span>
-<span style="color: #888a85; background-color: #ffffff;">#+OPTIONS: toc:2 H:3 num:2</span>
+<pre class="src src-org"><span style="color: #b3b3b3; font-size: 125%; font-weight: bold;">#+TITLE:</span> <span style="color: #b22222; background-color: #3F3F3F;">Using Emacs, Org-mode and R for Research Writing in Social Sciences</span>
+<span style="color: #7F9F7F;">#+SUBTITLE: A Toolkit for Writing Reproducible Research Papers and Monographs</span>
+<span style="color: #b3b3b3; font-size: 125%; font-weight: bold;">#+AUTHOR:</span> <span style="color: #b22222; font-size: 125%; font-weight: bold;">Vikas Rawal</span>
+<span style="color: #b3b3b3; font-size: 125%; font-weight: bold;">#+DATE:</span> <span style="color: #b22222; font-size: 125%; font-weight: bold;">May 4, 2014</span>
+<span style="color: #7F9F7F;">#+OPTIONS: toc:2 H:3 num:2</span>
 </pre>
 </div>
 
@@ -1964,26 +1977,26 @@ leave section numbering for org-mode to handle automatically.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-org"><span style="color: #7f7f7f; font-weight: bold;">#+TITLE:</span> <span style="color: #b22222; background-color: #ffffff;">Reproducible Research Papers using Org-mode and R: A Guide</span>
-<span style="color: #7f7f7f; font-weight: bold;">#+AUTHOR:</span> <span style="color: #b22222; font-size: 125%; font-weight: bold;">Vikas Rawal</span>
-<span style="color: #7f7f7f; font-weight: bold;">#+DATE:</span> <span style="color: #b22222; font-size: 125%; font-weight: bold;">May 4, 2014</span>
-<span style="color: #1b4167; background-color: #ffffff;">* Introduction</span>
+<pre class="src src-org"><span style="color: #b3b3b3; font-size: 125%; font-weight: bold;">#+TITLE:</span> <span style="color: #b22222; background-color: #3F3F3F;">Reproducible Research Papers using Org-mode and R: A Guide</span>
+<span style="color: #b3b3b3; font-size: 125%; font-weight: bold;">#+AUTHOR:</span> <span style="color: #b22222; font-size: 125%; font-weight: bold;">Vikas Rawal</span>
+<span style="color: #b3b3b3; font-size: 125%; font-weight: bold;">#+DATE:</span> <span style="color: #b22222; font-size: 125%; font-weight: bold;">May 4, 2014</span>
+<span style="color: #DFAF8F; background-color: #3F3F3F;">* Introduction</span>
 This is the first section. Add your content here.
-<span style="color: #1b4167; background-color: #ffffff;">* Literature review</span>
-<span style="color: #ffffff;">*</span><span style="color: #aa142d; background-color: #ffffff; font-weight: bold;">* Is this an important issue</span>
+<span style="color: #DFAF8F; background-color: #3F3F3F;">* Literature review</span>
+<span style="color: #3F3F3F;">*</span><span style="color: #BFEBBF; background-color: #3F3F3F; font-weight: bold;">* Is this an important issue</span>
 This is a sub-section under top-level section "Literature review" Now
 indulgence dissimilar for his thoroughly has terminated. Agreement
 offending commanded my an. Change wholly say why eldest period. Are
 projection put celebrated particular unreserved joy unsatiable its. In
 then dare good am rose bred or. On am in nearer square wanted.
-<span style="color: #ffffff;">*</span><span style="color: #aa142d; background-color: #ffffff; font-weight: bold;">* What are the major disputes in the literature</span>
-<span style="color: #ffffff;">**</span><span style="color: #0d7124; background-color: #ffffff; font-weight: bold;">* adulterated text</span>
+<span style="color: #3F3F3F;">*</span><span style="color: #BFEBBF; background-color: #3F3F3F; font-weight: bold;">* What are the major disputes in the literature</span>
+<span style="color: #3F3F3F;">**</span><span style="color: #7CB8BB; background-color: #3F3F3F; font-weight: bold;">* adulterated text</span>
 Instrument cultivated alteration any favourable expression law far
 nor. Both new like tore but year. An from mean on with when sing pain.
 Oh to as principles devonshire companions unsatiable an delightful.
 The ourselves suffering the sincerity. Inhabit her manners adapted age
 certain. Debating offended at branched striking be subjects.
-<span style="color: #ffffff;">**</span><span style="color: #0d7124; background-color: #ffffff; font-weight: bold;">* Unadulterated prose</span>
+<span style="color: #3F3F3F;">**</span><span style="color: #7CB8BB; background-color: #3F3F3F; font-weight: bold;">* Unadulterated prose</span>
 Announcing of invitation principles in. Cold in late or deal.
 Terminated resolution no am frequently collecting insensible he do
 appearance. Projection invitation affronting admiration if no on or.
@@ -1993,15 +2006,15 @@ stand nay own point walls. Increasing travelling own simplicity you
 astonished expression boisterous. Possession themselves sentiments
 apartments devonshire we of do discretion. Enjoyment discourse ye
 continued pronounce we necessary abilities.
-<span style="color: #1b4167; background-color: #ffffff;">* Methodology</span>
+<span style="color: #DFAF8F; background-color: #3F3F3F;">* Methodology</span>
 This is the next top-level section. There are no sub-sections under this.
-<span style="color: #1b4167; background-color: #ffffff;">* Results</span>
+<span style="color: #DFAF8F; background-color: #3F3F3F;">* Results</span>
 This is the third top-level section. There are sub-sections under this.
-<span style="color: #ffffff;">*</span><span style="color: #aa142d; background-color: #ffffff; font-weight: bold;">* Result 1</span>
+<span style="color: #3F3F3F;">*</span><span style="color: #BFEBBF; background-color: #3F3F3F; font-weight: bold;">* Result 1</span>
 This is a sub-section under section Results.
-<span style="color: #ffffff;">*</span><span style="color: #aa142d; background-color: #ffffff; font-weight: bold;">* Result 2</span>
+<span style="color: #3F3F3F;">*</span><span style="color: #BFEBBF; background-color: #3F3F3F; font-weight: bold;">* Result 2</span>
 This is another sub-section under section Results
-<span style="color: #1b4167; background-color: #ffffff;">* Conclusions</span>
+<span style="color: #DFAF8F; background-color: #3F3F3F;">* Conclusions</span>
 This is the next and final top-level section. There are  no sub-sections under it.
 </pre>
 </div>
@@ -2179,14 +2192,14 @@ up in the final document.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-org" id="orgff9912e"><span style="color: #888a85; background-color: #ffffff;">#+NAME: table-yield</span>
-<span style="color: #888a85; background-color: #ffffff;">#+CAPTION:</span> <span style="font-size: 96%;">Simple table created using LaTeX tabular environment</span>
-<span style="color: #888a85; background-color: #ffffff;">#+attr_latex: :environment tabular :width \textwidth :align lrr</span>
-    <span style="color: #204a87;">| State          | Average yield | Average income |</span>
-    <span style="color: #204a87;">|----------------+---------------+----------------|</span>
-    <span style="color: #204a87;">| Madhya Pradesh |           672 |          13000 |</span>
-    <span style="color: #204a87;">| Haryana        |           300 |          25000 |</span>
-    <span style="color: #204a87;">| Punjab         |           260 |          35000 |</span>
+<pre class="src src-org" id="orgff9912e"><span style="color: #7F9F7F;">#+NAME: table-yield</span>
+<span style="color: #7F9F7F;">#+CAPTION:</span> <span style="background-color: #494949; font-size: 120%;">Simple table created using LaTeX tabular environment</span>
+<span style="color: #7F9F7F;">#+attr_latex: :environment tabular :width \textwidth :align lrr</span>
+    <span style="color: #9FC59F;">| State          | Average yield | Average income |</span>
+    <span style="color: #9FC59F;">|----------------+---------------+----------------|</span>
+    <span style="color: #9FC59F;">| Madhya Pradesh |           672 |          13000 |</span>
+    <span style="color: #9FC59F;">| Haryana        |           300 |          25000 |</span>
+    <span style="color: #9FC59F;">| Punjab         |           260 |          35000 |</span>
 </pre>
 </div>
 </div>
@@ -2336,8 +2349,8 @@ is what we shall do.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-org"><span style="color: #888a85; background-color: #ffffff;">#+NAME: literacy-rate</span>
-<span style="color: #888a85; background-color: #ffffff;">#+CAPTION:</span> <span style="font-size: 96%;">Percentage of literate men and women, by country (per cent)</span>
+<pre class="src src-org"><span style="color: #7F9F7F;">#+NAME: literacy-rate</span>
+<span style="color: #7F9F7F;">#+CAPTION:</span> <span style="background-color: #494949; font-size: 120%;">Percentage of literate men and women, by country (per cent)</span>
 <span style="color: #4169e1; text-decoration: underline;"><a href="file:a.jpg">file:a.jpg</a></span>
 </pre>
 </div>
@@ -2347,13 +2360,13 @@ Similarly, a table will be inserted as follows.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-org"><span style="color: #888a85; background-color: #ffffff;">#+NAME: literacy-rate-table</span>
-<span style="color: #888a85; background-color: #ffffff;">#+CAPTION:</span> <span style="font-size: 96%;">Percentage of literate men and women, by country (per cent)</span>
-<span style="color: #204a87;">| Country    | Men | Women |</span>
-<span style="color: #204a87;">|------------+-----+-------|</span>
-<span style="color: #204a87;">| India      |  75 |    43 |</span>
-<span style="color: #204a87;">| Bangladesh |  83 |    63 |</span>
-<span style="color: #204a87;">| Rwanda     |  77 |    60 |</span>
+<pre class="src src-org"><span style="color: #7F9F7F;">#+NAME: literacy-rate-table</span>
+<span style="color: #7F9F7F;">#+CAPTION:</span> <span style="background-color: #494949; font-size: 120%;">Percentage of literate men and women, by country (per cent)</span>
+<span style="color: #9FC59F;">| Country    | Men | Women |</span>
+<span style="color: #9FC59F;">|------------+-----+-------|</span>
+<span style="color: #9FC59F;">| India      |  75 |    43 |</span>
+<span style="color: #9FC59F;">| Bangladesh |  83 |    63 |</span>
+<span style="color: #9FC59F;">| Rwanda     |  77 |    60 |</span>
 </pre>
 </div>
 
@@ -2454,12 +2467,12 @@ embedded into Org as a source block. The basic syntax is
 </p>
 
 <div class="org-src-container">
-<pre class="src src-org"><span style="color: #888a85; background-color: #ffffff;">#+NAME: name_of_code_block</span>
-<span style="color: #888a85; background-color: #ffffff;">#+BEGIN_SRC R &lt;switches&gt; &lt;header-arguments&gt;</span>
+<pre class="src src-org"><span style="color: #7F9F7F;">#+NAME: name_of_code_block</span>
+<span style="color: #7F9F7F;">#+BEGIN_SRC R &lt;switches&gt; &lt;header-arguments&gt;</span>
 
-<span style="font-size: 96%;">  &lt;Your R code goes here.&gt;</span>
+<span style="background-color: #494949; font-size: 120%;">  &lt;Your R code goes here.&gt;</span>
 
-<span style="color: #888a85; background-color: #ffffff;">#+END_SRC</span>
+<span style="color: #7F9F7F;">#+END_SRC</span>
 </pre>
 </div>
 
@@ -2511,18 +2524,18 @@ included into the document.<sup><a id="fnr.1" class="footref" href="#fn.1">1</a>
 </p>
 
 <p>
-Code block <a href="#org9163087">2</a> is an example of such a code block. Note
+Code block <a href="#org9163087">1</a> is an example of such a code block. Note
 <code>:results value silent</code> switch used in the  <code>#+begin_src</code> line.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-org" id="org9163087"><span style="color: #888a85; background-color: #ffffff;">#+NAME: readdata-code</span>
-<span style="color: #888a85; background-color: #ffffff;">#+BEGIN_SRC R :results value silent</span>
+<pre class="src src-org" id="org9163087"><span style="color: #7F9F7F;">#+NAME: readdata-code</span>
+<span style="color: #7F9F7F;">#+BEGIN_SRC R :results value silent</span>
 
-<span style="font-size: 96%;">read.data(</span><span style="color: #8f5902; font-size: 96%; font-style: italic;">"datafile1.csv"</span><span style="font-size: 96%;">,sep=</span><span style="color: #8f5902; font-size: 96%; font-style: italic;">","</span><span style="font-size: 96%;">,header=T)</span><span style="color: #8f5902; font-size: 96%; font-style: italic;">-&gt;</span><span style="font-size: 96%;">mydata1</span>
+<span style="background-color: #494949; font-size: 120%;">read.data(</span><span style="color: #CC9393; background-color: #494949; font-size: 120%;">"datafile1.csv"</span><span style="background-color: #494949; font-size: 120%;">,sep=</span><span style="color: #CC9393; background-color: #494949; font-size: 120%;">","</span><span style="background-color: #494949; font-size: 120%;">,header=T)</span><span style="color: #BFEBBF; background-color: #494949; font-size: 120%;">-&gt;</span><span style="background-color: #494949; font-size: 120%;">mydata1</span>
 
 
-<span style="color: #888a85; background-color: #ffffff;">#+END_SRC</span>
+<span style="color: #7F9F7F;">#+END_SRC</span>
 </pre>
 </div>
 </div>
@@ -2541,21 +2554,21 @@ document as a Table.
 </p>
 
 <p>
-For example, the code block <a href="#org503ec0a">2</a> below uses mydata1 read in
+For example, the code block <a href="#org503ec0a">1</a> below uses mydata1 read in
 the previous code block, reads a new dataset, and processes them to
 create a table that shows average BMI by country.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-org" id="org503ec0a"><span style="color: #888a85; background-color: #ffffff;">#+NAME: bmi-table-code</span>
-<span style="color: #888a85; background-color: #ffffff;">#+BEGIN_SRC R :results value :colnames yes :hline yes</span>
-<span style="font-size: 96%;">aggregate(height~Country,data=mydata1,mean)</span><span style="color: #8f5902; font-size: 96%; font-style: italic;">-&gt;</span><span style="font-size: 96%;">a1</span>
-<span style="font-size: 96%;">read.data(</span><span style="color: #8f5902; font-size: 96%; font-style: italic;">"datafile2.csv"</span><span style="font-size: 96%;">,sep=</span><span style="color: #8f5902; font-size: 96%; font-style: italic;">","</span><span style="font-size: 96%;">,header=T)</span><span style="color: #8f5902; font-size: 96%; font-style: italic;">-&gt;</span><span style="font-size: 96%;">mydata2</span>
-<span style="font-size: 96%;">aggregate(weight~Country,data=mydata2,mean)</span><span style="color: #8f5902; font-size: 96%; font-style: italic;">-&gt;</span><span style="font-size: 96%;">a2</span>
-<span style="font-size: 96%;">merge(a1,a2,by=</span><span style="color: #8f5902; font-size: 96%; font-style: italic;">"Country"</span><span style="font-size: 96%;">)</span><span style="color: #8f5902; font-size: 96%; font-style: italic;">-&gt;</span><span style="font-size: 96%;">a1</span>
-<span style="font-size: 96%;">a1$weight/a1$height</span><span style="color: #8f5902; font-size: 96%; font-style: italic;">-&gt;</span><span style="font-size: 96%;">a1$BMI</span>
-<span style="font-size: 96%;">subset(a1,select=c(</span><span style="color: #8f5902; font-size: 96%; font-style: italic;">"Country"</span><span style="font-size: 96%;">,</span><span style="color: #8f5902; font-size: 96%; font-style: italic;">"BMI"</span><span style="font-size: 96%;">))</span>
-<span style="color: #888a85; background-color: #ffffff;">#+END_SRC</span>
+<pre class="src src-org" id="org503ec0a"><span style="color: #7F9F7F;">#+NAME: bmi-table-code</span>
+<span style="color: #7F9F7F;">#+BEGIN_SRC R :results value :colnames yes :hline yes</span>
+<span style="background-color: #494949; font-size: 120%;">aggregate(height~Country,data=mydata1,mean)</span><span style="color: #BFEBBF; background-color: #494949; font-size: 120%;">-&gt;</span><span style="background-color: #494949; font-size: 120%;">a1</span>
+<span style="background-color: #494949; font-size: 120%;">read.data(</span><span style="color: #CC9393; background-color: #494949; font-size: 120%;">"datafile2.csv"</span><span style="background-color: #494949; font-size: 120%;">,sep=</span><span style="color: #CC9393; background-color: #494949; font-size: 120%;">","</span><span style="background-color: #494949; font-size: 120%;">,header=T)</span><span style="color: #BFEBBF; background-color: #494949; font-size: 120%;">-&gt;</span><span style="background-color: #494949; font-size: 120%;">mydata2</span>
+<span style="background-color: #494949; font-size: 120%;">aggregate(weight~Country,data=mydata2,mean)</span><span style="color: #BFEBBF; background-color: #494949; font-size: 120%;">-&gt;</span><span style="background-color: #494949; font-size: 120%;">a2</span>
+<span style="background-color: #494949; font-size: 120%;">merge(a1,a2,by=</span><span style="color: #CC9393; background-color: #494949; font-size: 120%;">"Country"</span><span style="background-color: #494949; font-size: 120%;">)</span><span style="color: #BFEBBF; background-color: #494949; font-size: 120%;">-&gt;</span><span style="background-color: #494949; font-size: 120%;">a1</span>
+<span style="background-color: #494949; font-size: 120%;">a1$weight/a1$height</span><span style="color: #BFEBBF; background-color: #494949; font-size: 120%;">-&gt;</span><span style="background-color: #494949; font-size: 120%;">a1$BMI</span>
+<span style="background-color: #494949; font-size: 120%;">subset(a1,select=c(</span><span style="color: #CC9393; background-color: #494949; font-size: 120%;">"Country"</span><span style="background-color: #494949; font-size: 120%;">,</span><span style="color: #CC9393; background-color: #494949; font-size: 120%;">"BMI"</span><span style="background-color: #494949; font-size: 120%;">))</span>
+<span style="color: #7F9F7F;">#+END_SRC</span>
 </pre>
 </div>
 
@@ -2585,9 +2598,9 @@ block and the result of the code block have separate names.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-org"><span style="color: #888a85; background-color: #ffffff;">#+NAME: bmi-table-output</span>
-<span style="color: #888a85; background-color: #ffffff;">#+CAPTION:</span> <span style="font-size: 96%;">Average BMI, by country</span>
-<span style="color: #888a85; background-color: #ffffff;">#+RESULTS: bmi-table-code</span>
+<pre class="src src-org"><span style="color: #7F9F7F;">#+NAME: bmi-table-output</span>
+<span style="color: #7F9F7F;">#+CAPTION:</span> <span style="background-color: #494949; font-size: 120%;">Average BMI, by country</span>
+<span style="color: #7F9F7F;">#+RESULTS: bmi-table-code</span>
 </pre>
 </div>
 
@@ -2612,10 +2625,10 @@ graph.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-org"><span style="color: #888a85; background-color: #ffffff;">#+NAME: mygraph-code</span>
-<span style="color: #888a85; background-color: #ffffff;">#+BEGIN_SRC R :results output graphics :file bmi2.png :width 825 :height 1050 :fonts serif</span>
+<pre class="src src-org"><span style="color: #7F9F7F;">#+NAME: mygraph-code</span>
+<span style="color: #7F9F7F;">#+BEGIN_SRC R :results output graphics :file bmi2.png :width 825 :height 1050 :fonts serif</span>
 
-<span style="color: #888a85; background-color: #ffffff;">#+END_SRC</span>
+<span style="color: #7F9F7F;">#+END_SRC</span>
 </pre>
 </div>
 
@@ -2645,7 +2658,7 @@ graphic device to produce the file. When you evaluate this code using
 </p>
 
 <div class="org-src-container">
-<pre class="src src-org"><span style="color: #888a85; background-color: #ffffff;">#+RESULTS: mygraph-code</span>
+<pre class="src src-org"><span style="color: #7F9F7F;">#+RESULTS: mygraph-code</span>
 <span style="color: #4169e1; text-decoration: underline;"><a href="bmi2.png">bmi2.png</a></span>
 </pre>
 </div>
@@ -2664,9 +2677,9 @@ As with the tables, we shall add a caption and a name to it as follows
 </p>
 
 <div class="org-src-container">
-<pre class="src src-org"><span style="color: #888a85; background-color: #ffffff;">#+NAME: my-bmi-graph</span>
-<span style="color: #888a85; background-color: #ffffff;">#+CAPTION:</span> <span style="font-size: 96%;">Average BMI, by Country</span>
-<span style="color: #888a85; background-color: #ffffff;">#+RESULTS: mygraph-code</span>
+<pre class="src src-org"><span style="color: #7F9F7F;">#+NAME: my-bmi-graph</span>
+<span style="color: #7F9F7F;">#+CAPTION:</span> <span style="background-color: #494949; font-size: 120%;">Average BMI, by Country</span>
+<span style="color: #7F9F7F;">#+RESULTS: mygraph-code</span>
 <span style="color: #4169e1; text-decoration: underline;"><a href="gini.png">gini.png</a></span>
 </pre>
 </div>
@@ -2691,8 +2704,8 @@ You can now refer to this graph in the text using <code>[[my-bmi-graph]]</code>.
 </ul>
 </div>
 </div>
-<div id="outline-container-org0669d9d" class="outline-3">
-<h3 id="org0669d9d"><span class="section-number-3">5.4</span> Resources</h3>
+<div id="outline-container-org30af10d" class="outline-3">
+<h3 id="org30af10d"><span class="section-number-3">5.4</span> Resources</h3>
 <div class="outline-text-3" id="text-5-4">
 <ul class="org-ul">
 <li>Dominik, Carsten and others (2016), <i>The Org Manual</i>, Free Software Foundation</li>
@@ -2735,7 +2748,7 @@ document.
 </div></div>
 <div id="postamble" class="status">
 <p class="author">Author: Vikas Rawal</p>
-<p class="date">Created: 2020-02-13 Thu 08:04</p>
+<p class="date">Created: 2020-02-20 Thu 19:41</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

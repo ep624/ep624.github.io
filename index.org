@@ -94,7 +94,7 @@ Once that is done, following commands will configure Emacs for the requirements 
 #+begin_src sh
 
 git clone git@github.com:vikasrawal/prelude-ep624.git
-git clone https://github.com/vikasrawal/prelude-ep624.git # Use may use this if you do not have a github account with your public ssh key added to it.
+#git clone https://github.com/vikasrawal/prelude-ep624.git # Use may use this if you do not have a github account with your public ssh key added to it.
 
 mv .emacs.d .emacs.d.old # Renames if you already have a .emacs.d directory
 mv prelude-ep624 .emacs.d
@@ -113,9 +113,9 @@ I will be using git and Github to run this course. Which means that you will nee
 
 I will create a separate /repository/ for each student on Github, and invite you as a collaborator. You will /clone/ it on your computer using the commands mentioned below, create a separate sub-directory for each assignment and do all your work in these sub-directories. Once you have completed some work and want to share it with me, you will /commit/ it and /push/ it to the github repository. You commit anything to the repository in two steps. You first add it to the /staging area/ and then you /commit/ it.
 
-#+CAPTION: Basic git workflow for this course
-#+begin_src sh -n
 
+#+begin_src sh -n
+  ## Basic git workflow for this course
   ## The following command, after modifying the name of your repository,
   ## clones your repository. A directory -- 2020_yourname -- will be
   ## created in the directory from where the command is given
@@ -124,6 +124,14 @@ I will create a separate /repository/ for each student on Github, and invite you
 
   cd ~
   git clone --recurse-submodules git@github.com:ep624/2020_yourname.git
+
+  cd ~/2020_yourname
+  rm -Rf resources
+  git clone git@github.com:ep624/resources.git
+
+  cd ~/2020_yourname/resources
+  git pull origin master
+
 
   ## create a separate subdirectory in 2020_yourname for each of your assignments.
   cd ~/2020_yourname
@@ -144,6 +152,8 @@ I will create a separate /repository/ for each student on Github, and invite you
   git pull
 
 #+end_src
+
+A separate team has been created on Github for your batch. You should accept the invite and join the team.
 
 * Introduction
 ** Introduction to the course
@@ -205,7 +215,7 @@ This section does not provide a detailed guide to the use of Emacs. In this guid
 
 ** Notations
 
-In emacs, a buffer is equivalent to a tab in a web browser. It is
+In emacs, a buffer is like a tab in an application. It is
 normal to have several buffers open at the same time. Each file opens
 in emacs as a buffer. Buffers could also have processes like R running
 in them. Emacs displays any messages for you in a separate buffer.
