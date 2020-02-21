@@ -9,7 +9,6 @@
 #+HTML_HEAD: <style>#content{max-width:1200px;} </style>
 #+MACRO: hlmacro (eval (org-table-insert-hline))
 
-
 * Preliminaries                                                    :noexport:
 
 * System Setup
@@ -154,6 +153,16 @@ I will create a separate /repository/ for each student on Github, and invite you
 #+end_src
 
 A separate team has been created on Github for your batch. You should accept the invite and join the team.
+
+** Learning how to set up your system
+
+It would be useful for you to learn how to
+
++ install a Linux system.
++ use package manager of your Linux distribution to install software.
++ customise Emacs.
+
+While we have given some instructions here, and provided some ready-made configuration files for you to deploy, you should learn what these are doing, how to modify them, and how to extend them.
 
 * Introduction
 ** Introduction to the course
@@ -360,9 +369,6 @@ getwd() # Reports the present working directory
 + Rossini, Anthony and Friedrich Leisch. (2003) "Literate Statistical Practice", University of Washington Biostatistics Working Paper Series , Available at: http://works.bepress.com/anthony_rossini/6/
 + Schulte, Eric and Dan Davison (2011), “Active Documents with Org-Mode”, Computing in Science & Engineering.
 + Schulte, Eric, Dan Davison, Thomas Dye and Carsten Dominik (2016), "A Multi-Language Computing Environment for Literate Programming and Reproducible Research." Journal of Statistical Software, 46 (3), 1 – 24.
-* Git
-
-
 * References                                                       :noexport:
 
 bibliography:~/ssercloud/bibliobase/bibliobase.bib
