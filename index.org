@@ -334,6 +334,23 @@ getwd() # Reports the present working directory
 ** Analysis of Survey Data in R
 ** Econometric Analysis in R
 
+** Exercises
+*** COVID-19
+
+Inside the resources directory, please give the following commands to get the COVID-19 dataset.
+
+~git submodule init~
+~git pull --recurse-submodules~
+
+The data will be downloaded in the "resources/COVID-19/csse_covid_19_data/csse_covid_19_time_series" directory. These data are updated daily. You should be able to ~git pull --recurse-submodules~ everyday to update the dataset.
+
+What exploratory analysis can you do with this data-set using the commands that you have learnt so far?
+
+*** NSS 75, Schedule 25.2
+In the resources directory, sub-directory nss75252e has following files.
++ download.sh :: Bash script that downloads the required data. Open and check what the file does before executing. Executing unknown shell-scripts given by others can be a potential security hazard. So be sure you know what you are executing. You may have to use chmod to make the file executable. The script also downloads a file called datalay75_252.XLS which gives layout of each data file.
++ readdata.R :: This is an R script written by me for reading the data files. Code for reading the file R75252L03.TXT for level 3 is missing, and is for you to write. Use code for other levels as illustrations for you to learn how to read these files. Information for the variables contained in R75252L03.TXT can be found in datalay75_252.XLS
+
 ** Resources
 + Chang, Winston (2013), /R Graphics Cookbook/, OReilly
 + Crawley, Michael J (2015), /Statistics: An Introduction using R/, Wiley
@@ -349,6 +366,7 @@ getwd() # Reports the present working directory
 + R Core Team (2015), /R: A Language and Environment for Statistical Computing/,  R Foundation for Statistical Computing,Vienna.
 + Spector, Phil (2008), /Data Manipulation with R/, Springer
 + Wikham, Hadley, /ggplot2: Elegant Graphics for Data Analysis/, UseR Series, Springer
+
 
 * Reproducible Research
 ** Introduction to orgmode
@@ -369,6 +387,28 @@ getwd() # Reports the present working directory
 + Rossini, Anthony and Friedrich Leisch. (2003) "Literate Statistical Practice", University of Washington Biostatistics Working Paper Series , Available at: http://works.bepress.com/anthony_rossini/6/
 + Schulte, Eric and Dan Davison (2011), “Active Documents with Org-Mode”, Computing in Science & Engineering.
 + Schulte, Eric, Dan Davison, Thomas Dye and Carsten Dominik (2016), "A Multi-Language Computing Environment for Literate Programming and Reproducible Research." Journal of Statistical Software, 46 (3), 1 – 24.
+* Topic Plan                                                       :noexport:
+** DONE Introduction
+** DONE Bash
+** R
+*** DONE Introduction to R
+*** DONE Data structures in R
+*** DONE Basic commands
+*** Data.table
+*** ggplot and basic concepts of statistical graphs
+*** Regressions in R
+*** Loops/apply
+** Orgmode
+*** Basic syntax
+*** Tables in Orgmode
+*** NAMES and CAPTIONS
+*** Customising LateX export
+*** Formatting Tables
+*** Tags and Properties
+*** Bibliography and Index
+*** Using orgmode for presentations
+*** HTML export
+** Version control using Git
 * References                                                       :noexport:
 
 bibliography:~/ssercloud/bibliobase/bibliobase.bib
