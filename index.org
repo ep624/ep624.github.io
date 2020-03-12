@@ -339,6 +339,7 @@ getwd() # Reports the present working directory
 Inside the resources directory, please give the following commands to get the COVID-19 dataset.
 
 ~git submodule init~
+
 ~git pull --recurse-submodules~
 
 The data will be downloaded in the "resources/COVID-19/csse_covid_19_data/csse_covid_19_time_series" directory. These data are updated daily. You should be able to ~git pull --recurse-submodules~ everyday to update the dataset.
