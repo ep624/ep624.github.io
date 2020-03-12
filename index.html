@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2020-03-12 Thu 18:45 -->
+<!-- 2020-03-12 Thu 18:46 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>EP624: Statistical Programming and Reproducible Research</title>
@@ -326,7 +326,7 @@ for the JavaScript code in this tag.
 <li><a href="#org0fb5ca3">3.1. Introduction to Emacs</a></li>
 <li><a href="#orgfceff0c">3.2. Notations</a></li>
 <li><a href="#orgf873cf1">3.3. Basic commands</a></li>
-<li><a href="#org65f1f14">3.4. Resources</a></li>
+<li><a href="#org88aeab1">3.4. Resources</a></li>
 </ul>
 </li>
 <li><a href="#org27c1820">4. R Programming</a>
@@ -356,7 +356,7 @@ for the JavaScript code in this tag.
 <li><a href="#orgb3581ec">NSS 75, Schedule 25.2</a></li>
 </ul>
 </li>
-<li><a href="#orgc2db6b3">4.8. Resources</a></li>
+<li><a href="#orgc4ed45a">4.8. Resources</a></li>
 </ul>
 </li>
 <li><a href="#org3632094">5. Reproducible Research</a>
@@ -388,7 +388,7 @@ for the JavaScript code in this tag.
 </li>
 <li><a href="#org0ca66e6">5.2. Formatting tables and figures for print</a></li>
 <li><a href="#org951f1ca">5.3. Citation management using org-ref and biblatex</a></li>
-<li><a href="#org88aeab1">5.4. Resources</a></li>
+<li><a href="#orgad6c457">5.4. Resources</a></li>
 </ul>
 </li>
 </ul>
@@ -998,8 +998,8 @@ shortcuts and starts using them instead of the verbose versions.
 </div>
 </div>
 
-<div id="outline-container-org65f1f14" class="outline-3">
-<h3 id="org65f1f14"><span class="section-number-3">3.4</span> Resources</h3>
+<div id="outline-container-org88aeab1" class="outline-3">
+<h3 id="org88aeab1"><span class="section-number-3">3.4</span> Resources</h3>
 <div class="outline-text-3" id="text-3-4">
 <ul class="org-ul">
 <li><a href="https://www2.lib.uchicago.edu/keith/tcl-course/emacs-tutorial.html">A Tutorial Introduction to GNU Emacs</a></li>
@@ -1052,7 +1052,6 @@ shortcuts and starts using them instead of the verbose versions.
 </div>
 </div>
 </div>
-
 
 <div id="outline-container-org67397fa" class="outline-3">
 <h3 id="org67397fa"><span class="section-number-3">4.2</span> Data structures in R</h3>
@@ -1232,7 +1231,7 @@ You could also specify colour, size and shape independently of aesthetics if you
 </p>
 
 <div class="org-src-container">
-<pre class="src src-R" id="org60e93d1"><span class="linenr">1: </span>ggplot(data,aes(x=year,y=income,size=State),
+<pre class="src src-R" id="orgbb8b49a"><span class="linenr">1: </span>ggplot(data,aes(x=year,y=income,size=State),
 <span class="linenr">2: </span>       colour=<span style="color: #CC9393;">"darkred"</span>)<span style="color: #BFEBBF;">-&gt;</span>p
 </pre>
 </div>
@@ -1247,7 +1246,7 @@ In the second step, you specify the type of graph you want to make. These are ca
 </p>
 
 <div class="org-src-container">
-<pre class="src src-R" id="org9f33949"><span class="linenr">2: </span><span style="color: #5F7F5F;"># </span><span style="color: #7F9F7F;">We start from the object 'p' created in Step 1</span>
+<pre class="src src-R" id="orgd2811f3"><span class="linenr">2: </span><span style="color: #5F7F5F;"># </span><span style="color: #7F9F7F;">We start from the object 'p' created in Step 1</span>
 <span class="linenr">3: </span><span style="color: #5F7F5F;"># </span><span style="color: #7F9F7F;">and use '+' to add to it/modify it.</span>
 <span class="linenr">4: </span>p+geom_point()<span style="color: #BFEBBF;">-&gt;</span>p <span style="color: #5F7F5F;">#</span><span style="color: #7F9F7F;">This makes a scatter plot</span>
 <span class="linenr">5: </span>p+geom_line()<span style="color: #BFEBBF;">-&gt;</span>p <span style="color: #5F7F5F;">#</span><span style="color: #7F9F7F;">This adds a line to the plot</span>
@@ -1434,7 +1433,7 @@ For each of these scales (x, y, colour, size and shape), you can define attribut
 </p>
 
 <div class="org-src-container">
-<pre class="src src-R" id="orgbb8b49a"><span class="linenr"> 6: </span>p+scale_x_continuous(<span style="color: #CC9393;">"Financial Year"</span>,
+<pre class="src src-R" id="orgc40088f"><span class="linenr"> 6: </span>p+scale_x_continuous(<span style="color: #CC9393;">"Financial Year"</span>,
 <span class="linenr"> 7: </span>                     limits=c(1990,2012),
 <span class="linenr"> 8: </span>                     breaks=c(1990,1995,
 <span class="linenr"> 9: </span>                              2000,2010))<span style="color: #BFEBBF;">-&gt;</span>p
@@ -1872,8 +1871,8 @@ In the resources directory, sub-directory nss75252e has following files.
 </div>
 </div>
 
-<div id="outline-container-orgc2db6b3" class="outline-3">
-<h3 id="orgc2db6b3"><span class="section-number-3">4.8</span> Resources</h3>
+<div id="outline-container-orgc4ed45a" class="outline-3">
+<h3 id="orgc4ed45a"><span class="section-number-3">4.8</span> Resources</h3>
 <div class="outline-text-3" id="text-4-8">
 <ul class="org-ul">
 <li>Chang, Winston (2013), <i>R Graphics Cookbook</i>, OReilly</li>
@@ -2769,8 +2768,8 @@ You can now refer to this graph in the text using <code>[[my-bmi-graph]]</code>.
 </ul>
 </div>
 </div>
-<div id="outline-container-org88aeab1" class="outline-3">
-<h3 id="org88aeab1"><span class="section-number-3">5.4</span> Resources</h3>
+<div id="outline-container-orgad6c457" class="outline-3">
+<h3 id="orgad6c457"><span class="section-number-3">5.4</span> Resources</h3>
 <div class="outline-text-3" id="text-5-4">
 <ul class="org-ul">
 <li>Dominik, Carsten and others (2016), <i>The Org Manual</i>, Free Software Foundation</li>
@@ -2810,7 +2809,7 @@ document.
 </div></div>
 <div id="postamble" class="status">
 <p class="author">Author: Vikas Rawal</p>
-<p class="date">Created: 2020-03-12 Thu 18:45</p>
+<p class="date">Created: 2020-03-12 Thu 18:46</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

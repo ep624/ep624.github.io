@@ -320,7 +320,6 @@ setwd("~/proj2")  # On a Linux or OSX machine, sets the working directory to ~/p
 getwd() # Reports the present working directory
 #+end_src
 
-
 ** Data structures in R
 #+INCLUDE: "~/ssercloud/sseRguide/sseRguide.org::#dataobjects" :only-contents t
 
