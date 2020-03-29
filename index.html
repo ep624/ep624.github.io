@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2020-03-12 Thu 19:09 -->
+<!-- 2020-03-30 Mon 05:15 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>EP624: Statistical Programming and Reproducible Research</title>
@@ -326,7 +326,7 @@ for the JavaScript code in this tag.
 <li><a href="#org0fb5ca3">3.1. Introduction to Emacs</a></li>
 <li><a href="#orgfceff0c">3.2. Notations</a></li>
 <li><a href="#orgf873cf1">3.3. Basic commands</a></li>
-<li><a href="#orgad6c457">3.4. Resources</a></li>
+<li><a href="#org3646c44">3.4. Resources</a></li>
 </ul>
 </li>
 <li><a href="#org27c1820">4. R Programming</a>
@@ -356,7 +356,7 @@ for the JavaScript code in this tag.
 <li><a href="#orgb3581ec">NSS 75, Schedule 25.2</a></li>
 </ul>
 </li>
-<li><a href="#org69133a4">4.8. Resources</a></li>
+<li><a href="#org0eaf88d">4.8. Resources</a></li>
 </ul>
 </li>
 <li><a href="#org3632094">5. Reproducible Research</a>
@@ -388,7 +388,7 @@ for the JavaScript code in this tag.
 </li>
 <li><a href="#org0ca66e6">5.2. Formatting tables and figures for print</a></li>
 <li><a href="#org951f1ca">5.3. Citation management using org-ref and biblatex</a></li>
-<li><a href="#org3646c44">5.4. Resources</a></li>
+<li><a href="#org5ee7dae">5.4. Resources</a></li>
 </ul>
 </li>
 </ul>
@@ -998,8 +998,8 @@ shortcuts and starts using them instead of the verbose versions.
 </div>
 </div>
 
-<div id="outline-container-orgad6c457" class="outline-3">
-<h3 id="orgad6c457"><span class="section-number-3">3.4</span> Resources</h3>
+<div id="outline-container-org3646c44" class="outline-3">
+<h3 id="org3646c44"><span class="section-number-3">3.4</span> Resources</h3>
 <div class="outline-text-3" id="text-3-4">
 <ul class="org-ul">
 <li><a href="https://www2.lib.uchicago.edu/keith/tcl-course/emacs-tutorial.html">A Tutorial Introduction to GNU Emacs</a></li>
@@ -1231,7 +1231,7 @@ You could also specify colour, size and shape independently of aesthetics if you
 </p>
 
 <div class="org-src-container">
-<pre class="src src-R" id="orgc40088f"><span class="linenr">1: </span>ggplot(data,aes(x=year,y=income,size=State),
+<pre class="src src-R" id="org5fc66e5"><span class="linenr">1: </span>ggplot(data,aes(x=year,y=income,size=State),
 <span class="linenr">2: </span>       colour=<span style="color: #CC9393;">"darkred"</span>)<span style="color: #BFEBBF;">-&gt;</span>p
 </pre>
 </div>
@@ -1246,7 +1246,7 @@ In the second step, you specify the type of graph you want to make. These are ca
 </p>
 
 <div class="org-src-container">
-<pre class="src src-R" id="orgdf0283e"><span class="linenr">2: </span><span style="color: #5F7F5F;"># </span><span style="color: #7F9F7F;">We start from the object 'p' created in Step 1</span>
+<pre class="src src-R" id="orgec39677"><span class="linenr">2: </span><span style="color: #5F7F5F;"># </span><span style="color: #7F9F7F;">We start from the object 'p' created in Step 1</span>
 <span class="linenr">3: </span><span style="color: #5F7F5F;"># </span><span style="color: #7F9F7F;">and use '+' to add to it/modify it.</span>
 <span class="linenr">4: </span>p+geom_point()<span style="color: #BFEBBF;">-&gt;</span>p <span style="color: #5F7F5F;">#</span><span style="color: #7F9F7F;">This makes a scatter plot</span>
 <span class="linenr">5: </span>p+geom_line()<span style="color: #BFEBBF;">-&gt;</span>p <span style="color: #5F7F5F;">#</span><span style="color: #7F9F7F;">This adds a line to the plot</span>
@@ -1433,7 +1433,7 @@ For each of these scales (x, y, colour, size and shape), you can define attribut
 </p>
 
 <div class="org-src-container">
-<pre class="src src-R" id="org5fc66e5"><span class="linenr"> 6: </span>p+scale_x_continuous(<span style="color: #CC9393;">"Financial Year"</span>,
+<pre class="src src-R" id="org31d0e2d"><span class="linenr"> 6: </span>p+scale_x_continuous(<span style="color: #CC9393;">"Financial Year"</span>,
 <span class="linenr"> 7: </span>                     limits=c(1990,2012),
 <span class="linenr"> 8: </span>                     breaks=c(1990,1995,
 <span class="linenr"> 9: </span>                              2000,2010))<span style="color: #BFEBBF;">-&gt;</span>p
@@ -1706,7 +1706,7 @@ You can convert an existing data frame to a data.table using
 <li>It also automatically detects separating character and variable names.</li>
 </ul></li>
 <li>All commands that work on a data frame can also be used on a &ldquo;data.table&rdquo;. So nothing is lost by keeping your data as a data table rather than as a data frame.</li>
-<li>The basis syntax of data.table is as follows: <code>DT[i,j,by]</code>. This subsets DT using i, calculates j, groups using &ldquo;by&rdquo;
+<li>The basic syntax of data.table is as follows: <code>DT[i,j,by]</code>. This subsets DT using i, calculates j, groups using &ldquo;by&rdquo;
 <ul class="org-ul">
 <li>i (subsetting rows)
 <ul class="org-ul">
@@ -1874,8 +1874,8 @@ In the resources directory, sub-directory nss75252e has following files.
 </div>
 </div>
 
-<div id="outline-container-org69133a4" class="outline-3">
-<h3 id="org69133a4"><span class="section-number-3">4.8</span> Resources</h3>
+<div id="outline-container-org0eaf88d" class="outline-3">
+<h3 id="org0eaf88d"><span class="section-number-3">4.8</span> Resources</h3>
 <div class="outline-text-3" id="text-4-8">
 <ul class="org-ul">
 <li>Chang, Winston (2013), <i>R Graphics Cookbook</i>, OReilly</li>
@@ -1900,7 +1900,6 @@ In the resources directory, sub-directory nss75252e has following files.
 </div>
 </div>
 </div>
-
 
 <div id="outline-container-org3632094" class="outline-2">
 <h2 id="org3632094"><span class="section-number-2">5</span> Reproducible Research</h2>
@@ -2260,7 +2259,7 @@ up in the final document.
 
 <div class="org-src-container">
 <pre class="src src-org" id="orgff9912e"><span style="color: #7F9F7F;">#+NAME: table-yield</span>
-<span style="color: #7F9F7F;">#+CAPTION:</span> <span style="background-color: #494949;">Simple table created using LaTeX tabular environment</span>
+<span style="color: #7F9F7F;">#+CAPTION:</span> <span style="background-color: #494949; font-size: 120%;">Simple table created using LaTeX tabular environment</span>
 <span style="color: #7F9F7F;">#+attr_latex: :environment tabular :width \textwidth :align lrr</span>
     <span style="color: #9FC59F;">| State          | Average yield | Average income |</span>
     <span style="color: #9FC59F;">|----------------+---------------+----------------|</span>
@@ -2417,8 +2416,8 @@ is what we shall do.
 
 <div class="org-src-container">
 <pre class="src src-org"><span style="color: #7F9F7F;">#+NAME: literacy-rate</span>
-<span style="color: #7F9F7F;">#+CAPTION:</span> <span style="background-color: #494949;">Percentage of literate men and women, by country (per cent)</span>
-<span style="color: #D0BF8F; text-decoration: underline;"><a href="file:a.jpg">file:a.jpg</a></span>
+<span style="color: #7F9F7F;">#+CAPTION:</span> <span style="background-color: #494949; font-size: 120%;">Percentage of literate men and women, by country (per cent)</span>
+<span style="color: #4169e1; text-decoration: underline;"><a href="file:a.jpg">file:a.jpg</a></span>
 </pre>
 </div>
 
@@ -2428,7 +2427,7 @@ Similarly, a table will be inserted as follows.
 
 <div class="org-src-container">
 <pre class="src src-org"><span style="color: #7F9F7F;">#+NAME: literacy-rate-table</span>
-<span style="color: #7F9F7F;">#+CAPTION:</span> <span style="background-color: #494949;">Percentage of literate men and women, by country (per cent)</span>
+<span style="color: #7F9F7F;">#+CAPTION:</span> <span style="background-color: #494949; font-size: 120%;">Percentage of literate men and women, by country (per cent)</span>
 <span style="color: #9FC59F;">| Country    | Men | Women |</span>
 <span style="color: #9FC59F;">|------------+-----+-------|</span>
 <span style="color: #9FC59F;">| India      |  75 |    43 |</span>
@@ -2443,8 +2442,8 @@ To refer to the Table above in the text, write Table
 </p>
 
 <div class="org-src-container">
-<pre class="src src-org">Tables <span style="color: #D0BF8F; text-decoration: underline;"><a href="literacy-rate-table">literacy-rate-table</a></span> and <span style="color: #D0BF8F; text-decoration: underline;"><a href="health-table">health-table</a></span>, and Figure
-<span style="color: #D0BF8F; text-decoration: underline;"><a href="literacy-figure">literacy-figure</a></span>, show the level of underdevelopment.
+<pre class="src src-org">Tables <span style="color: #4169e1; text-decoration: underline;"><a href="literacy-rate-table">literacy-rate-table</a></span> and <span style="color: #4169e1; text-decoration: underline;"><a href="health-table">health-table</a></span>, and Figure
+<span style="color: #4169e1; text-decoration: underline;"><a href="literacy-figure">literacy-figure</a></span>, show the level of underdevelopment.
 </pre>
 </div>
 
@@ -2537,7 +2536,7 @@ embedded into Org as a source block. The basic syntax is
 <pre class="src src-org"><span style="color: #7F9F7F;">#+NAME: name_of_code_block</span>
 <span style="color: #7F9F7F;">#+BEGIN_SRC R &lt;switches&gt; &lt;header-arguments&gt;</span>
 
-<span style="background-color: #494949;">  &lt;Your R code goes here.&gt;</span>
+<span style="background-color: #494949; font-size: 120%;">  &lt;Your R code goes here.&gt;</span>
 
 <span style="color: #7F9F7F;">#+END_SRC</span>
 </pre>
@@ -2599,7 +2598,7 @@ Code block <a href="#org9163087">1</a> is an example of such a code block. Note
 <pre class="src src-org" id="org9163087"><span style="color: #7F9F7F;">#+NAME: readdata-code</span>
 <span style="color: #7F9F7F;">#+BEGIN_SRC R :results value silent</span>
 
-<span style="background-color: #494949;">read.data(</span><span style="color: #CC9393; background-color: #494949;">"datafile1.csv"</span><span style="background-color: #494949;">,sep=</span><span style="color: #CC9393; background-color: #494949;">","</span><span style="background-color: #494949;">,header=T)</span><span style="color: #BFEBBF; background-color: #494949;">-&gt;</span><span style="background-color: #494949;">mydata1</span>
+<span style="background-color: #494949; font-size: 120%;">read.data(</span><span style="color: #CC9393; background-color: #494949; font-size: 120%;">"datafile1.csv"</span><span style="background-color: #494949; font-size: 120%;">,sep=</span><span style="color: #CC9393; background-color: #494949; font-size: 120%;">","</span><span style="background-color: #494949; font-size: 120%;">,header=T)</span><span style="color: #BFEBBF; background-color: #494949; font-size: 120%;">-&gt;</span><span style="background-color: #494949; font-size: 120%;">mydata1</span>
 
 
 <span style="color: #7F9F7F;">#+END_SRC</span>
@@ -2629,12 +2628,12 @@ create a table that shows average BMI by country.
 <div class="org-src-container">
 <pre class="src src-org" id="org503ec0a"><span style="color: #7F9F7F;">#+NAME: bmi-table-code</span>
 <span style="color: #7F9F7F;">#+BEGIN_SRC R :results value :colnames yes :hline yes</span>
-<span style="background-color: #494949;">aggregate(height~Country,data=mydata1,mean)</span><span style="color: #BFEBBF; background-color: #494949;">-&gt;</span><span style="background-color: #494949;">a1</span>
-<span style="background-color: #494949;">read.data(</span><span style="color: #CC9393; background-color: #494949;">"datafile2.csv"</span><span style="background-color: #494949;">,sep=</span><span style="color: #CC9393; background-color: #494949;">","</span><span style="background-color: #494949;">,header=T)</span><span style="color: #BFEBBF; background-color: #494949;">-&gt;</span><span style="background-color: #494949;">mydata2</span>
-<span style="background-color: #494949;">aggregate(weight~Country,data=mydata2,mean)</span><span style="color: #BFEBBF; background-color: #494949;">-&gt;</span><span style="background-color: #494949;">a2</span>
-<span style="background-color: #494949;">merge(a1,a2,by=</span><span style="color: #CC9393; background-color: #494949;">"Country"</span><span style="background-color: #494949;">)</span><span style="color: #BFEBBF; background-color: #494949;">-&gt;</span><span style="background-color: #494949;">a1</span>
-<span style="background-color: #494949;">a1$weight/a1$height</span><span style="color: #BFEBBF; background-color: #494949;">-&gt;</span><span style="background-color: #494949;">a1$BMI</span>
-<span style="background-color: #494949;">subset(a1,select=c(</span><span style="color: #CC9393; background-color: #494949;">"Country"</span><span style="background-color: #494949;">,</span><span style="color: #CC9393; background-color: #494949;">"BMI"</span><span style="background-color: #494949;">))</span>
+<span style="background-color: #494949; font-size: 120%;">aggregate(height~Country,data=mydata1,mean)</span><span style="color: #BFEBBF; background-color: #494949; font-size: 120%;">-&gt;</span><span style="background-color: #494949; font-size: 120%;">a1</span>
+<span style="background-color: #494949; font-size: 120%;">read.data(</span><span style="color: #CC9393; background-color: #494949; font-size: 120%;">"datafile2.csv"</span><span style="background-color: #494949; font-size: 120%;">,sep=</span><span style="color: #CC9393; background-color: #494949; font-size: 120%;">","</span><span style="background-color: #494949; font-size: 120%;">,header=T)</span><span style="color: #BFEBBF; background-color: #494949; font-size: 120%;">-&gt;</span><span style="background-color: #494949; font-size: 120%;">mydata2</span>
+<span style="background-color: #494949; font-size: 120%;">aggregate(weight~Country,data=mydata2,mean)</span><span style="color: #BFEBBF; background-color: #494949; font-size: 120%;">-&gt;</span><span style="background-color: #494949; font-size: 120%;">a2</span>
+<span style="background-color: #494949; font-size: 120%;">merge(a1,a2,by=</span><span style="color: #CC9393; background-color: #494949; font-size: 120%;">"Country"</span><span style="background-color: #494949; font-size: 120%;">)</span><span style="color: #BFEBBF; background-color: #494949; font-size: 120%;">-&gt;</span><span style="background-color: #494949; font-size: 120%;">a1</span>
+<span style="background-color: #494949; font-size: 120%;">a1$weight/a1$height</span><span style="color: #BFEBBF; background-color: #494949; font-size: 120%;">-&gt;</span><span style="background-color: #494949; font-size: 120%;">a1$BMI</span>
+<span style="background-color: #494949; font-size: 120%;">subset(a1,select=c(</span><span style="color: #CC9393; background-color: #494949; font-size: 120%;">"Country"</span><span style="background-color: #494949; font-size: 120%;">,</span><span style="color: #CC9393; background-color: #494949; font-size: 120%;">"BMI"</span><span style="background-color: #494949; font-size: 120%;">))</span>
 <span style="color: #7F9F7F;">#+END_SRC</span>
 </pre>
 </div>
@@ -2666,7 +2665,7 @@ block and the result of the code block have separate names.
 
 <div class="org-src-container">
 <pre class="src src-org"><span style="color: #7F9F7F;">#+NAME: bmi-table-output</span>
-<span style="color: #7F9F7F;">#+CAPTION:</span> <span style="background-color: #494949;">Average BMI, by country</span>
+<span style="color: #7F9F7F;">#+CAPTION:</span> <span style="background-color: #494949; font-size: 120%;">Average BMI, by country</span>
 <span style="color: #7F9F7F;">#+RESULTS: bmi-table-code</span>
 </pre>
 </div>
@@ -2726,7 +2725,7 @@ graphic device to produce the file. When you evaluate this code using
 
 <div class="org-src-container">
 <pre class="src src-org"><span style="color: #7F9F7F;">#+RESULTS: mygraph-code</span>
-<span style="color: #D0BF8F; text-decoration: underline;"><a href="bmi2.png">bmi2.png</a></span>
+<span style="color: #4169e1; text-decoration: underline;"><a href="bmi2.png">bmi2.png</a></span>
 </pre>
 </div>
 
@@ -2745,9 +2744,9 @@ As with the tables, we shall add a caption and a name to it as follows
 
 <div class="org-src-container">
 <pre class="src src-org"><span style="color: #7F9F7F;">#+NAME: my-bmi-graph</span>
-<span style="color: #7F9F7F;">#+CAPTION:</span> <span style="background-color: #494949;">Average BMI, by Country</span>
+<span style="color: #7F9F7F;">#+CAPTION:</span> <span style="background-color: #494949; font-size: 120%;">Average BMI, by Country</span>
 <span style="color: #7F9F7F;">#+RESULTS: mygraph-code</span>
-<span style="color: #D0BF8F; text-decoration: underline;"><a href="gini.png">gini.png</a></span>
+<span style="color: #4169e1; text-decoration: underline;"><a href="gini.png">gini.png</a></span>
 </pre>
 </div>
 
@@ -2771,8 +2770,8 @@ You can now refer to this graph in the text using <code>[[my-bmi-graph]]</code>.
 </ul>
 </div>
 </div>
-<div id="outline-container-org3646c44" class="outline-3">
-<h3 id="org3646c44"><span class="section-number-3">5.4</span> Resources</h3>
+<div id="outline-container-org5ee7dae" class="outline-3">
+<h3 id="org5ee7dae"><span class="section-number-3">5.4</span> Resources</h3>
 <div class="outline-text-3" id="text-5-4">
 <ul class="org-ul">
 <li>Dominik, Carsten and others (2016), <i>The Org Manual</i>, Free Software Foundation</li>
@@ -2812,7 +2811,7 @@ document.
 </div></div>
 <div id="postamble" class="status">
 <p class="author">Author: Vikas Rawal</p>
-<p class="date">Created: 2020-03-12 Thu 19:09</p>
+<p class="date">Created: 2020-03-30 Mon 05:15</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

@@ -367,7 +367,6 @@ In the resources directory, sub-directory nss75252e has following files.
 + Spector, Phil (2008), /Data Manipulation with R/, Springer
 + Wikham, Hadley, /ggplot2: Elegant Graphics for Data Analysis/, UseR Series, Springer
 
-
 * Reproducible Research
 ** Introduction to orgmode
 #+INCLUDE: "~/vikascloud/orgpaper/orgpapers.org::#orgmodebasics"
@@ -409,6 +408,93 @@ In the resources directory, sub-directory nss75252e has following files.
 *** Using orgmode for presentations
 *** HTML export
 ** Version control using Git
+
+You have been using git and github without really learning what it is all about. Given that we are not having to run the course in online mode, there is a need for all of you to learn at least some basic concepts of what git is all about. I would need this for you to be able to submit your work for review, and read comments that I/Ankur make on your work.
+
+Git is used to record the history of change of your work. As your work proceeds, you mark specific landmarks when you did something specific.  However, this journey from start to finish is not just a straight highway. You could, at any point, create a new side road -- a service lane, if we may call it -- travel down that road, test a thing or two, and then come back to your highway. If you like what you achieved in the service road, you can merge it with the highway. Or if you don't, you can leave it as a separate track.
+
+Now, call the highway, the "master" branch. First, let us understand how to work on this branch.
+
+The $2020_yourname$ directory is already a git repository. It was created using $git init$ command.
+
+*** the .gitignore file
+
+This particular repository is designed to only track certain kinds of files. Do a $git pull$ to ensure that you have the latest version of your repository before you modify it. Now, in emacs, open the file $2020_yourname/.gitignore$. The first line (*) in this file says do not accept anything in this repository. All the remaining lines specify exceptions to this, and mention either specific files and directories or types of files (R files, csv files, org files) that should be accepted.
+
+An alternative way of writing the .gitignore file would be to list the files/directories/types of files that should not be included in the repository. Such a .gitignore file would be something like this:
+
+#+begin_example
+*.jpg
+*.docx
+*.xlsx
+output.pdf
+#+end_example
+
+You can edit the .gitignore file if you want to include additional types of files in your directory. By default, git is designed to track only plain text files. There is an extenstion (git-lfs) that can be used to track binary files as well. But let us not worry about the binary files for now. Don't add things like docx, xlsx, ods, odt, pdf, png and jpg files to your git repository. Such files can remain in the directory but will not be tracked for now. Let us first learn how to track text files.
+
+*** Git status
+
+At any point, $git status$ tells you the status of your repository. It tells you what branch you are on, and if there are any files that are new/changed among the files that are permitted by .gitignore.
+
+$git log$ shows you the history of your work.
+
+Once you are proficient in git, you will be able to freely move along this history back and forth.
+
+***  Staging and Committing Changes
+
+In the git jargon, a commit in a branch is equivalent to a landmark on the road. These commits mark addition or removal of new files or changes in files that are already being tracked. Of course, only files that are permitted by .gitignore can be added.
+
+To make a commit, you first put the files in the /staging area/. Think of the /staging area/ as a shopping cart. You first put all that you want to buy into your shopping cart, and then go to the payment counter to actually make the purchase. Similarly, when you want to make a commit, you first put things in the /staging area/, and then make a /commit/.
+
+Before you commit anything, use $git status$ to identify which files need to be commited.
+
+If you want to see more details of what all has changed in the repository, you can use $git diff$ to look at all the changes.
+
+To add new or changed files to the staging area, use:
+
+$git add filename$
+
+$git add *$ would add all files in the directory that are permitted by .gitignore file.
+
+Then to commit what has been staged, use the following:
+
+$git commit -m "A message to describe this commit"$
+
+*** Syncing with Remotes
+
+One could have multiple copies of a git repository. There are at least two places where 2020_yourname is kept: on your computer in the ~/2020_yourname directory and on the github server. In your ~/2020_yourname directory, the repository on the github server is defined as a remote called /origin/.
+
+When you do $git pull origin master$ you are essentially asking your repository to pull any updates that might be there in the $master$ branch of the remote called $origin$.
+
+To send your updates to the remote, you push the commits to the remote as follows:
+
+$git push$ or, more specifically, $git push origin master$
+
+When you have done some work that you want somebody to review, you should push it to the remote and ask the reviewer to look at it. The reviewer will $git pull$, review the work and then may git push to remote the reviewed files.
+
+You use this system of pulling and pushing changes from/to the remote to keep everything synchronised.
+
+*** Working with branches
+
+The real power of git lies in dealing with branches. To move along the path or to move to a different branch, you use /checkout/.
+
+$git checkout -b temporary$ would create a new branch called temporary and move you there.
+
+$git checkout temporary$ would move you to an existing branch called temporary.
+
+$git checkout master$ would, obviously, bring you back to master.
+
+Now, let us think of this scenario. You do an assignment, and at some stage, either in between the work, or after completing the work, you want me to review it. How does this happen?
+
+You will first commit everything that you have done, and push it to origin master.
+
+I will pull from github the repository on my computer, create a branch, let us say, "review", and add my comments and suggestions to your files. I will then push it back to the remote.
+
+You will pull the review branch ($git pull origin review$). $git diff master..review$ will show you the differences between master and review branches. That way, you can see specifically what have I done. You can checkout to the review branch and see what I have done.
+
+If you like what I have done, and want to incorporate it into the master branch, which is where your work is, you should
+
+
 * References                                                       :noexport:
 
 bibliography:~/ssercloud/bibliobase/bibliobase.bib
